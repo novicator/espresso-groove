@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Outer vinyl -->
+  <circle cx="24" cy="24" r="22" fill="#2a7d7d"/>
+  <!-- Grooves area -->
+  <circle cx="24" cy="24" r="20" fill="#1d5c5c"/>
+  <!-- Groove lines -->
+  <circle cx="24" cy="24" r="18" fill="none" stroke="#2a7d7d" stroke-width="0.3" opacity="0.3"/>
+  <circle cx="24" cy="24" r="15" fill="none" stroke="#2a7d7d" stroke-width="0.3" opacity="0.3"/>
+  <!-- Orange ring -->
+  <circle cx="24" cy="24" r="12" fill="#c4470a"/>
+  <!-- Cream label -->
+  <circle cx="24" cy="24" r="9" fill="#e8dcc8"/>
+  <!-- Inner brown -->
+  <circle cx="24" cy="24" r="4" fill="#2d1f1a"/>
+  <!-- Center hole -->
+  <circle cx="24" cy="24" r="0.8" fill="#e8dcc8"/>
+</svg>
