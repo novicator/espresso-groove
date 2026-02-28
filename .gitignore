@@ -9,6 +9,7 @@ vinyl reference/
 iphone_15/
 *.backup-*
 button-styles.md
-background.png
-vinyl_fill.png
-shirt-outline-svgrepo-com.svg
+/background.png
+/vinyl_fill.png
+/shirt-outline-svgrepo-com.svg
+deployment_issue/
