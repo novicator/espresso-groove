@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Outer vinyl -->
+  <circle cx="24" cy="24" r="22" fill="#2d1f1a"/>
+  <!-- Grooves area -->
+  <circle cx="24" cy="24" r="20" fill="#261a16"/>
+  <!-- Groove lines -->
+  <circle cx="24" cy="24" r="18" fill="none" stroke="#403737" stroke-width="0.3" opacity="0.3"/>
+  <circle cx="24" cy="24" r="15" fill="none" stroke="#403737" stroke-width="0.3" opacity="0.3"/>
+  <!-- Teal ring - bigger -->
+  <circle cx="24" cy="24" r="12" fill="#2a7d7d"/>
+  <!-- Orange label - bigger -->
+  <circle cx="24" cy="24" r="9" fill="#c4470a"/>
+  <!-- Inner red -->
+  <circle cx="24" cy="24" r="4" fill="#B32A38"/>
+  <!-- Center hole -->
+  <circle cx="24" cy="24" r="0.8" fill="#eff2e1"/>
+</svg>

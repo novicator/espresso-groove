@@ -1,0 +1,15 @@
+.vercel
+node_modules
+.next
+*.tsbuildinfo
+.idea
+.DS_Store
+reference/
+vinyl reference/
+iphone_15/
+*.backup-*
+button-styles.md
+background.png
+vinyl_fill.png
+shirt-outline-svgrepo-com.svg
+src/app/menu/page.wip.tsx
