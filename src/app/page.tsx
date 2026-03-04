@@ -130,7 +130,7 @@ export default function Home() {
           <img 
             src="/images/espresso_groove.png" 
             alt="Espresso Groove"
-            className="min-[479px]:max-[481px]:!w-80 min-[427px]:max-[431px]:!w-75 min-[320px]:max-[321px]:!w-40 w-60 logo-glow"
+            className="min-[479px]:max-[481px]:!w-80 min-[427px]:max-[431px]:!w-75 min-[320px]:max-[321px]:!w-40 w-60 logo-glow scale-[1.4] translate-y-[20px]"
           />
         </div>
 
@@ -200,6 +200,175 @@ export default function Home() {
             filter: 'drop-shadow(0px 0px 15px rgba(255,150,50,0.5))'
           }}
         />
+      </div>
+    
+      {/* Gradient Divider */}
+      <div className="w-full flex flex-col items-center gap-[3px] py-6 lg:py-8 relative top-[-185px] -ml-[80px] scale-[1.8]">
+        <div 
+          className="w-4/5 h-[3px] rounded-full"
+          style={{
+            background: 'linear-gradient(to right, #2a7d7d 0%, #2a7d7d 60%, #e8c88c 85%, #d4a04a 100%)',
+            boxShadow: '0 0 8px rgba(16,185,129,0.5), 0 0 20px rgba(232,200,140,0.3)',
+          }}
+        />
+        <div 
+          className="w-4/5 h-[3px] rounded-full"
+          style={{
+            background: 'linear-gradient(to right, #2a7d7d 0%, #2a7d7d 60%, #e8c88c 85%, #d4a04a 100%)',
+            boxShadow: '0 0 8px rgba(16,185,129,0.5), 0 0 20px rgba(232,200,140,0.3)',
+          }}
+        />
+      </div>
+    
+      
+            <style>{`
+        @keyframes eq-bounce {
+          0%, 100% { transform: scaleY(1); background-color: #2a7d7d; box-shadow: 0 0 4px #2a7d7d99; }
+          33% { transform: scaleY(0.4); background-color: #e05620; box-shadow: 0 0 4px #e0562099; }
+          66% { transform: scaleY(0.7); background-color: #6b4c8c; box-shadow: 0 0 4px #6b4c8c99; }
+        }
+      `}</style>
+      {/* Now Playing Section */}
+      <div className="w-full flex items-center justify-center gap-4 py-4 relative top-[-200px]">
+{/* Left Equalizer */}
+        <div className="flex items-end gap-[3px] self-stretch">
+          {[
+            {h: 0.3, c: '#e05620'}, {h: 0.5, c: '#2a7d7d'}, {h: 0.4, c: '#6b4c8c'},
+            {h: 0.6, c: '#2a7d7d'}, {h: 0.35, c: '#e05620'}, {h: 0.55, c: '#6b4c8c'}
+          ].map((b, i) => (
+            <div key={i} className="w-[6px] rounded-full" style={{height: (b.h * 100) + '%', backgroundColor: b.c, boxShadow: '0 0 4px ' + b.c + '99', animation: 'eq-bounce ' + (1.1 + i * 0.15) + 's ease-in-out infinite', transformOrigin: 'bottom'}} />
+          ))}
+        </div>
+
+        {/* Center Text */}
+        <div className="flex items-center gap-2 shrink-0">
+          <div className="flex-1 flex flex-col items-center">
+            <span className="font-[family-name:var(--font-libre-baskerville)] text-[#e8c88c] uppercase text-[26px] tracking-tight font-bold whitespace-nowrap" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.6)'}}>Now Playing</span>
+            <span className="font-[family-name:var(--font-libre-baskerville)] text-[#e8c88c] italic text-[20px] whitespace-nowrap">Espresso Groove Radio</span>
+          </div>
+        </div>
+
+        {/* Right Equalizer */}
+        <div className="flex items-end gap-[3px] self-stretch">
+          {[
+            {h: 0.55, c: '#6b4c8c'}, {h: 0.35, c: '#e05620'}, {h: 0.6, c: '#2a7d7d'},
+            {h: 0.4, c: '#6b4c8c'}, {h: 0.5, c: '#2a7d7d'}, {h: 0.3, c: '#e05620'}
+          ].map((b, i) => (
+            <div key={i} className="w-[6px] rounded-full" style={{height: (b.h * 100) + '%', backgroundColor: b.c, boxShadow: '0 0 4px ' + b.c + '99', animation: 'eq-bounce ' + (1.1 + i * 0.15) + 's ease-in-out infinite', transformOrigin: 'bottom'}} />
+          ))}
+        </div>
+
+      </div>
+
+      
+      {/* Extended Background */}
+      <div className="w-full min-h-screen relative top-[-175px]" style={{ backgroundImage: `url('/images/background2.png')`, backgroundSize: 'cover', backgroundPosition: 'center', transform: 'scaleY(-1)' }}>
+        {/* Gradient Divider 2 (flipped back since parent is scaleY-1) */}
+        <div className="w-full flex flex-col items-center gap-[3px] pt-6 relative top-[750px] -ml-[80px] scale-[1.8]" style={{transform: 'scaleY(-1)'}}>
+          <div className="w-4/5 h-[3px] rounded-full" style={{background: 'linear-gradient(to right, #2a7d7d 0%, #2a7d7d 60%, #e8c88c 85%, #d4a04a 100%)', boxShadow: '0 0 8px rgba(16,185,129,0.5), 0 0 20px rgba(232,200,140,0.3)'}} />
+          <div className="w-4/5 h-[3px] rounded-full" style={{background: 'linear-gradient(to right, #2a7d7d 0%, #2a7d7d 60%, #e8c88c 85%, #d4a04a 100%)', boxShadow: '0 0 8px rgba(16,185,129,0.5), 0 0 20px rgba(232,200,140,0.3)'}} />
+        </div>
+
+        {/* Now Spinning */}
+        <div className="flex items-center justify-center gap-3 mt-6 relative top-[620px]" style={{transform: 'scaleY(-1)'}}>
+          <div className="w-[60px] h-[2px] bg-[#e8c88c]" style={{boxShadow: '0 0 6px rgba(232,200,140,0.3)'}} />
+          <span className="font-[family-name:var(--font-libre-baskerville)] text-[#e8c88c] uppercase text-[26px] tracking-tight font-bold whitespace-nowrap" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.6)'}}>Now Spinning</span>
+          <div className="w-[60px] h-[2px] bg-[#e8c88c]" style={{boxShadow: '0 0 6px rgba(232,200,140,0.3)'}} />
+        </div>
+
+        {/* Our Featured Genre */}
+        <div className="flex flex-col items-center gap-3 mt-8 relative top-[400px]" style={{transform: 'scaleY(-1)'}}>
+          <span className="font-[family-name:var(--font-libre-baskerville)] text-[#e8c88c] uppercase text-[20px] tracking-tight font-medium">Our Featured Genre</span>
+          
+          <div className="flex items-center gap-3">
+            <div className="w-[40px] h-[1px] bg-[#b8e8e8]" />
+            <span className="font-[family-name:var(--font-libre-baskerville)] text-[#b8e8e8] uppercase text-[64px] tracking-tight font-bold -mt-2" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.6)'}}>Jazz</span>
+            <div className="w-[40px] h-[1px] bg-[#b8e8e8]" />
+          </div>
+        </div>
+        {/* Album Cards Background */}
+        <div className="w-full py-6 relative top-[-200px]" style={{transform: 'scaleY(-1)'}}>
+          <div className="flex justify-center items-stretch gap-4 px-2">
+          {/* Left Card - Jazz History */}
+          <div className="w-[200px] rounded-xl overflow-hidden flex flex-col border-[3px] border-[#e8c88c]">
+            <div className="bg-[#2d1f1a] px-3 py-2">
+              <span className="font-[family-name:var(--font-libre-baskerville)] text-[#e8c88c] uppercase text-[14px] tracking-[0.15em] font-bold">Jazz History</span>
+            </div>
+            <div className="w-full h-[160px] bg-[#1a1310] flex items-center justify-center"><span className="text-white text-[11px] font-[family-name:var(--font-inter)] opacity-50">Jazz picture (person, vibe, etc)</span></div>
+            <div className="bg-[#2d1f1a] px-3 py-2 flex-1">
+              <p className="text-[#e8c88c]/70 text-[10px] font-[family-name:var(--font-inter)] leading-relaxed">In the early 1900s, the streets of New Orleans were alive with a new sound. African rhythms met blues and ragtime to create something entirely new. It wasn't just music — it was freedom, expression, and revolution all at once. From New Orleans to Harlem, jazz gave voice to a generation...</p>
+            </div>
+            <a href="/jazz/history" className="bg-[#2d1f1a] px-3 py-2 border-t border-[#e8c88c]/10 mt-auto flex items-center justify-between">
+              <span className="text-[#e8c88c] text-[13px] font-[family-name:var(--font-libre-baskerville)]">Learn More</span>
+              <span className="text-[#e8c88c] text-[13px]">→</span>
+            </a>
+          </div>
+
+          {/* Right Card - Featured Sips */}
+          <div className="w-[200px] rounded-xl overflow-hidden flex flex-col bg-[#2d1f1a] border-[3px] border-[#e8c88c]">
+            <div className="px-3 py-2 border-b border-[#2d1f1a]/10">
+              <span className="font-[family-name:var(--font-libre-baskerville)] text-[#e8c88c] uppercase text-[14px] tracking-[0.15em] font-bold whitespace-nowrap">Featured Sips</span>
+            </div>
+            <div className="flex-1 flex flex-col">
+              <div className="flex-1 border-b border-[#2d1f1a]/10 flex flex-col bg-[#2d1f1a] overflow-hidden">
+                <div className="bg-[#e05620] noisy px-3 py-1">
+                  <p className="text-[12px] font-[family-name:var(--font-libre-baskerville)] font-bold text-[#e8c88c] uppercase tracking-[0.07em] text-center"
+                    style={{ textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}>
+                    <img src="/images/menu_cup.svg" className="w-4 h-4 inline-block mr-1 -mt-1" style={{filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))'}} /> Coffee
+                  </p>
+                </div>
+                <div className="flex gap-2 p-2">
+                  <div className="w-[70px] h-[70px] relative top-[-1px] bg-[#1a1310] rounded-lg flex items-center justify-center">
+                    <span className="text-white/40 text-[7px]">PICTURE</span>
+                  </div>
+                  <div className="flex-1 flex flex-col items-center">
+                    <span className="text-[#e8c88c] text-[16px] whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide">Blue Note Brew</span>
+                    <span className="text-[22px] font-[family-name:var(--font-bebas-neue)] text-[#e05620]" style={{ textShadow: '0 0 8px rgba(224,86,32,0.4)' }}>$5.75</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex-1 border-b border-[#2d1f1a]/10 flex flex-col bg-[#2d1f1a] overflow-hidden">
+                <div className="bg-[#2a7d7d] noisy px-3 py-1">
+                  <p className="text-[12px] font-[family-name:var(--font-libre-baskerville)] font-bold text-[#e8c88c] uppercase tracking-[0.07em] text-center"
+                    style={{ textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}>
+                    Tea
+                  </p>
+                </div>
+                <div className="flex gap-2 p-2">
+                  <div className="w-[70px] h-[70px] relative top-[-1px] bg-[#1a1310] rounded-lg flex items-center justify-center">
+                    <span className="text-white/40 text-[7px]">PICTURE</span>
+                  </div>
+                  <div className="flex-1 flex flex-col items-center">
+                    <span className="text-[#e8c88c] text-[16px] whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide">Coltrane Chai</span>
+                    <span className="text-[22px] font-[family-name:var(--font-bebas-neue)] text-[#e05620]" style={{ textShadow: '0 0 8px rgba(224,86,32,0.4)' }}>$4.50</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex-1 flex flex-col bg-[#2d1f1a] overflow-hidden">
+                <div className="bg-[#6b4c8c] noisy px-3 py-1">
+                  <p className="text-[12px] font-[family-name:var(--font-libre-baskerville)] font-bold text-[#e8c88c] uppercase tracking-[0.07em] text-center"
+                    style={{ textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}>
+                    Energy Drinks
+                  </p>
+                </div>
+                <div className="flex gap-2 p-2">
+                  <div className="w-[70px] h-[70px] relative top-[-1px] bg-[#1a1310] rounded-lg flex items-center justify-center">
+                    <span className="text-white/40 text-[7px]">PICTURE</span>
+                  </div>
+                  <div className="flex-1 flex flex-col items-center">
+                    <span className="text-[#e8c88c] text-[16px] whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide">Bebop Blast</span>
+                    <span className="text-[22px] font-[family-name:var(--font-bebas-neue)] text-[#e05620]" style={{ textShadow: '0 0 8px rgba(224,86,32,0.4)' }}>$4.75</span>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-[#2d1f1a] px-3 py-2 border-t border-[#e8c88c]/10 mt-auto flex items-center justify-between">
+                <span className="text-[#e8c88c] text-[13px] whitespace-nowrap font-[family-name:var(--font-libre-baskerville)]">View Featured Menu</span>
+                <span className="text-[#e8c88c] text-[12px]">→</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
       </div>
     </>
   );
