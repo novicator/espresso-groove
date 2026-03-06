@@ -76,7 +76,7 @@ export default function Home() {
             className="text-3xl lg:text-4xl xl:text-[50px] xl:translate-y-[-50px] font-[family-name:var(--font-bebas-neue)] text-[#e8c88c] tracking-[0.15em] uppercase"
             style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}
           >
-            Drip • Drop • Vibe.
+            Drip • Drop • Vibe
           </p>
           
           {/* Buttons */}
