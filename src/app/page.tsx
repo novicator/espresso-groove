@@ -130,7 +130,7 @@ export default function Home() {
           <img 
             src="/images/espresso_groove_updated.png"
             alt="Espresso Groove"
-            className="min-[479px]:max-[481px]:!w-80 min-[427px]:max-[431px]:!w-75 min-[320px]:max-[321px]:!w-40 w-60 logo-glow"
+            className="min-[479px]:max-[481px]:!w-80 min-[427px]:max-[431px]:!w-75 min-[320px]:max-[321px]:!w-40 w-60 logo-glow scale-[1.4] translate-y-[20px]"
           />
         </div>
 
