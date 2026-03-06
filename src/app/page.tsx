@@ -59,7 +59,7 @@ export default function Home() {
         <div className="flex-1 flex flex-col justify-center pl-16 lg:pl-24 xl:pl-32 pr-8 z-10">
           {/* Logo */}
           <img 
-            src="/images/espresso_groove.png" 
+            src="/public/images/espresso_groove_updated.png"
             alt="Espresso Groove"
             className="w-72 lg:w-96 xl:w-[480px] xl:ml-[0px] xl:-mt-[150px] mb-8 logo-glow"
           />
