@@ -128,7 +128,7 @@ export default function Home() {
         {/* Logo */}
         <div className="pt-6 px-6">
           <img 
-            src="/images/espresso_groove.png" 
+            src="/images/espresso_groove_updated.png"
             alt="Espresso Groove"
             className="min-[479px]:max-[481px]:!w-80 min-[427px]:max-[431px]:!w-75 min-[320px]:max-[321px]:!w-40 w-60 logo-glow"
           />
@@ -147,7 +147,7 @@ export default function Home() {
             className="min-[479px]:max-[481px]:!text-[32px] min-[427px]:max-[431px]:!text-[31px] min-[410px]:max-[415px]:!text-[29px] min-[320px]:max-[321px]:!text-[17px] text-[25px] font-[family-name:var(--font-bebas-neue)] text-[#e8c88c] tracking-[0.15em] uppercase mt-2"
             style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}
           >
-            Drip • Drop • Vibe.
+            Drip • Drop • Vibe
           </p>
           
         </div>
