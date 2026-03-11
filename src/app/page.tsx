@@ -452,10 +452,24 @@ export default function Home() {
           transform: 'scaleY(-1)',
         }}
       >
-        <div className="absolute top-[630px] left-0 w-full flex items-center justify-center gap-3">
+        {/* The Vibe Header */}
+        <div className="absolute top-[630px] left-0 w-full flex items-center justify-center gap-3" style={{transform: 'scaleY(-1)'}}>
           <div className="w-[80px] h-[2px] bg-[#e8c88c]" style={{boxShadow: '0 0 6px rgba(232,200,140,0.3)'}}/>
-          <span className="font-[family-name:var(--font-libre-baskerville)] text-[#e8c88c] uppercase text-[26px] tracking-tight font-bold whitespace-nowrap" style={{transform: 'ScaleY(-1)'}}>The Vibe</span>
-          <div className="w-[80px] h-[2px] bg-[#e8c88c]" style={{boxShadow: '0 0 6px rgba(232, 200, 140, 0.3)'}}/>
+          <span className="font-[family-name:var(--font-libre-baskerville)] text-[#e8c88c] uppercase text-[26px] tracking-tight font-bold whitespace-nowrap" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.6)'}}>The Vibe</span>
+          <div className="w-[80px] h-[2px] bg-[#e8c88c]" style={{boxShadow: '0 0 6px rgba(232,200,140,0.3)'}}/>
+        </div>
+
+        {/* The Vibe Text */}
+        <div className="absolute top-[350px] left-0 w-full px-8 text-center" style={{transform: 'scaleY(-1)'}}>
+          <p className="text-[#e8c88c]/80 text-[13px] font-[family-name:var(--font-inter)] leading-relaxed">
+            <strong className="text-[#e8c88c]">Espresso Groove</strong> was born from a simple idea: a space where the ritual of coffee meets the soul of music. Great espresso and great vinyl share something in common — they&apos;re both meant to be <strong className="text-[#e8c88c]">savored</strong>, not rushed.
+          </p>
+          <p className="text-[#e8c88c]/80 text-[13px] font-[family-name:var(--font-inter)] leading-relaxed mt-4">
+            Pull up a chair. Flip through the crates. Espresso <strong className="text-[#e8c88c]">drips</strong>, the needle <strong className="text-[#e8c88c]">drops</strong>, and the <strong className="text-[#e8c88c]">vibe</strong> takes over.
+          </p>
+          <p className="text-[#e8c88c] text-[16px] font-[family-name:var(--font-libre-baskerville)] italic mt-4" style={{textShadow: '1px 1px 4px rgba(0,0,0,0.5)'}}>
+            Drip. Drop. Vibe.
+          </p>
         </div>
       </div>
     </>
