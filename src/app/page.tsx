@@ -473,6 +473,17 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      {/* Fourth Background Extension */}
+      <div className="w-full h-[350px] relative top-[-208px] overflow-hidden mb-[-208px]"
+        style={{
+          backgroundImage: `url('/images/background7.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'bottom',
+          transform: 'scaleY(-1)',
+        }}
+      >
+      </div>
     </>
   );
 }
