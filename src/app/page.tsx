@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import MusicNotes from "./components/MusicNotes";
 
 export default function Home() {
   return (
@@ -472,6 +473,12 @@ export default function Home() {
             Drip. Drop. Vibe.
           </p>
         </div>
+
+        {/* Music Notes */}
+        <div className="absolute top-[100px] left-0 w-full" style={{transform: 'scaleY(-1)'}}>
+          <MusicNotes isPlaying={true} />
+        </div>
+
       </div>
 
       {/* Fourth Background Extension */}
@@ -483,6 +490,79 @@ export default function Home() {
           transform: 'scaleY(-1)',
         }}
       >
+        {/* Logo */}
+        <div className="relative top-[25vh]">
+          <img
+            src="/images/espresso_groove.png"
+            alt="Espresso Groove"
+            className="ml-[6vw] min-[479px]:max-[481px]:!w-80 min-[427px]:max-[431px]:!w-75 min-[320px]:max-[321px]:!w-40 w-55 logo-glow scale-[1.4] translate-y-[20px]" style={{transform: 'scaleY(-1)'}}
+          />
+        </div>
+
+        {/* Tagline */}
+        <div>
+          <p className="text-[#e8c88c] text-[26px] font-[500] font-[family-name:var(--font-libre-baskerville)] italic relative top-[4vh] left-[3vh]" style={{textShadow: '1px 1px 4px rgba(0,0,0,0.5)', transform: 'scaleY(-1)'}}>
+            Drip. Drop. Vibe.
+          </p>
+        </div>
+
+        {/* Description */}
+        <div>
+          <p className="text-[#e8c88c] text-[15px] font-[500] font-[family-name:var(--font-libre-baskerville)] relative top-[-11vh] left-[3vh] max-w-[250px]" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)', transform: 'scaleY(-1)'}}>
+            A vinyl-fueled coffee shop coffee meets culture.<br />Sip slow, dig deep, stay groovy.
+          </p>
+        </div>
+      </div>
+
+      {/* Fifth Background Extension */}
+      <div className="w-full h-[685px]"
+        style={{
+          backgroundImage: `url('images/background8.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          transform: 'scaleY(-1)',
+        }}
+        >
+
+        {/* Store Info */}
+        <div className="flex flex-col gap-4 relative top-[83vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
+            {/* Address */}
+            <a 
+              href="https://maps.google.com/?q=Espresso+Groove" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 hover:opacity-80 transition cursor-pointer"
+            >
+              <svg className="w-7 h-7 text-[#e8c88c] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <div>
+                <p className="text-[#e8c88c] text-[16px] font-[family-name:var(--font-libre-baskerville)] font-medium">123 Groove St.</p>
+                <p className="text-[#e8c88c]/70 text-[15px] font-[family-name:var(--font-inter)]">City, State 00000</p>
+              </div>
+            </a>
+
+            {/* Hours */}
+            <div className="flex items-start gap-3">
+              <svg className="w-7 h-7 text-[#e8c88c] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <p className="text-[#e8c88c] text-[16px] font-[family-name:var(--font-libre-baskerville)] font-medium">Mon–Fri: 7am–9pm</p>
+                <p className="text-[#e8c88c]/70 text-[15px] font-[family-name:var(--font-inter)]">Sat–Sun: 8am–10pm</p>
+              </div>
+            </div>
+
+            {/* Phone */}
+            <a href="tel:+10000000000" className="flex items-center gap-3 hover:opacity-80 transition cursor-pointer">
+              <svg className="w-7 h-7 text-[#e8c88c] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <p className="text-[#e8c88c] text-[16px] font-[family-name:var(--font-libre-baskerville)] font-medium">(000) 000-0000</p>
+            </a>
+        </div>
+
       </div>
     </>
   );

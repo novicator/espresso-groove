@@ -2,45 +2,34 @@
 
 import { useEffect, useState, useRef } from "react";
 
-interface MusicNotesProps {
-  isPlaying: boolean;
-}
-
 interface Note {
   id: number;
   symbol: string;
-  startTime: number;
 }
 
-export default function MusicNotes({ isPlaying }: MusicNotesProps) {
+export default function MusicNotes({ isPlaying }: { isPlaying: boolean }) {
   const [notes, setNotes] = useState<Note[]>([]);
   const noteIdRef = useRef(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (isPlaying) {
-      // Spawn a new note every 400ms
-      // Spawn a new note every 700ms (slower = fewer notes)
       intervalRef.current = setInterval(() => {
         const newNote: Note = {
           id: noteIdRef.current++,
           symbol: Math.random() > 0.5 ? "♪" : "♫",
-          startTime: Date.now(),
         };
         setNotes((prev) => [...prev, newNote]);
 
-        // Remove note after animation completes (4.8s)
         setTimeout(() => {
           setNotes((prev) => prev.filter((n) => n.id !== newNote.id));
-        }, 7000);
-      }, 550);
+        }, 8000);
+      }, 1000);
     } else {
-      // Stop spawning when not playing
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
         intervalRef.current = null;
       }
-      // Clear existing notes
       setNotes([]);
     }
 
@@ -53,11 +42,12 @@ export default function MusicNotes({ isPlaying }: MusicNotesProps) {
 
   return (
     <>
-      <div className="absolute pointer-events-none overflow-visible text-[#5c3d2e]">
-        {notes.map((note, index) => (
+      <div className="relative w-full h-[100px] overflow-hidden pointer-events-none top-[50px]">
+        {notes.map((note) => (
           <span
             key={note.id}
-            className={`absolute float-note ${index % 2 === 0 ? "odd-note" : ""}`}
+            className="absolute left-[-10px] text-[#e8c88c] text-[30px] music-note-wave"
+            style={{ top: '50%' }}
           >
             {note.symbol}
           </span>
@@ -65,37 +55,51 @@ export default function MusicNotes({ isPlaying }: MusicNotesProps) {
       </div>
 
       <style jsx>{`
-        @keyframes floatNote {
+        @keyframes waveAcross {
           0% {
-            transform: translateX(0) translateY(0) scale(1.2);
+            transform: translateX(0) translateY(0);
             opacity: 0;
           }
-          5% {
+          3% {
             opacity: 1;
           }
-          95% {
-            opacity: 1;
+          10% {
+            transform: translateX(calc(10vw)) translateY(-18px);
           }
-          100% {
-            transform: translateX(calc(100vw + 50px)) translateY(-200px) scale(2);
-            opacity: 0;
+          20% {
+            transform: translateX(calc(20vw)) translateY(18px);
           }
-        }
-        @keyframes wobble {
-          0%,
-          100% {
-            margin-top: 0;
+          30% {
+            transform: translateX(calc(30vw)) translateY(-18px);
+          }
+          40% {
+            transform: translateX(calc(40vw)) translateY(18px);
           }
           50% {
-            margin-top: 20px;
+            transform: translateX(calc(50vw)) translateY(-18px);
+          }
+          60% {
+            transform: translateX(calc(60vw)) translateY(18px);
+          }
+          70% {
+            transform: translateX(calc(70vw)) translateY(-18px);
+          }
+          80% {
+            transform: translateX(calc(80vw)) translateY(18px);
+          }
+          90% {
+            transform: translateX(calc(90vw)) translateY(-18px);
+          }
+          97% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(calc(100vw + 5px)) translateY(18px);
+            opacity: 1;
           }
         }
-        .float-note {
-          animation: floatNote 7s linear forwards, wobble 1.5s ease-in-out infinite;
-          font-size: 22px;
-        }
-        .odd-note {
-          animation: floatNote 7s linear forwards, wobble 1.5s ease-in-out infinite reverse;
+        .music-note-wave {
+          animation: waveAcross 8s linear forwards;
         }
       `}</style>
     </>
