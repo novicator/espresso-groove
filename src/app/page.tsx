@@ -530,7 +530,7 @@ export default function Home() {
         </div>
 
         {/* Store Info */}
-        <div className="flex flex-col gap-4 relative top-[73vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
+        <div className="flex flex-col gap-4 relative top-[79vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
 
             {/* Address */}
             <a 
@@ -560,18 +560,39 @@ export default function Home() {
               </div>
             </div>
 
+        </div>
+
+        {/* Contact Us Title */}
+        <div className="relative top-[57vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
+          <h3 className="text-[#e8c88c] text-[22px] font-[family-name:var(--font-bebas-neue)] tracking-[0.15em] uppercase">Contact Us</h3>
+        </div>
+
+        {/* Contact Info */}
+        <div className="flex flex-col gap-4 relative top-[41vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
             {/* Phone */}
-            <a href="tel:+10000000000" className="flex items-center gap-3 hover:opacity-80 transition cursor-pointer">
+            <a href="tel:+10000000000" className="relative flex items-center gap-3 hover:opacity-80 transition cursor-pointer">
               <svg className="w-7 h-7 text-[#e8c88c] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               <p className="text-[#e8c88c] text-[16px] font-[family-name:var(--font-libre-baskerville)] font-medium">(000) 000-0000</p>
             </a>
 
+            {/* Email */}
+            <a href="mailto:espressogroove@gmail.com" className="relative flex items-center gap-3 hover:opacity-80 transition cursor-pointer">
+              <svg className="w-7 h-7 text-[#e8c88c] flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <p className="text-[#e8c88c] text-[16px] font-[family-name:var(--font-libre-baskerville)] font-medium">espressogroove@gmail.com</p>
+            </a>
+        </div>
+
+        {/* Follow Us Title */}
+        <div className="relative top-[24vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
+          <h3 className="text-[#e8c88c] text-[22px] font-[family-name:var(--font-bebas-neue)] tracking-[0.15em] uppercase">Follow Us</h3>
         </div>
 
         {/* Social Icons */}
-        <div className="flex gap-4 relative top-[35vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
+        <div className="flex gap-4 relative top-[11vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
           {/* Instagram */}
           <a href="#" className="w-12 h-12 border-2 border-[#e8c88c] rounded-full flex items-center justify-center text-[#e8c88c] hover:bg-[#e8c88c] hover:text-[#2d1f1a] transition-all">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -590,6 +611,33 @@ export default function Home() {
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
             </svg>
           </a>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="flex flex-col gap-0 relative top-[-32vh] w-full" style={{transform: 'scaleY(-1)'}}>
+          <Link href="/menu" className="relative w-full h-[80px] bg-[#e05620] noisy flex items-center justify-center gap-3">
+            <img src="/images/menu_cup.svg" className="w-10 h-10" style={{filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))'}} />
+            <span
+              className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-[#e8c88c] text-[28px]"
+              style={{textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)', letterSpacing: '0.1em'}}
+            >Menu</span>
+          </Link>
+
+          <Link href="/vinyl" className="relative w-full h-[80px] bg-[#2a7d7d] noisy flex items-center justify-center gap-3">
+            <img src="/images/vinyl-svgrepo-com.svg" className="w-10 h-10" style={{filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))'}} />
+            <span
+              className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-[#e8c88c] text-[28px]"
+              style={{textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)', letterSpacing: '0.2em'}}
+            >Vinyl</span>
+          </Link>
+
+          <Link href="/merch" className="relative w-full h-[80px] bg-[#6b4c8c] noisy flex items-center justify-center gap-3">
+            <img src="/images/shirt-outline-svgrepo-com.svg" className="w-10 h-10" style={{filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))'}} />
+            <span
+              className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-[#e8c88c] text-[28px]"
+              style={{textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)', letterSpacing: '0.12em'}}
+            >Merch</span>
+          </Link>
         </div>
 
       </div>
