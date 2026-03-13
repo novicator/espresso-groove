@@ -1,6 +1,10 @@
-import Link from "next/link";
+"use client";
+
+import { useRouter } from "next/navigation";
 
 export default function ComingSoon({ title }: { title: string }) {
+  const router = useRouter();
+
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center relative"
@@ -20,12 +24,12 @@ export default function ComingSoon({ title }: { title: string }) {
         >
           Coming Soon
         </p>
-        <Link
-          href="/"
+        <button
+          onClick={() => router.back()}
           className="px-8 py-3 rounded-full bg-[#e05620] noisy text-[#e8c88c] font-[family-name:var(--font-bebas-neue)] text-xl tracking-wide hover:scale-105 transition-transform inline-block"
         >
           Back to Home
-        </Link>
+        </button>
       </div>
     </div>
   );

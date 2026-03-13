@@ -509,7 +509,7 @@ export default function Home() {
         {/* Description */}
         <div>
           <p className="text-[#e8c88c] text-[15px] font-[500] font-[family-name:var(--font-libre-baskerville)] relative top-[-11vh] left-[3vh] max-w-[250px]" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)', transform: 'scaleY(-1)'}}>
-            A vinyl-fueled coffee shop coffee meets culture.<br />Sip slow, dig deep, stay groovy.
+            A vinyl-fueled coffee shop where coffee meets culture.<br />Sip slow, dig deep, stay groovy.
           </p>
         </div>
       </div>
@@ -563,12 +563,12 @@ export default function Home() {
         </div>
 
         {/* Contact Us Title */}
-        <div className="relative top-[57vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
+        <div className="relative top-[58vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
           <h3 className="text-[#e8c88c] text-[22px] font-[family-name:var(--font-bebas-neue)] tracking-[0.15em] uppercase">Contact Us</h3>
         </div>
 
         {/* Contact Info */}
-        <div className="flex flex-col gap-4 relative top-[41vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
+        <div className="flex flex-col gap-4 relative top-[42vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
             {/* Phone */}
             <a href="tel:+10000000000" className="relative flex items-center gap-3 hover:opacity-80 transition cursor-pointer">
               <svg className="w-7 h-7 text-[#e8c88c] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -587,12 +587,12 @@ export default function Home() {
         </div>
 
         {/* Follow Us Title */}
-        <div className="relative top-[24vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
+        <div className="relative top-[26vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
           <h3 className="text-[#e8c88c] text-[22px] font-[family-name:var(--font-bebas-neue)] tracking-[0.15em] uppercase">Follow Us</h3>
         </div>
 
         {/* Social Icons */}
-        <div className="flex gap-4 relative top-[11vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
+        <div className="flex gap-4 relative top-[14vh] left-[3vh]" style={{transform: 'scaleY(-1)'}}>
           {/* Instagram */}
           <a href="#" className="w-12 h-12 border-2 border-[#e8c88c] rounded-full flex items-center justify-center text-[#e8c88c] hover:bg-[#e8c88c] hover:text-[#2d1f1a] transition-all">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -614,8 +614,8 @@ export default function Home() {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex flex-col gap-0 relative top-[-32vh] w-full" style={{transform: 'scaleY(-1)'}}>
-          <Link href="/menu" className="relative w-full h-[80px] bg-[#e05620] noisy flex items-center justify-center gap-3">
+        <div className="flex flex-col gap-0 relative top-[-28vh] w-full" style={{transform: 'scaleY(-1)'}}>
+          <Link href="/menu" className="relative w-full h-[78px] bg-[#e05620] noisy flex items-center justify-center gap-3">
             <img src="/images/menu_cup.svg" className="w-10 h-10" style={{filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))'}} />
             <span
               className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-[#e8c88c] text-[28px]"
@@ -623,7 +623,7 @@ export default function Home() {
             >Menu</span>
           </Link>
 
-          <Link href="/vinyl" className="relative w-full h-[80px] bg-[#2a7d7d] noisy flex items-center justify-center gap-3">
+          <Link href="/vinyl" className="relative w-full h-[78px] bg-[#2a7d7d] noisy flex items-center justify-center gap-3">
             <img src="/images/vinyl-svgrepo-com.svg" className="w-10 h-10" style={{filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))'}} />
             <span
               className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-[#e8c88c] text-[28px]"
@@ -631,13 +631,33 @@ export default function Home() {
             >Vinyl</span>
           </Link>
 
-          <Link href="/merch" className="relative w-full h-[80px] bg-[#6b4c8c] noisy flex items-center justify-center gap-3">
+          <Link href="/merch" className="relative w-full h-[78px] bg-[#6b4c8c] noisy flex items-center justify-center gap-3">
             <img src="/images/shirt-outline-svgrepo-com.svg" className="w-10 h-10" style={{filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))'}} />
             <span
               className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-[#e8c88c] text-[28px]"
               style={{textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)', letterSpacing: '0.12em'}}
             >Merch</span>
           </Link>
+        </div>
+
+        {/* Copyright */}
+        <div className="relative top-[-68vh]" style={{transform: 'scaleY(-1)'}}>
+          <p className="text-[#e8c88c] font-[family-name:var(--font-inter)] text-base font-semibold text-center">
+            © 2026 Espresso Groove.<br />
+            All rights reserved.
+          </p>
+        </div>
+
+        {/* Powered by Novic */}
+        <div className="relative top-[-82vh] flex items-center justify-center gap-3" style={{transform: 'scaleY(-1)'}}>
+          <span className="text-[#e8c88c] font-[family-name:var(--font-inter)] text-lg font-semibold">
+            Powered by
+          </span>
+          <img 
+            src="/images/novic-logo.png" 
+            alt="Novic" 
+            className="h-16"
+          />
         </div>
 
       </div>
