@@ -538,8 +538,8 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
               <div>
-                <p className="text-[#e8c88c] text-[16px] font-[family-name:var(--font-libre-baskerville)] font-medium">123 Groove St.</p>
-                <p className="text-[#e8c88c]/70 text-[15px] font-[family-name:var(--font-inter)]">City, State 00000</p>
+                <p className="text-[#e8c88c] text-[16px] font-[family-name:var(--font-libre-baskerville)] font-medium">3540 Belle Terre Bldv • Unit C</p>
+                <p className="text-[#e8c88c]/70 text-[15px] font-[family-name:var(--font-inter)]">Myrtle Beach, SC 29579</p>
               </div>
             </a>
 
