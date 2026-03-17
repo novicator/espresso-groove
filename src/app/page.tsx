@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import MusicNotes from "./components/MusicNotes";
+import MiniMusicNotes from "./components/MiniMusicNotes";
 
 export default function Home() {
   return (
@@ -33,38 +34,49 @@ export default function Home() {
           mix-blend-mode: overlay;
           pointer-events: none;
         }
+
+
+       
       `}</style>
 
       {/* Mobile Site */}
-      <div className="md:hidden relative">
+      <div className="md:hidden relative" style={{ backgroundColor: '#2d1f1a', overflow: 'hidden' }}>
 
         {/* === BACKGROUND LAYER === */}
         <div className="absolute inset-0 z-0">
           <div
             className="h-screen bg-cover bg-center"
-            style={{ backgroundImage: `url('/images/background.png')` }}
+            style={{ backgroundImage: `url('/images/background_v2.png')` }}
+          />
+          <div
+            className="h-screen bg-cover bg-center bg-second"
+            style={{
+              backgroundImage: `url('/images/background_v2.png')`,
+              transform: 'scaleY(-1)',
+            }}
+          />
+          <div
+            className="h-screen bg-cover bg-center bg-third"
+            style={{ backgroundImage: `url('/images/vibe_background_3.png')` }}
           />
           <div
             className="h-screen bg-cover bg-center"
             style={{
-              backgroundImage: `url('/images/background.png')`,
+              backgroundImage: `url('/images/vibe_background.png')`,
               transform: 'scaleY(-1)',
             }}
           />
           <div
             className="h-screen bg-cover bg-center"
-            style={{ backgroundImage: `url('/images/background.png')` }}
+            style={{ 
+              backgroundImage: `url('/images/vibe_background.png')` }}
           />
           <div
             className="h-screen bg-cover bg-center"
             style={{
-              backgroundImage: `url('/images/background.png')`,
+              backgroundImage: `url('/images/vibe_background.png')`,
               transform: 'scaleY(-1)',
             }}
-          />
-          <div
-            className="h-screen bg-cover bg-center"
-            style={{ backgroundImage: `url('/images/background.png')` }}
           />
         </div>
 
@@ -72,10 +84,10 @@ export default function Home() {
         <div className="relative z-10">
           {/* Logo */}
           <img
-            src="/images/espresso_groove.png"
+            src="/images/expresso groove.svg"
             alt="Espresso Groove"
             className="logo-glow"
-            style={{ width: '85vw', marginLeft: '-6vw'}}
+            style={{ width: '85vw', marginLeft: '-6vw',}}
           />
           <h2
             className="text-white text-[8vw] font-[family-name:var(--font-libre-baskerville)] leading-tight uppercase tracking-tight"
@@ -111,15 +123,16 @@ export default function Home() {
           >
             <Link
               href="/menu"
-              className="rounded-full bg-[#e05620] noisy flex items-center justify-center"
-              style={{ width: '43vw', height: '13vw', gap: '2vw' }}
+              className="rounded-full bg-[#f06830] noisy flex items-center justify-center"
+              style={{ width: '43vw', height: '13vw', gap: '0vw', border: '2px solid #8a3010' }}
             >
               <img
-                src="/images/menu_cup.svg"
+                src="/images/menu_cup.svg?v=3"
                 style={{
                   width: '6vw',
                   height: '6vw',
                   filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))',
+                  marginRight: '2vw',
                 }}
               />
               <span
@@ -128,6 +141,7 @@ export default function Home() {
                   textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                   letterSpacing: '0.1em',
                   fontSize: '4.6vw',
+                  marginRight: '2vw'
                 }}
               >
                 Menu
@@ -137,7 +151,7 @@ export default function Home() {
             <Link
               href="/vinyl"
               className="rounded-full bg-[#2a7d7d] noisy flex items-center justify-center"
-              style={{ width: '43vw', height: '13vw', gap: '2vw' }}
+              style={{ width: '43vw', height: '13vw', gap: '2vw', border: '2px solid #1a4f4f' }}
             >
               <img
                 src="/images/vinyl-svgrepo-com.svg"
@@ -162,7 +176,7 @@ export default function Home() {
             <Link
               href="/merch"
               className="rounded-full bg-[#6b4c8c] noisy flex items-center justify-center"
-              style={{ width: '43vw', height: '13vw', gap: '2vw' }}
+              style={{ width: '43vw', height: '13vw', gap: '2vw', border: '2px solid #3d2a52' }}
             >
               <img
                 src="/images/shirt-outline-svgrepo-com.svg"
@@ -187,13 +201,13 @@ export default function Home() {
 
           {/* Mug */}
           <img
-            src="/images/mug.png"
+            src="/images/mug.svg"
             alt="Coffee mug with vinyl steam"
             className="pointer-events-none absolute"
             style={{
               width: '51vw',
               right: '0vw',
-              top: '79vw',
+              top: '88vw',
               filter: 'drop-shadow(0px 0px 15px rgba(255,150,50,0.5))',
             }}
           />
@@ -201,36 +215,17 @@ export default function Home() {
           {/* === Gradient Divider + Now Playing + Gradient Divider 2 === */}
           <div style={{ marginTop: 'vw' }}>
 
-            {/* Gradient Divider 1 */}
-            <div
-              className="w-full flex flex-col items-center"
-              style={{ gap: '2vw', paddingTop: '6vw', marginTop: '3vw' }}
-            >
-              <div   
-                style={{
-                  width: '100vw',
-                  height: '1.5vw',
-                  background: 'linear-gradient(to right, #2a7d7d 0%, #2a7d7d 40%, #e8c88c 85%, #d4a04a 100%)',
-                  boxShadow: '0 0 8px rgba(16,185,129,0.5), 0 0 20px rgba(232,200,140,0.3)',
-                }}
-              />
-              <div
-                
-                style={{
-                  width: '100vw',
-                  height: '1.5vw',
-                  background: 'linear-gradient(to right, #2a7d7d 0%, #2a7d7d 40%, #e8c88c 85%, #d4a04a 100%)',
-                  boxShadow: '0 0 8px rgba(16,185,129,0.5), 0 0 20px rgba(232,200,140,0.3)',
-                }}
-              />
+            {/* Music Notes Divider 1 */}
+            <div style={{ paddingTop: '6vw', marginTop: '3vw' }}>
+              <MiniMusicNotes isPlaying={true} />
             </div>
 
             {/* Now Playing Section */}
             <style>{`
               @keyframes eq-bounce {
-                0%, 100% { transform: scaleY(1); background-color: #2a7d7d; box-shadow: 0 0 4px #2a7d7d99; }
-                33% { transform: scaleY(0.4); background-color: #e05620; box-shadow: 0 0 4px #e0562099; }
-                66% { transform: scaleY(0.7); background-color: #6b4c8c; box-shadow: 0 0 4px #6b4c8c99; }
+                0%, 100% { transform: scaleY(1); background-color: #ffffff; box-shadow: 0 0 4px #ffffff99; }
+                33% { transform: scaleY(0.4); background-color: #ffffff; box-shadow: 0 0 4px #ffffff99; }
+                66% { transform: scaleY(0.7); background-color: #ffffff; box-shadow: 0 0 4px #ffffff99; }
               }
             `}</style>
             <div
@@ -240,8 +235,8 @@ export default function Home() {
               {/* Left Equalizer */}
               <div className="flex items-end self-stretch">
                 {[
-                  { h: 0.3, c: '#e05620' }, { h: 0.5, c: '#2a7d7d' }, { h: 0.4, c: '#6b4c8c' },
-                  { h: 0.6, c: '#2a7d7d' }, { h: 0.35, c: '#e05620' }, { h: 0.55, c: '#6b4c8c' }
+                  { h: 0.3, c: '#ffffff' }, { h: 0.5, c: '#ffffff' }, { h: 0.4, c: '#ffffff' },
+                  { h: 0.6, c: '#ffffff' }, { h: 0.35, c: '#ffffff' }, { h: 0.55, c: '#ffffff' }
                 ].map((b, i) => (
                   <div
                     key={i}
@@ -281,8 +276,8 @@ export default function Home() {
               {/* Right Equalizer */}
               <div className="flex items-end self-stretch" style={{ gap: 'vw' }}>
                 {[
-                  { h: 0.55, c: '#6b4c8c' }, { h: 0.35, c: '#e05620' }, { h: 0.6, c: '#2a7d7d' },
-                  { h: 0.4, c: '#6b4c8c' }, { h: 0.5, c: '#2a7d7d' }, { h: 0.3, c: '#e05620' }
+                  { h: 0.55, c: '#ffffff' }, { h: 0.35, c: '#ffffff' }, { h: 0.6, c: '#ffffff' },
+                  { h: 0.4, c: '#ffffff' }, { h: 0.5, c: '#ffffff' }, { h: 0.3, c: '#ffffff' }
                 ].map((b, i) => (
                   <div
                     key={i}
@@ -300,30 +295,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Gradient Divider 2 */}
-            <div
-              className="w-full flex flex-col items-center"
-              style={{ gap: '2vw',}}
-            >
-              <div
-                
-                style={{
-                  width: '100vw',
-                  height: '1.5vw',
-                  background: 'linear-gradient(to right, #2a7d7d 0%, #2a7d7d 60%, #e8c88c 85%, #d4a04a 100%)',
-                  boxShadow: '0 0 8px rgba(16,185,129,0.5), 0 0 20px rgba(232,200,140,0.3)',
-                }}
-              />
-              <div
-                
-                style={{
-                  width: '100vw',
-                  height: '1.5vw',
-                  background: 'linear-gradient(to right, #2a7d7d 0%, #2a7d7d 60%, #e8c88c 85%, #d4a04a 100%)',
-                  boxShadow: '0 0 8px rgba(16,185,129,0.5), 0 0 20px rgba(232,200,140,0.3)',
-                }}
-              />
-            </div>
+            {/* Music Notes Divider 2 */}
+            <MiniMusicNotes isPlaying={true} />
 
           </div>
 
@@ -360,19 +333,6 @@ export default function Home() {
             />
           </div>
 
-          {/* Our Featured Genre */}
-          <p
-            className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-medium text-center"
-            style={{
-              fontSize: '5.1vw',
-              marginTop: '4.1vw',
-              textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
-              fontWeight: 900,
-            }}
-          >
-            Our Featured Genre
-          </p>
-
           {/* Jazz */}
           <div
             className="flex items-center justify-center"
@@ -400,8 +360,11 @@ export default function Home() {
 
           {/* === Jazz History Section === */}
           <div
-            className="rounded-xl overflow-hidden border-white bg-[#2d1f1a]"
-            style={{ marginTop: '6.1vw', marginInline: '4vw', borderWidth: '0.8vw' }}
+            className="rounded-xl"
+            style={{ marginTop: '6.1vw', marginInline: '4vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+          >
+          <div
+            className="rounded-lg overflow-hidden bg-[#2d1f1a]"
           >
             {/* Title */}
             <div
@@ -454,11 +417,15 @@ export default function Home() {
               <span className="text-white" style={{ fontSize: '3.5vw' }}>→</span>
             </a>
           </div>
+          </div>
 
           {/* === Featured Sips Section === */}
           <div
-            className="rounded-xl overflow-hidden border-white bg-[#2d1f1a]"
-            style={{ marginTop: '4vw', marginInline: '4vw', borderWidth: '0.8vw' }}
+            className="rounded-xl"
+            style={{ marginTop: '4vw', marginInline: '4vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+          >
+          <div
+            className="rounded-lg overflow-hidden bg-[#2d1f1a]"
           >
             {/* Title */}
             <div
@@ -488,7 +455,7 @@ export default function Home() {
                   }}
                 >
                   <img
-                    src="/images/menu_cup.svg"
+                    src="/images/menu_cup.svg?v=3"
                     className="inline-block mr-1"
                     style={{
                       width: '4vw',
@@ -614,6 +581,7 @@ export default function Home() {
             </div>
 
           </div>
+          </div>
 
           {/* === The Vibe Header === */}
           <div
@@ -640,19 +608,19 @@ export default function Home() {
           <div style={{ paddingInline: '6vw', marginTop: '4vw', textShadow: '2px 2px 8px rgba(0,0,0,0.6)' }}>
             <p
               className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-              style={{ fontSize: '4.8vw', fontWeight: 900 }}
+              style={{ fontSize: '4.4vw', fontWeight: 900 }}
             >
               <span className="font-[900]">Espresso Groove</span> was born from a simple idea:
             </p>
             <p
               className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-              style={{ fontSize: '4.8vw', fontWeight: 900, marginTop: '3vw' }}
+              style={{ fontSize: '4.4vw', fontWeight: 900, marginTop: '3vw' }}
             >
               A space where the ritual of coffee meets the soul of music. Great espresso and great vinyl share something in common — they&apos;re both meant to be <span className="font-[800]">savored</span>, not rushed.
             </p>
             <p
               className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-              style={{ fontSize: '4.8vw', fontWeight: 900, marginTop: '3vw' }}
+              style={{ fontSize: '4.4vw', fontWeight: 900, marginTop: '3vw' }}
             >
               Pull up a chair. Flip through the crates. Espresso <span className="font-[900]">drips</span>, the needle <span className="font-[800]">drops</span>, and the <span className="font-[800]">vibe</span> takes over.
             </p>
@@ -687,8 +655,11 @@ export default function Home() {
 
           {/* === Store Card === */}
           <div
-            className="rounded-xl overflow-hidden border-white bg-[#2d1f1a]"
-            style={{ marginTop: '4vw', marginInline: '4vw', borderWidth: '0.8vw' }}
+            className="rounded-xl"
+            style={{ marginTop: '4vw', marginInline: '4vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+          >
+          <div
+            className="rounded-lg overflow-hidden bg-[#2d1f1a]"
           >
             {/* Our Store Title */}
             <div
@@ -801,23 +772,24 @@ export default function Home() {
               </div>
             </div>
           </div>
+          </div>
 
           {/* === Music Notes === */}
           <MusicNotes isPlaying={true} />
 
           {/* Footer Logo */}
           <img
-            src="/images/espresso_groove.png"
+            src="/images/expresso groove.svg"
             alt="Espresso Groove"
             className="logo-glow"
-            style={{ width: '70vw', marginLeft: '-6vw'}}
+            style={{ width: '75vw', marginLeft: '-6vw'}}
           />
 
           <div style={{ marginTop: '-7vw'}}>
           {/* Tagline */}
           <p
             className="text-white font-[family-name:var(--font-libre-baskerville)] italic"
-            style={{ fontSize: '6.6vw', fontWeight: 900, paddingLeft: '4vw', textShadow: '1px 1px 4px rgba(0,0,0,0.9)' }}
+            style={{ fontSize: '6.6vw', fontWeight: 900, paddingLeft: '4vw', textShadow: '1px 1px 4px rgba(0,0,0,0.9)',}}
           >
             Drip • Drop • Vibe
           </p>
@@ -977,8 +949,8 @@ export default function Home() {
 
           {/* Navigation Buttons */}
           <div className="flex flex-col w-full" style={{ marginTop: '8vw' }}>
-            <Link href="/menu" className="relative w-full bg-[#e05620] noisy flex items-center justify-center" style={{ height: '16vw', gap: '3vw' }}>
-              <img src="/images/menu_cup.svg" style={{ width: '8vw', height: '8vw', filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))' }} />
+            <Link href="/menu" className="relative w-full bg-[#f06830] noisy flex items-center justify-center" style={{ height: '16vw', gap: '3vw' }}>
+              <img src="/images/menu_cup.svg?v=3" style={{ width: '8vw', height: '8vw', filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))' }} />
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
                 style={{
