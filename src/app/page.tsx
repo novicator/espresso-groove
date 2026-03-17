@@ -84,7 +84,7 @@ export default function Home() {
         <div className="relative z-10">
           {/* Logo */}
           <img
-            src="/images/expresso groove.svg"
+            src="/images/Expresso groove.svg"
             alt="Espresso Groove"
             className="logo-glow"
             style={{ width: '85vw', marginLeft: '-6vw',}}
