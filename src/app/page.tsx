@@ -973,7 +973,7 @@ export default function Home() {
               >Vinyl</span>
             </Link>
 
-            <Link href="/merch" className="relative w-full bg-[#6b4c8c] noisy flex items-center justify-center" style={{ height: '16vw', gap: '3vw' }}>
+            <Link href="/merch" className="relative w-full bg-[#6b4c8d] noisy flex items-center justify-center" style={{ height: '16vw', gap: '3vw' }}>
               <img src="/images/shirt-outline-svgrepo-com.svg" style={{ width: '8vw', height: '8vw', filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))' }} />
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
