@@ -1,0 +1,40 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Clip the teal segments to just the center label area -->
+    <clipPath id="labelClip">
+      <circle cx="250" cy="250" r="75"/>
+    </clipPath>
+  </defs>
+
+  <!-- Full black disc -->
+  <circle cx="250" cy="250" r="230" fill="black"/>
+
+  <!-- Outer groove rings on the black part -->
+  <circle cx="250" cy="250" r="220" fill="none" stroke="white" stroke-width="1.5" opacity="0.15"/>
+  <circle cx="250" cy="250" r="210" fill="none" stroke="white" stroke-width="1" opacity="0.1"/>
+  <circle cx="250" cy="250" r="198" fill="none" stroke="white" stroke-width="1.5" opacity="0.18"/>
+  <circle cx="250" cy="250" r="186" fill="none" stroke="white" stroke-width="1" opacity="0.12"/>
+  <circle cx="250" cy="250" r="174" fill="none" stroke="white" stroke-width="1.5" opacity="0.16"/>
+  <circle cx="250" cy="250" r="162" fill="none" stroke="white" stroke-width="1" opacity="0.1"/>
+  <circle cx="250" cy="250" r="150" fill="none" stroke="white" stroke-width="1.5" opacity="0.18"/>
+  <circle cx="250" cy="250" r="138" fill="none" stroke="white" stroke-width="1" opacity="0.12"/>
+  <circle cx="250" cy="250" r="126" fill="none" stroke="white" stroke-width="1.5" opacity="0.15"/>
+  <circle cx="250" cy="250" r="114" fill="none" stroke="white" stroke-width="1" opacity="0.1"/>
+  <circle cx="250" cy="250" r="102" fill="none" stroke="white" stroke-width="1.5" opacity="0.16"/>
+  <circle cx="250" cy="250" r="92" fill="none" stroke="white" stroke-width="1" opacity="0.12"/>
+
+  <!-- Teal center label segments (clipped to small center) -->
+  <g clip-path="url(#labelClip)" transform="translate(-840, -710) scale(0.5)">
+    <path d="M1090.77 909.116C1103.97 909.116 1116.08 913.112 1125.77 919.73L1198.9 787.791C1166.9 771.975 1130.02 762.901 1090.77 762.901C1072.04 762.901 1053.85 764.983 1036.5 768.853L1080.95 909.907C1084.11 909.449 1087.4 909.116 1090.77 909.116Z" fill="#32B29A"/>
+    <path d="M1148.04 959.894C1148.04 969.092 1145.25 977.666 1140.43 985.117L1259.96 1087.55C1293.01 1053.17 1313.03 1008.59 1313.03 959.894C1313.03 928.762 1304.83 899.335 1290.34 873.156L1145.59 945.16C1147.17 949.822 1148.04 954.775 1148.04 959.894Z" fill="#2FB49B"/>
+    <path d="M1145.59 945.16L1290.34 873.156C1270.37 837.112 1238.32 807.311 1198.9 787.833L1125.77 919.771C1135.06 926.139 1142.09 934.963 1145.59 945.16Z" fill="#8ED1C4"/>
+    <path d="M1259.96 1087.55L1140.43 985.117C1130.56 1000.39 1112.04 1010.67 1090.73 1010.67C1080.12 1010.67 1070.17 1008.05 1061.64 1003.6L980.226 1130.79C1012.77 1147.36 1050.48 1156.89 1090.73 1156.89C1158.53 1156.85 1219.17 1129.92 1259.96 1087.55Z" fill="#67C5B1"/>
+    <path d="M1080.91 909.949L1036.46 768.895C953.006 787.458 888.368 847.808 872.344 923.351L1035.25 947.366C1040.83 928.179 1058.64 913.362 1080.91 909.949Z" fill="#158A7C"/>
+    <path d="M1037.79 979.206L901.687 1063.45C921.124 1091.25 948.178 1114.43 980.226 1130.75L1061.64 1003.55C1050.98 997.977 1042.53 989.445 1037.79 979.206Z" fill="#A1D8CD"/>
+    <path d="M1033.46 959.894C1033.46 955.565 1034.13 951.403 1035.29 947.366L872.386 923.351C869.889 935.213 868.515 947.408 868.515 959.894C868.515 997.894 880.668 1033.36 901.729 1063.45L1037.83 979.206C1035 973.255 1033.46 966.72 1033.46 959.894Z" fill="#40B9A2"/>
+  </g>
+
+  <!-- Black center hole -->
+  <circle cx="250" cy="250" r="12" fill="black"/>
+  <circle cx="250" cy="250" r="4" fill="#333"/>
+</svg>

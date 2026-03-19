@@ -36,6 +36,7 @@ export default function Home() {
         }
 
 
+
        
       `}</style>
 
@@ -46,13 +47,15 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div
             className="h-screen bg-cover bg-center"
-            style={{ backgroundImage: `url('/images/background_v2.png')` }}
+            style={{ backgroundImage: `url('/images/background_v2.png')`,
+              transform: 'scaleY(-1)',
+             }}
           />
           <div
             className="h-screen bg-cover bg-center bg-second"
             style={{
               backgroundImage: `url('/images/background_v2.png')`,
-              transform: 'scaleY(-1)',
+              
             }}
           />
           <div
@@ -123,7 +126,7 @@ export default function Home() {
           >
             <Link
               href="/menu"
-              className="rounded-full bg-[#f06830] noisy flex items-center justify-center"
+              className="rounded-full bg-[#f06830] noisy flex items-center justify-center active:scale-125 duration-150 transition-all"
               style={{ width: '43vw', height: '13vw', gap: '0vw', border: '2px solid #8a3010' }}
             >
               <img
@@ -150,7 +153,7 @@ export default function Home() {
 
             <Link
               href="/vinyl"
-              className="rounded-full bg-[#2a7d7d] noisy flex items-center justify-center"
+              className="rounded-full bg-[#2a7d7d] noisy flex items-center justify-center active:scale-125 duration-150 transition-all"
               style={{ width: '43vw', height: '13vw', gap: '2vw', border: '2px solid #1a4f4f' }}
             >
               <img
@@ -368,8 +371,8 @@ export default function Home() {
           >
             {/* Title */}
             <div
-              className="text-center border-b"
-              style={{ paddingBlock: '3vw', borderBottomWidth: '0.8vw' }}
+              className="text-center"
+              style={{ paddingBlock: '3vw' }}
             >
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
@@ -378,6 +381,7 @@ export default function Home() {
                 Jazz History
               </span>
             </div>
+            <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
             {/* Image + Text side by side */}
             <div className="flex" style={{ paddingInline: '3vw', gap: '3vw' }}>
@@ -394,7 +398,7 @@ export default function Home() {
               </div>
               <div className="flex-1">
                 <p
-                  className="text-white/70 font-[family-name:var(--font-inter)] leading-relaxed"
+                  className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                   style={{ fontSize: '3vw', marginTop: '4vw' }}
                 >
                   In the early 1900s, the streets of New Orleans were alive with a new sound. African rhythms met blues and ragtime to create something entirely new. It wasn&apos;t just music - it was freedom, expression, and revolution all at once. From New Orleans...
@@ -403,14 +407,15 @@ export default function Home() {
             </div>
 
             {/* Learn More */}
+            <div style={{ height: '0.4vw', marginTop: '4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
             <a
               href="/jazz/history"
-              className="flex items-center justify-center border-t border-white"
-              style={{ paddingInline: '4vw', paddingBlock: '3vw', gap: '2vw', borderTopWidth: '0.4vw', marginTop: '4vw' }}
+              className="flex items-center justify-center"
+              style={{ paddingInline: '4vw', paddingBlock: '3vw', gap: '2vw' }}
             >
               <span
                 className="text-white font-[family-name:var(--font-libre-baskerville)]"
-                style={{ fontSize: '3.5vw' }}
+                style={{ fontSize: '4.5vw' }}
               >
                 Learn More
               </span>
@@ -443,13 +448,13 @@ export default function Home() {
             {/* Category Labels */}
             <div className="flex">
               <div
-                className="flex-1 bg-[#e05620] noisy text-center flex items-center justify-center"
+                className="flex-1 bg-[#f06830] noisy text-center flex items-center justify-center"
                 style={{ height: '12vw' }}
               >
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                   style={{
-                    fontSize: '3.1vw',
+                    fontSize: '3.6vw',
                     letterSpacing: '0.07em',
                     textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                   }}
@@ -473,7 +478,7 @@ export default function Home() {
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                   style={{
-                    fontSize: '3.1vw',
+                    fontSize: '3.vw',
                     letterSpacing: '0.07em',
                     textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                   }}
@@ -515,8 +520,8 @@ export default function Home() {
                   <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
                 </div>
                 <span
-                  className="font-[family-name:var(--font-bebas-neue)] text-[#e05620]"
-                  style={{ fontSize: '5.5vw', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
+                  className="font-[family-name:var(--font-bebas-neue)] text-white"
+                  style={{ fontSize: '6.5vw', letterSpacing: '0.07em', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
                 >
                   $5.75
                 </span>
@@ -537,8 +542,8 @@ export default function Home() {
                   <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
                 </div>
                 <span
-                  className="font-[family-name:var(--font-bebas-neue)] text-[#e05620]"
-                  style={{ fontSize: '5.5vw', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
+                  className="font-[family-name:var(--font-bebas-neue)] text-white"
+                  style={{ fontSize: '6.5vw', letterSpacing: '0.07em', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
                 >
                   $4.50
                 </span>
@@ -559,8 +564,8 @@ export default function Home() {
                   <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
                 </div>
                 <span
-                  className="font-[family-name:var(--font-bebas-neue)] text-[#e05620]"
-                  style={{ fontSize: '5.5vw', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
+                  className="font-[family-name:var(--font-bebas-neue)] text-white"
+                  style={{ fontSize: '6.5vw', letterSpacing: '0.07em', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
                 >
                   $4.75
                 </span>
@@ -568,13 +573,14 @@ export default function Home() {
             </div>
 
             {/* View Featured Menu */}
+            <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
             <div
-              className="border-t border-white flex items-center justify-center"
-              style={{ paddingBlock: '3vw', gap: '2vw', borderTopWidth: '0.4vw' }}
+              className="flex items-center justify-center"
+              style={{ paddingBlock: '3vw', gap: '2vw' }}
             >
               <span
                 className="text-white whitespace-nowrap font-[family-name:var(--font-libre-baskerville)]"
-                style={{ fontSize: '3.5vw' }}
+                style={{ fontSize: '4.5vw' }}
               >
                 View Featured Menu →
               </span>
@@ -704,13 +710,13 @@ export default function Home() {
                 <div>
                   <p
                     className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                    style={{ fontSize: '3.3vw' }}
+                    style={{ fontSize: '3.8vw' }}
                   >
                     123 Groove St.
                   </p>
                   <p
                     className="text-white/70 font-[family-name:var(--font-inter)]"
-                    style={{ fontSize: '3.1vw' }}
+                    style={{ fontSize: '3.6vw' }}
                   >
                     City, State 00000
                   </p>
@@ -728,13 +734,13 @@ export default function Home() {
                 <div>
                   <p
                     className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                    style={{ fontSize: '3.3vw' }}
+                    style={{ fontSize: '3.8vw' }}
                   >
                     Mon–Fri: 7am–9pm
                   </p>
                   <p
                     className="text-white/70 font-[family-name:var(--font-inter)]"
-                    style={{ fontSize: '3.1vw' }}
+                    style={{ fontSize: '3.6vw' }}
                   >
                     Sat–Sun: 8am–10pm
                   </p>
@@ -752,20 +758,21 @@ export default function Home() {
                 </svg>
                 <p
                   className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                  style={{ fontSize: '3.3vw' }}
+                  style={{ fontSize: '3.8vw' }}
                 >
                   (000) 000-0000
                 </p>
               </a>
 
               {/* Get Directions */}
+              <div style={{ height: '0.4vw', marginTop: '4vw', marginLeft: '-4vw', marginRight: '-4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
               <div
-                className="flex items-center justify-center border-t border-white"
-                style={{ marginTop: '4vw', paddingTop: '3vw', gap: '2vw' }}
+                className="flex items-center justify-center"
+                style={{ paddingTop: '3vw', gap: '2vw' }}
               >
                 <span
                   className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                  style={{ fontSize: '3.6vw' }}
+                  style={{ fontSize: '4.6vw' }}
                 >
                   Get Directions →
                 </span>

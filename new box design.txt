@@ -1,0 +1,17 @@
+New Box Design Settings
+=======================
+
+Opacity: bg-[#2d1f1a]/35
+
+Blur:
+ .menu-card {
+ backdrop-filter: blur(8px);
+ -webkit-backdrop-filter: blur(8px);
+ }
+
+Apply to lines:
+- Jazz History box
+- Featured Sips box
+- Our Store box
+
+Full class: "rounded-lg overflow-hidden bg-[#2d1f1a]/35 menu-card"
