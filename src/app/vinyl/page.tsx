@@ -45,12 +45,12 @@ export default function VinylPage() {
         />
         {/* Panel 2 - Normal */}
         <div
-          className="h-screen bg-cover bg-center"
+          className="hidden h-screen bg-cover bg-center"
           style={{ backgroundImage: "url('/images/background_v2.png')" }}
         />
         {/* Panel 3 - Flipped */}
         <div
-          className="h-screen bg-cover bg-center"
+          className="hidden h-screen bg-cover bg-center"
           style={{
             backgroundImage: "url('/images/background_v2.png')",
             transform: "scaleY(-1)",
@@ -58,7 +58,7 @@ export default function VinylPage() {
         />
         {/* Panel 4 - Normal */}
         <div
-          className="h-screen bg-cover bg-center"
+          className="hidden h-screen bg-cover bg-center"
           style={{ backgroundImage: "url('/images/background_v2.png')" }}
         />
       </div>
