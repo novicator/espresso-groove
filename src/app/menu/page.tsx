@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Footer from "../components/Footer";
 
 type FilterType = "All" | "Coffee" | "Tea" | "Energy";
 
@@ -12,18 +13,24 @@ const coffeeItems = [
   { name: "HOUSE BLEND", desc: "Rich, smooth, everyday classic", price: "$3.50" },
   { name: "ESPRESSO", desc: "Bold and concentrated", price: "$2.75" },
   { name: "CAPPUCCINO", desc: "Espresso with steamed milk foam", price: "$4.50" },
+  { name: "AMERICANO", desc: "Espresso with hot water, smooth finish", price: "$3.25" },
+  { name: "FLAT WHITE", desc: "Velvety microfoam over double espresso", price: "$4.75" },
 ];
 
 const teaItems = [
   { name: "CHAI LATTE", desc: "Spiced chai with steamed milk", price: "$5.00" },
   { name: "GREEN TEA", desc: "Classic organic green tea", price: "$3.00" },
   { name: "EARL GREY", desc: "Bergamot-infused black tea", price: "$3.25" },
+  { name: "MATCHA LATTE", desc: "Ceremonial grade matcha with oat milk", price: "$5.50" },
+  { name: "JASMINE PEARL", desc: "Delicate hand-rolled jasmine green tea", price: "$3.75" },
 ];
 
 const energyItems = [
   { name: "BASS DROP", desc: "Citrus blast with a caffeine kick", price: "$4.50" },
   { name: "VINYL RUSH", desc: "Berry mix with B12 & taurine", price: "$4.75" },
   { name: "GROOVE FUEL", desc: "Tropical mango with green tea extract", price: "$4.50" },
+  { name: "NEON PULSE", desc: "Watermelon lime with ginseng boost", price: "$4.75" },
+  { name: "STATIC SHOCK", desc: "Passion fruit with guarana & electrolytes", price: "$5.00" },
 ];
 
 export default function MenuPage() {
@@ -58,34 +65,76 @@ export default function MenuPage() {
     <div className={`relative overflow-hidden ${fewItems ? 'min-h-screen' : ''}`}>
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
-        {/* Panel 1 - Normal */}
-        <div
-          className="h-screen bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/background_v2.png')",
-            transform: "scaleY(-1)",
-           }}
-        />
-        {/* Panel 2 - Flipped */}
-        <div
-          className="h-screen bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/images/background_v2.png')",
-          }}
-        />
-        {/* Panel 3 - Normal */}
-        <div
-          className="h-screen bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/background_v2.png')",
-            transform: "scaleY(-1)",
-           }}
-        />
-        {/* Panel 4 - Flipped */}
-        <div
-          className="h-screen bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/images/background_v2.png')",
-          }}
-        />
+        {activeFilter === "All" ? (
+          <>
+            {/* Panel 1 */}
+            <div
+              className="h-screen bg-cover bg-center"
+              style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(-1)" }}
+            />
+            {/* Panel 2 */}
+            <div
+              className="h-screen bg-cover bg-center"
+              style={{ backgroundImage: "url('/images/background_v2.png')" }}
+            />
+            {/* Panel 3 */}
+            <div
+              className="h-screen bg-cover bg-center"
+              style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: "scaleY(1)", marginTop: '-65vw' }}
+            />
+            {/* Panel 4 */}
+            <div
+              className="h-screen bg-cover bg-center"
+              style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: "scaleY(-1)" }}
+            />
+            {/* Panel 5 */}
+            <div
+              className="h-screen bg-cover bg-center"
+              style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: "scaleY(1)" }}
+            />
+            {/* Panel 4 */}
+            <div
+              className="h-screen bg-cover bg-center"
+              style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: "scaleY(-1)" }}
+            />
+          </>
+        ) : (
+          <>
+            {/* Panel 1 */}
+            <div
+              className="h-screen bg-cover bg-center"
+              style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(-1)" }}
+            />
+            {/* Panel 2 - Footer background */}
+            <div
+              className="h-screen bg-cover bg-center"
+              style={{
+                backgroundImage: "url('/images/vibe_background.png')",
+                marginTop: '-50vw',
+                transform: 'scaleY(1)'
+              }}
+            />
+            {/* Panel 2 - Footer background */}
+            <div
+              className="h-screen bg-cover bg-center"
+              style={{
+                backgroundImage: "url('/images/vibe_background.png')",
+                transform: 'scaleY(-1)',
+
+              }}
+            />
+            {/* Panel 3 - Footer background */}
+            <div
+              className="h-screen bg-cover bg-center"
+              style={{
+                backgroundImage: "url('/images/vibe_background.png')",
+                transform: 'scaleY(1)',
+
+              }}
+            />
+            
+          </>
+        )}
       </div>
 
       {/* Content Layer */}
@@ -459,6 +508,8 @@ export default function MenuPage() {
           </div>
           </div>
         </div>
+
+        <Footer style={{ marginTop: '-10vw' }} />
 
       </div>
     </div>
