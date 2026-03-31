@@ -38,7 +38,10 @@ export default function Home() {
 
 
 
-       
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
       `}</style>
 
       {/* Mobile Site */}
@@ -110,12 +113,6 @@ export default function Home() {
             Where Coffee<br />Meets Culture
           </h2>
           <p
-          className="text-white font-[family-name:var(--font-libre-baskerville)]"
-          style={{ fontSize: '4.2vw', fontWeight: 900, paddingLeft: '5vw', marginTop: '3vw', maxWidth: '70vw', textShadow: '1px 1px 3px rgba(0,0,0,0.9)' }}
-        >
-          A vinyl-fueled coffee shop where coffee meets culture.
-        </p>
-          <p
             className="text-white text-[7.2vw] font-[family-name:var(--font-libre-baskerville)] italic"
             style={{
               textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
@@ -165,27 +162,67 @@ export default function Home() {
 
             <Link
               href="/vinyl"
-              className="rounded-full bg-[#2a7d7d] noisy flex items-center justify-center active:scale-125 duration-150 transition-all"
-              style={{ width: '43vw', height: '13vw', gap: '2vw', border: '2px solid #1a4f4f' }}
+              className="overflow-hidden active:scale-125 duration-150 transition-all"
+              style={{ width: '43vw', borderRadius: '7vw', border: '2px solid #1a4f4f' }}
             >
-              <img
-                src="/images/vinyl-svgrepo-com.svg"
+              {/* Top: Vinyl button */}
+              <div
+                className="bg-[#2a7d7d] noisy flex items-center justify-center"
+                style={{ height: '13vw', gap: '2vw' }}
+              >
+                <img
+                  src="/images/vinyl-svgrepo-com.svg"
+                  style={{
+                    width: '6vw',
+                    height: '6vw',
+                    filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))',
+                  }}
+                />
+                <span
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
+                  style={{
+                    textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                    letterSpacing: '0.2em',
+                    fontSize: '4.6vw',
+                  }}
+                >
+                  Vinyl
+                </span>
+              </div>
+              {/* Bottom: We Buy Vinyl */}
+              <div
+                className="bg-[#d9bc52] noisy flex items-center justify-center"
                 style={{
-                  width: '6vw',
-                  height: '6vw',
-                  filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))',
-                }}
-              />
-              <span
-                className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
-                style={{
-                  textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
-                  letterSpacing: '0.2em',
-                  fontSize: '4.6vw',
+                  height: '8vw',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  boxShadow: '0 0 12px rgba(217,188,82,0.6), 0 0 24px rgba(217,188,82,0.3)',
                 }}
               >
-                Vinyl
-              </span>
+                {/* Shimmer effect */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%)',
+                    animation: 'shimmer 2.5s ease-in-out infinite',
+                    zIndex: 1,
+                    pointerEvents: 'none',
+                  }}
+                />
+                <span
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-black"
+                  style={{
+                    fontSize: '3vw',
+                    letterSpacing: '0.1em',
+                    textShadow: 'none',
+                    position: 'relative',
+                    zIndex: 2,
+                  }}
+                >
+                  We Buy Vinyl!
+                </span>
+              </div>
             </Link>
 
             <Link
@@ -242,7 +279,7 @@ export default function Home() {
             style={{
               width: '51vw',
               right: '0vw',
-              top: '103vw',
+              top: '93vw',
               filter: 'drop-shadow(0px 0px 15px rgba(255,150,50,0.5))',
             }}
           />

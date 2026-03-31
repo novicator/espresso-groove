@@ -172,6 +172,10 @@ export default function VinylPage() {
   return (
     <>
       <style jsx global>{`
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
         @keyframes vinyl-spin {
           from { transform: rotate(0deg); }
           to { transform: rotate(-360deg); }
@@ -279,7 +283,7 @@ export default function VinylPage() {
 
       {/* Vinyl clip wrapper - prevents horizontal overflow without affecting vertical scroll */}
       <div className="absolute inset-0 z-[5] pointer-events-none" style={{ clipPath: 'inset(0)' }}>
-      <div className="absolute" style={{ right: '-58vw', top: '-11vw', width: '120vw', height: '120vw' }}>
+      <div className="absolute" style={{ right: '-58vw', top: '-8vw', width: '120vw', height: '120vw' }}>
         <img
           src="/images/vinyl.svg"
           alt=""
@@ -290,6 +294,39 @@ export default function VinylPage() {
 
       {/* Content Layer */}
       <div className="relative z-10">
+        {/* We Buy Vinyl Banner */}
+        <div
+          className="bg-[#d9bc52] noisy flex items-center justify-center"
+          style={{
+            height: '10vw',
+            position: 'relative',
+            overflow: 'hidden',
+            boxShadow: '0 0 12px rgba(217,188,82,0.6), 0 0 24px rgba(217,188,82,0.3)',
+          }}
+        >
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%)',
+              animation: 'shimmer 2.5s ease-in-out infinite',
+              zIndex: 1,
+              pointerEvents: 'none',
+            }}
+          />
+          <span
+            className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-black"
+            style={{
+              fontSize: '4vw',
+              letterSpacing: '0.1em',
+              position: 'relative',
+              zIndex: 2,
+            }}
+          >
+            We Buy Vinyl!
+          </span>
+        </div>
+
         {/* Header - Back Button */}
         <header className="flex items-center justify-between" style={{ paddingTop: '6.1vw', paddingBottom: '4.1vw', paddingLeft: '5.1vw', paddingRight: '5.1vw' }}>
           <Link
