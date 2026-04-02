@@ -92,7 +92,7 @@ export default function MenuPage() {
               className="h-screen bg-cover bg-center"
               style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: "scaleY(1)" }}
             />
-            {/* Panel 4 */}
+            {/* Panel 6 */}
             <div
               className="h-screen bg-cover bg-center"
               style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: "scaleY(-1)" }}

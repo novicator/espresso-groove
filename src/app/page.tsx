@@ -284,6 +284,19 @@ export default function Home() {
             }}
           />
 
+          {/* Brown Button */}
+          <Link href="/now-spinning" className="flex items-center" style={{ marginTop: '4vw', paddingLeft: '4vw', }}>
+            <div
+              className="rounded-full bg-[#6F4E37] noisy flex items-center justify-center cursor-pointer active:scale-125 duration-150 transition-all"
+              style={{ width: '54vw', height: '13vw', border: '2px solid #1a0f0a' }}
+            >
+              <span className="text-white" style={{ fontSize: '6vw' }}>★</span>
+              <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '4.6vw', fontWeight: 900, marginInline: '2vw' }}>
+                Now Spinning
+              </span>
+            </div>
+          </Link>
+
           {/* === Gradient Divider + Now Playing + Gradient Divider 2 === */}
           <div style={{ marginTop: 'vw' }}>
 
@@ -478,7 +491,7 @@ export default function Home() {
             {/* Learn More */}
             <div style={{ height: '0.4vw', marginTop: '4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
             <a
-              href="/jazz/history"
+              href="/now-spinning"
               className="flex items-center justify-center"
               style={{ paddingInline: '4vw', paddingBlock: '3vw', gap: '2vw' }}
             >
@@ -486,7 +499,7 @@ export default function Home() {
                 className="text-white font-[family-name:var(--font-libre-baskerville)]"
                 style={{ fontSize: '4.5vw' }}
               >
-                Learn More
+                Now Spinning
               </span>
               <span className="text-white" style={{ fontSize: '3.5vw' }}>→</span>
             </a>
@@ -643,7 +656,8 @@ export default function Home() {
 
             {/* View Featured Menu */}
             <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-            <div
+            <Link
+              href="/menu"
               className="flex items-center justify-center"
               style={{ paddingBlock: '3vw', gap: '2vw' }}
             >
@@ -651,9 +665,9 @@ export default function Home() {
                 className="text-white whitespace-nowrap font-[family-name:var(--font-libre-baskerville)]"
                 style={{ fontSize: '4.5vw' }}
               >
-                View Featured Menu →
+                View Menu →
               </span>
-            </div>
+            </Link>
 
           </div>
           </div>

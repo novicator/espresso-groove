@@ -223,6 +223,18 @@ export default function Footer({ style, className }: { style?: React.CSSProperti
               }}
             >Events</span>
           </Link>
+
+          <Link href="/now-spinning" className="relative w-full bg-[#6F4E37] noisy flex items-center justify-center" style={{ height: '16vw', gap: '3vw' }}>
+            <span className="text-white" style={{ fontSize: '8vw', filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))' }}>★</span>
+            <span
+              className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
+              style={{
+                fontSize: '5.6vw',
+                textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                letterSpacing: '0.1em',
+              }}
+            >Now Spinning</span>
+          </Link>
         </div>
 
       </div>
