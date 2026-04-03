@@ -12,111 +12,111 @@ const vinylSections = [
     id: "Now Spinning",
     subtitle: "Jazz",
     items: [
-      { name: "KIND OF BLUE", artist: "Miles Davis", price: "$29.99", img: "/images/artwork/kind-of-blue.jpg" },
-      { name: "A LOVE SUPREME", artist: "John Coltrane", price: "$34.99", img: "/images/artwork/a-love-supreme.jpg" },
-      { name: "HEAD HUNTERS", artist: "Herbie Hancock", price: "$27.99", img: "/images/artwork/head-hunters.jpg" },
-      { name: "MINGUS AH UM", artist: "Charles Mingus", price: "$31.99", img: "/images/artwork/mingus-ah-um.jpg" },
-      { name: "TIME OUT", artist: "Dave Brubeck", price: "$28.99", img: "/images/artwork/time-out.jpg" },
+      { name: "KIND OF BLUE", artist: "Miles Davis", stock: 3, img: "/images/artwork/kind-of-blue.jpg" },
+      { name: "A LOVE SUPREME", artist: "John Coltrane", stock: 1, img: "/images/artwork/a-love-supreme.jpg" },
+      { name: "HEAD HUNTERS", artist: "Herbie Hancock", stock: 5, img: "/images/artwork/head-hunters.jpg" },
+      { name: "MINGUS AH UM", artist: "Charles Mingus", stock: 2, img: "/images/artwork/mingus-ah-um.jpg" },
+      { name: "TIME OUT", artist: "Dave Brubeck", stock: 4, img: "/images/artwork/time-out.jpg" },
     ],
   },
   {
     id: "New Releases",
     items: [
-      { name: "COWBOY CARTER", artist: "Beyoncé", price: "$36.99", img: "/images/artwork/cowboy-carter.jpg" },
-      { name: "HIT ME HARD AND SOFT", artist: "Billie Eilish", price: "$34.99", img: "/images/artwork/hit-me-hard-and-soft.jpg" },
-      { name: "THE TORTURED POETS DEPARTMENT", artist: "Taylor Swift", price: "$38.99", img: "/images/artwork/tortured-poets.jpg" },
-      { name: "BRAT", artist: "Charli XCX", price: "$29.99", img: "/images/artwork/brat.jpg" },
-      { name: "GNX", artist: "Kendrick Lamar", price: "$33.99", img: "/images/artwork/gnx.jpg" },
+      { name: "COWBOY CARTER", artist: "Beyoncé", stock: 2, img: "/images/artwork/cowboy-carter.jpg" },
+      { name: "HIT ME HARD AND SOFT", artist: "Billie Eilish", stock: 4, img: "/images/artwork/hit-me-hard-and-soft.jpg" },
+      { name: "THE TORTURED POETS DEPARTMENT", artist: "Taylor Swift", stock: 1, img: "/images/artwork/tortured-poets.jpg" },
+      { name: "BRAT", artist: "Charli XCX", stock: 3, img: "/images/artwork/brat.jpg" },
+      { name: "GNX", artist: "Kendrick Lamar", stock: 2, img: "/images/artwork/gnx.jpg" },
     ],
   },
   {
     id: "Best Sellers",
     items: [
-      { name: "RUMOURS", artist: "Fleetwood Mac", price: "$32.99", img: "/images/artwork/rumours.jpg" },
-      { name: "ABBEY ROAD", artist: "The Beatles", price: "$34.99", img: "/images/artwork/abbey-road.jpg" },
-      { name: "BACK TO BLACK", artist: "Amy Winehouse", price: "$31.99", img: "/images/artwork/back-to-black.jpg" },
-      { name: "THRILLER", artist: "Michael Jackson", price: "$27.99", img: "/images/artwork/thriller.jpg" },
-      { name: "LEGEND", artist: "Bob Marley", price: "$26.99", img: "/images/artwork/legend.jpg" },
+      { name: "RUMOURS", artist: "Fleetwood Mac", stock: 6, img: "/images/artwork/rumours.jpg" },
+      { name: "ABBEY ROAD", artist: "The Beatles", stock: 3, img: "/images/artwork/abbey-road.jpg" },
+      { name: "BACK TO BLACK", artist: "Amy Winehouse", stock: 2, img: "/images/artwork/back-to-black.jpg" },
+      { name: "THRILLER", artist: "Michael Jackson", stock: 4, img: "/images/artwork/thriller.jpg" },
+      { name: "LEGEND", artist: "Bob Marley", stock: 5, img: "/images/artwork/legend.jpg" },
     ],
   },
   {
     id: "Rock",
     items: [
-      { name: "DARK SIDE OF THE MOON", artist: "Pink Floyd", price: "$29.99", img: "/images/artwork/dark-side-of-the-moon.jpg" },
-      { name: "LED ZEPPELIN IV", artist: "Led Zeppelin", price: "$31.99", img: "/images/artwork/led-zeppelin-iv.jpg" },
-      { name: "NEVERMIND", artist: "Nirvana", price: "$28.99", img: "/images/artwork/nevermind.jpg" },
-      { name: "THE JOSHUA TREE", artist: "U2", price: "$27.99", img: "/images/artwork/joshua-tree.jpg" },
-      { name: "APPETITE FOR DESTRUCTION", artist: "Guns N' Roses", price: "$30.99", img: "/images/artwork/appetite-for-destruction.jpg" },
+      { name: "DARK SIDE OF THE MOON", artist: "Pink Floyd", stock: 2, img: "/images/artwork/dark-side-of-the-moon.jpg" },
+      { name: "LED ZEPPELIN IV", artist: "Led Zeppelin", stock: 3, img: "/images/artwork/led-zeppelin-iv.jpg" },
+      { name: "NEVERMIND", artist: "Nirvana", stock: 1, img: "/images/artwork/nevermind.jpg" },
+      { name: "THE JOSHUA TREE", artist: "U2", stock: 4, img: "/images/artwork/joshua-tree.jpg" },
+      { name: "APPETITE FOR DESTRUCTION", artist: "Guns N' Roses", stock: 2, img: "/images/artwork/appetite-for-destruction.jpg" },
     ],
   },
   {
     id: "Electronic",
     items: [
-      { name: "RANDOM ACCESS MEMORIES", artist: "Daft Punk", price: "$39.99", img: "/images/artwork/random-access-memories.jpg" },
-      { name: "DISCOVERY", artist: "Daft Punk", price: "$34.99", img: "/images/artwork/discovery.jpg" },
-      { name: "HOMEWORK", artist: "Daft Punk", price: "$29.99", img: "/images/artwork/homework.jpg" },
-      { name: "CROSS", artist: "Justice", price: "$31.99", img: "/images/artwork/cross-justice.jpg" },
-      { name: "MUSIC HAS THE RIGHT TO CHILDREN", artist: "Boards of Canada", price: "$36.99", img: "/images/artwork/music-has-the-right.jpg" },
+      { name: "RANDOM ACCESS MEMORIES", artist: "Daft Punk", stock: 3, img: "/images/artwork/random-access-memories.jpg" },
+      { name: "DISCOVERY", artist: "Daft Punk", stock: 2, img: "/images/artwork/discovery.jpg" },
+      { name: "HOMEWORK", artist: "Daft Punk", stock: 4, img: "/images/artwork/homework.jpg" },
+      { name: "CROSS", artist: "Justice", stock: 1, img: "/images/artwork/cross-justice.jpg" },
+      { name: "MUSIC HAS THE RIGHT TO CHILDREN", artist: "Boards of Canada", stock: 2, img: "/images/artwork/music-has-the-right.jpg" },
     ],
   },
   {
     id: "Hip-Hop",
     items: [
-      { name: "ILLMATIC", artist: "Nas", price: "$29.99", img: "/images/artwork/illmatic.jpg" },
-      { name: "TO PIMP A BUTTERFLY", artist: "Kendrick Lamar", price: "$34.99", img: "/images/artwork/to-pimp-a-butterfly.jpg" },
-      { name: "THE MISEDUCATION OF LAURYN HILL", artist: "Lauryn Hill", price: "$32.99", img: "/images/artwork/miseducation.jpg" },
-      { name: "READY TO DIE", artist: "Notorious B.I.G.", price: "$31.99", img: "/images/artwork/ready-to-die.jpg" },
-      { name: "MADVILLAINY", artist: "Madvillain", price: "$36.99", img: "/images/artwork/madvillainy.jpg" },
+      { name: "ILLMATIC", artist: "Nas", stock: 2, img: "/images/artwork/illmatic.jpg" },
+      { name: "TO PIMP A BUTTERFLY", artist: "Kendrick Lamar", stock: 3, img: "/images/artwork/to-pimp-a-butterfly.jpg" },
+      { name: "THE MISEDUCATION OF LAURYN HILL", artist: "Lauryn Hill", stock: 1, img: "/images/artwork/miseducation.jpg" },
+      { name: "READY TO DIE", artist: "Notorious B.I.G.", stock: 4, img: "/images/artwork/ready-to-die.jpg" },
+      { name: "MADVILLAINY", artist: "Madvillain", stock: 2, img: "/images/artwork/madvillainy.jpg" },
     ],
   },
   {
     id: "Indie",
     items: [
-      { name: "IN THE AEROPLANE OVER THE SEA", artist: "Neutral Milk Hotel", price: "$28.99", img: "/images/artwork/aeroplane-over-the-sea.jpg" },
-      { name: "IS THIS IT", artist: "The Strokes", price: "$27.99", img: "/images/artwork/is-this-it.jpg" },
-      { name: "FUNERAL", artist: "Arcade Fire", price: "$31.99", img: "/images/artwork/funeral.jpg" },
-      { name: "OK COMPUTER", artist: "Radiohead", price: "$33.99", img: "/images/artwork/ok-computer.jpg" },
-      { name: "LOVELESS", artist: "My Bloody Valentine", price: "$39.99", img: "/images/artwork/loveless.jpg" },
+      { name: "IN THE AEROPLANE OVER THE SEA", artist: "Neutral Milk Hotel", stock: 3, img: "/images/artwork/aeroplane-over-the-sea.jpg" },
+      { name: "IS THIS IT", artist: "The Strokes", stock: 5, img: "/images/artwork/is-this-it.jpg" },
+      { name: "FUNERAL", artist: "Arcade Fire", stock: 2, img: "/images/artwork/funeral.jpg" },
+      { name: "OK COMPUTER", artist: "Radiohead", stock: 1, img: "/images/artwork/ok-computer.jpg" },
+      { name: "LOVELESS", artist: "My Bloody Valentine", stock: 2, img: "/images/artwork/loveless.jpg" },
     ],
   },
   {
     id: "Jazz",
     items: [
-      { name: "BLUE TRAIN", artist: "John Coltrane", price: "$29.99", img: "/images/artwork/blue-train.jpg" },
-      { name: "MAIDEN VOYAGE", artist: "Herbie Hancock", price: "$28.99", img: "/images/artwork/maiden-voyage.jpg" },
-      { name: "MOANIN'", artist: "Art Blakey", price: "$27.99", img: "/images/artwork/moanin.jpg" },
-      { name: "SAXOPHONE COLOSSUS", artist: "Sonny Rollins", price: "$31.99", img: "/images/artwork/saxophone-colossus.jpg" },
-      { name: "SOMETHIN' ELSE", artist: "Cannonball Adderley", price: "$30.99", img: "/images/artwork/somethin-else.jpg" },
+      { name: "BLUE TRAIN", artist: "John Coltrane", stock: 4, img: "/images/artwork/blue-train.jpg" },
+      { name: "MAIDEN VOYAGE", artist: "Herbie Hancock", stock: 3, img: "/images/artwork/maiden-voyage.jpg" },
+      { name: "MOANIN'", artist: "Art Blakey", stock: 2, img: "/images/artwork/moanin.jpg" },
+      { name: "SAXOPHONE COLOSSUS", artist: "Sonny Rollins", stock: 1, img: "/images/artwork/saxophone-colossus.jpg" },
+      { name: "SOMETHIN' ELSE", artist: "Cannonball Adderley", stock: 3, img: "/images/artwork/somethin-else.jpg" },
     ],
   },
   {
     id: "Country",
     items: [
-      { name: "JOLENE", artist: "Dolly Parton", price: "$26.99", img: "/images/artwork/jolene.jpg" },
-      { name: "AT FOLSOM PRISON", artist: "Johnny Cash", price: "$29.99", img: "/images/artwork/at-folsom-prison.jpg" },
-      { name: "TRAVELLER", artist: "Chris Stapleton", price: "$31.99", img: "/images/artwork/traveller.jpg" },
-      { name: "GOLDEN HOUR", artist: "Kacey Musgraves", price: "$28.99", img: "/images/artwork/golden-hour.jpg" },
-      { name: "RED HEADED STRANGER", artist: "Willie Nelson", price: "$27.99", img: "/images/artwork/red-headed-stranger.jpg" },
+      { name: "JOLENE", artist: "Dolly Parton", stock: 5, img: "/images/artwork/jolene.jpg" },
+      { name: "AT FOLSOM PRISON", artist: "Johnny Cash", stock: 2, img: "/images/artwork/at-folsom-prison.jpg" },
+      { name: "TRAVELLER", artist: "Chris Stapleton", stock: 3, img: "/images/artwork/traveller.jpg" },
+      { name: "GOLDEN HOUR", artist: "Kacey Musgraves", stock: 4, img: "/images/artwork/golden-hour.jpg" },
+      { name: "RED HEADED STRANGER", artist: "Willie Nelson", stock: 1, img: "/images/artwork/red-headed-stranger.jpg" },
     ],
   },
   {
     id: "Pop",
     items: [
-      { name: "FUTURE NOSTALGIA", artist: "Dua Lipa", price: "$29.99", img: "/images/artwork/future-nostalgia.jpg" },
-      { name: "AFTER HOURS", artist: "The Weeknd", price: "$32.99", img: "/images/artwork/after-hours.jpg" },
-      { name: "1989", artist: "Taylor Swift", price: "$28.99", img: "/images/artwork/1989.jpg" },
-      { name: "LEMONADE", artist: "Beyoncé", price: "$34.99", img: "/images/artwork/lemonade.jpg" },
-      { name: "CHANNEL ORANGE", artist: "Frank Ocean", price: "$39.99", img: "/images/artwork/channel-orange.jpg" },
+      { name: "FUTURE NOSTALGIA", artist: "Dua Lipa", stock: 3, img: "/images/artwork/future-nostalgia.jpg" },
+      { name: "AFTER HOURS", artist: "The Weeknd", stock: 2, img: "/images/artwork/after-hours.jpg" },
+      { name: "1989", artist: "Taylor Swift", stock: 6, img: "/images/artwork/1989.jpg" },
+      { name: "LEMONADE", artist: "Beyoncé", stock: 1, img: "/images/artwork/lemonade.jpg" },
+      { name: "CHANNEL ORANGE", artist: "Frank Ocean", stock: 2, img: "/images/artwork/channel-orange.jpg" },
     ],
   },
   {
     id: "Funk",
     items: [
-      { name: "MOTHERSHIP CONNECTION", artist: "Parliament", price: "$31.99", img: "/images/artwork/mothership-connection.jpg" },
-      { name: "SUPERFLY", artist: "Curtis Mayfield", price: "$28.99", img: "/images/artwork/superfly.jpg" },
-      { name: "MAGGOT BRAIN", artist: "Funkadelic", price: "$33.99", img: "/images/artwork/maggot-brain.jpg" },
-      { name: "OFF THE WALL", artist: "Michael Jackson", price: "$27.99", img: "/images/artwork/off-the-wall.jpg" },
-      { name: "INNERVISIONS", artist: "Stevie Wonder", price: "$30.99", img: "/images/artwork/innervisions.jpg" },
+      { name: "MOTHERSHIP CONNECTION", artist: "Parliament", stock: 2, img: "/images/artwork/mothership-connection.jpg" },
+      { name: "SUPERFLY", artist: "Curtis Mayfield", stock: 3, img: "/images/artwork/superfly.jpg" },
+      { name: "MAGGOT BRAIN", artist: "Funkadelic", stock: 1, img: "/images/artwork/maggot-brain.jpg" },
+      { name: "OFF THE WALL", artist: "Michael Jackson", stock: 4, img: "/images/artwork/off-the-wall.jpg" },
+      { name: "INNERVISIONS", artist: "Stevie Wonder", stock: 3, img: "/images/artwork/innervisions.jpg" },
     ],
   },
 ];
@@ -576,10 +576,14 @@ export default function VinylPage() {
                       </p>
                     </div>
                     <span
-                      className="font-[family-name:var(--font-bebas-neue)] text-white/70 ml-auto"
-                      style={{ fontSize: '5vw', flexShrink: 0 }}
+                      className="font-[family-name:var(--font-inter)] ml-auto"
+                      style={{
+                        fontSize: '3.5vw',
+                        flexShrink: 0,
+                        color: item.stock <= 1 ? '#f06830' : 'rgba(255,255,255,0.5)',
+                      }}
                     >
-                      {item.price}
+                      {item.stock} in stock
                     </span>
                   </div>
                   );
@@ -588,6 +592,54 @@ export default function VinylPage() {
               </div>
             </div>
           )}
+        </div>
+
+        {/* Starting At Note */}
+        <div
+          className="noisy relative overflow-hidden"
+          style={{
+            marginInline: '4vw',
+            marginTop: '5vw',
+            padding: '4vw 5vw',
+            borderRadius: '12px',
+            background: 'rgba(20,14,10,0.92)',
+            border: '1px solid rgba(217,188,82,0.4)',
+          }}
+        >
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(105deg, transparent 40%, rgba(217,188,82,0.2) 50%, transparent 60%)',
+              animation: 'shimmer 3s ease-in-out infinite',
+              pointerEvents: 'none',
+            }}
+          />
+          <p
+            className="font-[family-name:var(--font-libre-baskerville)] text-center relative"
+            style={{
+              fontSize: '3.8vw',
+              lineHeight: '1.8',
+              zIndex: 1,
+            }}
+          >
+            <span
+              className="font-bold"
+              style={{
+                fontSize: '6vw',
+                background: 'linear-gradient(to right, #f0c040, #ffe08a, #f0c040)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                filter: 'drop-shadow(0 0 10px rgba(251,191,36,0.7))',
+              }}
+            >
+              Starting at $18
+            </span>
+            <br />
+            <span className="text-white/80">
+              Rare pressings, signed vinyl, and colored variants available.
+            </span>
+          </p>
         </div>
 
         {/* Vinyl Sections */}
@@ -667,10 +719,14 @@ export default function VinylPage() {
                             {item.artist}
                           </p>
                           <p
-                            className="font-[family-name:var(--font-bebas-neue)] text-white"
-                            style={{ fontSize: '5.1vw', marginTop: '2vw' }}
+                            className="font-[family-name:var(--font-inter)]"
+                            style={{
+                              fontSize: '5vw',
+                              marginTop: '2vw',
+                              color: item.stock <= 1 ? '#f06830' : 'rgba(255,255,255,0.5)',
+                            }}
                           >
-                            {item.price}
+                            {item.stock} in stock
                           </p>
                         </div>
                       </div>

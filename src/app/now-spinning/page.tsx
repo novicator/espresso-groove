@@ -173,48 +173,63 @@ export default function NowSpinningPage() {
                             </div>
 
                             {/* Category Boxes */}
-                            <div className="flex" style={{ marginTop: '4vw', marginInline: '-5vw' }}>
+                            <div className="flex justify-center" style={{ marginTop: '4vw', gap: '2vw', paddingInline: '2vw' }}>
                                 <button
                                     onClick={() => setActiveTab("Jazz History")}
-                                    className="flex-1 bg-[#f06830] noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all"
-                                    style={{ height: '16vw' }}
+                                    className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#f06830]"
+                                    style={{
+                                        height: '10vw',
+                                        paddingInline: '5vw',
+                                        borderRadius: '999px',
+                                        border: '2px solid rgba(255,255,255,0.2)',
+                                    }}
                                 >
                                     <span
                                         className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                                         style={{
-                                            fontSize: '3.6vw',
+                                            fontSize: '3vw',
                                             letterSpacing: '0.07em',
                                             textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                                         }}
                                     >
-                                        Jazz<br />History
+                                        Jazz History
                                     </span>
                                 </button>
                                 <button
                                     onClick={() => setActiveTab("Featured Sips")}
-                                    className="flex-1 bg-[#2a7d7d] noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all"
-                                    style={{ height: '16vw' }}
+                                    className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#2a7d7d]"
+                                    style={{
+                                        height: '10vw',
+                                        paddingInline: '5vw',
+                                        borderRadius: '999px',
+                                        border: '2px solid rgba(255,255,255,0.2)',
+                                    }}
                                 >
                                     <span
                                         className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                                         style={{
-                                            fontSize: '3.6vw',
+                                            fontSize: '3vw',
                                             letterSpacing: '0.07em',
                                             textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                                         }}
                                     >
-                                        Featured<br />Sips
+                                        Featured Sips
                                     </span>
                                 </button>
                                 <button
                                     onClick={() => setActiveTab("Vinyl")}
-                                    className="flex-1 bg-[#6b4c8c] noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all"
-                                    style={{ height: '16vw' }}
+                                    className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#6b4c8c]"
+                                    style={{
+                                        height: '10vw',
+                                        paddingInline: '5vw',
+                                        borderRadius: '999px',
+                                        border: '2px solid rgba(255,255,255,0.2)',
+                                    }}
                                 >
                                     <span
                                         className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                                         style={{
-                                            fontSize: '3.6vw',
+                                            fontSize: '3vw',
                                             letterSpacing: '0.07em',
                                             textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                                         }}
@@ -378,11 +393,11 @@ export default function NowSpinningPage() {
                                     style={{ gap: '4vw', marginInline: '-5vw', paddingLeft: '5vw', paddingRight: '5vw', paddingBottom: '4vw' }}
                                 >
                                     {[
-                                        { name: "KIND OF BLUE", artist: "Miles Davis", price: "$29.99", img: "/images/artwork/kind-of-blue.jpg", stock: 3 },
-                                        { name: "A LOVE SUPREME", artist: "John Coltrane", price: "$34.99", img: "/images/artwork/a-love-supreme.jpg", stock: 1 },
-                                        { name: "HEAD HUNTERS", artist: "Herbie Hancock", price: "$27.99", img: "/images/artwork/head-hunters.jpg", stock: 5 },
-                                        { name: "MINGUS AH UM", artist: "Charles Mingus", price: "$31.99", img: "/images/artwork/mingus-ah-um.jpg", stock: 2 },
-                                        { name: "TIME OUT", artist: "Dave Brubeck", price: "$28.99", img: "/images/artwork/time-out.jpg", stock: 4 },
+                                        { name: "KIND OF BLUE", artist: "Miles Davis", img: "/images/artwork/kind-of-blue.jpg", stock: 3 },
+                                        { name: "A LOVE SUPREME", artist: "John Coltrane", img: "/images/artwork/a-love-supreme.jpg", stock: 1 },
+                                        { name: "HEAD HUNTERS", artist: "Herbie Hancock", img: "/images/artwork/head-hunters.jpg", stock: 5 },
+                                        { name: "MINGUS AH UM", artist: "Charles Mingus", img: "/images/artwork/mingus-ah-um.jpg", stock: 2 },
+                                        { name: "TIME OUT", artist: "Dave Brubeck", img: "/images/artwork/time-out.jpg", stock: 4 },
                                     ].map((item, index) => (
                                         <div
                                             key={index}
@@ -421,12 +436,6 @@ export default function NowSpinningPage() {
                                                         style={{ fontSize: '3.6vw', marginTop: '1vw' }}
                                                     >
                                                         {item.artist}
-                                                    </p>
-                                                    <p
-                                                        className="font-[family-name:var(--font-bebas-neue)] text-white"
-                                                        style={{ fontSize: '5.1vw', marginTop: '2vw' }}
-                                                    >
-                                                        {item.price}
                                                     </p>
                                                     <p
                                                         className="font-[family-name:var(--font-inter)]"
@@ -513,12 +522,6 @@ export default function NowSpinningPage() {
                                         >
                                             <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
                                         </div>
-                                        <span
-                                            className="font-[family-name:var(--font-bebas-neue)] text-white"
-                                            style={{ fontSize: '6.5vw', letterSpacing: '0.07em', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
-                                        >
-                                            $5.75
-                                        </span>
                                     </div>
 
                                     {/* Tea Card */}
@@ -535,12 +538,6 @@ export default function NowSpinningPage() {
                                         >
                                             <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
                                         </div>
-                                        <span
-                                            className="font-[family-name:var(--font-bebas-neue)] text-white"
-                                            style={{ fontSize: '6.5vw', letterSpacing: '0.07em', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
-                                        >
-                                            $4.50
-                                        </span>
                                     </div>
 
                                     {/* Energy Card */}
@@ -557,12 +554,6 @@ export default function NowSpinningPage() {
                                         >
                                             <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
                                         </div>
-                                        <span
-                                            className="font-[family-name:var(--font-bebas-neue)] text-white"
-                                            style={{ fontSize: '6.5vw', letterSpacing: '0.07em', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
-                                        >
-                                            $4.75
-                                        </span>
                                     </div>
                                 </div>
 

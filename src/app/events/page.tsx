@@ -176,9 +176,43 @@ export default function EventsPage() {
                     textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
                   }}
                 >
-                  More than just coffee — Espresso Groove is a stage, a gathering place, and a vibe.
-                  From trivia and open mics to acoustic sets and vinyl listening parties, there&apos;s
-                  always something brewing. Check the calendar below and pull up.
+                  Drip. Drop. Vibe.
+                </p>
+                <p
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white"
+                  style={{
+                    fontSize: '3.8vw',
+                    lineHeight: '1.7',
+                    textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
+                    marginTop: '3vw',
+                  }}
+                >
+                  This isn&apos;t just a coffee shop — it&apos;s where the room comes alive.
+                  Espresso Groove is your stage, your hangout, your nightly soundtrack.
+                </p>
+                <p
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white"
+                  style={{
+                    fontSize: '3.8vw',
+                    lineHeight: '1.7',
+                    textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
+                    marginTop: '3vw',
+                  }}
+                >
+                  From laid-back vinyl listening sessions to open mics, trivia nights, and intimate acoustic
+                  sets — every event is part of the experience. The coffee flows, the records spin, and
+                  the vibe builds.
+                </p>
+                <p
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white"
+                  style={{
+                    fontSize: '3.8vw',
+                    lineHeight: '1.7',
+                    textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
+                    marginTop: '3vw',
+                  }}
+                >
+                  Check the calendar. Pull up. Stay awhile.
                 </p>
               </div>
 

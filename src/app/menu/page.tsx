@@ -10,27 +10,27 @@ type FilterType = "All" | "Coffee" | "Tea" | "Energy";
 // Formula: px ÷ 393 × 100 = vw
 
 const coffeeItems = [
-  { name: "HOUSE BLEND", desc: "Rich, smooth, everyday classic", price: "$3.50" },
-  { name: "ESPRESSO", desc: "Bold and concentrated", price: "$2.75" },
-  { name: "CAPPUCCINO", desc: "Espresso with steamed milk foam", price: "$4.50" },
-  { name: "AMERICANO", desc: "Espresso with hot water, smooth finish", price: "$3.25" },
-  { name: "FLAT WHITE", desc: "Velvety microfoam over double espresso", price: "$4.75" },
+  { name: "HOUSE BLEND", desc: "Rich, smooth, everyday classic" },
+  { name: "ESPRESSO", desc: "Bold and concentrated" },
+  { name: "CAPPUCCINO", desc: "Espresso with steamed milk foam" },
+  { name: "AMERICANO", desc: "Espresso with hot water, smooth finish" },
+  { name: "FLAT WHITE", desc: "Velvety microfoam over double espresso" },
 ];
 
 const teaItems = [
-  { name: "CHAI LATTE", desc: "Spiced chai with steamed milk", price: "$5.00" },
-  { name: "GREEN TEA", desc: "Classic organic green tea", price: "$3.00" },
-  { name: "EARL GREY", desc: "Bergamot-infused black tea", price: "$3.25" },
-  { name: "MATCHA LATTE", desc: "Ceremonial grade matcha with oat milk", price: "$5.50" },
-  { name: "JASMINE PEARL", desc: "Delicate hand-rolled jasmine green tea", price: "$3.75" },
+  { name: "CHAI LATTE", desc: "Spiced chai with steamed milk" },
+  { name: "GREEN TEA", desc: "Classic organic green tea" },
+  { name: "EARL GREY", desc: "Bergamot-infused black tea" },
+  { name: "MATCHA LATTE", desc: "Ceremonial grade matcha with oat milk" },
+  { name: "JASMINE PEARL", desc: "Delicate hand-rolled jasmine green tea" },
 ];
 
 const energyItems = [
-  { name: "BASS DROP", desc: "Citrus blast with a caffeine kick", price: "$4.50" },
-  { name: "VINYL RUSH", desc: "Berry mix with B12 & taurine", price: "$4.75" },
-  { name: "GROOVE FUEL", desc: "Tropical mango with green tea extract", price: "$4.50" },
-  { name: "NEON PULSE", desc: "Watermelon lime with ginseng boost", price: "$4.75" },
-  { name: "STATIC SHOCK", desc: "Passion fruit with guarana & electrolytes", price: "$5.00" },
+  { name: "BASS DROP", desc: "Citrus blast with a caffeine kick" },
+  { name: "VINYL RUSH", desc: "Berry mix with B12 & taurine" },
+  { name: "GROOVE FUEL", desc: "Tropical mango with green tea extract" },
+  { name: "NEON PULSE", desc: "Watermelon lime with ginseng boost" },
+  { name: "STATIC SHOCK", desc: "Passion fruit with guarana & electrolytes" },
 ];
 
 export default function MenuPage() {
@@ -337,12 +337,6 @@ export default function MenuPage() {
               >
                 <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
               </div>
-              <span
-                className="font-[family-name:var(--font-bebas-neue)] text-white"
-                style={{ fontSize: '6.5vw', letterSpacing: '0.07em', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
-              >
-                $5.75
-              </span>
             </div>
 
             {/* Tea Card */}
@@ -359,12 +353,6 @@ export default function MenuPage() {
               >
                 <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
               </div>
-              <span
-                className="font-[family-name:var(--font-bebas-neue)] text-white"
-                style={{ fontSize: '6.5vw', letterSpacing: '0.07em', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
-              >
-                $4.50
-              </span>
             </div>
 
             {/* Energy Card */}
@@ -381,12 +369,6 @@ export default function MenuPage() {
               >
                 <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
               </div>
-              <span
-                className="font-[family-name:var(--font-bebas-neue)] text-white"
-                style={{ fontSize: '6.5vw', letterSpacing: '0.07em', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
-              >
-                $4.75
-              </span>
             </div>
           </div>
 
@@ -424,8 +406,6 @@ export default function MenuPage() {
                       <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
                           style={{ fontSize: '4.6vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                        <span className="font-[family-name:var(--font-bebas-neue)] text-white whitespace-nowrap"
-                          style={{ fontSize: '5.1vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.price}</span>
                       </div>
                       <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3vw', marginTop: '0.5vw' }}>{item.desc}</p>
                     </div>
@@ -459,8 +439,6 @@ export default function MenuPage() {
                       <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
                           style={{ fontSize: '4.6vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                        <span className="font-[family-name:var(--font-bebas-neue)] text-white whitespace-nowrap"
-                          style={{ fontSize: '5.1vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.price}</span>
                       </div>
                       <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3vw', marginTop: '0.5vw' }}>{item.desc}</p>
                     </div>
@@ -494,8 +472,6 @@ export default function MenuPage() {
                       <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
                           style={{ fontSize: '4.6vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                        <span className="font-[family-name:var(--font-bebas-neue)] text-white whitespace-nowrap"
-                          style={{ fontSize: '5.1vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.price}</span>
                       </div>
                       <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3vw', marginTop: '0.5vw' }}>{item.desc}</p>
                     </div>

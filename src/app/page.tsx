@@ -601,12 +601,6 @@ export default function Home() {
                 >
                   <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
                 </div>
-                <span
-                  className="font-[family-name:var(--font-bebas-neue)] text-white"
-                  style={{ fontSize: '6.5vw', letterSpacing: '0.07em', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
-                >
-                  $5.75
-                </span>
               </div>
 
               {/* Tea Card */}
@@ -623,12 +617,6 @@ export default function Home() {
                 >
                   <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
                 </div>
-                <span
-                  className="font-[family-name:var(--font-bebas-neue)] text-white"
-                  style={{ fontSize: '6.5vw', letterSpacing: '0.07em', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
-                >
-                  $4.50
-                </span>
               </div>
 
               {/* Energy Card */}
@@ -645,12 +633,6 @@ export default function Home() {
                 >
                   <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
                 </div>
-                <span
-                  className="font-[family-name:var(--font-bebas-neue)] text-white"
-                  style={{ fontSize: '6.5vw', letterSpacing: '0.07em', textShadow: '0 0 8px rgba(224,86,32,0.4)' }}
-                >
-                  $4.75
-                </span>
               </div>
             </div>
 
