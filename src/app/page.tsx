@@ -64,7 +64,7 @@ export default function Home() {
           />
           <div
             className="h-screen bg-cover bg-center bg-third"
-            style={{ backgroundImage: `url('/images/vibe_background_3.png')` }}
+            style={{ backgroundImage: `url('/images/new_background_v2.png')` }}
           />
           <div
             className="h-screen bg-cover bg-center"
