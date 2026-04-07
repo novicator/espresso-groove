@@ -7,7 +7,14 @@ interface Note {
   symbol: string;
 }
 
-export default function MiniMusicNotes({ isPlaying }: { isPlaying: boolean }) {
+const sizePresets = {
+  mobile: { height: '8vw', fontSize: '7.2vw', left: '-2vw', wave: '1vw', top: '-30%' },
+  desktop: { height: '7vw', fontSize: '4vw', left: '-1vw', wave: '0.5vw', top: '0%' },
+  xl: { height: '3.3vw', fontSize: '2.4vw', left: '-0.8vw', wave: '0.3vw', top: '0%' },
+};
+
+export default function MiniMusicNotes({ isPlaying, size = "mobile" }: { isPlaying: boolean; size?: "mobile" | "desktop" | "xl" }) {
+  const s = sizePresets[size];
   const [notes, setNotes] = useState<Note[]>([]);
   const noteIdRef = useRef(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -42,15 +49,15 @@ export default function MiniMusicNotes({ isPlaying }: { isPlaying: boolean }) {
 
   return (
     <>
-      <div className="relative w-full overflow-hidden pointer-events-none" style={{ height: '8vw' }}>
+      <div className="relative w-full overflow-hidden pointer-events-none" style={{ height: s.height }}>
         {notes.map((note) => (
           <span
             key={note.id}
             className="absolute text-white mini-note-wave"
             style={{
-              top: '-30%',
-              left: '-2vw',
-              fontSize: '7.2vw',
+              top: s.top,
+              left: s.left,
+              fontSize: s.fontSize,
               fontWeight: 900,
               textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
               transform: 'translateY(-50%)',
@@ -70,18 +77,18 @@ export default function MiniMusicNotes({ isPlaying }: { isPlaying: boolean }) {
           3% {
             opacity: 1;
           }
-          10% { transform: translateX(10vw) translateY(-1vw); }
-          20% { transform: translateX(20vw) translateY(1vw); }
-          30% { transform: translateX(30vw) translateY(-1vw); }
-          40% { transform: translateX(40vw) translateY(1vw); }
-          50% { transform: translateX(50vw) translateY(-1vw); }
-          60% { transform: translateX(60vw) translateY(1vw); }
-          70% { transform: translateX(70vw) translateY(-1vw); }
-          80% { transform: translateX(80vw) translateY(1vw); }
-          90% { transform: translateX(90vw) translateY(-1vw); }
+          10% { transform: translateX(10vw) translateY(-${s.wave}); }
+          20% { transform: translateX(20vw) translateY(${s.wave}); }
+          30% { transform: translateX(30vw) translateY(-${s.wave}); }
+          40% { transform: translateX(40vw) translateY(${s.wave}); }
+          50% { transform: translateX(50vw) translateY(-${s.wave}); }
+          60% { transform: translateX(60vw) translateY(${s.wave}); }
+          70% { transform: translateX(70vw) translateY(-${s.wave}); }
+          80% { transform: translateX(80vw) translateY(${s.wave}); }
+          90% { transform: translateX(90vw) translateY(-${s.wave}); }
           97% { opacity: 1; }
           100% {
-            transform: translateX(calc(100vw + 5px)) translateY(1vw);
+            transform: translateX(calc(100vw + 5px)) translateY(${s.wave});
             opacity: 1;
           }
         }
