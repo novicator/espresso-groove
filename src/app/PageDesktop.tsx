@@ -143,7 +143,7 @@ export default function PageDesktop() {
           src="/images/Expresso groove.svg"
           alt="Espresso Groove"
           className="logo-glow"
-          style={{ width: '60vw', marginLeft: '-4vw', marginTop: '-6vw' }}
+          style={{ width: '55vw', marginLeft: '-4vw', marginTop: '-6vw' }}
         />
         <h2
           className="text-white text-[5vw] font-[family-name:var(--font-libre-baskerville)] leading-tight uppercase tracking-tight"
@@ -157,7 +157,7 @@ export default function PageDesktop() {
           Where Coffee<br />Meets Culture
         </h2>
         <p
-          className="text-white text-[5.5vw] font-[family-name:var(--font-libre-baskerville)] italic"
+          className="text-white text-[5.2vw] font-[family-name:var(--font-libre-baskerville)] italic"
           style={{
             textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
             marginTop: '2vw',
@@ -173,14 +173,14 @@ export default function PageDesktop() {
           className="flex items-center justify-center"
           style={{
             paddingLeft: '0vw',
-            paddingTop: '4vw',
-            gap: '3vw',
+            paddingTop: '3.5vw',
+            gap: '1.5vw',
           }}
         >
           <Link
             href="/menu"
             className="bg-[#f06830] noisy flex items-center justify-center active:scale-105 duration-150 transition-all"
-            style={{ width: '16vw', height: '6.5vw', gap: '0.3vw', border: '2px solid #8a3010', borderRadius: '2vw' }}
+            style={{ width: '18vw', height: '7.5vw', gap: '0.5vw', border: '2px solid #8a3010', borderRadius: '2vw' }}
           >
             <img
               src="/images/menu_cup.svg?v=3"
@@ -206,12 +206,12 @@ export default function PageDesktop() {
           <Link
             href="/vinyl"
             className="overflow-hidden active:scale-105 duration-150 transition-all"
-            style={{ width: '16vw', borderRadius: '2vw', border: '2px solid #1a4f4f' }}
+            style={{ width: '18vw', borderRadius: '2vw', border: '2px solid #1a4f4f' }}
           >
             {/* Top: Vinyl button */}
             <div
               className="bg-[#2a7d7d] noisy flex items-center justify-center"
-              style={{ height: '4vw', gap: '0.9vw' }}
+              style={{ height: '5vw', gap: '0.9vw' }}
             >
               <img
                 src="/images/vinyl-svgrepo-com.svg"
@@ -236,7 +236,7 @@ export default function PageDesktop() {
             <div
               className="bg-[#d9bc52] noisy flex items-center justify-center"
               style={{
-                height: '2.2vw',
+                height: '2.5vw',
                 position: 'relative',
                 overflow: 'hidden',
                 boxShadow: '0 0 12px rgba(217,188,82,0.6), 0 0 24px rgba(217,188,82,0.3)',
@@ -271,7 +271,7 @@ export default function PageDesktop() {
           <Link
             href="/merch"
             className="bg-[#6b4c8c] noisy flex items-center justify-center"
-            style={{ width: '16vw', height: '6.5vw', gap: '0.8vw', border: '2px solid #3d2a52', borderRadius: '2vw' }}
+            style={{ width: '18vw', height: '7.5vw', gap: '0.8vw', border: '2px solid #3d2a52', borderRadius: '2vw' }}
           >
             <img
               src="/images/shirt-outline-svgrepo-com.svg"
@@ -296,7 +296,7 @@ export default function PageDesktop() {
           <Link
             href="/events"
             className="bg-[#24ADFF] noisy flex items-center justify-center active:scale-105 duration-150 transition-all"
-            style={{ width: '16vw', height: '6.5vw', gap: '0.5vw', border: '2px solid #3a8abf', borderRadius: '2vw' }}
+            style={{ width: '18vw', height: '7.5vw', gap: '0.5vw', border: '2px solid #3a8abf', borderRadius: '2vw' }}
           >
             <svg style={{ width: '2.5vw', height: '2.5vw', filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))' }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -317,7 +317,7 @@ export default function PageDesktop() {
           <Link href="/now-spinning" className="flex items-center justify-center">
             <div
               className="bg-[#6F4E37] noisy flex items-center justify-center cursor-pointer active:scale-105 duration-150 transition-all"
-              style={{ width: '18.5vw', height: '6.5vw', border: '2px solid #1a0f0a', borderRadius: '2vw' }}
+              style={{ width: '18vw', height: '7.5vw', border: '2px solid #1a0f0a', borderRadius: '2vw' }}
             >
               <span className="text-white" style={{ fontSize: '2.2vw' }}>★</span>
               <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.8vw', fontWeight: 900, marginInline: '0.5vw' }}>
@@ -335,7 +335,7 @@ export default function PageDesktop() {
           style={{
             width: '28vw',
             right: '7vw',
-            top: '24vw',
+            top: '21vw',
             filter: 'drop-shadow(0px 0px 15px rgba(255,150,50,0.5))',
           }}
         />
@@ -344,7 +344,7 @@ export default function PageDesktop() {
         <div style={{ marginTop: '-3vw' }}>
 
           {/* Music Notes Divider 1 */}
-          <div style={{ paddingTop: '6vw', marginTop: '0vw' }}>
+          <div style={{ paddingTop: '5vw', marginTop: '0vw' }}>
             <MiniMusicNotes isPlaying={true} size="desktop" />
           </div>
 
@@ -948,7 +948,7 @@ export default function PageDesktop() {
             </div>
 
             {/* The Vibe Text */}
-            <div style={{ paddingInline: '2vw', paddingTop: '2vw', textShadow: '2px 2px 8px rgba(0,0,0,0.6)' }}>
+            <div style={{ paddingInline: '2vw', paddingTop: '2vw', textShadow: '2px 2px 8px rgba(0,0,0,0)' }}>
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                 style={{ fontSize: '2.5vw', fontWeight: 900 }}

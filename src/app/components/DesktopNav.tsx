@@ -9,7 +9,7 @@ export default function DesktopNav() {
   useEffect(() => {
     const handleScroll = () => {
       // Show nav after scrolling past 400px (roughly past the buttons)
-      setVisible(window.scrollY > 400);
+      setVisible(window.scrollY > 200);
     };
 
     window.addEventListener("scroll", handleScroll);

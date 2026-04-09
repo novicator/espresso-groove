@@ -141,19 +141,19 @@ export default function DesktopFooter() {
             Navigate
           </h3>
           <div className="flex flex-col" style={{ marginTop: '1vw', gap: '0.8vw' }}>
-            <Link href="/menu" className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.5vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
+            <Link href="/menu" className="w-fit text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.8vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
               Menu
             </Link>
-            <Link href="/vinyl" className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.5vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
+            <Link href="/vinyl" className="w-fit text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.8vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
               Vinyl
             </Link>
-            <Link href="/merch" className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.5vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
+            <Link href="/merch" className="w-fit text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.8vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
               Merch
             </Link>
-            <Link href="/events" className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.5vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
+            <Link href="/events" className="w-fit text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.8vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
               Events
             </Link>
-            <Link href="/now-spinning" className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.5vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
+            <Link href="/now-spinning" className="w-fit text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.8vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
               Now Spinning
             </Link>
           </div>

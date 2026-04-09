@@ -8,9 +8,9 @@ interface Note {
 }
 
 const sizePresets = {
-  mobile: { height: '8vw', fontSize: '7.2vw', left: '-2vw', wave: '1vw', top: '-30%' },
-  desktop: { height: '7vw', fontSize: '4vw', left: '-1vw', wave: '0.5vw', top: '0%' },
-  xl: { height: '3.3vw', fontSize: '2.4vw', left: '-0.8vw', wave: '0.3vw', top: '0%' },
+  mobile: { height: '8vw', fontSize: '7.2vw', left: '-2vw', wave: '1vw', top: '-30%', speed: '6s' },
+  desktop: { height: '7vw', fontSize: '4vw', left: '-1vw', wave: '0.5vw', top: '0%', speed: '8s' },
+  xl: { height: '3.3vw', fontSize: '2.4vw', left: '-0.8vw', wave: '0.3vw', top: '0%', speed: '6s' },
 };
 
 export default function MiniMusicNotes({ isPlaying, size = "mobile" }: { isPlaying: boolean; size?: "mobile" | "desktop" | "xl" }) {
@@ -30,7 +30,7 @@ export default function MiniMusicNotes({ isPlaying, size = "mobile" }: { isPlayi
 
         setTimeout(() => {
           setNotes((prev) => prev.filter((n) => n.id !== newNote.id));
-        }, 6000);
+        }, 8000);
       }, 800);
     } else {
       if (intervalRef.current) {
@@ -53,7 +53,7 @@ export default function MiniMusicNotes({ isPlaying, size = "mobile" }: { isPlayi
         {notes.map((note) => (
           <span
             key={note.id}
-            className="absolute text-white mini-note-wave"
+            className={`absolute text-white mini-note-wave-${size}`}
             style={{
               top: s.top,
               left: s.left,
@@ -68,8 +68,8 @@ export default function MiniMusicNotes({ isPlaying, size = "mobile" }: { isPlayi
         ))}
       </div>
 
-      <style jsx>{`
-        @keyframes miniWaveAcross {
+      <style>{`
+        @keyframes miniWaveAcross-${size} {
           0% {
             transform: translateX(0) translateY(0);
             opacity: 0;
@@ -92,8 +92,8 @@ export default function MiniMusicNotes({ isPlaying, size = "mobile" }: { isPlayi
             opacity: 1;
           }
         }
-        .mini-note-wave {
-          animation: miniWaveAcross 6s linear forwards;
+        .mini-note-wave-${size} {
+          animation: miniWaveAcross-${size} ${s.speed} linear forwards;
         }
       `}</style>
     </>
