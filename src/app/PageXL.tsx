@@ -3,10 +3,10 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import MiniMusicNotes from "./components/MiniMusicNotes";
-import DesktopFooter from "./components/DesktopFooter";
+import DesktopFooterXL from "./components/DesktopFooterXL";
 import DesktopNav from "./components/DesktopNav";
 
-export default function PageDesktop() {
+export default function PageXL() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [scrollRatio, setScrollRatio] = useState(0);
@@ -59,7 +59,7 @@ export default function PageDesktop() {
 
   return (
     <>
-      <DesktopNav hideOnTop />
+      <DesktopNav hideOnTop size="xl" />
       <style jsx global>{`
         @keyframes logoGlowPulseMobile {
           0% {
@@ -104,7 +104,7 @@ export default function PageDesktop() {
 
     <div className="relative" style={{ backgroundColor: '#2d1f1a', overflow: 'hidden' }}>
 
-      {/* === BACKGROUND LAYER === */}
+      {/* === BACKGROUND LAYER (stays vw) === */}
       <div className="absolute inset-0 z-0">
         <div
           className="h-screen bg-[position:0%_20%] bg-[length:100%_140%]"
@@ -136,32 +136,35 @@ export default function PageDesktop() {
         />
       </div>
 
-      {/* === CONTENT LAYER === */}
+      {/* === CONTENT LAYER (px values based on 1400px viewport) === */}
       <div className="relative z-10">
+      <div className="relative" style={{ maxWidth: '1400px', margin: '0 auto' }}>
         {/* Logo */}
         <img
           src="/images/Expresso groove.svg"
           alt="Espresso Groove"
           className="logo-glow"
-          style={{ width: '55vw', marginLeft: '-4vw', marginTop: '-6vw' }}
+          style={{ width: '770px', marginLeft: '-56px', marginTop: '-84px' }}
         />
         <h2
-          className="text-white text-[5vw] font-[family-name:var(--font-libre-baskerville)] leading-tight uppercase tracking-tight"
+          className="text-white font-[family-name:var(--font-libre-baskerville)] leading-tight uppercase tracking-tight"
           style={{
+            fontSize: '70px',
             textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
-            marginTop: '-8vw',
-            paddingLeft: '5vw',
+            marginTop: '-112px',
+            paddingLeft: '70px',
             fontWeight: 900,
           }}
         >
           Where Coffee<br />Meets Culture
         </h2>
         <p
-          className="text-white text-[5.2vw] font-[family-name:var(--font-libre-baskerville)] italic"
+          className="text-white font-[family-name:var(--font-libre-baskerville)] italic"
           style={{
+            fontSize: '72.8px',
             textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
-            marginTop: '2vw',
-            paddingLeft: '4.5vw',
+            marginTop: '28px',
+            paddingLeft: '63px',
             fontWeight: 900,
           }}
         >
@@ -172,23 +175,23 @@ export default function PageDesktop() {
         <div
           className="flex items-center justify-center"
           style={{
-            paddingLeft: '0vw',
-            paddingTop: '3.5vw',
-            gap: '1.5vw',
+            paddingLeft: '0px',
+            paddingTop: '49px',
+            gap: '21px',
           }}
         >
           <Link
             href="/menu"
             className="bg-[#f06830] noisy flex items-center justify-center active:scale-105 duration-150 transition-all"
-            style={{ width: '18vw', height: '7.5vw', gap: '0.5vw', border: '2px solid #8a3010', borderRadius: '2vw' }}
+            style={{ width: '252px', height: '105px', gap: '7px', border: '2px solid #8a3010', borderRadius: '28px' }}
           >
             <img
               src="/images/menu_cup.svg?v=3"
               style={{
-                width: '2.6vw',
-                height: '2.6vw',
+                width: '36.4px',
+                height: '36.4px',
                 filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))',
-                marginRight: '0.5vw',
+                marginRight: '7px',
               }}
             />
             <span
@@ -196,7 +199,7 @@ export default function PageDesktop() {
               style={{
                 textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                 letterSpacing: '0.1em',
-                fontSize: '2vw',
+                fontSize: '28px',
               }}
             >
               Menu
@@ -206,18 +209,18 @@ export default function PageDesktop() {
           <Link
             href="/vinyl"
             className="overflow-hidden active:scale-105 duration-150 transition-all"
-            style={{ width: '18vw', borderRadius: '2vw', border: '2px solid #1a4f4f' }}
+            style={{ width: '252px', borderRadius: '28px', border: '2px solid #1a4f4f' }}
           >
             {/* Top: Vinyl button */}
             <div
               className="bg-[#2a7d7d] noisy flex items-center justify-center"
-              style={{ height: '5vw', gap: '0.9vw' }}
+              style={{ height: '70px', gap: '12.6px' }}
             >
               <img
                 src="/images/vinyl-svgrepo-com.svg"
                 style={{
-                  width: '2.1vw',
-                  height: '2.1vw',
+                  width: '29.4px',
+                  height: '29.4px',
                   filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))',
                 }}
               />
@@ -226,7 +229,7 @@ export default function PageDesktop() {
                 style={{
                   textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                   letterSpacing: '0.2em',
-                  fontSize: '1.8vw',
+                  fontSize: '25.2px',
                 }}
               >
                 Vinyl
@@ -236,13 +239,12 @@ export default function PageDesktop() {
             <div
               className="bg-[#d9bc52] noisy flex items-center justify-center"
               style={{
-                height: '2.5vw',
+                height: '35px',
                 position: 'relative',
                 overflow: 'hidden',
                 boxShadow: '0 0 12px rgba(217,188,82,0.6), 0 0 24px rgba(217,188,82,0.3)',
               }}
             >
-              {/* Shimmer effect */}
               <div
                 style={{
                   position: 'absolute',
@@ -256,7 +258,7 @@ export default function PageDesktop() {
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-black"
                 style={{
-                  fontSize: '1.1vw',
+                  fontSize: '15.4px',
                   letterSpacing: '0.1em',
                   textShadow: 'none',
                   position: 'relative',
@@ -271,13 +273,13 @@ export default function PageDesktop() {
           <Link
             href="/merch"
             className="bg-[#6b4c8c] noisy flex items-center justify-center"
-            style={{ width: '18vw', height: '7.5vw', gap: '0.8vw', border: '2px solid #3d2a52', borderRadius: '2vw' }}
+            style={{ width: '252px', height: '105px', gap: '11.2px', border: '2px solid #3d2a52', borderRadius: '28px' }}
           >
             <img
               src="/images/shirt-outline-svgrepo-com.svg"
               style={{
-                width: '2.4vw',
-                height: '2.4vw',
+                width: '33.6px',
+                height: '33.6px',
                 filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))',
               }}
             />
@@ -286,7 +288,7 @@ export default function PageDesktop() {
               style={{
                 textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                 letterSpacing: '0.12em',
-                fontSize: '1.9vw',
+                fontSize: '26.6px',
               }}
             >
               Merch
@@ -296,9 +298,9 @@ export default function PageDesktop() {
           <Link
             href="/events"
             className="bg-[#24ADFF] noisy flex items-center justify-center active:scale-105 duration-150 transition-all"
-            style={{ width: '18vw', height: '7.5vw', gap: '0.5vw', border: '2px solid #3a8abf', borderRadius: '2vw' }}
+            style={{ width: '252px', height: '105px', gap: '7px', border: '2px solid #3a8abf', borderRadius: '28px' }}
           >
-            <svg style={{ width: '2.5vw', height: '2.5vw', filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))' }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg style={{ width: '35px', height: '35px', filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))' }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <span
@@ -306,7 +308,7 @@ export default function PageDesktop() {
               style={{
                 textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                 letterSpacing: '0.12em',
-                fontSize: '1.8vw',
+                fontSize: '25.2px',
               }}
             >
               Events
@@ -317,10 +319,10 @@ export default function PageDesktop() {
           <Link href="/now-spinning" className="flex items-center justify-center">
             <div
               className="bg-[#6F4E37] noisy flex items-center justify-center cursor-pointer active:scale-105 duration-150 transition-all"
-              style={{ width: '18vw', height: '7.5vw', border: '2px solid #1a0f0a', borderRadius: '2vw' }}
+              style={{ width: '252px', height: '105px', border: '2px solid #1a0f0a', borderRadius: '28px' }}
             >
-              <span className="text-white" style={{ fontSize: '2.2vw' }}>★</span>
-              <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.8vw', fontWeight: 900, marginInline: '0.5vw' }}>
+              <span className="text-white" style={{ fontSize: '30.8px' }}>★</span>
+              <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '25.2px', fontWeight: 900, marginInline: '7px' }}>
                 Now Spinning
               </span>
             </div>
@@ -333,21 +335,20 @@ export default function PageDesktop() {
           alt="Coffee mug with vinyl steam"
           className="pointer-events-none absolute"
           style={{
-            width: '28vw',
-            right: '7vw',
-            top: '21vw',
+            width: '392px',
+            right: '98px',
+            top: '294px',
             filter: 'drop-shadow(0px 0px 15px rgba(255,150,50,0.5))',
           }}
         />
 
-        {/* === Gradient Divider + Now Playing + Gradient Divider 2 === */}
-        <div style={{ marginTop: '-3vw' }}>
-
-          {/* Music Notes Divider 1 */}
-          <div style={{ paddingTop: '5vw', marginTop: '0vw' }}>
-            <MiniMusicNotes isPlaying={true} size="desktop" />
-          </div>
-
+      </div>
+      {/* === Gradient Divider + Now Playing + Gradient Divider 2 === */}
+      {/* Music Notes Divider 1 (full width) */}
+      <div style={{ paddingTop: '70px', marginTop: '-42px' }}>
+        <MiniMusicNotes isPlaying={true} size="xlFixed" />
+      </div>
+      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           {/* Now Playing Section */}
           <style>{`
             @keyframes eq-bounce {
@@ -358,7 +359,7 @@ export default function PageDesktop() {
           `}</style>
           <div
             className="w-full flex items-center justify-center"
-            style={{ gap: '5vw', paddingBlock: '2vw' }}
+            style={{ gap: '70px', paddingBlock: '28px' }}
           >
             {/* Left Equalizer */}
             <div className="flex items-end self-stretch">
@@ -370,7 +371,7 @@ export default function PageDesktop() {
                   key={i}
                   className="rounded-full"
                   style={{
-                    width: '2vw',
+                    width: '28px',
                     height: (b.h * 100) + '%',
                     backgroundColor: b.c,
                     boxShadow: '0 0 4px ' + b.c + '99',
@@ -386,7 +387,7 @@ export default function PageDesktop() {
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
                 style={{
-                  fontSize: '4.6vw',
+                  fontSize: '64.4px',
                   textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
                   fontWeight: 900,
                 }}
@@ -395,14 +396,14 @@ export default function PageDesktop() {
               </span>
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] text-white italic whitespace-nowrap"
-                style={{ fontSize: '4.6vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
+                style={{ fontSize: '64.4px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
               >
                 Espresso Groove Radio
               </span>
             </div>
 
             {/* Right Equalizer */}
-            <div className="flex items-end self-stretch" style={{ gap: 'vw' }}>
+            <div className="flex items-end self-stretch">
               {[
                 { h: 0.55, c: '#ffffff' }, { h: 0.35, c: '#ffffff' }, { h: 0.6, c: '#ffffff' },
                 { h: 0.4, c: '#ffffff' }, { h: 0.5, c: '#ffffff' }, { h: 0.3, c: '#ffffff' }
@@ -411,7 +412,7 @@ export default function PageDesktop() {
                   key={i}
                   className="rounded-full"
                   style={{
-                    width: '2vw',
+                    width: '28px',
                     height: (b.h * 100) + '%',
                     backgroundColor: b.c,
                     boxShadow: '0 0 4px ' + b.c + '99',
@@ -423,28 +424,28 @@ export default function PageDesktop() {
             </div>
           </div>
 
-          {/* Music Notes Divider 2 */}
-          <MiniMusicNotes isPlaying={true} size="desktop" />
-
-        </div>
+      </div>
+      {/* Music Notes Divider 2 (full width) */}
+      <MiniMusicNotes isPlaying={true} size="xlFixed" />
+      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* Now Spinning */}
         <div
           className="flex items-center justify-center"
-          style={{ gap: '4vw', marginTop: '4.1vw' }}
+          style={{ gap: '56px', marginTop: '57.4px' }}
         >
           <div
             className="bg-white"
             style={{
-              width: '14.3vw',
-              height: '0.7vw',
+              width: '200.2px',
+              height: '9.8px',
               boxShadow: '0 0 6px rgba(0,0,0,0.9)',
             }}
           />
           <span
             className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
             style={{
-              fontSize: '4.6vw',
+              fontSize: '64.4px',
               textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
               fontWeight: 900,
             }}
@@ -454,8 +455,8 @@ export default function PageDesktop() {
           <div
             className="bg-white"
             style={{
-              width: '14.3vw',
-              height: '0.7vw',
+              width: '200.2px',
+              height: '9.8px',
               boxShadow: '0 0 6px rgba(0,0,0,.9)',
             }}
           />
@@ -464,16 +465,16 @@ export default function PageDesktop() {
         {/* Jazz */}
         <div
           className="flex items-center justify-center"
-          style={{ gap: '4.1vw', marginTop: '3.1vw' }}
+          style={{ gap: '57.4px', marginTop: '43.4px' }}
         >
           <div
             className="bg-white"
-            style={{ width: '14.2vw', height: '0.8vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+            style={{ width: '198.8px', height: '11.2px', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
           />
           <span
             className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
             style={{
-              fontSize: '8.8vw',
+              fontSize: '123.2px',
               textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
               fontWeight: 900,
             }}
@@ -482,20 +483,20 @@ export default function PageDesktop() {
           </span>
           <div
             className="bg-white"
-            style={{ width: '14.2vw', height: '0.8vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+            style={{ width: '198.8px', height: '11.2px', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
           />
         </div>
 
         {/* Brown Box */}
         <div
           className="rounded-xl"
-          style={{ marginInline: '4vw', marginTop: '4vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+          style={{ marginInline: '56px', marginTop: '56px', padding: '11.2px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
         >
-          <div className="rounded-lg overflow-hidden bg-[#2d1f1a]" style={{ padding: '3vw' }}>
+          <div className="rounded-lg overflow-hidden bg-[#2d1f1a]" style={{ padding: '42px' }}>
             <p
               className="font-[family-name:var(--font-libre-baskerville)] text-white"
               style={{
-                fontSize: '2.1vw',
+                fontSize: '29.4px',
                 lineHeight: '1.6',
                 textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
               }}
@@ -506,38 +507,38 @@ export default function PageDesktop() {
         </div>
 
         {/* === Three Column Row === */}
-        <div className="flex" style={{ gap: '2vw', marginTop: '4vw', paddingInline: '4vw' }}>
+        <div className="flex" style={{ gap: '28px', marginTop: '56px', paddingInline: '56px' }}>
 
           {/* LEFT: Jazz History */}
-          <div className="flex-1 rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
+          <div className="flex-1 rounded-xl" style={{ padding: '11.2px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '623px' }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
               {/* Title */}
-              <div className="text-center" style={{ paddingBlock: '2vw' }}>
+              <div className="text-center" style={{ paddingBlock: '28px' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                  style={{ fontSize: '2vw', letterSpacing: '0.15em' }}
+                  style={{ fontSize: '28px', letterSpacing: '0.15em' }}
                 >
                   Jazz History
                 </span>
               </div>
-              <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+              <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
               {/* Image + Text (float wrap) */}
-              <div style={{ padding: '1.5vw' }}>
+              <div style={{ padding: '21px' }}>
                 <div
                   className="bg-[#d4d4d4] rounded-lg flex items-center justify-center"
-                  style={{ width: '10vw', height: '10vw', float: 'left', marginRight: '1.5vw', marginTop: '0.5vw' }}
+                  style={{ width: '140px', height: '140px', float: 'left', marginRight: '21px', marginTop: '7px' }}
                 >
                   <span
                     className="text-[#555555] font-[family-name:var(--font-inter)] text-center"
-                    style={{ fontSize: '1vw' }}
+                    style={{ fontSize: '14px' }}
                   >
                     IMAGE
                   </span>
                 </div>
                 <p
                   className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                  style={{ fontSize: '1.2vw' }}
+                  style={{ fontSize: '16.8px' }}
                 >
                   In the early 1900s, the streets of New Orleans were alive with a new sound. African rhythms met blues and ragtime to create something entirely new. It wasn&apos;t just music — it was freedom, expression, and revolution all at once. From the brass bands of Congo Square to the smoky clubs of Storyville, jazz was born not on a stage, but in the soul of a city. By the 1920s, it had migrated north — Chicago, Kansas City, Harlem...
                 </p>
@@ -545,137 +546,137 @@ export default function PageDesktop() {
 
               {/* Learn More */}
               <div className="mt-auto">
-                <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+                <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
                 <a
                   href="/now-spinning"
                   className="flex items-center justify-center"
-                  style={{ paddingBlock: '0vw', gap: '1vw' }}
+                  style={{ paddingBlock: '0px', gap: '14px' }}
                 >
-                  <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.8vw' }}>
+                  <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '25.2px' }}>
                     Now Spinning
                   </span>
-                  <span className="text-white" style={{ fontSize: '3vw' }}>→</span>
+                  <span className="text-white" style={{ fontSize: '42px' }}>→</span>
                 </a>
               </div>
             </div>
           </div>
 
           {/* MIDDLE: Featured Sips */}
-          <div className="flex-1 rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
+          <div className="flex-1 rounded-xl" style={{ padding: '11.2px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '623px' }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
               {/* Title */}
-              <div className="text-center" style={{ paddingBlock: '2vw' }}>
+              <div className="text-center" style={{ paddingBlock: '28px' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                  style={{ fontSize: '2vw', letterSpacing: '0.15em' }}
+                  style={{ fontSize: '28px', letterSpacing: '0.15em' }}
                 >
                   Featured Sips
                 </span>
               </div>
-              <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+              <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
               {/* Coffee */}
-              <div className="bg-[#f06830] noisy flex items-center justify-center" style={{ height: '3.5vw' }}>
+              <div className="bg-[#f06830] noisy flex items-center justify-center" style={{ height: '49px' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{ fontSize: '1.2vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                  style={{ fontSize: '16.8px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
                 >
                   Coffee
                 </span>
               </div>
-              <div className="flex items-center" style={{ paddingBlock: '1.2vw', paddingLeft: '2vw', paddingRight: '1.2vw', gap: '3vw' }}>
-                <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '5.5vw', height: '5.5vw' }}>
-                  <span className="text-[#555555]" style={{ fontSize: '0.8vw' }}>IMG</span>
+              <div className="flex items-center" style={{ paddingBlock: '16.8px', paddingLeft: '28px', paddingRight: '16.8px', gap: '42px' }}>
+                <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '77px', height: '77px' }}>
+                  <span className="text-[#555555]" style={{ fontSize: '11.2px' }}>IMG</span>
                 </div>
-                <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '2.2vw' }}>
+                <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '30.8px' }}>
                   Blue Note Brew
                 </span>
               </div>
 
               {/* Tea */}
-              <div className="bg-[#2a7d7d] noisy flex items-center justify-center" style={{ height: '3.5vw' }}>
+              <div className="bg-[#2a7d7d] noisy flex items-center justify-center" style={{ height: '49px' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{ fontSize: '1.2vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                  style={{ fontSize: '16.8px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
                 >
                   Tea
                 </span>
               </div>
-              <div className="flex items-center" style={{ paddingBlock: '1.2vw', paddingLeft: '2vw', paddingRight: '1.2vw', gap: '3vw' }}>
-                <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '5.5vw', height: '5.5vw' }}>
-                  <span className="text-[#555555]" style={{ fontSize: '0.8vw' }}>IMG</span>
+              <div className="flex items-center" style={{ paddingBlock: '16.8px', paddingLeft: '28px', paddingRight: '16.8px', gap: '42px' }}>
+                <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '77px', height: '77px' }}>
+                  <span className="text-[#555555]" style={{ fontSize: '11.2px' }}>IMG</span>
                 </div>
-                <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '2.2vw' }}>
+                <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '30.8px' }}>
                   Coltrane Chai
                 </span>
               </div>
 
               {/* Energy Drinks */}
-              <div className="bg-[#6b4c8c] noisy flex items-center justify-center" style={{ height: '3.5vw' }}>
+              <div className="bg-[#6b4c8c] noisy flex items-center justify-center" style={{ height: '49px' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{ fontSize: '1.2vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                  style={{ fontSize: '16.8px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
                 >
                   Energy Drinks
                 </span>
               </div>
-              <div className="flex items-center" style={{ paddingBlock: '1.2vw', paddingLeft: '2vw', paddingRight: '1.2vw', gap: '3vw' }}>
-                <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '5.5vw', height: '5.5vw' }}>
-                  <span className="text-[#555555]" style={{ fontSize: '0.8vw' }}>IMG</span>
+              <div className="flex items-center" style={{ paddingBlock: '16.8px', paddingLeft: '28px', paddingRight: '16.8px', gap: '42px' }}>
+                <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '77px', height: '77px' }}>
+                  <span className="text-[#555555]" style={{ fontSize: '11.2px' }}>IMG</span>
                 </div>
-                <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '2.2vw' }}>
+                <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '30.8px' }}>
                   Bebop Blast
                 </span>
               </div>
 
               {/* View Menu */}
               <div className="mt-auto">
-                <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+                <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
                 <a
                   href="/menu"
                   className="flex items-center justify-center"
-                  style={{ paddingBlock: '0vw', gap: '1vw' }}
+                  style={{ paddingBlock: '0px', gap: '14px' }}
                 >
-                  <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.8vw' }}>
+                  <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '25.2px' }}>
                     View Menu
                   </span>
-                  <span className="text-white" style={{ fontSize: '3vw' }}>→</span>
+                  <span className="text-white" style={{ fontSize: '42px' }}>→</span>
                 </a>
               </div>
             </div>
           </div>
 
           {/* RIGHT: Now Spinning Jazz Vinyl */}
-          <div className="flex-1 rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw', minWidth: 0 }}>
+          <div className="flex-1 rounded-xl" style={{ padding: '11.2px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '623px', minWidth: 0 }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
               {/* Title */}
-              <div className="text-center" style={{ paddingBlock: '2vw' }}>
+              <div className="text-center" style={{ paddingBlock: '28px' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                  style={{ fontSize: '2vw', letterSpacing: '0.15em' }}
+                  style={{ fontSize: '28px', letterSpacing: '0.15em' }}
                 >
                   Vinyl
                 </span>
               </div>
-              <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+              <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
               {/* Now Spinning */}
-              <div className="text-center" style={{ paddingTop: '1vw' }}>
+              <div className="text-center" style={{ paddingTop: '14px' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                  style={{ fontSize: '1.7vw', letterSpacing: '0.15em' }}
+                  style={{ fontSize: '23.8px', letterSpacing: '0.15em' }}
                 >
                   Now Spinning
                 </span>
-                <div className="flex items-center justify-center" style={{ gap: '1.5vw', marginTop: '0.8vw' }}>
-                  <div style={{ width: '3vw', height: '0.3vw', backgroundColor: 'white' }} />
+                <div className="flex items-center justify-center" style={{ gap: '21px', marginTop: '11.2px' }}>
+                  <div style={{ width: '42px', height: '4.2px', backgroundColor: 'white' }} />
                   <span
                     className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                    style={{ fontSize: '2vw', letterSpacing: '0.15em' }}
+                    style={{ fontSize: '28px', letterSpacing: '0.15em' }}
                   >
                     Jazz
                   </span>
-                  <div style={{ width: '3vw', height: '0.3vw', backgroundColor: 'white' }} />
+                  <div style={{ width: '42px', height: '4.2px', backgroundColor: 'white' }} />
                 </div>
               </div>
 
@@ -683,7 +684,7 @@ export default function PageDesktop() {
               <div
                 ref={scrollRef}
                 className="flex overflow-x-auto overflow-y-hidden hide-scrollbar"
-                style={{ gap: '1.5vw', paddingLeft: '1.5vw', paddingRight: '1.5vw', paddingTop: '1vw', paddingBottom: '2vw' }}
+                style={{ gap: '21px', paddingLeft: '21px', paddingRight: '21px', paddingTop: '14px', paddingBottom: '28px' }}
               >
                 {[
                   { name: "KIND OF BLUE", artist: "Miles Davis", img: "/images/artwork/kind-of-blue.jpg" },
@@ -696,27 +697,27 @@ export default function PageDesktop() {
                     key={index}
                     className="flex-shrink-0 rounded-xl"
                     style={{
-                      width: '12vw',
-                      height: '19.5vw',
-                      paddingTop: '0.4vw',
-                      paddingLeft: '0.4vw',
-                      paddingRight: '0.4vw',
-                      paddingBottom: '0.4vw',
+                      width: '168px',
+                      height: '273px',
+                      paddingTop: '5.6px',
+                      paddingLeft: '5.6px',
+                      paddingRight: '5.6px',
+                      paddingBottom: '5.6px',
                       background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
                     }}
                   >
                     <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
-                      <div className="bg-[#1a1310] overflow-hidden" style={{ width: '100%', height: '11vw',  }}>
+                      <div className="bg-[#1a1310] overflow-hidden" style={{ width: '100%', height: '154px' }}>
                         <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
                       </div>
-                      <div style={{ paddingInline: '0.5vw', paddingBlock: '0.5vw', }}>
+                      <div style={{ paddingInline: '7px', paddingBlock: '7px' }}>
                         <h4
                           className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight overflow-hidden whitespace-nowrap text-ellipsis"
-                          style={{ fontSize: '1.8vw' }}
+                          style={{ fontSize: '25.2px' }}
                         >
                           {item.name}
                         </h4>
-                        <p className="text-white/60 font-[family-name:var(--font-inter)]" style={{ fontSize: '1.4vw', marginTop: '0.2vw' }}>
+                        <p className="text-white/60 font-[family-name:var(--font-inter)]" style={{ fontSize: '19.6px', marginTop: '2.8px' }}>
                           {item.artist}
                         </p>
                       </div>
@@ -728,7 +729,7 @@ export default function PageDesktop() {
               {/* Scroll Indicator */}
               <div
                 ref={trackRef}
-                style={{ marginInline: '1.5vw', marginBottom: '1vw', height: '0.3vw', backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: '999px', position: 'relative', cursor: 'pointer' }}
+                style={{ marginInline: '21px', marginBottom: '14px', height: '4.2px', backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: '999px', position: 'relative', cursor: 'pointer' }}
                 onClick={(e) => {
                   if (!scrollRef.current || !trackRef.current) return;
                   const rect = trackRef.current.getBoundingClientRect();
@@ -754,16 +755,16 @@ export default function PageDesktop() {
 
               {/* Vinyl Footer */}
               <div className="mt-auto">
-                <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+                <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
                 <a
                   href="/vinyl"
                   className="flex items-center justify-center"
-                  style={{ paddingBlock: '0vw', gap: '1vw' }}
+                  style={{ paddingBlock: '0px', gap: '14px' }}
                 >
-                  <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.8vw' }}>
+                  <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '25.2px' }}>
                     Vinyl
                   </span>
-                  <span className="text-white" style={{ fontSize: '3vw' }}>→</span>
+                  <span className="text-white" style={{ fontSize: '42px' }}>→</span>
                 </a>
               </div>
             </div>
@@ -774,47 +775,47 @@ export default function PageDesktop() {
         {/* Drip • Drop • Vibe */}
         <p
           className="text-white font-[family-name:var(--font-libre-baskerville)] italic text-center"
-          style={{ fontSize: '6vw', fontWeight: 900, marginTop: '5vw', textShadow: '2px 2px 8px rgba(0,0,0,0.)' }}
+          style={{ fontSize: '84px', fontWeight: 900, marginTop: '70px', textShadow: '2px 2px 8px rgba(0,0,0,0.)' }}
         >
           Drip • Drop • Vibe
         </p>
 
         {/* === About Us + The Vibe === */}
-        <div className="flex" style={{ gap: '2vw', marginTop: '4vw', paddingInline: '4vw' }}>
+        <div className="flex" style={{ gap: '28px', marginTop: '56px', paddingInline: '56px' }}>
 
           {/* LEFT: About Us */}
           <div className="flex-1">
             {/* About Us Header */}
             <div
               className="flex items-center justify-center"
-              style={{ gap: '2vw', marginBottom: '2vw' }}
+              style={{ gap: '28px', marginBottom: '28px' }}
             >
               <div
                 className="bg-white"
-                style={{ width: '5vw', height: '0.5vw', boxShadow: '0 0 6px rgba(0,0,0,0.9)' }}
+                style={{ width: '70px', height: '7px', boxShadow: '0 0 6px rgba(0,0,0,0.9)' }}
               />
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
-                style={{ fontSize: '2.8vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
+                style={{ fontSize: '39.2px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
               >
                 About Us
               </span>
               <div
                 className="bg-white"
-                style={{ width: '5vw', height: '0.5vw', boxShadow: '0 0 6px rgba(0,0,0,0.9)' }}
+                style={{ width: '70px', height: '7px', boxShadow: '0 0 6px rgba(0,0,0,0.9)' }}
               />
             </div>
 
-            <div className="rounded-xl w-full" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
+            <div className="rounded-xl w-full" style={{ padding: '11.2px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
               <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
                 {/* Our Store Title */}
                 <div
                   className="text-center border-b border-white"
-                  style={{ paddingBlock: '2vw' }}
+                  style={{ paddingBlock: '28px' }}
                 >
                   <span
                     className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                    style={{ fontSize: '2.3vw', letterSpacing: '0.15em' }}
+                    style={{ fontSize: '32.2px', letterSpacing: '0.15em' }}
                   >
                     Our Store
                   </span>
@@ -823,40 +824,40 @@ export default function PageDesktop() {
                 {/* Store Photo Placeholder */}
                 <div
                   className="w-full bg-[#d4d4d4] flex items-center justify-center"
-                  style={{ height: '20vw' }}
+                  style={{ height: '280px' }}
                 >
                   <span
                     className="text-[#555555] font-[family-name:var(--font-inter)]"
-                    style={{ fontSize: '1.8vw' }}
+                    style={{ fontSize: '25.2px' }}
                   >
                     Store Photo Coming Soon
                   </span>
                 </div>
 
                 {/* Store Info */}
-                <div style={{ padding: '2vw' }}>
+                <div style={{ padding: '28px' }}>
                   {/* Address */}
                   <a
                     href="https://maps.google.com/?q=Espresso+Groove"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-start"
-                    style={{ gap: '1.5vw' }}
+                    style={{ gap: '21px' }}
                   >
-                    <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '3.5vw', height: '3.5vw' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '49px', height: '49px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     <div>
                       <p
                         className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                        style={{ fontSize: '2vw' }}
+                        style={{ fontSize: '28px' }}
                       >
                         3540 Belle Terre Blvd • Unit C
                       </p>
                       <p
                         className="text-white/70 font-[family-name:var(--font-inter)]"
-                        style={{ fontSize: '1.8vw' }}
+                        style={{ fontSize: '25.2px' }}
                       >
                         Myrtle Beach, SC 29579
                       </p>
@@ -866,21 +867,21 @@ export default function PageDesktop() {
                   {/* Hours */}
                   <div
                     className="flex items-start"
-                    style={{ gap: '1.5vw', marginTop: '1.5vw' }}
+                    style={{ gap: '21px', marginTop: '21px' }}
                   >
-                    <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '3.5vw', height: '3.5vw' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '49px', height: '49px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
                       <p
                         className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                        style={{ fontSize: '2vw' }}
+                        style={{ fontSize: '28px' }}
                       >
                         Mon–Fri: 7am–9pm
                       </p>
                       <p
                         className="text-white/70 font-[family-name:var(--font-inter)]"
-                        style={{ fontSize: '1.8vw' }}
+                        style={{ fontSize: '25.2px' }}
                       >
                         Sat–Sun: 8am–10pm
                       </p>
@@ -891,28 +892,28 @@ export default function PageDesktop() {
                   <a
                     href="tel:+10000000000"
                     className="flex items-center"
-                    style={{ gap: '1.5vw', marginTop: '1.5vw' }}
+                    style={{ gap: '21px', marginTop: '21px' }}
                   >
-                    <svg className="text-white flex-shrink-0" style={{ width: '3.5vw', height: '3.5vw' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="text-white flex-shrink-0" style={{ width: '49px', height: '49px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     <p
                       className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                      style={{ fontSize: '2vw' }}
+                      style={{ fontSize: '28px' }}
                     >
                       (000) 000-0000
                     </p>
                   </a>
 
                   {/* Get Directions */}
-                  <div style={{ height: '0.4vw', marginTop: '2vw', marginLeft: '-2vw', marginRight: '-2vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+                  <div style={{ height: '5.6px', marginTop: '28px', marginLeft: '-28px', marginRight: '-28px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
                   <div
                     className="flex items-center justify-center"
-                    style={{ paddingTop: '1.5vw', gap: '1vw' }}
+                    style={{ paddingTop: '21px', gap: '14px' }}
                   >
                     <span
                       className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                      style={{ fontSize: '2.2vw' }}
+                      style={{ fontSize: '30.8px' }}
                     >
                       Get Directions →
                     </span>
@@ -927,41 +928,41 @@ export default function PageDesktop() {
             {/* The Vibe Header */}
             <div
               className="flex items-center justify-center"
-              style={{ gap: '2vw', marginBottom: '2vw' }}
+              style={{ gap: '28px', marginBottom: '28px' }}
             >
               <div
                 className="bg-white"
-                style={{ width: '5vw', height: '0.5vw', boxShadow: '0 0 6px rgba(0,0,0,0.9)' }}
+                style={{ width: '70px', height: '7px', boxShadow: '0 0 6px rgba(0,0,0,0.9)' }}
               />
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
-                style={{ fontSize: '2.8vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
+                style={{ fontSize: '39.2px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
               >
                 The Vibe
               </span>
               <div
                 className="bg-white"
-                style={{ width: '5vw', height: '0.5vw', boxShadow: '0 0 6px rgba(0,0,0,0.9)' }}
+                style={{ width: '70px', height: '7px', boxShadow: '0 0 6px rgba(0,0,0,0.9)' }}
               />
             </div>
 
             {/* The Vibe Text */}
-            <div style={{ paddingInline: '2vw', paddingTop: '2vw', textShadow: '2px 2px 8px rgba(0,0,0,0)' }}>
+            <div style={{ paddingInline: '28px', paddingTop: '28px', textShadow: '2px 2px 8px rgba(0,0,0,0)' }}>
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                style={{ fontSize: '2.5vw', fontWeight: 900 }}
+                style={{ fontSize: '35px', fontWeight: 900 }}
               >
                 <span className="font-[900]">Espresso Groove</span> was born from a simple idea:
               </p>
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                style={{ fontSize: '2.5vw', fontWeight: 900, marginTop: '1.5vw' }}
+                style={{ fontSize: '35px', fontWeight: 900, marginTop: '21px' }}
               >
                 A space where the ritual of coffee meets the soul of music. Great espresso and great vinyl share something in common — they&apos;re both meant to be <span className="font-[800]">savored</span>, not rushed.
               </p>
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                style={{ fontSize: '2.5vw', fontWeight: 900, marginTop: '1.5vw' }}
+                style={{ fontSize: '35px', fontWeight: 900, marginTop: '21px' }}
               >
                 Pull up a chair. Flip through the crates. Espresso <span className="font-[900]">drips</span>, the needle <span className="font-[800]">drops</span>, and the <span className="font-[800]">vibe</span> takes over.
               </p>
@@ -970,7 +971,8 @@ export default function PageDesktop() {
 
         </div>
 
-        <DesktopFooter />
+      </div>
+      <DesktopFooterXL />
       </div>
 
     </div>

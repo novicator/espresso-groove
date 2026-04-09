@@ -776,13 +776,13 @@ export default function PageMobile() {
                     className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
                     style={{ fontSize: '3.8vw' }}
                   >
-                    123 Groove St.
+                    3540 Belle Terre Blvd • Unit C
                   </p>
                   <p
                     className="text-white/70 font-[family-name:var(--font-inter)]"
                     style={{ fontSize: '3.6vw' }}
                   >
-                    City, State 00000
+                    Myrtle Beach, SC 29579
                   </p>
                 </div>
               </a>

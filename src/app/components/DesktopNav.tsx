@@ -3,7 +3,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-export default function DesktopNav({ onShow, hideOnTop }: { onShow?: () => void; hideOnTop?: boolean } = {}) {
+export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { onShow?: () => void; hideOnTop?: boolean; size?: "desktop" | "xl" } = {}) {
+  const h = size === "xl" ? '56px' : '4vw';
+  const fs = size === "xl" ? '19.6px' : '1.4vw';
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -40,12 +42,12 @@ export default function DesktopNav({ onShow, hideOnTop }: { onShow?: () => void;
       <Link
         href="/menu"
         className="flex-1 bg-[#f06830] noisy flex items-center justify-center"
-        style={{ height: '4vw' }}
+        style={{ height: h }}
       >
         <span
           className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
           style={{
-            fontSize: '1.4vw',
+            fontSize: fs,
             letterSpacing: '0.1em',
             textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
           }}
@@ -57,12 +59,12 @@ export default function DesktopNav({ onShow, hideOnTop }: { onShow?: () => void;
       <Link
         href="/vinyl"
         className="flex-1 bg-[#2a7d7d] noisy flex items-center justify-center"
-        style={{ height: '4vw' }}
+        style={{ height: h }}
       >
         <span
           className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
           style={{
-            fontSize: '1.4vw',
+            fontSize: fs,
             letterSpacing: '0.2em',
             textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
           }}
@@ -74,12 +76,12 @@ export default function DesktopNav({ onShow, hideOnTop }: { onShow?: () => void;
       <Link
         href="/merch"
         className="flex-1 bg-[#6b4c8c] noisy flex items-center justify-center"
-        style={{ height: '4vw' }}
+        style={{ height: h }}
       >
         <span
           className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
           style={{
-            fontSize: '1.4vw',
+            fontSize: fs,
             letterSpacing: '0.12em',
             textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
           }}
@@ -91,12 +93,12 @@ export default function DesktopNav({ onShow, hideOnTop }: { onShow?: () => void;
       <Link
         href="/events"
         className="flex-1 bg-[#24ADFF] noisy flex items-center justify-center"
-        style={{ height: '4vw' }}
+        style={{ height: h }}
       >
         <span
           className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
           style={{
-            fontSize: '1.4vw',
+            fontSize: fs,
             letterSpacing: '0.12em',
             textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
           }}
@@ -108,12 +110,12 @@ export default function DesktopNav({ onShow, hideOnTop }: { onShow?: () => void;
       <Link
         href="/now-spinning"
         className="flex-1 bg-[#6F4E37] noisy flex items-center justify-center"
-        style={{ height: '4vw' }}
+        style={{ height: h }}
       >
         <span
           className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
           style={{
-            fontSize: '1.4vw',
+            fontSize: fs,
             letterSpacing: '0.1em',
             textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
           }}

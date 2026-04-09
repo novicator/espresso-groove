@@ -136,7 +136,8 @@ export default function VinylMobile() {
     ? allVinylItems.filter(
         (item) =>
           item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          item.artist.toLowerCase().includes(searchQuery.toLowerCase())
+          item.artist.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.section.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : [];
 

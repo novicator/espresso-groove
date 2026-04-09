@@ -8,12 +8,13 @@ interface Note {
 }
 
 const sizePresets = {
-  mobile: { height: '8vw', fontSize: '7.2vw', left: '-2vw', wave: '1vw', top: '-30%', speed: '6s' },
-  desktop: { height: '7vw', fontSize: '4vw', left: '-1vw', wave: '0.5vw', top: '0%', speed: '8s' },
-  xl: { height: '3.3vw', fontSize: '2.4vw', left: '-0.8vw', wave: '0.3vw', top: '0%', speed: '6s' },
+  mobile: { height: '8vw', fontSize: '7.2vw', left: '-2vw', wave: '1vw', top: '-30%', speed: '6s', unit: 'vw' },
+  desktop: { height: '7vw', fontSize: '4vw', left: '-1vw', wave: '0.5vw', top: '0%', speed: '8s', unit: 'vw' },
+  xl: { height: '3.3vw', fontSize: '2.4vw', left: '-0.8vw', wave: '0.3vw', top: '0%', speed: '6s', unit: 'vw' },
+  xlFixed: { height: '98px', fontSize: '56px', left: '-14px', wave: '7px', top: '0%', speed: '8s', unit: 'px' },
 };
 
-export default function MiniMusicNotes({ isPlaying, size = "mobile" }: { isPlaying: boolean; size?: "mobile" | "desktop" | "xl" }) {
+export default function MiniMusicNotes({ isPlaying, size = "mobile" }: { isPlaying: boolean; size?: "mobile" | "desktop" | "xl" | "xlFixed" }) {
   const s = sizePresets[size];
   const [notes, setNotes] = useState<Note[]>([]);
   const noteIdRef = useRef(0);

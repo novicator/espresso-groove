@@ -1,5 +1,6 @@
 import EventsMobile from "./EventsMobile";
 import EventsDesktop from "./EventsDesktop";
+import EventsXL from "./EventsXL";
 
 export default function EventsPage() {
   return (
@@ -7,8 +8,11 @@ export default function EventsPage() {
       <div className="lg:hidden">
         <EventsMobile />
       </div>
-      <div className="hidden lg:block">
+      <div className="hidden lg:block xl:hidden">
         <EventsDesktop />
+      </div>
+      <div className="hidden xl:block">
+        <EventsXL />
       </div>
     </>
   );

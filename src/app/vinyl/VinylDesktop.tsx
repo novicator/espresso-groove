@@ -127,9 +127,32 @@ export default function VinylDesktop() {
   const [selectedFilter, setSelectedFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
+  const allVinylItems = vinylSections.flatMap((s) =>
+    s.items.map((item) => ({ ...item, section: s.id }))
+  );
+  const searchResults = searchQuery.length > 0
+    ? allVinylItems.filter(
+        (item) =>
+          item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.artist.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.section.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
+
   const visibleSections = selectedFilter === "All"
     ? vinylSections.filter((s) => s.id !== "Now Spinning")
     : vinylSections.filter((s) => s.id === selectedFilter && s.id !== "Now Spinning");
+
+  const scrollToItem = (sectionId: string) => {
+    setSelectedFilter("All");
+    setSearchQuery("");
+    setTimeout(() => {
+      const sectionEl = document.getElementById(`section-${sectionId}`);
+      if (sectionEl) {
+        sectionEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 100);
+  };
 
   return (
     <>
@@ -173,6 +196,21 @@ export default function VinylDesktop() {
           border-radius: 999px;
         }
         .white-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #ffffff;
+        }
+
+        .white-scrollbar-lg::-webkit-scrollbar {
+          width: 8px;
+        }
+        .white-scrollbar-lg::-webkit-scrollbar-track {
+          background: rgba(255,255,255,0.1);
+          border-radius: 999px;
+        }
+        .white-scrollbar-lg::-webkit-scrollbar-thumb {
+          background: #ffffff;
+          border-radius: 999px;
+        }
+        .white-scrollbar-lg::-webkit-scrollbar-thumb:hover {
           background: #ffffff;
         }
 
@@ -447,30 +485,90 @@ export default function VinylDesktop() {
 
         {/* Search Bar */}
         <div className="relative z-50" style={{ paddingLeft: '30vw', paddingRight: '10vw', marginTop: '2vw' }}>
-          <div
-            className="rounded-full relative z-50"
-            style={{ width: '50vw', padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
-          >
-            <div className="flex items-center rounded-full bg-[#2d1f1a]" style={{  paddingLeft: '2vw', paddingRight: '2vw', height: '4.5vw', gap: '1vw' }}>
-              <svg
-                className="text-white/50"
-                style={{ width: '2.2vw', height: '2.2vw', flexShrink: 0 }}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2.5}
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <input
-                type="text"
-                placeholder="Search vinyl..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-transparent text-white font-[family-name:var(--font-libre-baskerville)] outline-none w-full placeholder-white/40"
-                style={{ fontSize: '2vw' }}
-              />
+          <div className="relative" style={{ width: '50vw' }}>
+            <div
+              className="rounded-full"
+              style={{ padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+            >
+              <div className="flex items-center rounded-full bg-[#2d1f1a]" style={{ paddingLeft: '2vw', paddingRight: '2vw', height: '4.5vw', gap: '1vw' }}>
+                <svg
+                  className="text-white/50"
+                  style={{ width: '2.2vw', height: '2.2vw', flexShrink: 0 }}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input
+                  type="text"
+                  placeholder="Search vinyl..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="bg-transparent text-white font-[family-name:var(--font-libre-baskerville)] outline-none w-full placeholder-white/40"
+                  style={{ fontSize: '2vw' }}
+                />
+              </div>
             </div>
+
+            {/* Click-outside overlay */}
+            {searchQuery.length > 0 && searchResults.length > 0 && (
+              <div
+                className="fixed inset-0 z-40"
+                onClick={() => setSearchQuery("")}
+              />
+            )}
+
+            {/* Search Results Dropdown */}
+            {searchQuery.length > 0 && searchResults.length > 0 && (
+              <div
+                className="absolute left-0 right-0 z-50 rounded-xl"
+                style={{
+                  marginTop: '0.8vw',
+                  padding: '0.4vw',
+                  background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
+                }}
+              >
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute flex items-center justify-center bg-red-600 rounded-full cursor-pointer active:scale-90 transition-transform"
+                  style={{ width: '5vw', height: '5vw', top: '-1vw', right: '-1vw', zIndex: 10, boxShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
+                >
+                  <svg className="text-white" style={{ width: '2.6vw', height: '2.6vw' }} fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
+                  <div className="overflow-y-scroll white-scrollbar-lg" style={{ maxHeight: '30vw' }}>
+                    {searchResults.map((item, i) => (
+                      <div
+                        key={`${item.name}-${i}`}
+                        className="flex items-center font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors"
+                        style={{ padding: '1.2vw 2vw', gap: '1.5vw', borderTop: i > 0 ? '1px solid rgba(255,255,255,0.1)' : 'none' }}
+                        onClick={() => scrollToItem(item.section)}
+                      >
+                        <img src={item.img} alt={item.name} className="rounded object-cover" style={{ width: '7vw', height: '7vw', flexShrink: 0 }} />
+                        <div style={{ minWidth: 0 }}>
+                          <p className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight overflow-hidden whitespace-nowrap text-ellipsis" style={{ fontSize: '3vw' }}>
+                            {item.name}
+                          </p>
+                          <p className="text-white/50 font-[family-name:var(--font-inter)]" style={{ fontSize: '2.5vw' }}>
+                            {item.artist}
+                          </p>
+                        </div>
+                        <span
+                          className="font-[family-name:var(--font-inter)] ml-auto"
+                          style={{ fontSize: '2.4vw', flexShrink: 0, color: item.stock <= 1 ? '#f06830' : 'rgba(255,255,255,0.5)' }}
+                        >
+                          {item.stock} in stock
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
