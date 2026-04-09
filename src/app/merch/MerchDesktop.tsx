@@ -85,7 +85,6 @@ export default function MerchDesktop() {
             Coming Soon
           </span>
         </div>
-
       </div>
 
     </div>

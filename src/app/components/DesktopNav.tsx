@@ -3,18 +3,32 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-export default function DesktopNav() {
+export default function DesktopNav({ onShow, hideOnTop }: { onShow?: () => void; hideOnTop?: boolean } = {}) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Show nav after scrolling past 400px (roughly past the buttons)
-      setVisible(window.scrollY > 200);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    if (hideOnTop) {
+      const handleScroll = () => {
+        if (window.scrollY > 100) {
+          setVisible(true);
+        } else {
+          setVisible(false);
+        }
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    } else {
+      const handleScroll = () => {
+        if (window.scrollY > 200) {
+          setVisible(true);
+          onShow?.();
+          window.removeEventListener("scroll", handleScroll);
+        }
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, [hideOnTop, onShow]);
 
   return (
     <div

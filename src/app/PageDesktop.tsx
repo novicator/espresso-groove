@@ -59,7 +59,7 @@ export default function PageDesktop() {
 
   return (
     <>
-      <DesktopNav />
+      <DesktopNav hideOnTop />
       <style jsx global>{`
         @keyframes logoGlowPulseMobile {
           0% {
@@ -500,9 +500,7 @@ export default function PageDesktop() {
                 textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
               }}
             >
-              Every rotation tells a story. We pick a genre, dive deep into the sound, and craft
-              a coffee, tea, and energy drink inspired by the mood behind the music. Explore the
-              genre, sip the lineup, and take home the vinyl that started it all.
+              We spin a genre and let the music shape the menu — a signature coffee, tea, and energy drink built around the sound. Dig into the history, taste the lineup, and browse the vinyl. Hit the Now Spinning page for the full story.
             </p>
           </div>
         </div>
@@ -511,8 +509,8 @@ export default function PageDesktop() {
         <div className="flex" style={{ gap: '2vw', marginTop: '4vw', paddingInline: '4vw' }}>
 
           {/* LEFT: Jazz History */}
-          <div className="flex-1 rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '40.5vw' }}>
-            <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full">
+          <div className="flex-1 rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
+            <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
               {/* Title */}
               <div className="text-center" style={{ paddingBlock: '2vw' }}>
                 <span
@@ -541,27 +539,29 @@ export default function PageDesktop() {
                   className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                   style={{ fontSize: '1.2vw' }}
                 >
-                  In the early 1900s, the streets of New Orleans were alive with a new sound. African rhythms met blues and ragtime to create something entirely new. It wasn&apos;t just music — it was freedom, expression, and revolution all at once. From the brass bands of Congo Square to the smoky clubs of Storyville, jazz was born not on a stage, but in the soul of a city...
+                  In the early 1900s, the streets of New Orleans were alive with a new sound. African rhythms met blues and ragtime to create something entirely new. It wasn&apos;t just music — it was freedom, expression, and revolution all at once. From the brass bands of Congo Square to the smoky clubs of Storyville, jazz was born not on a stage, but in the soul of a city. By the 1920s, it had migrated north — Chicago, Kansas City, Harlem...
                 </p>
               </div>
 
               {/* Learn More */}
-              <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-              <a
-                href="/now-spinning"
-                className="flex items-center justify-center"
-                style={{ paddingBlock: '0vw', gap: '1vw' }}
-              >
-                <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.8vw' }}>
-                  Now Spinning
-                </span>
-                <span className="text-white" style={{ fontSize: '3vw' }}>→</span>
-              </a>
+              <div className="mt-auto">
+                <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+                <a
+                  href="/now-spinning"
+                  className="flex items-center justify-center"
+                  style={{ paddingBlock: '0vw', gap: '1vw' }}
+                >
+                  <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.8vw' }}>
+                    Now Spinning
+                  </span>
+                  <span className="text-white" style={{ fontSize: '3vw' }}>→</span>
+                </a>
+              </div>
             </div>
           </div>
 
           {/* MIDDLE: Featured Sips */}
-          <div className="flex-1 rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '40.5vw' }}>
+          <div className="flex-1 rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
               {/* Title */}
               <div className="text-center" style={{ paddingBlock: '2vw' }}>
@@ -574,63 +574,61 @@ export default function PageDesktop() {
               </div>
               <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
-              {/* Category Labels */}
-              <div className="flex">
-                <div className="flex-1 bg-[#f06830] noisy text-center flex items-center justify-center" style={{ height: '6vw' }}>
-                  <span
-                    className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                    style={{ fontSize: '1.2vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
-                  >
-                    Coffee
-                  </span>
+              {/* Coffee */}
+              <div className="bg-[#f06830] noisy flex items-center justify-center" style={{ height: '3.5vw' }}>
+                <span
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                  style={{ fontSize: '1.2vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                >
+                  Coffee
+                </span>
+              </div>
+              <div className="flex items-center" style={{ paddingBlock: '1.2vw', paddingLeft: '2vw', paddingRight: '1.2vw', gap: '3vw' }}>
+                <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '5.5vw', height: '5.5vw' }}>
+                  <span className="text-[#555555]" style={{ fontSize: '0.8vw' }}>IMG</span>
                 </div>
-                <div className="flex-1 bg-[#2a7d7d] noisy text-center flex items-center justify-center" style={{ height: '6vw' }}>
-                  <span
-                    className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                    style={{ fontSize: '1.2vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
-                  >
-                    Tea
-                  </span>
-                </div>
-                <div className="flex-1 bg-[#6b4c8c] noisy text-center flex items-center justify-center" style={{ height: '6vw' }}>
-                  <span
-                    className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                    style={{ fontSize: '1.2vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
-                  >
-                    Energy Drinks
-                  </span>
-                </div>
+                <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '2.2vw' }}>
+                  Blue Note Brew
+                </span>
               </div>
 
-              {/* Product Cards Row */}
-              <div className="flex" style={{ paddingBlock: '2.5vw', paddingInline: '1vw', gap: '1vw' }}>
-                <div className="flex-1 flex flex-col items-center" style={{ gap: '1vw' }}>
-                  <span className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '1.5vw' }}>
-                    Blue Note Brew
-                  </span>
-                  <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center" style={{ width: '7vw', height: '7vw', marginTop: '1.5vw' }}>
-                    <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
-                  </div>
+              {/* Tea */}
+              <div className="bg-[#2a7d7d] noisy flex items-center justify-center" style={{ height: '3.5vw' }}>
+                <span
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                  style={{ fontSize: '1.2vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                >
+                  Tea
+                </span>
+              </div>
+              <div className="flex items-center" style={{ paddingBlock: '1.2vw', paddingLeft: '2vw', paddingRight: '1.2vw', gap: '3vw' }}>
+                <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '5.5vw', height: '5.5vw' }}>
+                  <span className="text-[#555555]" style={{ fontSize: '0.8vw' }}>IMG</span>
                 </div>
-                <div className="flex-1 flex flex-col items-center" style={{ gap: '1vw' }}>
-                  <span className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '1.5vw' }}>
-                    Coltrane Chai
-                  </span>
-                  <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center" style={{ width: '7vw', height: '7vw', marginTop: '1.5vw' }}>
-                    <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
-                  </div>
-                </div>
-                <div className="flex-1 flex flex-col items-center" style={{ gap: '1vw' }}>
-                  <span className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '1.5vw' }}>
-                    Bebop Blast
-                  </span>
-                  <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center" style={{ width: '7vw', height: '7vw', marginTop: '1.5vw' }}>
-                    <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
-                  </div>
-                </div>
+                <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '2.2vw' }}>
+                  Coltrane Chai
+                </span>
               </div>
 
-              {/* View Featured Menu */}
+              {/* Energy Drinks */}
+              <div className="bg-[#6b4c8c] noisy flex items-center justify-center" style={{ height: '3.5vw' }}>
+                <span
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                  style={{ fontSize: '1.2vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                >
+                  Energy Drinks
+                </span>
+              </div>
+              <div className="flex items-center" style={{ paddingBlock: '1.2vw', paddingLeft: '2vw', paddingRight: '1.2vw', gap: '3vw' }}>
+                <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '5.5vw', height: '5.5vw' }}>
+                  <span className="text-[#555555]" style={{ fontSize: '0.8vw' }}>IMG</span>
+                </div>
+                <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '2.2vw' }}>
+                  Bebop Blast
+                </span>
+              </div>
+
+              {/* View Menu */}
               <div className="mt-auto">
                 <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
                 <a
@@ -648,7 +646,7 @@ export default function PageDesktop() {
           </div>
 
           {/* RIGHT: Now Spinning Jazz Vinyl */}
-          <div className="flex-1 rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '40.5vw', minWidth: 0 }}>
+          <div className="flex-1 rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw', minWidth: 0 }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
               {/* Title */}
               <div className="text-center" style={{ paddingBlock: '2vw' }}>
@@ -684,7 +682,7 @@ export default function PageDesktop() {
               {/* Horizontal Scrolling Cards */}
               <div
                 ref={scrollRef}
-                className="flex overflow-x-auto hide-scrollbar"
+                className="flex overflow-x-auto overflow-y-hidden hide-scrollbar"
                 style={{ gap: '1.5vw', paddingLeft: '1.5vw', paddingRight: '1.5vw', paddingTop: '1vw', paddingBottom: '2vw' }}
               >
                 {[
@@ -698,27 +696,27 @@ export default function PageDesktop() {
                     key={index}
                     className="flex-shrink-0 rounded-xl"
                     style={{
-                      width: '10vw',
-                      height: '15.5vw',
+                      width: '12vw',
+                      height: '19.5vw',
                       paddingTop: '0.4vw',
                       paddingLeft: '0.4vw',
                       paddingRight: '0.4vw',
-                      paddingBottom: '1.5vw',
+                      paddingBottom: '0.4vw',
                       background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
                     }}
                   >
                     <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
-                      <div className="bg-[#1a1310] overflow-hidden" style={{ width: '100%', height: '10vw' }}>
+                      <div className="bg-[#1a1310] overflow-hidden" style={{ width: '100%', height: '11vw',  }}>
                         <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
                       </div>
-                      <div style={{ padding: '0.5vw' }}>
+                      <div style={{ paddingInline: '0.5vw', paddingBlock: '0.5vw', }}>
                         <h4
                           className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight overflow-hidden whitespace-nowrap text-ellipsis"
-                          style={{ fontSize: '1.3vw' }}
+                          style={{ fontSize: '1.8vw' }}
                         >
                           {item.name}
                         </h4>
-                        <p className="text-white/60 font-[family-name:var(--font-inter)]" style={{ fontSize: '1vw', marginTop: '0.2vw' }}>
+                        <p className="text-white/60 font-[family-name:var(--font-inter)]" style={{ fontSize: '1.4vw', marginTop: '0.2vw' }}>
                           {item.artist}
                         </p>
                       </div>

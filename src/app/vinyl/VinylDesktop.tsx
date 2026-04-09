@@ -122,6 +122,7 @@ const vinylSections = [
 const totalItems = vinylSections.reduce((sum, s) => sum + s.items.length, 0);
 
 export default function VinylDesktop() {
+  const [navVisible, setNavVisible] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
@@ -132,7 +133,7 @@ export default function VinylDesktop() {
 
   return (
     <>
-      <DesktopNav />
+      <DesktopNav onShow={() => setNavVisible(true)} />
       <style jsx global>{`
         .noisy {
           position: relative;
@@ -276,7 +277,7 @@ export default function VinylDesktop() {
       </div>
 
       {/* === CONTENT LAYER === */}
-      <div className="relative z-10">
+      <div className="relative z-10 transition-all duration-300" style={{ paddingTop: navVisible ? '4vw' : '0' }}>
         {/* We Buy Vinyl Banner */}
         <div
           className="bg-[#d9bc52] noisy flex items-center justify-center"

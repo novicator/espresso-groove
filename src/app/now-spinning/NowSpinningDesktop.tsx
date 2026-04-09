@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import DesktopFooter from "../components/DesktopFooter";
 import DesktopNav from "../components/DesktopNav";
 
 export default function NowSpinningDesktop() {
+  const [activeTab, setActiveTab] = useState<string>("Jazz History");
+
   return (
     <>
       <DesktopNav />
@@ -29,7 +32,7 @@ export default function NowSpinningDesktop() {
         }
       `}</style>
 
-    <div className="relative" style={{ backgroundColor: '#2d1f1a', overflow: 'hidden' }}>
+    <div className="relative" style={{ backgroundColor: '#2d1f1a', overflow: 'hidden', minHeight: '100vh' }}>
 
       {/* === BACKGROUND LAYER === */}
       <div className="absolute inset-0 z-0">
@@ -57,12 +60,20 @@ export default function NowSpinningDesktop() {
           className="h-screen bg-[position:0%_20%] bg-[length:100%_100%]"
           style={{ backgroundImage: "url('/images/desktop_black_bg.png')", transform: "scaleY(-1)" }}
         />
+        <div
+          className="h-screen bg-[position:0%_20%] bg-[length:100%_100%]"
+          style={{ backgroundImage: "url('/images/desktop_black_bg.png')", transform: "scaleY(1)" }}
+        />
+        <div
+          className="h-screen bg-[position:0%_20%] bg-[length:100%_100%]"
+          style={{ backgroundImage: "url('/images/desktop_black_bg.png')", transform: "scaleY(-1)" }}
+        />
       </div>
 
       {/* === CONTENT LAYER === */}
       <div className="relative z-10">
         {/* Header - Back Button */}
-        <header className="flex items-center" style={{ paddingTop: '6.5vw', paddingBottom: '1.5vw', paddingLeft: '3vw' }}>
+        <header className="flex items-center" style={{ paddingTop: '5.5vw', paddingBottom: '1.5vw', paddingLeft: '3vw' }}>
           <Link
             href="/"
             className="flex items-center text-white active:scale-105 duration-150 transition-all"
@@ -78,11 +89,475 @@ export default function NowSpinningDesktop() {
           </Link>
         </header>
 
-        <div className="h-[200vh]"></div>
-
-        <div className="hidden">
-          <DesktopFooter />
+        {/* Page Title */}
+        <div className="text-center" style={{ marginTop: '-5vw', marginBottom: '3vw' }}>
+          <div className="flex items-center justify-center" style={{ gap: '1vw' }}>
+            <span className="text-white" style={{ fontSize: '4.5vw', textShadow: '0px 0px 10px rgba(0,0,0,0.5)' }}>★</span>
+            <h1
+              className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
+              style={{
+                fontSize: '4.5vw',
+                fontWeight: 900,
+                letterSpacing: '-0.02em',
+                textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+              }}
+            >
+              Now Spinning
+            </h1>
+          </div>
         </div>
+
+        {/* BOX 1 - Description Text */}
+        <div
+          style={{ marginInline: '3vw', marginBottom: '1.3vw', padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '1vw' }}
+        >
+          <div className="bg-[#2d1f1a]" style={{ borderRadius: '0.7vw', padding: '2.5vw' }}>
+            <p
+              className="font-[family-name:var(--font-libre-baskerville)] text-white"
+              style={{
+                fontSize: '1.9vw',
+                lineHeight: '1.7',
+                textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
+              }}
+            >
+              Every rotation tells a story. We pick a genre, dive deep into the sound, and craft
+              a coffee, tea, and energy drink inspired by the mood behind the music. Explore the
+              genre, sip the lineup, and take home the vinyl that started it all.
+            </p>
+          </div>
+        </div>
+
+        {/* BOX 2 - Featured Genre + Buttons */}
+        <div
+          style={{ marginInline: '3vw', marginBottom: '4vw', padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '1vw' }}
+        >
+          <div className="bg-[#2d1f1a]" style={{ borderRadius: '0.7vw', padding: '3vw' }}>
+            {/* Featured Genre */}
+            <h2
+              className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center"
+              style={{
+                fontSize: '4.5vw',
+                fontWeight: 900,
+                letterSpacing: '0.15em',
+                textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+              }}
+            >
+              Featured Genre
+            </h2>
+
+            {/* Jazz with dashes */}
+            <div
+              className="flex items-center justify-center"
+              style={{ gap: '3.5vw', marginTop: '0.2vw' }}
+            >
+              <div
+                className="bg-white"
+                style={{ width: '6vw', height: '0.4vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+              />
+              <span
+                className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
+                style={{
+                  fontSize: '7vw',
+                  textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+                  fontWeight: 900,
+                }}
+              >
+                Jazz
+              </span>
+              <div
+                className="bg-white"
+                style={{ width: '6vw', height: '0.4vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+              />
+            </div>
+
+            {/* Three Buttons */}
+            <div className="flex" style={{ marginTop: '2.5vw' }}>
+              <div className="flex-1 flex justify-center">
+                <button
+                  onClick={() => setActiveTab("Jazz History")}
+                  className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#f06830]"
+                  style={{
+                    height: '5vw',
+                    width: '24vw',
+                    borderRadius: '999px',
+                    border: activeTab === "Jazz History" ? '2px solid rgba(255,255,255,0.6)' : '2px solid rgba(255,255,255,0.2)',
+                  }}
+                >
+                  <span
+                    className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                    style={{
+                      fontSize: '1.8vw',
+                      letterSpacing: '0.07em',
+                      textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                    }}
+                  >
+                    Jazz History
+                  </span>
+                </button>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <button
+                  onClick={() => setActiveTab("Featured Sips")}
+                  className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#2a7d7d]"
+                  style={{
+                    height: '5vw',
+                    width: '24vw',
+                    borderRadius: '999px',
+                    border: activeTab === "Featured Sips" ? '2px solid rgba(255,255,255,0.6)' : '2px solid rgba(255,255,255,0.2)',
+                  }}
+                >
+                  <span
+                    className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                    style={{
+                      fontSize: '1.8vw',
+                      letterSpacing: '0.07em',
+                      textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                    }}
+                  >
+                    Featured Sips
+                  </span>
+                </button>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <button
+                  onClick={() => setActiveTab("Vinyl")}
+                  className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#6b4c8c]"
+                  style={{
+                    height: '5vw',
+                    width: '24vw',
+                    borderRadius: '999px',
+                    border: activeTab === "Vinyl" ? '2px solid rgba(255,255,255,0.6)' : '2px solid rgba(255,255,255,0.2)',
+                  }}
+                >
+                  <span
+                    className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                    style={{
+                      fontSize: '1.8vw',
+                      letterSpacing: '0.07em',
+                      textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                    }}
+                  >
+                    Vinyl
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            {/* Active Tab Title */}
+            <h2
+              className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center"
+              style={{
+                fontSize: '3.5vw',
+                fontWeight: 900,
+                letterSpacing: '0.15em',
+                textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+                marginTop: '3vw',
+              }}
+            >
+              {activeTab}
+            </h2>
+
+            {/* Gradient Divider */}
+            <div style={{ height: '0.4vw', marginTop: '1.5vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+
+            {/* Tab Content */}
+            {activeTab === "Jazz History" && (
+              <div>
+                {/* Section 1: Origins */}
+                <div style={{ marginTop: '2.5vw' }}>
+                  <img
+                    src="/images/artwork/kind-of-blue.jpg"
+                    alt="Kind of Blue by Miles Davis"
+                    className="rounded-lg object-cover"
+                    style={{ width: '18vw', height: '18vw', float: 'left', marginRight: '2vw', marginBottom: '1vw' }}
+                  />
+                  <p
+                    className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
+                    style={{ fontSize: '1.8vw' }}
+                  >
+                    In the early 1900s, the streets of New Orleans were alive with a new sound. African rhythms met blues and ragtime to create something entirely new. It wasn&apos;t just music — it was freedom, expression, and revolution all at once. From the brass bands of Congo Square to the smoky clubs of Storyville, jazz was born not on a stage, but in the soul of a city.
+                  </p>
+                  <p
+                    className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
+                    style={{ fontSize: '1.8vw', marginTop: '2vw' }}
+                  >
+                    By the 1920s, jazz had migrated north — Chicago, Kansas City, Harlem. It became the soundtrack of speakeasies and the anthem of a generation refusing to sit still. Swing took over the dance halls. Big bands filled ballrooms from coast to coast. The world was moving faster, and jazz was the pulse keeping time.
+                  </p>
+                </div>
+
+                {/* Gradient Divider */}
+                <div style={{ height: '0.4vw', marginTop: '3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+
+                {/* Section 2: The Legends */}
+                <h3
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center font-bold"
+                  style={{ fontSize: '3vw', letterSpacing: '0.15em', marginTop: '3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                >
+                  The Legends
+                </h3>
+
+                <div style={{ marginTop: '1vw' }}>
+                  <img
+                    src="/images/artwork/a-love-supreme.jpg"
+                    alt="A Love Supreme by John Coltrane"
+                    className="rounded-lg object-cover"
+                    style={{ width: '20vw', height: '20vw', float: 'right', marginLeft: '2vw', marginBottom: '1vw' }}
+                  />
+                  <p
+                    className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
+                    style={{ fontSize: '1.8vw' }}
+                  >
+                    Louis Armstrong didn&apos;t just play the trumpet — he reinvented what it meant to be a soloist. His gravelly voice and fearless improvisation turned jazz from an ensemble art into a platform for individual genius. Then came Duke Ellington, who composed not just songs but entire worlds. His orchestra wasn&apos;t a band — it was a living, breathing instrument.
+                  </p>
+                  <p
+                    className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
+                    style={{ fontSize: '1.8vw', marginTop: '2vw' }}
+                  >
+                    Charlie Parker and Dizzy Gillespie shattered every rule in the book with bebop — fast, complex, unapologetic. Thelonious Monk played notes that weren&apos;t supposed to work, and somehow they were the only ones that made sense. Miles Davis refused to stay in one lane, reinventing himself and the genre with every decade — from cool jazz to modal to fusion. And John Coltrane? He turned the saxophone into a prayer, chasing something spiritual that most of us can only feel, never name.
+                  </p>
+                </div>
+
+                {/* Gradient Divider */}
+                <div style={{ height: '0.4vw', marginTop: '3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+
+                {/* Section 3: The Albums */}
+                <h3
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center font-bold"
+                  style={{ fontSize: '3vw', letterSpacing: '0.15em', marginTop: '3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                >
+                  The Records That Defined Jazz
+                </h3>
+
+                <div className="grid grid-cols-3" style={{ gap: '2vw', marginTop: '2.5vw' }}>
+                  {[
+                    { src: '/images/artwork/kind-of-blue.jpg', title: 'Kind of Blue', artist: 'Miles Davis' },
+                    { src: '/images/artwork/blue-train.jpg', title: 'Blue Train', artist: 'John Coltrane' },
+                    { src: '/images/artwork/a-love-supreme.jpg', title: 'A Love Supreme', artist: 'John Coltrane' },
+                    { src: '/images/artwork/time-out.jpg', title: 'Time Out', artist: 'Dave Brubeck' },
+                    { src: '/images/artwork/maiden-voyage.jpg', title: 'Maiden Voyage', artist: 'Herbie Hancock' },
+                    { src: '/images/artwork/moanin.jpg', title: "Moanin'", artist: 'Art Blakey' },
+                  ].map((album) => (
+                    <div key={album.title} className="text-center">
+                      <img
+                        src={album.src}
+                        alt={`${album.title} by ${album.artist}`}
+                        className="rounded-lg object-cover w-full"
+                        style={{ aspectRatio: '1' }}
+                      />
+                      <p
+                        className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold uppercase"
+                        style={{ fontSize: '2vw', marginTop: '0.8vw', textShadow: '1px 1px 4px rgba(0,0,0,0.6)' }}
+                      >
+                        {album.title}
+                      </p>
+                      <p
+                        className="text-white/60 font-[family-name:var(--font-inter)]"
+                        style={{ fontSize: '2vw' }}
+                      >
+                        {album.artist}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Gradient Divider */}
+                <div style={{ height: '0.4vw', marginTop: '3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+
+                {/* Section 4: Jazz Lives On */}
+                <h3
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center font-bold"
+                  style={{ fontSize: '3vw', letterSpacing: '0.15em', marginTop: '3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                >
+                  Jazz Lives On
+                </h3>
+
+                <p
+                  className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
+                  style={{ fontSize: '1.8vw', marginTop: '2.5vw' }}
+                >
+                  Jazz never died — it just learned new languages. You hear it in the hip-hop samples that loop Coltrane&apos;s phrases, in the neo-soul that borrows its harmonic warmth, in the lo-fi beats that carry its late-night intimacy. Artists like Robert Glasper, Kamasi Washington, and Nubya Garcia are proving that jazz isn&apos;t a museum piece — it&apos;s a living conversation that keeps finding new voices.
+                </p>
+
+                <p
+                  className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
+                  style={{ fontSize: '1.8vw', marginTop: '2vw', paddingBottom: '2vw' }}
+                >
+                  That&apos;s why we chose jazz as our first rotation. It&apos;s the genre that taught music how to be free — how to listen, respond, and create in the moment. At Espresso Groove, we believe great coffee and great records share the same philosophy: slow down, pay attention, and let the moment move you.
+                </p>
+              </div>
+            )}
+
+            {activeTab === "Vinyl" && (
+              <div style={{ marginTop: '2.5vw' }}>
+                <div
+                  className="flex"
+                  style={{ gap: '1.5vw', paddingBottom: '2vw' }}
+                >
+                  {[
+                    { name: "KIND OF BLUE", artist: "Miles Davis", img: "/images/artwork/kind-of-blue.jpg", stock: 3 },
+                    { name: "A LOVE SUPREME", artist: "John Coltrane", img: "/images/artwork/a-love-supreme.jpg", stock: 1 },
+                    { name: "HEAD HUNTERS", artist: "Herbie Hancock", img: "/images/artwork/head-hunters.jpg", stock: 5 },
+                    { name: "MINGUS AH UM", artist: "Charles Mingus", img: "/images/artwork/mingus-ah-um.jpg", stock: 2 },
+                    { name: "TIME OUT", artist: "Dave Brubeck", img: "/images/artwork/time-out.jpg", stock: 4 },
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex-1 rounded-xl"
+                      style={{
+                        padding: '0.5vw',
+                        paddingBottom: '2.5vw',
+                        background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
+                      }}
+                    >
+                      <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
+                        <div
+                          className="bg-[#1a1310] overflow-hidden"
+                          style={{ width: '100%', aspectRatio: '1' }}
+                        >
+                          <img
+                            src={item.img}
+                            alt={item.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div style={{ padding: '1.2vw' }}>
+                          <h4
+                            className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight overflow-hidden whitespace-nowrap text-ellipsis"
+                            style={{ fontSize: '2.2vw' }}
+                          >
+                            {item.name}
+                          </h4>
+                          <p
+                            className="text-white/60 font-[family-name:var(--font-inter)]"
+                            style={{ fontSize: '1.4vw', marginTop: '0.4vw' }}
+                          >
+                            {item.artist}
+                          </p>
+                          <p
+                            className="font-[family-name:var(--font-inter)]"
+                            style={{
+                              fontSize: '1.8vw',
+                              marginTop: '0.6vw',
+                              color: item.stock <= 1 ? '#f06830' : 'rgba(255,255,255,0.5)',
+                            }}
+                          >
+                            {item.stock} in stock
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeTab === "Featured Sips" && (
+              <div style={{ marginTop: '2.5vw' }}>
+                {/* Category Labels */}
+                <div className="flex" style={{ marginInline: '-3vw' }}>
+                  <div
+                    className="flex-1 bg-[#f06830] noisy text-center flex items-center justify-center"
+                    style={{ height: '4.5vw' }}
+                  >
+                    <span
+                      className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                      style={{
+                        fontSize: '2vw',
+                        letterSpacing: '0.07em',
+                        textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                      }}
+                    >
+                      Coffee
+                    </span>
+                  </div>
+                  <div
+                    className="flex-1 bg-[#2a7d7d] noisy text-center flex items-center justify-center"
+                    style={{ height: '4.5vw' }}
+                  >
+                    <span
+                      className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                      style={{
+                        fontSize: '2vw',
+                        letterSpacing: '0.07em',
+                        textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                      }}
+                    >
+                      Tea
+                    </span>
+                  </div>
+                  <div
+                    className="flex-1 bg-[#6b4c8c] noisy text-center flex items-center justify-center"
+                    style={{ height: '4.5vw' }}
+                  >
+                    <span
+                      className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                      style={{
+                        fontSize: '2vw',
+                        letterSpacing: '0.07em',
+                        textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                      }}
+                    >
+                      Energy Drinks
+                    </span>
+                  </div>
+                </div>
+
+                {/* Product Cards Row */}
+                <div className="flex" style={{ padding: '2.5vw 0', gap: '1.5vw' }}>
+                  {/* Coffee Card */}
+                  <div className="flex-1 flex flex-col items-center" style={{ gap: '1vw' }}>
+                    <span
+                      className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
+                      style={{ fontSize: '4vw' }}
+                    >
+                      Blue Note Brew
+                    </span>
+                    <div
+                      className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0"
+                      style={{ width: '8vw', height: '8vw' }}
+                    >
+                      <span className="text-[#555555]" style={{ fontSize: '1.2vw' }}>IMG</span>
+                    </div>
+                  </div>
+
+                  {/* Tea Card */}
+                  <div className="flex-1 flex flex-col items-center" style={{ gap: '1vw' }}>
+                    <span
+                      className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
+                      style={{ fontSize: '4vw' }}
+                    >
+                      Coltrane Chai
+                    </span>
+                    <div
+                      className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0"
+                      style={{ width: '8vw', height: '8vw' }}
+                    >
+                      <span className="text-[#555555]" style={{ fontSize: '1.2vw' }}>IMG</span>
+                    </div>
+                  </div>
+
+                  {/* Energy Card */}
+                  <div className="flex-1 flex flex-col items-center" style={{ gap: '1vw' }}>
+                    <span
+                      className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
+                      style={{ fontSize: '4vw' }}
+                    >
+                      Bebop Blast
+                    </span>
+                    <div
+                      className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0"
+                      style={{ width: '8vw', height: '8vw' }}
+                    >
+                      <span className="text-[#555555]" style={{ fontSize: '1.2vw' }}>IMG</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <DesktopFooter />
       </div>
 
     </div>

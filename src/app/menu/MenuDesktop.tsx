@@ -127,7 +127,7 @@ export default function MenuDesktop() {
         </header>
 
         {/* Page Title */}
-        <div className="text-center" style={{ marginTop: '-9vw', marginBottom: '3.71vw' }}>
+        <div className="text-center" style={{ marginTop: '-7vw', marginBottom: '3.71vw' }}>
           <div className="flex items-center justify-center" style={{ gap: '1.86vw' }}>
             <img
               src="/images/mug.svg"
@@ -172,7 +172,7 @@ export default function MenuDesktop() {
         <div className="flex" style={{ paddingInline: '4vw', paddingBottom: '4vw', marginTop: '2vw', gap: '2vw' }}>
 
           {/* LEFT: Featured Sips */}
-          <div className="flex-[1.5] rounded-xl" style={{ padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
+          <div className="flex-[3] rounded-xl" style={{ padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
               {/* Title */}
               <div className="text-center" style={{ paddingBlock: '1.5vw' }}>
@@ -225,7 +225,7 @@ export default function MenuDesktop() {
                   Coffee
                 </p>
               </div>
-              <div className="flex items-center" style={{ padding: '1.5vw 2vw', gap: '1.5vw' }}>
+              <div className="flex items-center" style={{ padding: '1.5vw 1.5vw', gap: '1.5vw' }}>
                 <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '6vw', height: '6vw' }}>
                   <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
                 </div>
@@ -245,7 +245,7 @@ export default function MenuDesktop() {
                   Tea
                 </p>
               </div>
-              <div className="flex items-center" style={{ padding: '1.5vw 2vw', gap: '1.5vw' }}>
+              <div className="flex items-center" style={{ padding: '1.5vw 1.5vw', gap: '1.5vw' }}>
                 <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '6vw', height: '6vw' }}>
                   <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
                 </div>
@@ -265,7 +265,7 @@ export default function MenuDesktop() {
                   Energy Drink
                 </p>
               </div>
-              <div className="flex items-center" style={{ padding: '1.5vw 2vw', gap: '1.5vw' }}>
+              <div className="flex items-center" style={{ padding: '1.5vw 1.5vw', gap: '1.5vw' }}>
                 <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '6vw', height: '6vw' }}>
                   <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
                 </div>
@@ -279,7 +279,7 @@ export default function MenuDesktop() {
           </div>
 
           {/* RIGHT: Full Menu */}
-          <div className="flex-[3] rounded-xl" style={{ padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', alignSelf: 'flex-start' }}>
+          <div className="flex-[6.5] rounded-xl" style={{ padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', alignSelf: 'flex-start' }}>
             <div className="flex rounded-lg overflow-hidden bg-[#2d1f1a]">
 
               {/* Coffee Column */}
@@ -295,7 +295,7 @@ export default function MenuDesktop() {
                 {coffeeItems.map((item, index) => (
                   <div key={`coffee-${index}`}>
                     {index > 0 && <div style={{ height: '0.2vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
-                    <div className="flex items-center" style={{ height: '12vw', paddingInline: '1vw', gap: '1.5vw' }}>
+                    <div className="flex items-center" style={{ height: '12.5vw', paddingInline: '1vw', gap: '1.5vw' }}>
                       <div className="bg-[#f06830]/20 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '5vw', height: '5vw' }}>
                         <img src="/images/menu_cup.svg?v=3" style={{ width: '1.5vw', height: '1.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
                       </div>
@@ -325,7 +325,7 @@ export default function MenuDesktop() {
                 {teaItems.map((item, index) => (
                   <div key={`tea-${index}`}>
                     {index > 0 && <div style={{ height: '0.2vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
-                    <div className="flex items-center" style={{ height: '12vw', paddingInline: '1vw', gap: '1.5vw' }}>
+                    <div className="flex items-center" style={{ height: '12.5vw', paddingInline: '1vw', gap: '1.5vw' }}>
                       <div className="bg-[#2a7d7d]/20 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '5vw', height: '5vw' }}>
                         <img src="/images/menu_cup.svg?v=3" style={{ width: '1.5vw', height: '1.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
                       </div>
@@ -347,7 +347,7 @@ export default function MenuDesktop() {
                 <div className="bg-[#6b4c8c] noisy text-center flex items-center justify-center" style={{ height: '6.7vw' }}>
                   <p
                     className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                    style={{ fontSize: '1.8vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                    style={{ fontSize: '1.8vw', letterSpacing: '0.02em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                   >
                     Energy Drinks
                   </p>
@@ -355,7 +355,7 @@ export default function MenuDesktop() {
                 {energyItems.map((item, index) => (
                   <div key={`energy-${index}`}>
                     {index > 0 && <div style={{ height: '0.2vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
-                    <div className="flex items-center" style={{ height: '12vw', paddingInline: '1vw', gap: '1.5vw' }}>
+                    <div className="flex items-center" style={{ height: '12.5vw', paddingInline: '1vw', gap: '1.5vw' }}>
                       <div className="bg-[#6b4c8c]/30 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '5vw', height: '5vw' }}>
                         <span style={{ fontSize: '1.5vw' }}>⚡</span>
                       </div>
