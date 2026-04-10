@@ -126,25 +126,8 @@ export default function EventsDesktop() {
 
       {/* === CONTENT LAYER === */}
       <div className="relative z-10">
-        {/* Header - Back Button */}
-        <header className="flex items-center" style={{ paddingTop: '5.5vw', paddingBottom: '1.5vw', paddingLeft: '3vw' }}>
-          <Link
-            href="/"
-            className="flex items-center text-white active:scale-105 duration-150 transition-all"
-            style={{ gap: '0.5vw' }}
-          >
-            <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '5vw', height: '5vw' }}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            <span
-              className="font-[family-name:var(--font-bebas-neue)]"
-              style={{ fontSize: '4.3vw', letterSpacing: '0.05em', marginLeft: '0.5vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-            >Back</span>
-          </Link>
-        </header>
-
         {/* Page Title */}
-        <div className="text-center" style={{ marginTop: '-5vw', marginBottom: '3vw' }}>
+        <div className="text-center" style={{ marginTop: '6vw', marginBottom: '3vw' }}>
           <div className="flex items-center justify-center" style={{ gap: '1.5vw' }}>
             <img
               src="/images/calendar.svg"

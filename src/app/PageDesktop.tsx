@@ -524,17 +524,12 @@ export default function PageDesktop() {
 
               {/* Image + Text (float wrap) */}
               <div style={{ padding: '1.5vw' }}>
-                <div
-                  className="bg-[#d4d4d4] rounded-lg flex items-center justify-center"
+                <img
+                  src="/images/artwork/performance.png"
+                  alt="Jazz performance"
+                  className="rounded-lg object-cover"
                   style={{ width: '10vw', height: '10vw', float: 'left', marginRight: '1.5vw', marginTop: '0.5vw' }}
-                >
-                  <span
-                    className="text-[#555555] font-[family-name:var(--font-inter)] text-center"
-                    style={{ fontSize: '1vw' }}
-                  >
-                    IMAGE
-                  </span>
-                </div>
+                />
                 <p
                   className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                   style={{ fontSize: '1.2vw' }}

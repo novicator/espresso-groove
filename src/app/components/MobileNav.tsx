@@ -3,9 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { onShow?: () => void; hideOnTop?: boolean; size?: "desktop" | "xl" } = {}) {
-  const h = size === "xl" ? '56px' : '4vw';
-  const fs = size === "xl" ? '19.6px' : '1.4vw';
+export default function MobileNav({ onShow, hideOnTop }: { onShow?: () => void; hideOnTop?: boolean } = {}) {
   const [visible, setVisible] = useState(!hideOnTop);
 
   useEffect(() => {
@@ -40,11 +38,11 @@ export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { on
           }
         }}
         className="flex-[0.6] bg-white noisy flex items-center justify-center"
-        style={{ height: h }}
+        style={{ height: '10vw' }}
       >
-        <svg style={{ width: size === 'xl' ? '32px' : '2vw', height: size === 'xl' ? '32px' : '2vw' }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg style={{ width: '5vw', height: '5vw' }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id={`home-gradient-${size}`} x1="0%" y1="0%" x2="100%" y2="100%">
+            <linearGradient id="home-gradient-mobile" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#f06830" />
               <stop offset="50%" stopColor="#2a7d7d" />
               <stop offset="100%" stopColor="#6b4c8c" />
@@ -52,8 +50,8 @@ export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { on
           </defs>
           <path
             d="M3 11L12 3L21 11V20C21 20.5523 20.5523 21 20 21H15V14H9V21H4C3.44772 21 3 20.5523 3 20V11Z"
-            fill={`url(#home-gradient-${size})`}
-            stroke={`url(#home-gradient-${size})`}
+            fill="url(#home-gradient-mobile)"
+            stroke="url(#home-gradient-mobile)"
             strokeWidth="1.5"
             strokeLinejoin="round"
           />
@@ -63,12 +61,12 @@ export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { on
       <Link
         href="/menu"
         className="flex-1 bg-[#f06830] noisy flex items-center justify-center"
-        style={{ height: h }}
+        style={{ height: '10vw' }}
       >
         <span
           className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
           style={{
-            fontSize: fs,
+            fontSize: '2.6vw',
             letterSpacing: '0.1em',
             textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
           }}
@@ -80,12 +78,12 @@ export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { on
       <Link
         href="/vinyl"
         className="flex-1 bg-[#2a7d7d] noisy flex items-center justify-center"
-        style={{ height: h }}
+        style={{ height: '10vw' }}
       >
         <span
           className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
           style={{
-            fontSize: fs,
+            fontSize: '2.6vw',
             letterSpacing: '0.2em',
             textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
           }}
@@ -97,12 +95,12 @@ export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { on
       <Link
         href="/merch"
         className="flex-1 bg-[#6b4c8c] noisy flex items-center justify-center"
-        style={{ height: h }}
+        style={{ height: '10vw' }}
       >
         <span
           className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
           style={{
-            fontSize: fs,
+            fontSize: '2.6vw',
             letterSpacing: '0.12em',
             textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
           }}
@@ -114,12 +112,12 @@ export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { on
       <Link
         href="/events"
         className="flex-1 bg-[#24ADFF] noisy flex items-center justify-center"
-        style={{ height: h }}
+        style={{ height: '10vw' }}
       >
         <span
           className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
           style={{
-            fontSize: fs,
+            fontSize: '2.6vw',
             letterSpacing: '0.12em',
             textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
           }}
@@ -130,18 +128,30 @@ export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { on
 
       <Link
         href="/now-spinning"
-        className="flex-1 bg-[#6F4E37] noisy flex items-center justify-center"
-        style={{ height: h }}
+        className="flex-[1.4] bg-[#6F4E37] noisy flex flex-col items-center justify-center"
+        style={{ height: '10vw' }}
       >
         <span
           className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
           style={{
-            fontSize: fs,
+            fontSize: '2.5vw',
             letterSpacing: '0.1em',
+            lineHeight: 1,
             textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
           }}
         >
-          Now Spinning
+          Now
+        </span>
+        <span
+          className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
+          style={{
+            fontSize: '2.5vw',
+            letterSpacing: '0.1em',
+            lineHeight: 1.2,
+            textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+          }}
+        >
+          Spinning
         </span>
       </Link>
     </div>

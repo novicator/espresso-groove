@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import MobileNav from "../components/MobileNav";
 
 type FilterType = "All" | "Coffee" | "Tea" | "Energy";
 
@@ -46,6 +47,7 @@ export default function MenuMobile() {
 
   return (
     <>
+      <MobileNav />
       <style jsx global>{`
         .noisy {
           position: relative;
@@ -80,22 +82,22 @@ export default function MenuMobile() {
             {/* Panel 3 */}
             <div
               className="h-screen bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: "scaleY(1)", marginTop: '-65vw' }}
+              style={{ backgroundImage: "url('/images/new_background_v2.png')", transform: "scaleY(1)", }}
             />
             {/* Panel 4 */}
             <div
               className="h-screen bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: "scaleY(-1)" }}
+              style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(-1)" }}
             />
             {/* Panel 5 */}
             <div
               className="h-screen bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: "scaleY(1)" }}
+              style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(1)" }}
             />
             {/* Panel 6 */}
             <div
               className="h-screen bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: "scaleY(-1)" }}
+              style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(-1)" }}
             />
           </>
         ) : (
@@ -109,8 +111,8 @@ export default function MenuMobile() {
             <div
               className="h-screen bg-cover bg-center"
               style={{
-                backgroundImage: "url('/images/vibe_background.png')",
-                marginTop: '-50vw',
+                backgroundImage: "url('/images/menu_background_full.png')",
+                marginTop: '-0vw',
                 transform: 'scaleY(1)'
               }}
             />
@@ -138,32 +140,10 @@ export default function MenuMobile() {
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-10">
-        {/* Header - Back Button */}
-        {/* pt-6=24px=6.1vw, pb-4=16px=4.1vw, px-5=20px=5.1vw */}
-        <header className="flex items-center justify-between" style={{ paddingTop: '6.1vw', paddingBottom: '4.1vw', paddingLeft: '5.1vw', paddingRight: '5.1vw' }}>
-          <Link
-            href="/"
-            className="flex items-center text-white active:scale-125 duration-150 transition-all"
-            style={{ gap: '1.5vw', transform: 'translateY(2.5vw) scale(1.1)' }}
-          >
-            {/* w-7=28px=7.1vw, h-7=28px=7.1vw */}
-            <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '7.1vw', height: '7.1vw' }}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            {/* text-2xl=24px=6.1vw, ml-2=8px=2vw */}
-            <span
-              className="font-[family-name:var(--font-bebas-neue)]"
-              style={{ fontSize: '6.1vw', letterSpacing: '0.05em', marginLeft: '2vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-            >Back</span>
-          </Link>
-          {/* w-16=64px=16.3vw */}
-          <div style={{ width: '16.3vw' }} />
-        </header>
-
+      <div className="relative z-10" style={{  }}>
         {/* Page Title */}
         {/* mt-2=8px=2vw, mb-6=24px=6.1vw */}
-        <div className="text-center" style={{ marginTop: '2vw', marginBottom: '6.1vw' }}>
+        <div className="text-center" style={{ marginTop: '14vw', marginBottom: '6.1vw' }}>
           {/* gap-3=12px=3.1vw */}
           <div className="flex items-center justify-center" style={{ gap: '3.1vw' }}>
             {/* w-18=72px=18.3vw, translateY(15px)=3.8vw, translateX(5px)=1.3vw, scale(1.2) kept */}
@@ -327,7 +307,7 @@ export default function MenuMobile() {
             <div className="flex-1 flex flex-col items-center" style={{ gap: '2vw' }}>
               <span
                 className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
-                style={{ fontSize: '4.5vw' }}
+                style={{ fontSize: '5vw' }}
               >
                 Blue Note Brew
               </span>
@@ -343,7 +323,7 @@ export default function MenuMobile() {
             <div className="flex-1 flex flex-col items-center" style={{ gap: '2vw' }}>
               <span
                 className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
-                style={{ fontSize: '4.5vw' }}
+                style={{ fontSize: '5vw' }}
               >
                 Coltrane Chai
               </span>
@@ -359,7 +339,7 @@ export default function MenuMobile() {
             <div className="flex-1 flex flex-col items-center" style={{ gap: '2vw' }}>
               <span
                 className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
-                style={{ fontSize: '4.5vw' }}
+                style={{ fontSize: '5vw' }}
               >
                 Bebop Blast
               </span>
@@ -405,9 +385,9 @@ export default function MenuMobile() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
-                          style={{ fontSize: '4.6vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
+                          style={{ fontSize: '5.7vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
                       </div>
-                      <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3vw', marginTop: '0.5vw' }}>{item.desc}</p>
+                      <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3.7vw', marginTop: '0.5vw' }}>{item.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -438,9 +418,9 @@ export default function MenuMobile() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
-                          style={{ fontSize: '4.6vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
+                          style={{ fontSize: '5.7vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
                       </div>
-                      <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3vw', marginTop: '0.5vw' }}>{item.desc}</p>
+                      <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3.7vw', marginTop: '0.5vw' }}>{item.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -471,9 +451,9 @@ export default function MenuMobile() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
-                          style={{ fontSize: '4.6vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
+                          style={{ fontSize: '5.7vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
                       </div>
-                      <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3vw', marginTop: '0.5vw' }}>{item.desc}</p>
+                      <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3.7vw', marginTop: '0.5vw' }}>{item.desc}</p>
                     </div>
                   </div>
                 </div>

@@ -109,25 +109,8 @@ export default function EventsXL() {
       {/* === CONTENT LAYER (px values based on 1400px) === */}
       <div className="relative z-10">
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          {/* Header - Back Button */}
-          <header className="flex items-center" style={{ paddingTop: '77px', paddingBottom: '21px', paddingLeft: '42px' }}>
-            <Link
-              href="/"
-              className="flex items-center text-white active:scale-105 duration-150 transition-all"
-              style={{ gap: '7px' }}
-            >
-              <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '70px', height: '70px' }}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-              <span
-                className="font-[family-name:var(--font-bebas-neue)]"
-                style={{ fontSize: '60.2px', letterSpacing: '0.05em', marginLeft: '7px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-              >Back</span>
-            </Link>
-          </header>
-
           {/* Page Title */}
-          <div className="text-center" style={{ marginTop: '-70px', marginBottom: '42px' }}>
+          <div className="text-center" style={{ marginTop: '98px', marginBottom: '42px' }}>
             <div className="flex items-center justify-center" style={{ gap: '21px' }}>
               <img
                 src="/images/calendar.svg"

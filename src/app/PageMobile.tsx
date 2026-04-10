@@ -1,13 +1,38 @@
 "use client";
 
+import { useRef, useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import MusicNotes from "./components/MusicNotes";
 import MiniMusicNotes from "./components/MiniMusicNotes";
 import Footer from "./components/Footer";
+import MobileNav from "./components/MobileNav";
 
 export default function PageMobile() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [scrollRatio, setScrollRatio] = useState(0);
+  const [thumbWidth, setThumbWidth] = useState(0);
+
+  const updateScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    if (maxScroll <= 0) { setScrollRatio(0); setThumbWidth(100); return; }
+    setScrollRatio(el.scrollLeft / maxScroll);
+    setThumbWidth((el.clientWidth / el.scrollWidth) * 100);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    updateScroll();
+    el.addEventListener("scroll", updateScroll);
+    return () => el.removeEventListener("scroll", updateScroll);
+  }, [updateScroll]);
+
   return (
     <>
+      <MobileNav hideOnTop />
       <style jsx global>{`
         @keyframes logoGlowPulseMobile {
           0% {
@@ -41,6 +66,14 @@ export default function PageMobile() {
         @keyframes shimmer {
           0% { transform: translateX(-100%); }
           100% { transform: translateX(100%); }
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
 
@@ -464,31 +497,24 @@ export default function PageMobile() {
             </div>
             <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
-            {/* Image + Text side by side */}
-            <div className="flex" style={{ paddingInline: '3vw', gap: '3vw' }}>
-              <div
-                className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0"
-                style={{ width: '30vw', height: '30vw', marginTop: '6vw'}}
+            {/* Image + Text (float wrap) */}
+            <div style={{ padding: '4vw' }}>
+              <img
+                src="/images/artwork/performance.png"
+                alt="Jazz performance"
+                className="rounded-lg object-cover"
+                style={{ width: '30vw', height: '30vw', float: 'left', marginRight: '3vw', marginBottom: '2vw' }}
+              />
+              <p
+                className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
+                style={{ fontSize: '3.7vw' }}
               >
-                <span
-                  className="text-[#555555] font-[family-name:var(--font-inter)] text-center"
-                  style={{ fontSize: '2.5vw' }}
-                >
-                  IMAGE
-                </span>
-              </div>
-              <div className="flex-1">
-                <p
-                  className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                  style={{ fontSize: '3vw', marginTop: '4vw' }}
-                >
-                  In the early 1900s, the streets of New Orleans were alive with a new sound. African rhythms met blues and ragtime to create something entirely new. It wasn&apos;t just music - it was freedom, expression, and revolution all at once. From New Orleans...
-                </p>
-              </div>
+                In the early 1900s, the streets of New Orleans were alive with a new sound. African rhythms met blues and ragtime to create something entirely new. It wasn&apos;t just music - it was freedom, expression, and revolution all at once. From New Orleans...
+              </p>
             </div>
 
             {/* Learn More */}
-            <div style={{ height: '0.4vw', marginTop: '4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+            <div style={{ height: '0.4vw', marginTop: '0vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
             <a
               href="/now-spinning"
               className="flex items-center justify-center"
@@ -590,7 +616,7 @@ export default function PageMobile() {
               <div className="flex-1 flex flex-col items-center" style={{ gap: '2vw' }}>
                 <span
                   className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
-                  style={{ fontSize: '4.5vw' }}
+                  style={{ fontSize: '5vw' }}
                 >
                   Blue Note Brew
                 </span>
@@ -606,7 +632,7 @@ export default function PageMobile() {
               <div className="flex-1 flex flex-col items-center" style={{ gap: '2vw' }}>
                 <span
                   className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
-                  style={{ fontSize: '4.5vw' }}
+                  style={{ fontSize: '5vw' }}
                 >
                   Coltrane Chai
                 </span>
@@ -622,7 +648,7 @@ export default function PageMobile() {
               <div className="flex-1 flex flex-col items-center" style={{ gap: '2vw' }}>
                 <span
                   className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
-                  style={{ fontSize: '4.5vw' }}
+                  style={{ fontSize: '5vw' }}
                 >
                   Bebop Blast
                 </span>
@@ -651,6 +677,149 @@ export default function PageMobile() {
             </Link>
 
           </div>
+          </div>
+
+          {/* === Vinyl Section === */}
+          <div
+            className="rounded-xl"
+            style={{ marginTop: '4vw', marginInline: '4vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+          >
+            <div className="rounded-lg overflow-hidden bg-[#2d1f1a] flex flex-col" style={{ height: '115vw' }}>
+              {/* Title */}
+              <div
+                className="text-center"
+                style={{ paddingBlock: '3vw' }}
+              >
+                <span
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
+                  style={{ fontSize: '5vw', letterSpacing: '0.15em' }}
+                >
+                  Vinyl
+                </span>
+              </div>
+              <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+
+              {/* Featured Genre */}
+              <div className="text-center" style={{ paddingTop: '3vw' }}>
+                <span
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
+                  style={{ fontSize: '4.8vw', letterSpacing: '0.15em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                >
+                  Featured Genre
+                </span>
+              </div>
+
+              {/* Jazz with dashes */}
+              <div
+                className="flex items-center justify-center"
+                style={{ gap: '3vw', marginTop: '2vw' }}
+              >
+                <div
+                  className="bg-white"
+                  style={{ width: '10vw', height: '0.6vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+                />
+                <span
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
+                  style={{
+                    fontSize: '7vw',
+                    textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+                    fontWeight: 900,
+                  }}
+                >
+                  Jazz
+                </span>
+                <div
+                  className="bg-white"
+                  style={{ width: '10vw', height: '0.6vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+                />
+              </div>
+
+              {/* Horizontal Scrolling Cards */}
+              <div
+                ref={scrollRef}
+                className="flex overflow-x-auto overflow-y-hidden hide-scrollbar"
+                style={{ gap: '3vw', marginTop: '3vw', paddingLeft: '4vw', paddingRight: '4vw', paddingBottom: '3vw' }}
+              >
+                {[
+                  { name: "KIND OF BLUE", artist: "Miles Davis", img: "/images/artwork/kind-of-blue.jpg" },
+                  { name: "A LOVE SUPREME", artist: "John Coltrane", img: "/images/artwork/a-love-supreme.jpg" },
+                  { name: "HEAD HUNTERS", artist: "Herbie Hancock", img: "/images/artwork/head-hunters.jpg" },
+                  { name: "MINGUS AH UM", artist: "Charles Mingus", img: "/images/artwork/mingus-ah-um.jpg" },
+                  { name: "TIME OUT", artist: "Dave Brubeck", img: "/images/artwork/time-out.jpg" },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 rounded-xl"
+                    style={{
+                      width: '35vw',
+                      padding: '.8vw',
+                      paddingBottom: '3vw',
+                      background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
+                    }}
+                  >
+                    <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
+                      <div className="bg-[#1a1310] overflow-hidden" style={{ width: '100%', aspectRatio: '1' }}>
+                        <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
+                      </div>
+                      <div style={{ padding: '1.5vw' }}>
+                        <h4
+                          className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight overflow-hidden whitespace-nowrap text-ellipsis"
+                          style={{ fontSize: '5vw' }}
+                        >
+                          {item.name}
+                        </h4>
+                        <p className="text-white/60 font-[family-name:var(--font-inter)]" style={{ fontSize: '3.8vw', marginTop: '0.5vw' }}>
+                          {item.artist}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Scroll Indicator */}
+              <div
+                ref={trackRef}
+                style={{
+                  marginLeft: '4vw',
+                  marginRight: '4vw',
+                  marginTop: '1vw',
+                  height: '1vw',
+                  backgroundColor: 'rgba(255,255,255,0.2)',
+                  borderRadius: '999px',
+                  position: 'relative',
+                }}
+              >
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: `${scrollRatio * (100 - thumbWidth)}%`,
+                    width: `${thumbWidth}%`,
+                    height: '100%',
+                    backgroundColor: '#ffffff',
+                    borderRadius: '999px',
+                  }}
+                />
+              </div>
+
+              <div className="flex-1"></div>
+
+              {/* View Vinyl */}
+              <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+              <Link
+                href="/vinyl"
+                className="flex items-center justify-center"
+                style={{ paddingBlock: '3vw', gap: '2vw' }}
+              >
+                <span
+                  className="text-white whitespace-nowrap font-[family-name:var(--font-libre-baskerville)]"
+                  style={{ fontSize: '4.5vw' }}
+                >
+                  View All Vinyl →
+                </span>
+              </Link>
+            </div>
           </div>
 
           {/* === The Vibe Header === */}

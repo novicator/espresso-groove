@@ -49,25 +49,8 @@ export default function NowSpinningXL() {
       {/* === CONTENT LAYER (px values based on 1400px) === */}
       <div className="relative z-10">
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          {/* Header - Back Button */}
-          <header className="flex items-center" style={{ paddingTop: '77px', paddingBottom: '21px', paddingLeft: '42px' }}>
-            <Link
-              href="/"
-              className="flex items-center text-white active:scale-105 duration-150 transition-all"
-              style={{ gap: '7px' }}
-            >
-              <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '70px', height: '70px' }}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-              <span
-                className="font-[family-name:var(--font-bebas-neue)]"
-                style={{ fontSize: '60.2px', letterSpacing: '0.05em', marginLeft: '7px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-              >Back</span>
-            </Link>
-          </header>
-
           {/* Page Title */}
-          <div className="text-center" style={{ marginTop: '-70px', marginBottom: '42px' }}>
+          <div className="text-center" style={{ marginTop: '98px', marginBottom: '42px' }}>
             <div className="flex items-center justify-center" style={{ gap: '14px' }}>
               <span className="text-white" style={{ fontSize: '63px', textShadow: '0px 0px 10px rgba(0,0,0,0.5)' }}>★</span>
               <h1
@@ -172,7 +155,7 @@ export default function NowSpinningXL() {
               {activeTab === "Jazz History" && (
                 <div>
                   <div style={{ marginTop: '35px' }}>
-                    <img src="/images/artwork/kind-of-blue.jpg" alt="Kind of Blue by Miles Davis" className="rounded-lg object-cover" style={{ width: '252px', height: '252px', float: 'left', marginRight: '28px', marginBottom: '14px' }} />
+                    <img src="/images/artwork/performance.png" alt="Jazz performance" className="rounded-lg object-cover" style={{ width: '252px', height: '252px', float: 'left', marginRight: '28px', marginBottom: '14px' }} />
                     <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '25.2px' }}>
                       In the early 1900s, the streets of New Orleans were alive with a new sound. African rhythms met blues and ragtime to create something entirely new. It wasn&apos;t just music — it was freedom, expression, and revolution all at once. From the brass bands of Congo Square to the smoky clubs of Storyville, jazz was born not on a stage, but in the soul of a city.
                     </p>
@@ -188,7 +171,7 @@ export default function NowSpinningXL() {
                   </h3>
 
                   <div style={{ marginTop: '14px' }}>
-                    <img src="/images/artwork/a-love-supreme.jpg" alt="A Love Supreme by John Coltrane" className="rounded-lg object-cover" style={{ width: '280px', height: '280px', float: 'right', marginLeft: '28px', marginBottom: '14px' }} />
+                    <img src="/images/artwork/hands_on_piano.png" alt="Hands on piano" className="rounded-lg object-cover" style={{ width: '280px', height: '280px', float: 'right', marginLeft: '28px', marginBottom: '14px' }} />
                     <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '25.2px' }}>
                       Louis Armstrong didn&apos;t just play the trumpet — he reinvented what it meant to be a soloist. His gravelly voice and fearless improvisation turned jazz from an ensemble art into a platform for individual genius. Then came Duke Ellington, who composed not just songs but entire worlds. His orchestra wasn&apos;t a band — it was a living, breathing instrument.
                     </p>

@@ -307,25 +307,8 @@ export default function VinylXL() {
         </div>
 
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          {/* Header - Back Button */}
-          <header className="flex items-center" style={{ paddingTop: '28px', paddingBottom: '21px', paddingLeft: '42px' }}>
-            <Link
-              href="/"
-              className="flex items-center text-white active:scale-105 duration-150 transition-all"
-              style={{ gap: '7px' }}
-            >
-              <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '70px', height: '70px' }}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-              <span
-                className="font-[family-name:var(--font-bebas-neue)]"
-                style={{ fontSize: '60.2px', letterSpacing: '0.05em', marginLeft: '7px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-              >Back</span>
-            </Link>
-          </header>
-
           {/* Page Title */}
-          <div className="flex flex-col items-center" style={{ marginTop: '-56px', marginBottom: '85.4px', paddingLeft: '336px', width: 'fit-content' }}>
+          <div className="flex flex-col items-center" style={{ marginTop: '-30px', marginBottom: '85.4px', paddingLeft: '336px', width: 'fit-content' }}>
             <h1
               className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
               style={{

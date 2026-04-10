@@ -1,14 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import MobileNav from "../components/MobileNav";
 
 export default function NowSpinningMobile() {
     const [activeTab, setActiveTab] = useState<string>("Jazz History");
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const trackRef = useRef<HTMLDivElement>(null);
+    const [scrollRatio, setScrollRatio] = useState(0);
+    const [thumbWidth, setThumbWidth] = useState(0);
+
+    const updateScroll = useCallback(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const maxScroll = el.scrollWidth - el.clientWidth;
+        if (maxScroll <= 0) { setScrollRatio(0); setThumbWidth(100); return; }
+        setScrollRatio(el.scrollLeft / maxScroll);
+        setThumbWidth((el.clientWidth / el.scrollWidth) * 100);
+    }, []);
+
+    useEffect(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+        updateScroll();
+        el.addEventListener("scroll", updateScroll);
+        return () => el.removeEventListener("scroll", updateScroll);
+    }, [updateScroll, activeTab]);
 
     return (
         <>
+            <MobileNav />
             <style jsx global>{`
                 @keyframes logoGlowPulseMobile {
                     0% { filter: drop-shadow(0px 0px 0px rgba(255, 150, 50, 0)); }
@@ -30,68 +53,50 @@ export default function NowSpinningMobile() {
                     mix-blend-mode: overlay;
                     pointer-events: none;
                 }
+                .hide-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+                .hide-scrollbar {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
             `}</style>
 
             <div className="relative overflow-hidden min-h-screen">
                 {/* Background Layer */}
                 <div className="absolute inset-0 z-0">
-                    <div
-                        className="h-screen bg-cover bg-center"
-                        style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(-1)", }}
-                    />
-                    <div
-                        className="h-screen bg-cover bg-center"
-                        style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(1)", }}
-                    />
-                    <div
-                        className="h-screen bg-cover bg-center"
-                        style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(-1)", }}
-                    />
-                    <div
-                        className="h-screen bg-cover bg-center"
-                        style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(1)", }}
-                    />
-                    {/* Footer background panels */}
-                    <div
-                        className="h-screen bg-cover bg-center"
-                        style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: "scaleY(-1)", marginTop: '-60vw' }}
-                    />
-                    <div
-                        className="h-screen bg-cover bg-center"
-                        style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: 'scaleY(1)' }}
-                    />
-                    <div
-                        className="h-screen bg-cover bg-center"
-                        style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: 'scaleY(-1)' }}
-                    />
-                    <div
-                        className="h-screen bg-cover bg-center"
-                        style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: 'scaleY(1)' }}
-                    />
+                    {activeTab === "Jazz History" ? (
+                        <>
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(-1)" }} />
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(1)" }} />
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(-1)" }} />
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(1)" }} />
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/new_background_v2.png')", transform: "scaleY(1)" }} />
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(-1)" }} />
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(1)" }} />
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(-1)" }} />
+                        </>
+                    ) : activeTab === "Featured Sips" ? (
+                        <>
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(-1)" }} />
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/menu_background_full.png')", transform: "scaleY(1)" }} />
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(-1)" }} />
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(1)" }} />
+                        </>
+                    ) : (
+                        <>
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(-1)" }} />
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/menu_background_full.png')", transform: "scaleY(1)" }} />
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(-1)" }} />
+                            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(1)" }} />
+                        </>
+                    )}
                 </div>
 
                 {/* Content Layer */}
                 <div className="relative z-10">
-                    {/* Header - Back Button */}
-                    <header className="flex items-center justify-between" style={{ paddingTop: '6.1vw', paddingBottom: '4.1vw', paddingLeft: '5.1vw', paddingRight: '5.1vw' }}>
-                        <Link
-                            href="/"
-                            className="flex items-center text-white active:scale-125 duration-150 transition-all"
-                            style={{ gap: '1.5vw', transform: 'translateY(2.5vw) scale(1.1)' }}
-                        >
-                            <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '7.1vw', height: '7.1vw' }}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                            </svg>
-                            <span
-                                className="font-[family-name:var(--font-bebas-neue)]"
-                                style={{ fontSize: '6.1vw', letterSpacing: '0.05em', marginLeft: '2vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-                            >Back</span>
-                        </Link>
-                        <div style={{ width: '16.3vw' }} />
-                    </header>
-
                     {/* Page Title */}
-                    <div className="text-center" style={{ marginTop: '5vw', marginBottom: '6.1vw', }}>
+                    <div className="text-center" style={{ marginTop: '14vw', marginBottom: '6.1vw', }}>
                         <div className="flex items-center justify-center" style={{ gap: '2.3vw',}}>
                             <span className="text-white" style={{ fontSize: '11vw', textShadow: '0px 0px 10px rgba(0,0,0,0.5)' }}>★</span>
                             <h1
@@ -173,70 +178,76 @@ export default function NowSpinningMobile() {
                             </div>
 
                             {/* Category Boxes */}
-                            <div className="flex justify-center" style={{ marginTop: '4vw', gap: '2vw', paddingInline: '2vw' }}>
-                                <button
-                                    onClick={() => setActiveTab("Jazz History")}
-                                    className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#f06830]"
-                                    style={{
-                                        height: '10vw',
-                                        paddingInline: '5vw',
-                                        borderRadius: '999px',
-                                        border: '2px solid rgba(255,255,255,0.2)',
-                                    }}
-                                >
-                                    <span
-                                        className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                            <div className="flex" style={{ marginTop: '4vw', marginInline: '-5vw' }}>
+                                <div className="flex-1 flex justify-center">
+                                    <button
+                                        onClick={() => setActiveTab("Jazz History")}
+                                        className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#f06830]"
                                         style={{
-                                            fontSize: '3vw',
-                                            letterSpacing: '0.07em',
-                                            textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                                            height: '9vw',
+                                            width: '28.5vw',
+                                            borderRadius: '999px',
+                                            border: '2px solid rgba(255,255,255,0.2)',
                                         }}
                                     >
-                                        Jazz History
-                                    </span>
-                                </button>
-                                <button
-                                    onClick={() => setActiveTab("Featured Sips")}
-                                    className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#2a7d7d]"
-                                    style={{
-                                        height: '10vw',
-                                        paddingInline: '5vw',
-                                        borderRadius: '999px',
-                                        border: '2px solid rgba(255,255,255,0.2)',
-                                    }}
-                                >
-                                    <span
-                                        className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                                        <span
+                                            className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                                            style={{
+                                                fontSize: '2.7vw',
+                                                letterSpacing: '0.02em',
+                                                textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                                            }}
+                                        >
+                                            Jazz History
+                                        </span>
+                                    </button>
+                                </div>
+                                <div className="flex-1 flex justify-center">
+                                    <button
+                                        onClick={() => setActiveTab("Featured Sips")}
+                                        className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#2a7d7d]"
                                         style={{
-                                            fontSize: '3vw',
-                                            letterSpacing: '0.07em',
-                                            textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                                            height: '9vw',
+                                            width: '29vw',
+                                            borderRadius: '999px',
+                                            border: '2px solid rgba(255,255,255,0.2)',
                                         }}
                                     >
-                                        Featured Sips
-                                    </span>
-                                </button>
-                                <button
-                                    onClick={() => setActiveTab("Vinyl")}
-                                    className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#6b4c8c]"
-                                    style={{
-                                        height: '10vw',
-                                        paddingInline: '5vw',
-                                        borderRadius: '999px',
-                                        border: '2px solid rgba(255,255,255,0.2)',
-                                    }}
-                                >
-                                    <span
-                                        className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                                        <span
+                                            className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                                            style={{
+                                                fontSize: '2.7vw',
+                                                letterSpacing: '0.02em',
+                                                textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                                            }}
+                                        >
+                                            Featured Sips
+                                        </span>
+                                    </button>
+                                </div>
+                                <div className="flex-1 flex justify-center">
+                                    <button
+                                        onClick={() => setActiveTab("Vinyl")}
+                                        className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#6b4c8c]"
                                         style={{
-                                            fontSize: '3vw',
-                                            letterSpacing: '0.07em',
-                                            textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                                            height: '9vw',
+                                            width: '28.5vw',
+                                            borderRadius: '999px',
+                                            border: '2px solid rgba(255,255,255,0.2)',
                                         }}
                                     >
-                                        Vinyl
-                                    </span>
-                                </button>
+                                        <span
+                                            className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                                            style={{
+                                                fontSize: '2.7vw',
+                                                letterSpacing: '0.07em',
+                                                textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                                            }}
+                                        >
+                                            Vinyl
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
 
                             {/* Active Tab Title */}
@@ -262,8 +273,8 @@ export default function NowSpinningMobile() {
                                 {/* Section 1: Origins */}
                                 <div style={{ marginTop: '4vw' }}>
                                     <img
-                                        src="/images/artwork/kind-of-blue.jpg"
-                                        alt="Kind of Blue by Miles Davis"
+                                        src="/images/artwork/performance.png"
+                                        alt="Jazz performance"
                                         className="rounded-lg object-cover"
                                         style={{ width: '35vw', height: '35vw', float: 'left', marginRight: '3vw', marginBottom: '2vw' }}
                                     />
@@ -294,8 +305,8 @@ export default function NowSpinningMobile() {
 
                                 <div style={{ marginTop: '4vw' }}>
                                     <img
-                                        src="/images/artwork/a-love-supreme.jpg"
-                                        alt="A Love Supreme by John Coltrane"
+                                        src="/images/artwork/hands_on_piano.png"
+                                        alt="Hands on piano"
                                         className="rounded-lg object-cover"
                                         style={{ width: '40vw', height: '40vw', float: 'right', marginLeft: '3vw', marginBottom: '2vw' }}
                                     />
@@ -389,7 +400,8 @@ export default function NowSpinningMobile() {
                             <div style={{ marginTop: '4vw' }}>
                                 {/* Horizontal Scrolling Cards */}
                                 <div
-                                    className="flex overflow-x-auto"
+                                    ref={scrollRef}
+                                    className="flex overflow-x-auto hide-scrollbar"
                                     style={{ gap: '4vw', marginInline: '-5vw', paddingLeft: '5vw', paddingRight: '5vw', paddingBottom: '4vw' }}
                                 >
                                     {[
@@ -427,13 +439,13 @@ export default function NowSpinningMobile() {
                                                 <div style={{ padding: '3vw' }}>
                                                     <h4
                                                         className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight overflow-hidden whitespace-nowrap text-ellipsis"
-                                                        style={{ fontSize: '4.6vw' }}
+                                                        style={{ fontSize: '5.5vw' }}
                                                     >
                                                         {item.name}
                                                     </h4>
                                                     <p
                                                         className="text-white/60 font-[family-name:var(--font-inter)]"
-                                                        style={{ fontSize: '3.6vw', marginTop: '1vw' }}
+                                                        style={{ fontSize: '4vw', marginTop: '1vw' }}
                                                     >
                                                         {item.artist}
                                                     </p>
@@ -451,6 +463,31 @@ export default function NowSpinningMobile() {
                                             </div>
                                         </div>
                                     ))}
+                                </div>
+
+                                {/* Scroll Indicator */}
+                                <div
+                                    ref={trackRef}
+                                    style={{
+                                        marginRight: '5vw',
+                                        marginBottom: '2vw',
+                                        height: '1vw',
+                                        backgroundColor: 'rgba(255,255,255,0.2)',
+                                        borderRadius: '999px',
+                                        position: 'relative',
+                                    }}
+                                >
+                                    <div
+                                        style={{
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: `${scrollRatio * (100 - thumbWidth)}%`,
+                                            width: `${thumbWidth}%`,
+                                            height: '100%',
+                                            backgroundColor: '#ffffff',
+                                            borderRadius: '999px',
+                                        }}
+                                    />
                                 </div>
                             </div>
                             )}

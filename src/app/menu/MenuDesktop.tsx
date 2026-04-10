@@ -109,25 +109,8 @@ export default function MenuDesktop() {
 
       {/* === CONTENT LAYER === */}
       <div className="relative z-10">
-        {/* Header - Back Button */}
-        <header className="flex items-center" style={{ paddingTop: '4.5vw', paddingBottom: '1.5vw', paddingLeft: '3vw' }}>
-          <Link
-            href="/"
-            className="flex items-center text-white active:scale-105 duration-150 transition-all"
-            style={{ gap: '0.5vw' }}
-          >
-            <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '5vw', height: '5vw' }}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            <span
-              className="font-[family-name:var(--font-bebas-neue)]"
-              style={{ fontSize: '4.3vw', letterSpacing: '0.05em', marginLeft: '0.5vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-            >Back</span>
-          </Link>
-        </header>
-
         {/* Page Title */}
-        <div className="text-center" style={{ marginTop: '-7vw', marginBottom: '3.71vw' }}>
+        <div className="text-center" style={{ marginTop: '6vw', marginBottom: '3.71vw' }}>
           <div className="flex items-center justify-center" style={{ gap: '1.86vw' }}>
             <img
               src="/images/mug.svg"

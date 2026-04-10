@@ -3,6 +3,7 @@
 import React, { useState, useCallback } from "react";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import MobileNav from "../components/MobileNav";
 
 // All vw values converted from px based on 393px width
 // Formula: px ÷ 393 × 100 = vw
@@ -122,6 +123,7 @@ const vinylSections = [
 ];
 
 export default function VinylMobile() {
+  const [navVisible, setNavVisible] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
@@ -172,6 +174,7 @@ export default function VinylMobile() {
 
   return (
     <>
+      <MobileNav onShow={() => setNavVisible(true)} />
       <style jsx global>{`
         @keyframes shimmer {
           0% { transform: translateX(-100%); }
@@ -266,17 +269,17 @@ export default function VinylMobile() {
             {/* Panel 2 - Footer background */}
             <div
               className="h-screen bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/vibe_background_2.png')", marginTop: "-15vw", }}
+              style={{ backgroundImage: "url('/images/menu_background_full.png')", }}
             />
             {/* Panel 3 - Footer background */}
             <div
               className="h-screen bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/vibe_background_2.png')", transform: "scaleY(-1)",}}
+              style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(-1)",}}
             />
             {/* Panel 4 - Footer background */}
             <div
               className="h-screen bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/vibe_background_2.png')", }}
+              style={{ backgroundImage: "url('/images/vibe_background.png')", }}
             />
           </>
         )}
@@ -294,7 +297,7 @@ export default function VinylMobile() {
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-10">
+      <div className="relative z-10 transition-all duration-300" style={{ paddingTop: navVisible ? '10vw' : '0' }}>
         {/* We Buy Vinyl Banner */}
         <div
           className="bg-[#d9bc52] noisy flex items-center justify-center"
@@ -327,24 +330,6 @@ export default function VinylMobile() {
             We Buy Vinyl!
           </span>
         </div>
-
-        {/* Header - Back Button */}
-        <header className="flex items-center justify-between" style={{ paddingTop: '6.1vw', paddingBottom: '4.1vw', paddingLeft: '5.1vw', paddingRight: '5.1vw' }}>
-          <Link
-            href="/"
-            className="flex items-center text-white active:scale-125 duration-150 transition-all"
-            style={{ gap: '1.5vw', transform: 'translateY(2.5vw) scale(1.1)' }}
-          >
-            <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '7.1vw', height: '7.1vw' }}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            <span
-              className="font-[family-name:var(--font-bebas-neue)]"
-              style={{ fontSize: '6.1vw', letterSpacing: '0.05em', marginLeft: '2vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-            >Back</span>
-          </Link>
-          <div style={{ width: '16.3vw' }} />
-        </header>
 
         {/* Page Title */}
         <div className="flex flex-col" style={{ marginTop: '2vw', marginBottom: '6.1vw' }}>
@@ -709,13 +694,13 @@ export default function VinylMobile() {
                         <div style={{ padding: '3vw' }}>
                           <h4
                             className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight overflow-hidden whitespace-nowrap text-ellipsis"
-                            style={{ fontSize: '4.6vw' }}
+                            style={{ fontSize: '5vw' }}
                           >
                             {item.name}
                           </h4>
                           <p
                             className="text-white/60 font-[family-name:var(--font-inter)]"
-                            style={{ fontSize: '3.6vw', marginTop: '1vw' }}
+                            style={{ fontSize: '3.8vw', marginTop: '1vw' }}
                           >
                             {item.artist}
                           </p>
