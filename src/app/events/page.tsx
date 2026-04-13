@@ -8,10 +8,10 @@ export default function EventsPage() {
       <div className="lg:hidden">
         <EventsMobile />
       </div>
-      <div className="hidden lg:block xl:hidden">
+      <div className="hidden lg:block hide-on-xl">
         <EventsDesktop />
       </div>
-      <div className="hidden xl:block">
+      <div className="show-on-xl">
         <EventsXL />
       </div>
     </>

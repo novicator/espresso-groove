@@ -8,10 +8,10 @@ export default function VinylPage() {
       <div className="lg:hidden">
         <VinylMobile />
       </div>
-      <div className="hidden lg:block xl:hidden">
+      <div className="hidden lg:block hide-on-xl">
         <VinylDesktop />
       </div>
-      <div className="hidden xl:block">
+      <div className="show-on-xl">
         <VinylXL />
       </div>
     </>

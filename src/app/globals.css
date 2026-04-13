@@ -10,7 +10,22 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --breakpoint-xl: 1450px;
+}
+
+/* Custom XL breakpoint at 1450px */
+.show-on-xl {
+  display: none;
+}
+.hide-on-xl {
+  display: block;
+}
+@media (min-width: 1450px) {
+  .show-on-xl {
+    display: block;
+  }
+  .hide-on-xl {
+    display: none;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

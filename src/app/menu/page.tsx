@@ -8,10 +8,10 @@ export default function MenuPage() {
       <div className="lg:hidden">
         <MenuMobile />
       </div>
-      <div className="hidden lg:block xl:hidden">
+      <div className="hidden lg:block hide-on-xl">
         <MenuDesktop />
       </div>
-      <div className="hidden xl:block">
+      <div className="show-on-xl">
         <MenuXL />
       </div>
     </>

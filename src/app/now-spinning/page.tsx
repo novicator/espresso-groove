@@ -8,10 +8,10 @@ export default function NowSpinningPage() {
       <div className="lg:hidden">
         <NowSpinningMobile />
       </div>
-      <div className="hidden lg:block xl:hidden">
+      <div className="hidden lg:block hide-on-xl">
         <NowSpinningDesktop />
       </div>
-      <div className="hidden xl:block">
+      <div className="show-on-xl">
         <NowSpinningXL />
       </div>
     </>

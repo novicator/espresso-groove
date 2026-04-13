@@ -8,10 +8,10 @@ export default function MerchPage() {
       <div className="lg:hidden">
         <MerchMobile />
       </div>
-      <div className="hidden lg:block xl:hidden">
+      <div className="hidden lg:block hide-on-xl">
         <MerchDesktop />
       </div>
-      <div className="hidden xl:block">
+      <div className="show-on-xl">
         <MerchXL />
       </div>
     </>

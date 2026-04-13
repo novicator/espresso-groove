@@ -8,10 +8,10 @@ export default function Home() {
       <div className="lg:hidden">
         <PageMobile />
       </div>
-      <div className="hidden lg:block xl:hidden">
+      <div className="hidden lg:block hide-on-xl">
         <PageDesktop />
       </div>
-      <div className="hidden xl:block">
+      <div className="show-on-xl">
         <PageXL />
       </div>
     </>
