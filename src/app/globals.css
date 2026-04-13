@@ -12,14 +12,14 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Custom XL breakpoint at 1450px */
+/* Custom XL breakpoint at 1200px */
 .show-on-xl {
   display: none;
 }
 .hide-on-xl {
   display: block;
 }
-@media (min-width: 1450px) {
+@media (min-width: 1200px) {
   .show-on-xl {
     display: block;
   }

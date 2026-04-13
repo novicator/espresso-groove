@@ -42,7 +42,7 @@ export default function MerchXL() {
 
       {/* === CONTENT LAYER (px values based on 1400px) === */}
       <div className="relative z-10">
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', zoom: 0.857 }}>
           <div className="flex items-center justify-center" style={{ height: '60vh' }}>
             <span
               className="text-white font-[family-name:var(--font-libre-baskerville)] uppercase"

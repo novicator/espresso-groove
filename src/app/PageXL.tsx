@@ -138,7 +138,7 @@ export default function PageXL() {
 
       {/* === CONTENT LAYER (px values based on 1400px viewport) === */}
       <div className="relative z-10">
-      <div className="relative" style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      <div className="relative" style={{ maxWidth: '1400px', margin: '0 auto', zoom: 0.857 }}>
         {/* Logo */}
         <img
           src="/images/Expresso groove.svg"
@@ -348,7 +348,7 @@ export default function PageXL() {
       <div style={{ paddingTop: '70px', marginTop: '-42px' }}>
         <MiniMusicNotes isPlaying={true} size="xlFixed" />
       </div>
-      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', zoom: 0.857 }}>
           {/* Now Playing Section */}
           <style>{`
             @keyframes eq-bounce {
@@ -427,7 +427,7 @@ export default function PageXL() {
       </div>
       {/* Music Notes Divider 2 (full width) */}
       <MiniMusicNotes isPlaying={true} size="xlFixed" />
-      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', zoom: 0.857 }}>
 
         {/* Now Spinning */}
         <div

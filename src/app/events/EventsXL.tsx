@@ -108,7 +108,7 @@ export default function EventsXL() {
 
       {/* === CONTENT LAYER (px values based on 1400px) === */}
       <div className="relative z-10">
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', zoom: 0.857 }}>
           {/* Page Title */}
           <div className="text-center" style={{ marginTop: '98px', marginBottom: '42px' }}>
             <div className="flex items-center justify-center" style={{ gap: '21px' }}>

@@ -10,7 +10,7 @@ export default function DesktopFooterXL() {
       <MusicNotes isPlaying={true} size="xlFixed" />
 
       {/* Footer Content (capped at 1400px) */}
-      <div style={{ maxWidth: '1400px', margin: '0 auto', paddingInline: '56px', paddingTop: '56px', paddingBottom: '49px' }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', zoom: 0.857, paddingInline: '56px', paddingTop: '56px', paddingBottom: '49px' }}>
         <div className="flex" style={{ gap: '0px' }}>
 
           {/* Left: Logo + Tagline (wider) */}

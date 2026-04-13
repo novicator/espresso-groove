@@ -306,7 +306,7 @@ export default function VinylXL() {
           </span>
         </div>
 
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', zoom: 0.857 }}>
           {/* Page Title */}
           <div className="flex flex-col items-center" style={{ marginTop: '-30px', marginBottom: '85.4px', paddingLeft: '336px', width: 'fit-content' }}>
             <h1
