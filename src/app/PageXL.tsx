@@ -144,15 +144,15 @@ export default function PageXL() {
           src="/images/Expresso groove.svg"
           alt="Espresso Groove"
           className="logo-glow"
-          style={{ width: '770px', marginLeft: '-56px', marginTop: '-84px' }}
+          style={{ width: '693px', marginLeft: '-50.4px', marginTop: '-75.6px' }}
         />
         <h2
           className="text-white font-[family-name:var(--font-libre-baskerville)] leading-tight uppercase tracking-tight"
           style={{
-            fontSize: '70px',
+            fontSize: '63px',
             textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
-            marginTop: '-112px',
-            paddingLeft: '70px',
+            marginTop: '-100.8px',
+            paddingLeft: '63px',
             fontWeight: 900,
           }}
         >
@@ -161,10 +161,10 @@ export default function PageXL() {
         <p
           className="text-white font-[family-name:var(--font-libre-baskerville)] italic"
           style={{
-            fontSize: '72.8px',
+            fontSize: '65.52px',
             textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
-            marginTop: '28px',
-            paddingLeft: '63px',
+            marginTop: '25.2px',
+            paddingLeft: '56.7px',
             fontWeight: 900,
           }}
         >
@@ -177,19 +177,19 @@ export default function PageXL() {
           style={{
             paddingLeft: '0px',
             paddingTop: '49px',
-            gap: '21px',
+            gap: '10px',
           }}
         >
           <Link
             href="/menu"
-            className="bg-[#f06830] noisy flex items-center justify-center active:scale-105 duration-150 transition-all"
-            style={{ width: '252px', height: '105px', gap: '7px', border: '2px solid #8a3010', borderRadius: '28px' }}
+            className="bg-[#f06830] noisy flex items-center justify-center hover:scale-105 active:scale-105 duration-150 transition-all"
+            style={{ width: '300px', height: '115px', gap: '7px', border: '2px solid #8a3010', borderRadius: '28px' }}
           >
             <img
               src="/images/menu_cup.svg?v=3"
               style={{
-                width: '36.4px',
-                height: '36.4px',
+                width: '45.4px',
+                height: '45.4px',
                 filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))',
                 marginRight: '7px',
               }}
@@ -199,7 +199,8 @@ export default function PageXL() {
               style={{
                 textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                 letterSpacing: '0.1em',
-                fontSize: '28px',
+                fontSize: '33px',
+                paddingTop: '2px',
               }}
             >
               Menu
@@ -208,19 +209,19 @@ export default function PageXL() {
 
           <Link
             href="/vinyl"
-            className="overflow-hidden active:scale-105 duration-150 transition-all"
-            style={{ width: '252px', borderRadius: '28px', border: '2px solid #1a4f4f' }}
+            className="overflow-hidden hover:scale-105 active:scale-105 duration-150 transition-all"
+            style={{ width: '300px', borderRadius: '28px', border: '2px solid #1a4f4f' }}
           >
             {/* Top: Vinyl button */}
             <div
               className="bg-[#2a7d7d] noisy flex items-center justify-center"
-              style={{ height: '70px', gap: '12.6px' }}
+              style={{ height: '80px', gap: '12.6px' }}
             >
               <img
                 src="/images/vinyl-svgrepo-com.svg"
                 style={{
-                  width: '29.4px',
-                  height: '29.4px',
+                  width: '38.4px',
+                  height: '38.4px',
                   filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))',
                 }}
               />
@@ -228,8 +229,8 @@ export default function PageXL() {
                 className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
                 style={{
                   textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
-                  letterSpacing: '0.2em',
-                  fontSize: '25.2px',
+                  letterSpacing: '0.12em',
+                  fontSize: '31.2px',
                 }}
               >
                 Vinyl
@@ -258,7 +259,7 @@ export default function PageXL() {
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-black"
                 style={{
-                  fontSize: '15.4px',
+                  fontSize: '17.4px',
                   letterSpacing: '0.1em',
                   textShadow: 'none',
                   position: 'relative',
@@ -272,14 +273,14 @@ export default function PageXL() {
 
           <Link
             href="/merch"
-            className="bg-[#6b4c8c] noisy flex items-center justify-center"
-            style={{ width: '252px', height: '105px', gap: '11.2px', border: '2px solid #3d2a52', borderRadius: '28px' }}
+            className="bg-[#6b4c8c] noisy flex items-center justify-center hover:scale-105 active:scale-105 duration-150 transition-all"
+            style={{ width: '300px', height: '115px', gap: '11.2px', border: '2px solid #3d2a52', borderRadius: '28px' }}
           >
             <img
               src="/images/shirt-outline-svgrepo-com.svg"
               style={{
-                width: '33.6px',
-                height: '33.6px',
+                width: '42.6px',
+                height: '42.6px',
                 filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))',
               }}
             />
@@ -288,7 +289,7 @@ export default function PageXL() {
               style={{
                 textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                 letterSpacing: '0.12em',
-                fontSize: '26.6px',
+                fontSize: '32px',
               }}
             >
               Merch
@@ -297,10 +298,10 @@ export default function PageXL() {
 
           <Link
             href="/events"
-            className="bg-[#24ADFF] noisy flex items-center justify-center active:scale-105 duration-150 transition-all"
-            style={{ width: '252px', height: '105px', gap: '7px', border: '2px solid #3a8abf', borderRadius: '28px' }}
+            className="bg-[#24ADFF] noisy flex items-center justify-center hover:scale-105 active:scale-105 duration-150 transition-all"
+            style={{ width: '300px', height: '115px', gap: '7px', border: '2px solid #215171', borderRadius: '28px' }}
           >
-            <svg style={{ width: '35px', height: '35px', filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))' }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg style={{ width: '44px', height: '44px', filter: 'drop-shadow(0 0 6px rgba(0,0,0,1))' }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <span
@@ -308,7 +309,7 @@ export default function PageXL() {
               style={{
                 textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                 letterSpacing: '0.12em',
-                fontSize: '25.2px',
+                fontSize: '31px',
               }}
             >
               Events
@@ -318,11 +319,11 @@ export default function PageXL() {
           {/* Now Spinning Button */}
           <Link href="/now-spinning" className="flex items-center justify-center">
             <div
-              className="bg-[#6F4E37] noisy flex items-center justify-center cursor-pointer active:scale-105 duration-150 transition-all"
-              style={{ width: '252px', height: '105px', border: '2px solid #1a0f0a', borderRadius: '28px' }}
+              className="bg-[#6F4E37] noisy flex items-center justify-center cursor-pointer hover:scale-105 active:scale-105 duration-150 transition-all"
+              style={{ width: '370px', height: '115px', border: '2px solid #1a0f0a', borderRadius: '28px' }}
             >
-              <span className="text-white" style={{ fontSize: '30.8px' }}>★</span>
-              <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '25.2px', fontWeight: 900, marginInline: '7px' }}>
+              <span className="text-white" style={{ fontSize: '50.8px', filter: 'drop-shadow(0 0 6px rgba(0,0,0,1)' }}>★</span>
+              <span className="uppercase text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '30.2px', fontWeight: 900, marginInline: '7px', textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)', }}>
                 Now Spinning
               </span>
             </div>
@@ -337,7 +338,7 @@ export default function PageXL() {
           style={{
             width: '392px',
             right: '98px',
-            top: '294px',
+            top: '214px',
             filter: 'drop-shadow(0px 0px 15px rgba(255,150,50,0.5))',
           }}
         />
@@ -465,7 +466,7 @@ export default function PageXL() {
         {/* Jazz */}
         <div
           className="flex items-center justify-center"
-          style={{ gap: '57.4px', marginTop: '43.4px' }}
+          style={{ gap: '57.4px', marginTop: '10.4px' }}
         >
           <div
             className="bg-white"
@@ -492,11 +493,11 @@ export default function PageXL() {
           className="rounded-xl"
           style={{ marginInline: '56px', marginTop: '56px', padding: '11.2px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
         >
-          <div className="rounded-lg overflow-hidden bg-[#2d1f1a]" style={{ padding: '42px' }}>
+          <div className="rounded-lg overflow-hidden bg-[#2d1f1a]" style={{ padding: '22px' }}>
             <p
               className="font-[family-name:var(--font-libre-baskerville)] text-white"
               style={{
-                fontSize: '29.4px',
+                fontSize: '25.4px',
                 lineHeight: '1.6',
                 textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
               }}
@@ -507,7 +508,7 @@ export default function PageXL() {
         </div>
 
         {/* === Three Column Row === */}
-        <div className="flex" style={{ gap: '28px', marginTop: '56px', paddingInline: '56px' }}>
+        <div className="flex" style={{ gap: '28px', marginTop: '36px', paddingInline: '56px' }}>
 
           {/* LEFT: Jazz History */}
           <div className="flex-1 rounded-xl" style={{ padding: '11.2px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '623px' }}>
@@ -571,10 +572,10 @@ export default function PageXL() {
               <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
               {/* Coffee */}
-              <div className="bg-[#f06830] noisy flex items-center justify-center" style={{ height: '49px' }}>
+              <div className="bg-[#f06830] noisy flex items-center justify-center" style={{ height: '58px' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{ fontSize: '16.8px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                  style={{ fontSize: '18.8px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
                 >
                   Coffee
                 </span>
@@ -589,10 +590,10 @@ export default function PageXL() {
               </div>
 
               {/* Tea */}
-              <div className="bg-[#2a7d7d] noisy flex items-center justify-center" style={{ height: '49px' }}>
+              <div className="bg-[#2a7d7d] noisy flex items-center justify-center" style={{ height: '58px' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{ fontSize: '16.8px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                  style={{ fontSize: '18.8px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
                 >
                   Tea
                 </span>
@@ -607,10 +608,10 @@ export default function PageXL() {
               </div>
 
               {/* Energy Drinks */}
-              <div className="bg-[#6b4c8c] noisy flex items-center justify-center" style={{ height: '49px' }}>
+              <div className="bg-[#6b4c8c] noisy flex items-center justify-center" style={{ height: '58px' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{ fontSize: '16.8px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                  style={{ fontSize: '18.8px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
                 >
                   Energy Drinks
                 </span>
@@ -770,16 +771,16 @@ export default function PageXL() {
         {/* Drip • Drop • Vibe */}
         <p
           className="text-white font-[family-name:var(--font-libre-baskerville)] italic text-center"
-          style={{ fontSize: '84px', fontWeight: 900, marginTop: '70px', textShadow: '2px 2px 8px rgba(0,0,0,0.)' }}
+          style={{ fontSize: '75.6px', fontWeight: 900, marginTop: '63px', textShadow: '2px 2px 8px rgba(0,0,0,0.)' }}
         >
           Drip • Drop • Vibe
         </p>
 
         {/* === About Us + The Vibe === */}
-        <div className="flex" style={{ gap: '28px', marginTop: '56px', paddingInline: '56px' }}>
+        <div className="flex justify-center" style={{ gap: '28px', marginTop: '56px', }}>
 
           {/* LEFT: About Us */}
-          <div className="flex-1">
+          <div className="flex-[1]" style={{ maxWidth: '550px', }}>
             {/* About Us Header */}
             <div
               className="flex items-center justify-center"
@@ -787,7 +788,7 @@ export default function PageXL() {
             >
               <div
                 className="bg-white"
-                style={{ width: '70px', height: '7px', boxShadow: '0 0 6px rgba(0,0,0,0.9)' }}
+                style={{ width: '6=70px', height: '7px', boxShadow: '0 0 6px rgba(0,0,0,0.9)' }}
               />
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
@@ -806,11 +807,11 @@ export default function PageXL() {
                 {/* Our Store Title */}
                 <div
                   className="text-center border-b border-white"
-                  style={{ paddingBlock: '28px' }}
+                  style={{ paddingBlock: '13px' }}
                 >
                   <span
                     className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                    style={{ fontSize: '32.2px', letterSpacing: '0.15em' }}
+                    style={{ fontSize: '28.2px', letterSpacing: '0.15em' }}
                   >
                     Our Store
                   </span>
@@ -819,7 +820,7 @@ export default function PageXL() {
                 {/* Store Photo Placeholder */}
                 <div
                   className="w-full bg-[#d4d4d4] flex items-center justify-center"
-                  style={{ height: '280px' }}
+                  style={{ height: '250px' }}
                 >
                   <span
                     className="text-[#555555] font-[family-name:var(--font-inter)]"
@@ -830,7 +831,7 @@ export default function PageXL() {
                 </div>
 
                 {/* Store Info */}
-                <div style={{ padding: '28px' }}>
+                <div style={{ paddingInline: '22px', paddingBlock: '14px', }}>
                   {/* Address */}
                   <a
                     href="https://maps.google.com/?q=Espresso+Groove"
@@ -839,20 +840,20 @@ export default function PageXL() {
                     className="flex items-start"
                     style={{ gap: '21px' }}
                   >
-                    <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '49px', height: '49px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '40px', height: '40px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     <div>
                       <p
                         className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                        style={{ fontSize: '28px' }}
+                        style={{ fontSize: '26px' }}
                       >
                         3540 Belle Terre Blvd • Unit C
                       </p>
                       <p
                         className="text-white/70 font-[family-name:var(--font-inter)]"
-                        style={{ fontSize: '25.2px' }}
+                        style={{ fontSize: '24.2px' }}
                       >
                         Myrtle Beach, SC 29579
                       </p>
@@ -864,19 +865,19 @@ export default function PageXL() {
                     className="flex items-start"
                     style={{ gap: '21px', marginTop: '21px' }}
                   >
-                    <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '49px', height: '49px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '40px', height: '40px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
                       <p
                         className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                        style={{ fontSize: '28px' }}
+                        style={{ fontSize: '26px' }}
                       >
                         Mon–Fri: 7am–9pm
                       </p>
                       <p
                         className="text-white/70 font-[family-name:var(--font-inter)]"
-                        style={{ fontSize: '25.2px' }}
+                        style={{ fontSize: '24.2px' }}
                       >
                         Sat–Sun: 8am–10pm
                       </p>
@@ -889,26 +890,26 @@ export default function PageXL() {
                     className="flex items-center"
                     style={{ gap: '21px', marginTop: '21px' }}
                   >
-                    <svg className="text-white flex-shrink-0" style={{ width: '49px', height: '49px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="text-white flex-shrink-0" style={{ width: '40px', height: '40px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     <p
                       className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                      style={{ fontSize: '28px' }}
+                      style={{ fontSize: '26px' }}
                     >
                       (000) 000-0000
                     </p>
                   </a>
 
                   {/* Get Directions */}
-                  <div style={{ height: '5.6px', marginTop: '28px', marginLeft: '-28px', marginRight: '-28px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+                  <div style={{ height: '5.6px', marginTop: '12px', marginLeft: '-28px', marginRight: '-28px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
                   <div
                     className="flex items-center justify-center"
-                    style={{ paddingTop: '21px', gap: '14px' }}
+                    style={{ paddingTop: '11px', gap: '14px' }}
                   >
                     <span
                       className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                      style={{ fontSize: '30.8px' }}
+                      style={{ fontSize: '25.8px' }}
                     >
                       Get Directions →
                     </span>
@@ -919,7 +920,7 @@ export default function PageXL() {
           </div>
 
           {/* RIGHT: The Vibe */}
-          <div className="flex-1">
+          <div className="flex-1" style={{ maxWidth: '630px' }}>
             {/* The Vibe Header */}
             <div
               className="flex items-center justify-center"
@@ -945,19 +946,19 @@ export default function PageXL() {
             <div style={{ paddingInline: '28px', paddingTop: '28px', textShadow: '2px 2px 8px rgba(0,0,0,0)' }}>
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                style={{ fontSize: '35px', fontWeight: 900 }}
+                style={{ fontSize: '30px', fontWeight: 900 }}
               >
                 <span className="font-[900]">Espresso Groove</span> was born from a simple idea:
               </p>
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                style={{ fontSize: '35px', fontWeight: 900, marginTop: '21px' }}
+                style={{ fontSize: '30px', fontWeight: 900, marginTop: '21px' }}
               >
                 A space where the ritual of coffee meets the soul of music. Great espresso and great vinyl share something in common — they&apos;re both meant to be <span className="font-[800]">savored</span>, not rushed.
               </p>
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                style={{ fontSize: '35px', fontWeight: 900, marginTop: '21px' }}
+                style={{ fontSize: '30px', fontWeight: 900, marginTop: '21px' }}
               >
                 Pull up a chair. Flip through the crates. Espresso <span className="font-[900]">drips</span>, the needle <span className="font-[800]">drops</span>, and the <span className="font-[800]">vibe</span> takes over.
               </p>

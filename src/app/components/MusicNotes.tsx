@@ -11,7 +11,7 @@ const sizePresets = {
   mobile: { height: '40vw', marginTop: '-5vw', fontSize: '10.6vw', left: '-3vw', top: '50%', wave: '4.6vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', speed: '8s', unit: 'vw' },
   desktop: { height: '15vw', marginTop: '-3vw', fontSize: '5vw', left: '-2vw', top: '50%', wave: '2vw', textShadow: 'none', speed: '10s', unit: 'vw' },
   xl: { height: '10vw', marginTop: '-1vw', fontSize: '3.5vw', left: '-1.5vw', top: '50%', wave: '1.5vw', textShadow: 'none', speed: '8s', unit: 'vw' },
-  xlFixed: { height: '210px', marginTop: '-42px', fontSize: '70px', left: '-28px', top: '50%', wave: '28px', textShadow: 'none', speed: '10s', unit: 'px' },
+  xlFixed: { height: '245px', marginTop: '-42px', fontSize: '70px', left: '-28px', top: '50%', wave: '28px', textShadow: 'none', speed: '10s', unit: 'px' },
 };
 
 export default function MusicNotes({ isPlaying, size = "mobile" }: { isPlaying: boolean; size?: "mobile" | "desktop" | "xl" | "xlFixed" }) {
