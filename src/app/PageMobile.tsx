@@ -1014,7 +1014,7 @@ export default function PageMobile() {
           </div>
           </div>
 
-          <Footer />
+          {/* <Footer /> */}
 
         </div>
 
