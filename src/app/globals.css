@@ -14,17 +14,17 @@
 
 /* Custom XL breakpoint at 1200px */
 .show-on-xl {
-  display: none;
+  display: none !important;
 }
 .hide-on-xl {
   display: block;
 }
 @media (min-width: 1200px) {
   .show-on-xl {
-    display: block;
+    display: block !important;
   }
   .hide-on-xl {
-    display: none;
+    display: none !important;
   }
 }
 
