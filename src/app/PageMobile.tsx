@@ -1016,6 +1016,8 @@ export default function PageMobile() {
 
           {/* <Footer /> */}
 
+          <div style={{ height: '15vw' }} />
+
         </div>
 
       </div>

@@ -16,9 +16,6 @@
 .show-on-xl {
   display: none !important;
 }
-.hide-on-xl {
-  display: block;
-}
 @media (min-width: 1200px) {
   .show-on-xl {
     display: block !important;

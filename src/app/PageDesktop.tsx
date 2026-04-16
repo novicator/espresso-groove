@@ -131,8 +131,12 @@ export default function PageDesktop() {
           style={{ backgroundImage: `url('/images/desktop_black_bg.png')`, transform: 'scaleY(-1)' }}
         />
         <div
-          className="h-screen bg-cover bg-center"
-          style={{ backgroundImage: `url('/images/vibe_background.png')` }}
+          className="h-screen bg-[position:0%_20%] bg-[length:100%_100%]"
+          style={{ backgroundImage: `url('/images/desktop_black_bg.png')`, transform: 'scaleY(1)' }}
+        />
+        <div
+          className="h-screen bg-[position:0%_20%] bg-[length:100%_100%]"
+          style={{ backgroundImage: `url('/images/desktop_black_bg.png')`, transform: 'scaleY(-1)' }}
         />
       </div>
 
