@@ -5,7 +5,7 @@ import Link from "next/link";
 import Footer from "../components/Footer";
 import MobileNav from "../components/MobileNav";
 
-type FilterType = "All" | "Coffee" | "Tea" | "Energy";
+type FilterType = "All" | "The Pour" | "Espresso/Coffee" | "Tea/Matcha" | "Energy/Boba" | "Bakery" | "Dessert";
 
 // All vw values converted from px based on 393px width
 // Formula: px ÷ 393 × 100 = vw
@@ -34,14 +34,31 @@ const energyItems = [
   { name: "STATIC SHOCK", desc: "Passion fruit with guarana & electrolytes" },
 ];
 
+const bakeryItems = [
+  { name: "CROISSANT", desc: "Buttery, flaky, classic French pastry" },
+  { name: "BLUEBERRY MUFFIN", desc: "Fresh blueberries in a soft crumb" },
+  { name: "BANANA BREAD", desc: "Moist, warm, homestyle slice" },
+  { name: "CINNAMON ROLL", desc: "Glazed swirl of cinnamon and sugar" },
+  { name: "SCONE", desc: "Crumbly, buttery, pairs with any drink" },
+];
+
+const dessertItems = [
+  { name: "TIRAMISU", desc: "Espresso-soaked layers of mascarpone" },
+  { name: "BROWNIE", desc: "Rich, fudgy, chocolate perfection" },
+  { name: "CHEESECAKE SLICE", desc: "Creamy New York-style classic" },
+  { name: "COOKIE", desc: "Warm chocolate chip, baked fresh" },
+  { name: "AFFOGATO", desc: "Vanilla gelato drowned in espresso" },
+];
+
 export default function MenuMobile() {
   const [activeFilter, setActiveFilter] = useState<FilterType>("All");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // Count visible items to determine layout
   const visibleCount =
-    (activeFilter === "All" || activeFilter === "Coffee" ? coffeeItems.length : 0) +
-    (activeFilter === "All" || activeFilter === "Tea" ? teaItems.length : 0) +
-    (activeFilter === "All" || activeFilter === "Energy" ? energyItems.length : 0);
+    (activeFilter === "All" || activeFilter === "Espresso/Coffee" ? coffeeItems.length : 0) +
+    (activeFilter === "All" || activeFilter === "Tea/Matcha" ? teaItems.length : 0) +
+    (activeFilter === "All" || activeFilter === "Energy/Boba" ? energyItems.length : 0);
 
   const fewItems = visibleCount < 4;
 
@@ -61,6 +78,11 @@ export default function MenuMobile() {
           opacity: 0.8;
           mix-blend-mode: overlay;
           pointer-events: none;
+        }
+
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
         }
       `}</style>
 
@@ -188,41 +210,152 @@ export default function MenuMobile() {
           </p>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex justify-center" style={{ gap: '1vw', paddingLeft: '2.1vw', paddingRight: '3.1vw', marginBottom: '6.1vw' }}>
-          {(["All", "Coffee", "Tea", "Energy"] as FilterType[]).map((filter) => {
-            const buttonStyles: Record<FilterType, { bg: string; border: string }> = {
-              All: { bg: 'bg-white', border: '2px solid #b0b0b0' },
-              Coffee: { bg: 'bg-[#f06830]', border: '2px solid #8a3010' },
-              Tea: { bg: 'bg-[#2a7d7d]', border: '2px solid #1a4f4f' },
-              Energy: { bg: 'bg-[#6b4c8c]', border: '2px solid #3d2a52' },
-            };
-            const s = buttonStyles[filter];
-            return (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`rounded-full noisy font-[family-name:var(--font-libre-baskerville)] uppercase transition-all cursor-pointer flex items-center justify-center active:scale-125 duration-150 ${s.bg} ${filter === 'All' ? 'text-[#1a1310]' : 'text-white'}`}
+        {/* Dropdown */}
+        <div className="relative flex justify-start" style={{ marginBottom: '6.1vw', paddingLeft: '10vw' }}>
+          <div
+            className="rounded-full relative"
+            style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+          >
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="flex items-center justify-between rounded-full bg-[#2d1f1a] cursor-pointer"
+              style={{ width: '78vw', paddingLeft: '6vw', paddingRight: '5vw', paddingTop: '2.5vw', paddingBottom: '2.5vw', gap: '3vw' }}
+            >
+              <span
+                className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold"
+                style={{ fontSize: '4vw' }}
+              >
+                {activeFilter}
+              </span>
+              <svg
+                className={`text-white transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+                style={{ width: '3.5vw', height: '3.5vw' }}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {dropdownOpen && (
+              <div
+                className="absolute left-0 z-[60] rounded-xl overflow-hidden"
                 style={{
-                  paddingLeft: '3.5vw',
-                  paddingRight: '3.5vw',
-                  paddingTop: '3.5vw',
-                  paddingBottom: '3.5vw',
-                  fontSize: '3vw',
-                  letterSpacing: '0.0em',
-                  border: s.border,
-                  fontWeight: 900,
-                  textShadow: filter === 'All' ? 'none' : '2px 2px 8px rgba(0,0,0,0.9)',
+                  top: '100%',
+                  marginTop: '1.5vw',
+                  minWidth: '100%',
+                  padding: '0.8vw',
+                  background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
                 }}
               >
-                {filter === 'Energy' ? 'Energy Drinks' : filter}
-              </button>
-            );
-          })}
+                <div className="rounded-lg overflow-y-auto bg-[#2d1f1a]" style={{ maxHeight: '80vw' }}>
+                  {/* All */}
+                  <button
+                    onClick={() => { setActiveFilter("All"); setDropdownOpen(false); }}
+                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                    style={{ fontSize: '3.8vw', padding: '3vw 5vw' }}
+                  >
+                    All
+                  </button>
+
+                  {/* Limited Press Gold Banner + The Pour */}
+                  <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                    <div
+                      onClick={() => { setActiveFilter("The Pour"); setDropdownOpen(false); }}
+                      className="bg-[#d9bc52] noisy flex flex-col items-center justify-center cursor-pointer"
+                      style={{
+                        position: 'relative',
+                        overflow: 'hidden',
+                        paddingBlock: '0.5vw',
+                        boxShadow: '0 0 12px rgba(217,188,82,0.6), 0 0 24px rgba(217,188,82,0.3)',
+                      }}
+                    >
+                      <div
+                        style={{
+                          position: 'absolute',
+                          inset: 0,
+                          background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%)',
+                          animation: 'shimmer 2.5s ease-in-out infinite',
+                          zIndex: 1,
+                          pointerEvents: 'none',
+                        }}
+                      />
+                      <span
+                        className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-black"
+                        style={{ fontSize: '3vw', letterSpacing: '0.1em', position: 'relative', zIndex: 2 }}
+                      >
+                        Limited Press
+                      </span>
+                      <span
+                        className="font-[family-name:var(--font-inter)] text-black/70"
+                        style={{ fontSize: '2.8vw', position: 'relative', zIndex: 2 }}
+                      >
+                        In rotation for a limited time
+                      </span>
+                    </div>
+                    <button
+                      onClick={() => { setActiveFilter("The Pour"); setDropdownOpen(false); }}
+                      className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                      style={{ fontSize: '3.8vw', padding: '3vw 5vw' }}
+                    >
+                      The Pour
+                    </button>
+                  </div>
+
+                  {/* Espresso/Coffee */}
+                  <button
+                    onClick={() => { setActiveFilter("Espresso/Coffee"); setDropdownOpen(false); }}
+                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                    style={{ fontSize: '3.8vw', padding: '3vw 5vw', borderTop: '1px solid #d9bc52' }}
+                  >
+                    Espresso/Coffee
+                  </button>
+
+                  {/* Tea/Matcha */}
+                  <button
+                    onClick={() => { setActiveFilter("Tea/Matcha"); setDropdownOpen(false); }}
+                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                    style={{ fontSize: '3.8vw', padding: '3vw 5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    Tea/Matcha
+                  </button>
+
+                  {/* Energy/Boba */}
+                  <button
+                    onClick={() => { setActiveFilter("Energy/Boba"); setDropdownOpen(false); }}
+                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                    style={{ fontSize: '3.8vw', padding: '3vw 5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    Energy/Boba
+                  </button>
+
+                  {/* Bakery */}
+                  <button
+                    onClick={() => { setActiveFilter("Bakery"); setDropdownOpen(false); }}
+                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                    style={{ fontSize: '3.8vw', padding: '3vw 5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    Bakery
+                  </button>
+
+                  {/* Dessert */}
+                  <button
+                    onClick={() => { setActiveFilter("Dessert"); setDropdownOpen(false); }}
+                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                    style={{ fontSize: '3.8vw', padding: '3vw 5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    Dessert
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* Featured Sips Section - only on "All" */}
-        {activeFilter === "All" && (
+        {/* The Pour Section - on "All" or "The Pour" */}
+        {(activeFilter === "All" || activeFilter === "The Pour") && (
         <div
           className="rounded-xl"
           style={{ marginInline: '4vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
@@ -230,6 +363,40 @@ export default function MenuMobile() {
         <div
           className="rounded-lg overflow-hidden bg-[#2d1f1a]"
         >
+          {/* Limited Press Banner */}
+          <div
+            className="bg-[#d9bc52] noisy flex flex-col items-center justify-center"
+            style={{
+              position: 'relative',
+              overflow: 'hidden',
+              paddingBlock: '1.5vw',
+              boxShadow: '0 0 12px rgba(217,188,82,0.6), 0 0 24px rgba(217,188,82,0.3)',
+            }}
+          >
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%)',
+                animation: 'shimmer 2.5s ease-in-out infinite',
+                zIndex: 1,
+                pointerEvents: 'none',
+              }}
+            />
+            <span
+              className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-black"
+              style={{ fontSize: '4.5vw', letterSpacing: '0.1em', position: 'relative', zIndex: 2 }}
+            >
+              Limited Press
+            </span>
+            <span
+              className="font-[family-name:var(--font-inter)] text-black/70"
+              style={{ fontSize: '3.8vw', position: 'relative', zIndex: 2 }}
+            >
+              In rotation for a limited time
+            </span>
+          </div>
+
           {/* Title */}
           <div
             className="text-center"
@@ -239,8 +406,16 @@ export default function MenuMobile() {
               className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
               style={{ fontSize: '5vw', letterSpacing: '0.15em' }}
             >
-              Featured Sips
+              &ldquo;The Pour&rdquo;
             </span>
+            <div>
+              <span
+                className="font-[family-name:var(--font-libre-baskerville)] text-white italic"
+                style={{ fontSize: '5vw' }}
+              >
+                What&apos;s in your cup?
+              </span>
+            </div>
             <div className="mx-auto" style={{ height: '0.4vw', width: '60%', marginTop: '2vw', marginBottom: '2vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
             <div>
               <span
@@ -266,7 +441,7 @@ export default function MenuMobile() {
                   textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                 }}
               >
-                Coffee
+                Espresso<br />+ Coffee
               </span>
             </div>
             <div
@@ -281,7 +456,7 @@ export default function MenuMobile() {
                   textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                 }}
               >
-                Tea
+                Tea<br />+ Matcha
               </span>
             </div>
             <div
@@ -291,12 +466,12 @@ export default function MenuMobile() {
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                 style={{
-                  fontSize: '3.1vw',
+                  fontSize: '3.6vw',
                   letterSpacing: '0.07em',
                   textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                 }}
               >
-                Energy Drinks
+                Energy<br />+ Boba
               </span>
             </div>
           </div>
@@ -364,15 +539,15 @@ export default function MenuMobile() {
           >
           <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
 
-            {/* Coffee Section */}
-            {(activeFilter === "All" || activeFilter === "Coffee") && (
+            {/* Espresso/Coffee Section */}
+            {(activeFilter === "All" || activeFilter === "Espresso/Coffee") && (
             <>
               <div className="bg-[#f06830] noisy" style={{ padding: '2.5vw 4vw' }}>
                 <p
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                   style={{ fontSize: '4.6vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                 >
-                  Coffee
+                  Espresso/Coffee
                 </p>
               </div>
               {coffeeItems.map((item, index) => (
@@ -397,15 +572,15 @@ export default function MenuMobile() {
 
 
 
-            {/* Tea Section */}
-            {(activeFilter === "All" || activeFilter === "Tea") && (
+            {/* Tea/Matcha Section */}
+            {(activeFilter === "All" || activeFilter === "Tea/Matcha") && (
             <>
               <div className="bg-[#2a7d7d] noisy" style={{ padding: '2.5vw 4vw' }}>
                 <p
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                   style={{ fontSize: '4.6vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                 >
-                  🍵 <span style={{ marginLeft: '2vw' }}>Tea</span>
+                  Tea/Matcha
                 </p>
               </div>
               {teaItems.map((item, index) => (
@@ -430,15 +605,15 @@ export default function MenuMobile() {
 
 
 
-            {/* Energy Drinks Section */}
-            {(activeFilter === "All" || activeFilter === "Energy") && (
+            {/* Energy/Boba Section */}
+            {(activeFilter === "All" || activeFilter === "Energy/Boba") && (
             <>
               <div className="bg-[#6b4c8c] noisy" style={{ padding: '2.5vw 4vw' }}>
                 <p
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                   style={{ fontSize: '4.6vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                 >
-                  ⚡ Energy Drinks
+                  Energy/Boba
                 </p>
               </div>
               {energyItems.map((item, index) => (
@@ -447,6 +622,68 @@ export default function MenuMobile() {
                   <div className="flex" style={{ padding: '3vw 4vw', gap: '3vw' }}>
                     <div className="bg-[#6b4c8c]/30 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '10vw', height: '10vw' }}>
                       <span style={{ fontSize: '4.5vw' }}>⚡</span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
+                        <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
+                          style={{ fontSize: '5.7vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
+                      </div>
+                      <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3.7vw', marginTop: '0.5vw' }}>{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </>
+            )}
+
+            {/* Bakery Section */}
+            {(activeFilter === "All" || activeFilter === "Bakery") && (
+            <>
+              <div className="bg-[#6F4E37] noisy" style={{ padding: '2.5vw 4vw' }}>
+                <p
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                  style={{ fontSize: '4.6vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                >
+                  Bakery
+                </p>
+              </div>
+              {bakeryItems.map((item, index) => (
+                <div key={`bakery-${index}`}>
+                  {index > 0 && <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
+                  <div className="flex" style={{ padding: '3vw 4vw', gap: '3vw' }}>
+                    <div className="bg-[#6F4E37]/20 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '10vw', height: '10vw' }}>
+                      <img src="/images/menu_cup.svg?v=3" style={{ width: '5vw', height: '5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
+                        <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
+                          style={{ fontSize: '5.7vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
+                      </div>
+                      <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3.7vw', marginTop: '0.5vw' }}>{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </>
+            )}
+
+            {/* Dessert Section */}
+            {(activeFilter === "All" || activeFilter === "Dessert") && (
+            <>
+              <div className="bg-[#24ADFF] noisy" style={{ padding: '2.5vw 4vw' }}>
+                <p
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                  style={{ fontSize: '4.6vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                >
+                  Dessert
+                </p>
+              </div>
+              {dessertItems.map((item, index) => (
+                <div key={`dessert-${index}`}>
+                  {index > 0 && <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
+                  <div className="flex" style={{ padding: '3vw 4vw', gap: '3vw' }}>
+                    <div className="bg-[#24ADFF]/20 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '10vw', height: '10vw' }}>
+                      <img src="/images/menu_cup.svg?v=3" style={{ width: '5vw', height: '5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between" style={{ gap: '2vw' }}>

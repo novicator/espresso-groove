@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import DesktopFooter from "../components/DesktopFooter";
 
@@ -13,7 +14,7 @@ const coffeeItems = [
 
 const teaItems = [
   { name: "CHAI LATTE", desc: "Spiced chai with steamed milk" },
-  { name: "GREEN TEA", desc: "Classic organic green tea" },
+  { name: "GREEN TEA", desc: "Classic organic\ngreen tea" },
   { name: "EARL GREY", desc: "Bergamot-infused black tea" },
   { name: "MATCHA LATTE", desc: "Ceremonial grade matcha with oat milk" },
   { name: "JASMINE PEARL", desc: "Delicate hand-rolled jasmine green tea" },
@@ -24,11 +25,16 @@ const energyItems = [
   { name: "VINYL RUSH", desc: "Berry mix with B12 & taurine" },
   { name: "GROOVE FUEL", desc: "Tropical mango with green tea extract" },
   { name: "NEON PULSE", desc: "Watermelon lime with ginseng boost" },
-  { name: "STATIC SHOCK", desc: "Passion fruit with guarana & electrolytes" },
+  { name: "STATIC SHOCK", desc: "Passion fruit with guarana & electrolytes", smallDesc: true },
 ];
 import DesktopNav from "../components/DesktopNav";
 
+type FilterType = "All" | "The Pour" | "Espresso/Coffee" | "Tea/Matcha" | "Energy/Boba" | "Bakery" | "Dessert";
+
 export default function MenuDesktop() {
+  const [activeFilter, setActiveFilter] = useState<FilterType>("All");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   return (
     <>
       <DesktopNav />
@@ -47,6 +53,13 @@ export default function MenuDesktop() {
           pointer-events: none;
         }
 
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+      `}</style>
+
+      <style jsx global>{`
         @keyframes shimmer {
           0% { transform: translateX(-100%); }
           100% { transform: translateX(100%); }
@@ -151,210 +164,425 @@ export default function MenuDesktop() {
           </p>
         </div>
 
-        {/* Two Column Layout: Featured Sips + Menu */}
-        <div className="flex" style={{ paddingInline: '4vw', paddingBottom: '4vw', marginTop: '2vw', gap: '2vw' }}>
+        {/* Dropdown */}
+        <div className="relative" style={{ paddingInline: '4vw', marginTop: '-1vw' }}>
+          <div
+            className="rounded-full mx-auto relative"
+            style={{ padding: '0.4vw', width: '60vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+          >
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="flex items-center justify-between rounded-full bg-[#2d1f1a] cursor-pointer w-full"
+              style={{ paddingLeft: '3vw', paddingRight: '2.5vw', paddingTop: '1.2vw', paddingBottom: '1.2vw' }}
+            >
+              <span
+                className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold"
+                style={{ fontSize: '1.8vw' }}
+              >
+                {activeFilter}
+              </span>
+              <svg
+                className={`text-white transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+                style={{ width: '1.5vw', height: '1.5vw' }}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
 
-          {/* LEFT: Featured Sips */}
-          <div className="flex-[3] rounded-xl" style={{ padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
+            {dropdownOpen && (
+              <div
+                className="absolute left-0 z-[60] rounded-xl overflow-hidden"
+                style={{
+                  top: '100%',
+                  marginTop: '0.8vw',
+                  width: '100%',
+                  padding: '0.4vw',
+                  background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
+                }}
+              >
+                <div className="rounded-lg overflow-y-auto bg-[#2d1f1a]" style={{ maxHeight: '40vw' }}>
+                  <button
+                    onClick={() => { setActiveFilter("All"); setDropdownOpen(false); }}
+                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                    style={{ fontSize: '1.6vw', padding: '1.2vw 2.5vw' }}
+                  >
+                    All
+                  </button>
+
+                  <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                    <div
+                      onClick={() => { setActiveFilter("The Pour"); setDropdownOpen(false); }}
+                      className="bg-[#d9bc52] noisy flex flex-col items-center justify-center cursor-pointer"
+                      style={{
+                        position: 'relative',
+                        overflow: 'hidden',
+                        paddingBlock: '0.4vw',
+                        boxShadow: '0 0 12px rgba(217,188,82,0.6), 0 0 24px rgba(217,188,82,0.3)',
+                      }}
+                    >
+                      <div
+                        style={{
+                          position: 'absolute',
+                          inset: 0,
+                          background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%)',
+                          animation: 'shimmer 2.5s ease-in-out infinite',
+                          zIndex: 1,
+                          pointerEvents: 'none',
+                        }}
+                      />
+                      <span
+                        className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-black"
+                        style={{ fontSize: '1.3vw', letterSpacing: '0.1em', position: 'relative', zIndex: 2 }}
+                      >
+                        Limited Press -<span style={{ fontWeight: 400, fontSize: '1.3vw', letterSpacing: '0.05em' }}> In rotation for a limited time</span>
+                      </span>
+                    </div>
+                    <button
+                      onClick={() => { setActiveFilter("The Pour"); setDropdownOpen(false); }}
+                      className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                      style={{ fontSize: '1.6vw', padding: '1.2vw 2.5vw' }}
+                    >
+                      The Pour
+                    </button>
+                  </div>
+
+                  <button
+                    onClick={() => { setActiveFilter("Espresso/Coffee"); setDropdownOpen(false); }}
+                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                    style={{ fontSize: '1.6vw', padding: '1.2vw 2.5vw', borderTop: '1px solid #d9bc52' }}
+                  >
+                    Espresso/Coffee
+                  </button>
+
+                  <button
+                    onClick={() => { setActiveFilter("Tea/Matcha"); setDropdownOpen(false); }}
+                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                    style={{ fontSize: '1.6vw', padding: '1.2vw 2.5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    Tea/Matcha
+                  </button>
+
+                  <button
+                    onClick={() => { setActiveFilter("Energy/Boba"); setDropdownOpen(false); }}
+                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                    style={{ fontSize: '1.6vw', padding: '1.2vw 2.5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    Energy/Boba
+                  </button>
+
+                  <button
+                    onClick={() => { setActiveFilter("Bakery"); setDropdownOpen(false); }}
+                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                    style={{ fontSize: '1.6vw', padding: '1.2vw 2.5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    Bakery
+                  </button>
+
+                  <button
+                    onClick={() => { setActiveFilter("Dessert"); setDropdownOpen(false); }}
+                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                    style={{ fontSize: '1.6vw', padding: '1.2vw 2.5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    Dessert
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Menu Content Box */}
+        <div style={{ paddingInline: '4vw', paddingBottom: '4vw', marginTop: '2vw' }}>
+          <div className="rounded-xl" style={{ padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
-              {/* Title */}
-              <div className="text-center" style={{ paddingBlock: '1.5vw' }}>
+
+              {(activeFilter === "All" || activeFilter === "The Pour") && (<>
+              {/* 1 - Limited Press Gold Banner */}
+              <div
+                className="bg-[#d9bc52] noisy flex flex-col items-center justify-center"
+                style={{
+                  position: 'relative',
+                  overflow: 'hidden',
+                  paddingBlock: '0.6vw',
+                  boxShadow: '0 0 12px rgba(217,188,82,0.6), 0 0 24px rgba(217,188,82,0.3)',
+                }}
+              >
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%)',
+                    animation: 'shimmer 2.5s ease-in-out infinite',
+                    zIndex: 1,
+                    pointerEvents: 'none',
+                  }}
+                />
                 <span
-                  className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                  style={{ fontSize: '1.8vw', letterSpacing: '0.15em' }}
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-black"
+                  style={{ fontSize: '1.7vw', letterSpacing: '0.15em', position: 'relative', zIndex: 2 }}
                 >
-                  Featured Sips
+                  Limited Press - <span style={{ fontWeight: 400, fontSize: '1.7vw', letterSpacing: '0.05em' }}> In rotation for a limited time</span>
                 </span>
               </div>
-              <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
-              {/* Now Spinning - Jazz */}
-              <div className="text-center" style={{ paddingTop: '1.5vw' }}>
+              {/* 2 - The Pour Title */}
+              <div className="text-center" style={{ paddingBlock: '1vw' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                  style={{ fontSize: '1.8vw', letterSpacing: '0.15em' }}
+                  style={{ fontSize: '2.1vw', letterSpacing: '0.15em' }}
                 >
-                  Now Spinning
+                  &ldquo;The Pour&rdquo;
                 </span>
-                <div className="flex items-center justify-center" style={{ gap: '1vw', marginTop: '0.5vw' }}>
-                  <div style={{ width: '3vw', height: '0.3vw', backgroundColor: 'white' }} />
+                <div>
                   <span
-                    className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                    style={{ fontSize: '2vw', letterSpacing: '0.15em' }}
+                    className="font-[family-name:var(--font-libre-baskerville)] text-white italic"
+                    style={{ fontSize: '1.8vw' }}
                   >
-                    Jazz
+                    What&apos;s in your cup?
                   </span>
-                  <div style={{ width: '3vw', height: '0.3vw', backgroundColor: 'white' }} />
                 </div>
               </div>
 
-              {/* Description */}
-              <div style={{ padding: '1.5vw 2vw' }}>
-                <p
-                  className="font-[family-name:var(--font-libre-baskerville)] text-white/80 text-left"
-                  style={{ fontSize: '1.35vw', lineHeight: '1.7' }}
-                >
-                  Each featured genre inspires three signature drinks — one coffee, one tea, one energy —
-                  crafted to match the mood of the music on the turntable.
-                </p>
-              </div>
+              {/* 3 + 4 + 5 Row */}
+              <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+              <div className="flex">
 
-              {/* Coffee Featured */}
-              <div className="bg-[#f06830] noisy text-center" style={{ padding: '1vw 2vw' }}>
-                <p
-                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{ fontSize: '2vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-                >
-                  Coffee
-                </p>
-              </div>
-              <div className="flex items-center" style={{ padding: '1.5vw 1.5vw', gap: '1.5vw' }}>
-                <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '6vw', height: '6vw' }}>
-                  <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
-                </div>
-                <div>
-                  <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
-                    style={{ fontSize: '3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>Blue Note Brew</h3>
-                  <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '1.5vw', marginTop: '0.3vw' }}>Rich espresso with hints of dark chocolate and smooth jazz</p>
-                </div>
-              </div>
-
-              {/* Tea Featured */}
-              <div className="bg-[#2a7d7d] noisy text-center" style={{ padding: '1vw 2vw' }}>
-                <p
-                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{ fontSize: '2vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-                >
-                  Tea
-                </p>
-              </div>
-              <div className="flex items-center" style={{ padding: '1.5vw 1.5vw', gap: '1.5vw' }}>
-                <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '6vw', height: '6vw' }}>
-                  <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
-                </div>
-                <div>
-                  <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
-                    style={{ fontSize: '3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>Coltrane Chai</h3>
-                  <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '1.5vw', marginTop: '0.3vw' }}>Spiced chai with warm cinnamon and cardamom notes</p>
-                </div>
-              </div>
-
-              {/* Energy Featured */}
-              <div className="bg-[#6b4c8c] noisy text-center" style={{ padding: '1vw 2vw' }}>
-                <p
-                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{ fontSize: '2vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-                >
-                  Energy Drink
-                </p>
-              </div>
-              <div className="flex items-center" style={{ padding: '1.5vw 1.5vw', gap: '1.5vw' }}>
-                <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '6vw', height: '6vw' }}>
-                  <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
-                </div>
-                <div>
-                  <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
-                    style={{ fontSize: '3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>Bebop Blast</h3>
-                  <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '1.5vw', marginTop: '0.3vw' }}>Citrus energy with a smooth improvisational kick</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT: Full Menu */}
-          <div className="flex-[6.5] rounded-xl" style={{ padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', alignSelf: 'flex-start' }}>
-            <div className="flex rounded-lg overflow-hidden bg-[#2d1f1a]">
-
-              {/* Coffee Column */}
-              <div className="flex-1">
-                <div className="bg-[#f06830] noisy text-center flex items-center justify-center" style={{ height: '6.7vw' }}>
+                {/* 3 - Now Spinning Description */}
+                <div className="flex-[2]" style={{ padding: '1.5vw 2vw' }}>
+                  <div className="text-center" style={{ paddingTop: '0vw' }}>
+                    <span
+                      className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
+                      style={{ fontSize: '2.2vw', letterSpacing: '0.15em' }}
+                    >
+                      Now Spinning
+                    </span>
+                    <div className="flex items-center justify-center" style={{ gap: '1vw', marginTop: '0.5vw' }}>
+                      <div style={{ width: '3.3vw', height: '0.4vw', backgroundColor: 'white' }} />
+                      <span
+                        className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
+                        style={{ fontSize: '2.4vw', letterSpacing: '0.15em' }}
+                      >
+                        Jazz
+                      </span>
+                      <div style={{ width: '3.3vw', height: '0.4vw', backgroundColor: 'white' }} />
+                    </div>
+                  </div>
                   <p
-                    className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                    style={{ fontSize: '1.8vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                    className="font-[family-name:var(--font-libre-baskerville)] text-white/80 text-left"
+                    style={{ fontSize: '1.55vw', lineHeight: '1.7', marginTop: '1vw' }}
                   >
-                    Coffee
+                    Each featured genre inspires three signature drinks — one coffee, one tea, one energy —
+                    crafted to match the mood of the music on the turntable.
                   </p>
                 </div>
+
+                {/* Vertical Divider */}
+                <div style={{ width: '0.3vw', background: 'linear-gradient(180deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+
+                {/* 4 + 5 - Category Labels + Featured Drinks */}
+                <div className="flex flex-[5]">
+                  {/* Coffee + Espresso */}
+                  <div className="flex-1 flex flex-col">
+                    <div className="bg-[#f06830] noisy text-center flex items-center justify-center" style={{ height: '6.5vw' }}>
+                      <span
+                        className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                        style={{ fontSize: '1.8vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                      >
+                        Coffee<br />+ Espresso
+                      </span>
+                    </div>
+                    <div className="flex flex-col items-center" style={{ padding: '1.8vw 1vw', gap: '1vw' }}>
+                      <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '3vw', marginTop: '-0.5vw', }}>
+                        Blue Note Brew
+                      </span>
+                      <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center" style={{ width: '8vw', height: '8vw', marginTop: '-0vw', }}>
+                        <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tea + Matcha */}
+                  <div className="flex-1 flex flex-col">
+                    <div className="bg-[#2a7d7d] noisy text-center flex items-center justify-center" style={{ height: '6.5vw' }}>
+                      <span
+                        className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                        style={{ fontSize: '1.8vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                      >
+                        Tea<br />+ Matcha
+                      </span>
+                    </div>
+                    <div className="flex flex-col items-center" style={{ padding: '1.8vw 1vw', gap: '1vw' }}>
+                      <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '3vw', marginTop: '-0.5vw' }}>
+                        Coltrane Chai
+                      </span>
+                      <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center" style={{ width: '8vw', height: '8vw', marginTop: '0vw' }}>
+                        <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Energy + Boba */}
+                  <div className="flex-1 flex flex-col">
+                    <div className="bg-[#6b4c8c] noisy text-center flex items-center justify-center" style={{ height: '6.5vw' }}>
+                      <span
+                        className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                        style={{ fontSize: '1.8vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                      >
+                        Energy<br />+ Boba
+                      </span>
+                    </div>
+                    <div className="flex flex-col items-center" style={{ padding: '1.8vw 1vw', gap: '1vw' }}>
+                      <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '3vw', marginTop: '-0.5vw' }}>
+                        Bebop Blast
+                      </span>
+                      <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center" style={{ width: '8vw', height: '8vw', marginTop: '0vw' }}>
+                        <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              </>)}
+
+              {(activeFilter === "All" || activeFilter === "Espresso/Coffee") && (<>
+              {/* Espresso/Coffee Section */}
+              <div className="bg-[#f06830] noisy" style={{ padding: '1vw 2vw' }}>
+                <p
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                  style={{ fontSize: '2vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                >
+                  Espresso/Coffee
+                </p>
+              </div>
+              <div className="flex" style={{ padding: '1.5vw 1vw', gap: '0.5vw' }}>
                 {coffeeItems.map((item, index) => (
-                  <div key={`coffee-${index}`}>
-                    {index > 0 && <div style={{ height: '0.2vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
-                    <div className="flex items-center" style={{ height: '12.5vw', paddingInline: '1vw', gap: '1.5vw' }}>
-                      <div className="bg-[#f06830]/20 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '5vw', height: '5vw' }}>
-                        <img src="/images/menu_cup.svg?v=3" style={{ width: '1.5vw', height: '1.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
-                          style={{ fontSize: '2.2vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                        <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '1.35vw', marginTop: '0.2vw' }}>{item.desc}</p>
-                      </div>
+                  <div key={`coffee-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '0.5vw', borderRight: index < coffeeItems.length - 1 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 0.5vw' }}>
+                    <div className="bg-[#f06830]/20 noisy rounded-lg flex items-center justify-center" style={{ width: '7vw', height: '6vw' }}>
+                      <img src="/images/menu_cup.svg?v=3" style={{ width: '3.5vw', height: '2.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
                     </div>
+                    <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
+                      style={{ fontSize: '2.8vw', marginTop: '1.3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
+                    <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '1.6vw' }}>{item.desc}</p>
                   </div>
                 ))}
               </div>
+              </>)}
 
-              {/* Vertical Divider */}
-              <div style={{ width: '0.2vw', background: 'linear-gradient(180deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-
-              {/* Tea Column */}
-              <div className="flex-1">
-                <div className="bg-[#2a7d7d] noisy text-center flex items-center justify-center" style={{ height: '6.7vw' }}>
-                  <p
-                    className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                    style={{ fontSize: '1.8vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-                  >
-                    Tea
-                  </p>
-                </div>
+              {(activeFilter === "All" || activeFilter === "Tea/Matcha") && (<>
+              {/* Tea/Matcha Section */}
+              <div className="bg-[#2a7d7d] noisy" style={{ padding: '1vw 2vw' }}>
+                <p
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                  style={{ fontSize: '2vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                >
+                  Tea/Matcha
+                </p>
+              </div>
+              <div className="flex" style={{ padding: '1.5vw 1vw', gap: '0.5vw' }}>
                 {teaItems.map((item, index) => (
-                  <div key={`tea-${index}`}>
-                    {index > 0 && <div style={{ height: '0.2vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
-                    <div className="flex items-center" style={{ height: '12.5vw', paddingInline: '1vw', gap: '1.5vw' }}>
-                      <div className="bg-[#2a7d7d]/20 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '5vw', height: '5vw' }}>
-                        <img src="/images/menu_cup.svg?v=3" style={{ width: '1.5vw', height: '1.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
-                          style={{ fontSize: '2.2vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                        <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '1.35vw', marginTop: '0.2vw' }}>{item.desc}</p>
-                      </div>
+                  <div key={`tea-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '0.5vw', borderRight: index < teaItems.length - 1 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 0.5vw' }}>
+                    <div className="bg-[#2a7d7d]/20 noisy rounded-lg flex items-center justify-center" style={{ width: '7vw', height: '6vw' }}>
+                      <img src="/images/menu_cup.svg?v=3" style={{ width: '3.5vw', height: '2.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
                     </div>
+                    <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
+                      style={{ fontSize: '2.8vw', marginTop: '1.3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
+                    <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '1.6vw', whiteSpace: 'pre-line' }}>{item.desc}</p>
                   </div>
                 ))}
               </div>
+              </>)}
 
-              {/* Vertical Divider */}
-              <div style={{ width: '0.2vw', background: 'linear-gradient(180deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-
-              {/* Energy Drinks Column */}
-              <div className="flex-1">
-                <div className="bg-[#6b4c8c] noisy text-center flex items-center justify-center" style={{ height: '6.7vw' }}>
-                  <p
-                    className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                    style={{ fontSize: '1.8vw', letterSpacing: '0.02em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-                  >
-                    Energy Drinks
-                  </p>
-                </div>
+              {(activeFilter === "All" || activeFilter === "Energy/Boba") && (<>
+              {/* Energy/Boba Section */}
+              <div className="bg-[#6b4c8c] noisy" style={{ padding: '1vw 2vw' }}>
+                <p
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                  style={{ fontSize: '2vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                >
+                  Energy/Boba
+                </p>
+              </div>
+              <div className="flex" style={{ padding: '1.5vw 1vw', gap: '0.5vw' }}>
                 {energyItems.map((item, index) => (
-                  <div key={`energy-${index}`}>
-                    {index > 0 && <div style={{ height: '0.2vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
-                    <div className="flex items-center" style={{ height: '12.5vw', paddingInline: '1vw', gap: '1.5vw' }}>
-                      <div className="bg-[#6b4c8c]/30 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '5vw', height: '5vw' }}>
-                        <span style={{ fontSize: '1.5vw' }}>⚡</span>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
-                          style={{ fontSize: '2.2vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                        <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '1.35vw', marginTop: '0.2vw' }}>{item.desc}</p>
-                      </div>
+                  <div key={`energy-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '0.5vw', borderRight: index < energyItems.length - 1 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 0.5vw' }}>
+                    <div className="bg-[#6b4c8c]/30 noisy rounded-lg flex items-center justify-center" style={{ width: '7vw', height: '6vw' }}>
+                      <img src="/images/menu_cup.svg?v=3" style={{ width: '3.5vw', height: '2.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
                     </div>
+                    <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
+                      style={{ fontSize: '2.8vw', marginTop: '1.3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
+                    <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: item.smallDesc ? '1.5vw' : '1.6vw' }}>{item.desc}</p>
                   </div>
                 ))}
               </div>
+              </>)}
+
+              {(activeFilter === "All" || activeFilter === "Bakery") && (<>
+              {/* Bakery Section */}
+              <div className="bg-[#6F4E37] noisy" style={{ padding: '1vw 2vw' }}>
+                <p
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                  style={{ fontSize: '2vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                >
+                  Bakery
+                </p>
+              </div>
+              <div className="flex" style={{ padding: '1.5vw 1vw', gap: '0.5vw' }}>
+                {[
+                  { name: "CROISSANT", desc: "Buttery, flaky, classic French pastry" },
+                  { name: "BLUEBERRY MUFFIN", desc: "Fresh blueberries in a soft crumb", smallName: true },
+                  { name: "BANANA BREAD", desc: "Moist, warm, homestyle slice" },
+                  { name: "CINNAMON ROLL", desc: "Glazed swirl of cinnamon and sugar" },
+                  { name: "SCONE", desc: "Crumbly, buttery, pairs with any drink" },
+                ].map((item, index) => (
+                  <div key={`bakery-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '0.5vw', borderRight: index < 4 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 0.5vw' }}>
+                    <div className="bg-[#6F4E37]/20 noisy rounded-lg flex items-center justify-center" style={{ width: '7vw', height: '6vw' }}>
+                      <img src="/images/menu_cup.svg?v=3" style={{ width: '3.5vw', height: '2.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
+                    </div>
+                    <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
+                      style={{ fontSize: item.smallName ? '2.6vw' : '2.8vw', marginTop: '1.3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
+                    <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '1.6vw' }}>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+              </>)}
+
+              {(activeFilter === "All" || activeFilter === "Dessert") && (<>
+              {/* Dessert Section */}
+              <div className="bg-[#24ADFF] noisy" style={{ padding: '1vw 2vw' }}>
+                <p
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                  style={{ fontSize: '2vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                >
+                  Dessert
+                </p>
+              </div>
+              <div className="flex" style={{ padding: '1.5vw 1vw', gap: '0.5vw' }}>
+                {[
+                  { name: "TIRAMISU", desc: "Espresso-soaked layers of mascarpone" },
+                  { name: "BROWNIE", desc: "Rich, fudgy, chocolate perfection" },
+                  { name: "CHEESECAKE SLICE", desc: "Creamy New York-style classic", smallName: true },
+                  { name: "COOKIE", desc: "Warm chocolate chip, baked fresh" },
+                  { name: "AFFOGATO", desc: "Vanilla gelato drowned in espresso" },
+                ].map((item, index) => (
+                  <div key={`dessert-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '0.5vw', borderRight: index < 4 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 0.5vw' }}>
+                    <div className="bg-[#24ADFF]/20 noisy rounded-lg flex items-center justify-center" style={{ width: '7vw', height: '6vw' }}>
+                      <img src="/images/menu_cup.svg?v=3" style={{ width: '3.5vw', height: '2.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
+                    </div>
+                    <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
+                      style={{ fontSize: item.smallName ? '2.6vw' : '2.8vw', marginTop: '1.3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
+                    <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '1.6vw' }}>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+              </>)}
 
             </div>
           </div>
-
         </div>
 
         <DesktopFooter />

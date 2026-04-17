@@ -96,7 +96,7 @@ export default function EventsXL() {
 
     <div className="relative" style={{ backgroundColor: '#2d1f1a', overflow: 'hidden', minHeight: '100vh' }}>
 
-      {/* === BACKGROUND LAYER (stays vw) === */}
+      {/* === BACKGROUND LAYER === */}
       <div className="absolute inset-0 z-0">
         <div className="h-screen bg-[position:0%_20%] bg-[length:100%_140%]" style={{ backgroundImage: "url('/images/desktop_background_v2.png')", transform: "scaleY(-1)" }} />
         <div className="h-screen bg-[position:0%_20%] bg-[length:100%_140%]" style={{ backgroundImage: "url('/images/desktop_background_v2.png')" }} />
@@ -106,85 +106,90 @@ export default function EventsXL() {
         <div className="h-screen bg-[position:0%_20%] bg-[length:100%_100%]" style={{ backgroundImage: "url('/images/desktop_black_bg.png')", transform: "scaleY(-1)" }} />
       </div>
 
-      {/* === CONTENT LAYER (px values based on 1400px) === */}
+      {/* === CONTENT LAYER (px values based on 1199px viewport) === */}
       <div className="relative z-10">
-        <div style={{ maxWidth: '1400px', margin: '0 auto', zoom: 0.857 }}>
+        <div style={{ maxWidth: '1199px', margin: '0 auto' }}>
           {/* Page Title */}
-          <div className="text-center" style={{ marginTop: '98px', marginBottom: '42px' }}>
-            <div className="flex items-center justify-center" style={{ gap: '21px' }}>
-              <img
-                src="/images/calendar.svg"
-                alt=""
-                className="pointer-events-none"
-                style={{
-                  width: '70px',
-                  filter: 'brightness(0) invert(1) drop-shadow(0px 0px 10px rgba(0,0,0,0.5))',
-                }}
-              />
+          <div className="text-center" style={{ marginTop: '72px', marginBottom: '36px' }}>
+            <div className="flex items-center justify-center" style={{ gap: '18px' }}>
               <h1
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
                 style={{
-                  fontSize: '63px',
+                  fontSize: '79.1px',
                   fontWeight: 900,
                   letterSpacing: '-0.02em',
                   textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
-                  paddingLeft: '7px',
                 }}
               >
                 Events
               </h1>
             </div>
+            <p
+              className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
+              style={{
+                fontSize: '49.6px',
+                fontWeight: 900,
+                letterSpacing: '0.2em',
+                marginTop: '-12px',
+                textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
+              }}
+            >
+              Drip • Drop • Vibe
+            </p>
           </div>
 
-          {/* Two Column Layout */}
+          {/* Stacked Layout */}
           <div
-            className="flex"
-            style={{ marginInline: '42px', marginBottom: '56px', gap: '5.6px' }}
+            className="flex flex-col items-center"
+            style={{ marginInline: '36px', marginBottom: '48px', gap: '4.8px', marginTop: '-24px' }}
           >
-            {/* LEFT BOX - Text */}
+            {/* TOP BOX - Text */}
             <div
-              className="flex-1"
-              style={{ padding: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '14px' }}
+              style={{ width: '899px', padding: '4.8px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '12px' }}
             >
-              <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full" style={{ borderRadius: '9.8px', padding: '35px' }}>
+              <div className="rounded-lg overflow-hidden bg-[#2d1f1a]" style={{ borderRadius: '8.4px', padding: '24px' }}>
                 <p
-                  className="font-[family-name:var(--font-libre-baskerville)] text-white"
-                  style={{ fontSize: '25.2px', lineHeight: '1.7', textShadow: '1px 1px 4px rgba(0,0,0,0.6)' }}
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white italic"
+                  style={{
+                    fontSize: '21.6px',
+                    lineHeight: '.5',
+                    textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
+                  }}
                 >
-                  Drip. Drop. Vibe.
+                  Where the vibe comes to life
                 </p>
                 <p
                   className="font-[family-name:var(--font-libre-baskerville)] text-white"
-                  style={{ fontSize: '25.2px', lineHeight: '1.7', textShadow: '1px 1px 4px rgba(0,0,0,0.6)', marginTop: '21px' }}
+                  style={{
+                    fontSize: '21.6px',
+                    lineHeight: '1.7',
+                    textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
+                    marginTop: '18px',
+                  }}
                 >
-                  This isn&apos;t just a coffee shop — it&apos;s where the room comes alive.
-                  Espresso Groove is your stage, your hangout, your nightly soundtrack.
+                  Events on the calendar — listening parties, music, mics, trivia, and more.
                 </p>
                 <p
-                  className="font-[family-name:var(--font-libre-baskerville)] text-white"
-                  style={{ fontSize: '25.2px', lineHeight: '1.7', textShadow: '1px 1px 4px rgba(0,0,0,0.6)', marginTop: '21px' }}
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold"
+                  style={{
+                    fontSize: '21.6px',
+                    lineHeight: '.5',
+                    textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
+                    marginTop: '18px',
+                  }}
                 >
-                  From laid-back vinyl listening sessions to open mics, trivia nights, and intimate acoustic
-                  sets — every event is part of the experience. The coffee flows, the records spin, and
-                  the vibe builds.
-                </p>
-                <p
-                  className="font-[family-name:var(--font-libre-baskerville)] text-white"
-                  style={{ fontSize: '25.2px', lineHeight: '1.7', textShadow: '1px 1px 4px rgba(0,0,0,0.6)', marginTop: '21px' }}
-                >
-                  Check the calendar. Pull up. Stay awhile.
+                  Your stage. Your hangout. Your soundtrack.
                 </p>
               </div>
             </div>
 
-            {/* RIGHT BOX - Calendar */}
+            {/* BOTTOM BOX - Calendar */}
             <div
-              className="flex-[1.5]"
-              style={{ padding: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '14px' }}
+              style={{ width: '720px', padding: '4.8px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '12px', marginTop: '6px' }}
             >
-              <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full" style={{ borderRadius: '9.8px', padding: '28px', paddingBottom: '7px' }}>
+              <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full" style={{ borderRadius: '8.4px', padding: '24px', paddingBottom: '6px' }}>
                 {/* Month Navigation */}
-                <div className="flex items-center justify-between" style={{ marginBottom: '28px' }}>
+                <div className="flex items-center justify-between" style={{ marginBottom: '24px' }}>
                   <button
                     onClick={() => {
                       const prev = month === 0 ? 11 : month - 1;
@@ -194,15 +199,15 @@ export default function EventsXL() {
                       setSelectedDay(null);
                     }}
                     className="text-white active:scale-125 duration-150 transition-all"
-                    style={{ padding: '14px' }}
+                    style={{ padding: '12px' }}
                   >
-                    <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '42px', height: '42px' }}>
+                    <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '36px', height: '36px' }}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
                   <span
                     className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                    style={{ fontSize: '37.8px', letterSpacing: '0.1em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                    style={{ fontSize: '32.4px', letterSpacing: '0.1em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                   >
                     {MONTHS[month]} {year}
                   </span>
@@ -215,21 +220,21 @@ export default function EventsXL() {
                       setSelectedDay(null);
                     }}
                     className="text-white active:scale-125 duration-150 transition-all"
-                    style={{ padding: '14px' }}
+                    style={{ padding: '12px' }}
                   >
-                    <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '42px', height: '42px' }}>
+                    <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '36px', height: '36px' }}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
                 </div>
 
                 {/* Day Headers */}
-                <div className="grid grid-cols-7" style={{ gap: '7px', marginBottom: '14px' }}>
+                <div className="grid grid-cols-7" style={{ gap: '6px', marginBottom: '12px' }}>
                   {DAYS.map((day) => (
                     <div
                       key={day}
                       className="text-center font-[family-name:var(--font-bebas-neue)] text-white/60 uppercase"
-                      style={{ fontSize: '35px', letterSpacing: '0.05em' }}
+                      style={{ fontSize: '30px', letterSpacing: '0.05em' }}
                     >
                       {day}
                     </div>
@@ -237,7 +242,7 @@ export default function EventsXL() {
                 </div>
 
                 {/* Calendar Grid */}
-                <div className="grid grid-cols-7" style={{ gap: '7px' }}>
+                <div className="grid grid-cols-7" style={{ gap: '6px' }}>
                   {Array.from({ length: firstDay }).map((_, i) => (
                     <div key={`empty-${i}`} />
                   ))}
@@ -268,17 +273,17 @@ export default function EventsXL() {
                       >
                         <span
                           className="font-[family-name:var(--font-bebas-neue)] text-white"
-                          style={{ fontSize: '39.2px' }}
+                          style={{ fontSize: '33.6px' }}
                         >
                           {day}
                         </span>
                         <div
                           style={{
-                            width: '14px',
-                            height: '14px',
+                            width: '12px',
+                            height: '12px',
                             borderRadius: '50%',
                             background: hasEvents ? (isSelected ? '#fff' : '#f06830') : 'transparent',
-                            marginTop: '2.8px',
+                            marginTop: '2.4px',
                           }}
                         />
                       </button>
@@ -288,98 +293,102 @@ export default function EventsXL() {
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Bottom Sheet */}
-        {selectedDay !== null && (
-          <>
-            <div
-              className="fixed inset-0 z-40"
-              style={{ background: 'rgba(0,0,0,0.6)' }}
-              onClick={() => setSelectedDay(null)}
-            />
-            <div
-              className="fixed bottom-0 left-0 right-0 z-50"
-              style={{ animation: 'slideUp 0.25s ease-out' }}
-            >
-              <style>{`
-                @keyframes slideUp {
-                  from { transform: translateY(100%); }
-                  to { transform: translateY(0); }
-                }
-              `}</style>
-              <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+          {/* Bottom Sheet */}
+          {selectedDay !== null && (
+            <>
+              {/* Backdrop */}
               <div
-                style={{
-                  background: '#2d1f1a',
-                  padding: '35px',
-                  paddingBottom: '56px',
-                  maxHeight: '50vh',
-                  overflowY: 'auto',
-                }}
+                className="fixed inset-0 z-40"
+                style={{ background: 'rgba(0,0,0,0.6)' }}
+                onClick={() => setSelectedDay(null)}
+              />
+              {/* Sheet */}
+              <div
+                className="fixed bottom-0 left-0 right-0 z-50"
+                style={{ animation: 'slideUp 0.25s ease-out' }}
               >
-                <div className="flex items-center justify-between" style={{ marginBottom: '28px' }}>
-                  <span
-                    className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                    style={{ fontSize: '28px', letterSpacing: '0.05em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-                  >
-                    {MONTHS[month]} {selectedDay}, {year}
-                  </span>
-                  <button
-                    onClick={() => setSelectedDay(null)}
-                    className="text-white active:scale-125 duration-150 transition-all"
-                    style={{ padding: '7px' }}
-                  >
-                    <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '35px', height: '35px' }}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-
-                <div style={{ height: '2.8px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', marginBottom: '28px' }} />
-
-                {eventsForSelectedDay.length > 0 ? (
-                  <div className="flex" style={{ gap: '28px', flexWrap: 'wrap' }}>
-                    {eventsForSelectedDay.map((event, i) => (
-                      <div key={i} style={{ flex: '1', minWidth: '280px' }}>
-                        <div className="flex items-center" style={{ gap: '11.2px', marginBottom: '7px' }}>
-                          <div style={{ width: '18.2px', height: '18.2px', borderRadius: '50%', background: event.color, flexShrink: 0 }} />
-                          <span
-                            className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                            style={{ fontSize: '25.2px', letterSpacing: '0.05em', textShadow: '1px 1px 4px rgba(0,0,0,0.6)' }}
-                          >
-                            {event.title}
-                          </span>
-                        </div>
-                        <span
-                          className="font-[family-name:var(--font-bebas-neue)] uppercase"
-                          style={{ fontSize: '33.6px', color: event.color, letterSpacing: '0.1em', marginLeft: '25.2px', display: 'block' }}
-                        >
-                          {event.time}
-                        </span>
-                        <p
-                          className="font-[family-name:var(--font-libre-baskerville)] text-white/80"
-                          style={{ fontSize: '25.2px', lineHeight: '1.6', marginLeft: '25.2px', marginTop: '7px' }}
-                        >
-                          {event.description}
-                        </p>
-                      </div>
-                    ))}
+                <style>{`
+                  @keyframes slideUp {
+                    from { transform: translateY(100%); }
+                    to { transform: translateY(0); }
+                  }
+                `}</style>
+                {/* Gradient border top */}
+                <div style={{ height: '4.8px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+                <div
+                  style={{
+                    background: '#2d1f1a',
+                    padding: '30px',
+                    paddingBottom: '48px',
+                    maxHeight: '50vh',
+                    overflowY: 'auto',
+                  }}
+                >
+                  {/* Header + Close */}
+                  <div className="flex items-center justify-between" style={{ marginBottom: '24px' }}>
+                    <span
+                      className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
+                      style={{ fontSize: '24px', letterSpacing: '0.05em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                    >
+                      {MONTHS[month]} {selectedDay}, {year}
+                    </span>
+                    <button
+                      onClick={() => setSelectedDay(null)}
+                      className="text-white active:scale-125 duration-150 transition-all"
+                      style={{ padding: '6px' }}
+                    >
+                      <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '30px', height: '30px' }}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
                   </div>
-                ) : (
-                  <p
-                    className="font-[family-name:var(--font-libre-baskerville)] text-white text-center"
-                    style={{ fontSize: '22.4px' }}
-                  >
-                    No events this day — but the coffee&apos;s still on.
-                  </p>
-                )}
-              </div>
-            </div>
-          </>
-        )}
 
-        <DesktopFooterXL />
+                  <div style={{ height: '2.4px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', marginBottom: '24px' }} />
+
+                  {eventsForSelectedDay.length > 0 ? (
+                    <div className="flex" style={{ gap: '24px', flexWrap: 'wrap' }}>
+                      {eventsForSelectedDay.map((event, i) => (
+                        <div key={i} style={{ flex: '1', minWidth: '240px' }}>
+                          <div className="flex items-center" style={{ gap: '9.6px', marginBottom: '6px' }}>
+                            <div style={{ width: '15.6px', height: '15.6px', borderRadius: '50%', background: event.color, flexShrink: 0 }} />
+                            <span
+                              className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
+                              style={{ fontSize: '21.6px', letterSpacing: '0.05em', textShadow: '1px 1px 4px rgba(0,0,0,0.6)' }}
+                            >
+                              {event.title}
+                            </span>
+                          </div>
+                          <span
+                            className="font-[family-name:var(--font-bebas-neue)] uppercase"
+                            style={{ fontSize: '28.8px', color: event.color, letterSpacing: '0.1em', marginLeft: '21.6px', display: 'block' }}
+                          >
+                            {event.time}
+                          </span>
+                          <p
+                            className="font-[family-name:var(--font-libre-baskerville)] text-white/80"
+                            style={{ fontSize: '21.6px', lineHeight: '1.6', marginLeft: '21.6px', marginTop: '6px' }}
+                          >
+                            {event.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p
+                      className="font-[family-name:var(--font-libre-baskerville)] text-white text-center"
+                      style={{ fontSize: '19.2px' }}
+                    >
+                      No events this day — but the coffee&apos;s still on.
+                    </p>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
+
+          <DesktopFooterXL />
+        </div>
       </div>
 
     </div>

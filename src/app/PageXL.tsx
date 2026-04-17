@@ -147,28 +147,28 @@ export default function PageXL() {
           style={{ width: '693px', marginLeft: '-50.4px', marginTop: '-75.6px' }}
         />
         <h2
-          className="text-white font-[family-name:var(--font-libre-baskerville)] leading-tight uppercase tracking-tight"
+          className="text-white font-[family-name:var(--font-libre-baskerville)] italic"
           style={{
             fontSize: '63px',
-            textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+            textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
             marginTop: '-100.8px',
             paddingLeft: '63px',
             fontWeight: 900,
           }}
         >
-          Where Coffee<br />Meets Culture
+          Drip • Drop • Vibe
         </h2>
         <p
           className="text-white font-[family-name:var(--font-libre-baskerville)] italic"
           style={{
             fontSize: '65.52px',
             textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
-            marginTop: '25.2px',
+            marginTop: '10.2px',
             paddingLeft: '56.7px',
             fontWeight: 900,
           }}
         >
-          Drip • Drop • Vibe
+          Craft drinks.<br />Curated sound.
         </p>
 
         {/* Buttons */}
@@ -176,7 +176,7 @@ export default function PageXL() {
           className="flex items-center justify-center"
           style={{
             paddingLeft: '0px',
-            paddingTop: '49px',
+            paddingTop: '40px',
             gap: '10px',
           }}
         >
@@ -338,7 +338,7 @@ export default function PageXL() {
           style={{
             width: '392px',
             right: '98px',
-            top: '214px',
+            top: '234px',
             filter: 'drop-shadow(0px 0px 15px rgba(255,150,50,0.5))',
           }}
         />
@@ -572,15 +572,15 @@ export default function PageXL() {
               <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
               {/* Coffee */}
-              <div className="bg-[#f06830] noisy flex items-center justify-center" style={{ height: '58px' }}>
+              <div className="bg-[#f06830] noisy flex items-center justify-center" style={{ height: '70px' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                   style={{ fontSize: '18.8px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
                 >
-                  Coffee
+                  Coffee/Espresso
                 </span>
               </div>
-              <div className="flex items-center" style={{ paddingBlock: '16.8px', paddingLeft: '28px', paddingRight: '16.8px', gap: '42px' }}>
+              <div className="flex items-center" style={{ paddingBlock: '13.8px', paddingLeft: '28px', paddingRight: '16.8px', gap: '42px' }}>
                 <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '77px', height: '77px' }}>
                   <span className="text-[#555555]" style={{ fontSize: '11.2px' }}>IMG</span>
                 </div>
@@ -590,15 +590,15 @@ export default function PageXL() {
               </div>
 
               {/* Tea */}
-              <div className="bg-[#2a7d7d] noisy flex items-center justify-center" style={{ height: '58px' }}>
+              <div className="bg-[#2a7d7d] noisy flex items-center justify-center" style={{ height: '70px' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                   style={{ fontSize: '18.8px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
                 >
-                  Tea
+                  Tea/Matcha
                 </span>
               </div>
-              <div className="flex items-center" style={{ paddingBlock: '16.8px', paddingLeft: '28px', paddingRight: '16.8px', gap: '42px' }}>
+              <div className="flex items-center" style={{ paddingBlock: '13.8px', paddingLeft: '28px', paddingRight: '16.8px', gap: '42px' }}>
                 <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '77px', height: '77px' }}>
                   <span className="text-[#555555]" style={{ fontSize: '11.2px' }}>IMG</span>
                 </div>
@@ -608,15 +608,15 @@ export default function PageXL() {
               </div>
 
               {/* Energy Drinks */}
-              <div className="bg-[#6b4c8c] noisy flex items-center justify-center" style={{ height: '58px' }}>
+              <div className="bg-[#6b4c8c] noisy flex items-center justify-center" style={{ height: '70px' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                   style={{ fontSize: '18.8px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
                 >
-                  Energy Drinks
+                  Energy/Boba
                 </span>
               </div>
-              <div className="flex items-center" style={{ paddingBlock: '16.8px', paddingLeft: '28px', paddingRight: '16.8px', gap: '42px' }}>
+              <div className="flex items-center" style={{ paddingBlock: '13.8px', paddingLeft: '28px', paddingRight: '16.8px', gap: '42px' }}>
                 <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '77px', height: '77px' }}>
                   <span className="text-[#555555]" style={{ fontSize: '11.2px' }}>IMG</span>
                 </div>

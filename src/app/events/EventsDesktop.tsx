@@ -129,50 +129,52 @@ export default function EventsDesktop() {
         {/* Page Title */}
         <div className="text-center" style={{ marginTop: '6vw', marginBottom: '3vw' }}>
           <div className="flex items-center justify-center" style={{ gap: '1.5vw' }}>
-            <img
-              src="/images/calendar.svg"
-              alt=""
-              className="pointer-events-none"
-              style={{
-                width: '5vw',
-                filter: 'brightness(0) invert(1) drop-shadow(0px 0px 10px rgba(0,0,0,0.5))',
-              }}
-            />
             <h1
               className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
               style={{
-                fontSize: '4.5vw',
+                fontSize: '6.6vw',
                 fontWeight: 900,
                 letterSpacing: '-0.02em',
                 textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
-                paddingLeft: '0.5vw',
               }}
             >
               Events
             </h1>
           </div>
+          <p
+            className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
+            style={{
+              fontSize: '4.14vw',
+              fontWeight: 900,
+              letterSpacing: '0.2em',
+              marginTop: '-1vw',
+              textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
+            }}
+          >
+            Drip • Drop • Vibe
+          </p>
         </div>
 
-        {/* Two Column Layout */}
+        {/* Stacked Layout */}
         <div
-          className="flex"
-          style={{ marginInline: '3vw', marginBottom: '4vw', gap: '0.4vw' }}
+          className="flex flex-col items-center"
+          style={{ marginInline: '3vw', marginBottom: '4vw', gap: '0.4vw', marginTop: '-2vw' }}
         >
-          {/* LEFT BOX - Text */}
+          {/* TOP BOX - Text */}
           <div
-            className="flex-1"
+            className="w-[75vw]"
             style={{ padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '1vw' }}
           >
-            <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full" style={{ borderRadius: '0.7vw', padding: '2.5vw' }}>
+            <div className="rounded-lg overflow-hidden bg-[#2d1f1a]" style={{ borderRadius: '0.7vw', padding: '2vw' }}>
               <p
-                className="font-[family-name:var(--font-libre-baskerville)] text-white"
+                className="font-[family-name:var(--font-libre-baskerville)] text-white italic"
                 style={{
                   fontSize: '1.8vw',
-                  lineHeight: '1.7',
+                  lineHeight: '.5',
                   textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
                 }}
               >
-                Drip. Drop. Vibe.
+                Where the vibe comes to life
               </p>
               <p
                 className="font-[family-name:var(--font-libre-baskerville)] text-white"
@@ -183,40 +185,25 @@ export default function EventsDesktop() {
                   marginTop: '1.5vw',
                 }}
               >
-                This isn&apos;t just a coffee shop — it&apos;s where the room comes alive.
-                Espresso Groove is your stage, your hangout, your nightly soundtrack.
+                Events on the calendar — listening parties, music, mics, trivia, and more.
               </p>
               <p
-                className="font-[family-name:var(--font-libre-baskerville)] text-white"
+                className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold"
                 style={{
                   fontSize: '1.8vw',
-                  lineHeight: '1.7',
+                  lineHeight: '.5',
                   textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
                   marginTop: '1.5vw',
                 }}
               >
-                From laid-back vinyl listening sessions to open mics, trivia nights, and intimate acoustic
-                sets — every event is part of the experience. The coffee flows, the records spin, and
-                the vibe builds.
-              </p>
-              <p
-                className="font-[family-name:var(--font-libre-baskerville)] text-white"
-                style={{
-                  fontSize: '1.8vw',
-                  lineHeight: '1.7',
-                  textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
-                  marginTop: '1.5vw',
-                }}
-              >
-                Check the calendar. Pull up. Stay awhile.
+                Your stage. Your hangout. Your soundtrack.
               </p>
             </div>
           </div>
 
-          {/* RIGHT BOX - Calendar */}
+          {/* BOTTOM BOX - Calendar */}
           <div
-            className="flex-[1.5]"
-            style={{ padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '1vw' }}
+            style={{ width: '60vw', padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '1vw', marginTop: '0.5vw', }}
           >
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full" style={{ borderRadius: '0.7vw', padding: '2vw', paddingBottom: '0.5vw' }}>
               {/* Month Navigation */}

@@ -134,26 +134,26 @@ export default function PageMobile() {
             style={{ width: '85vw', marginLeft: '-6vw',}}
           />
           <h2
-            className="text-white text-[8vw] font-[family-name:var(--font-libre-baskerville)] leading-tight uppercase tracking-tight"
+            className="text-white text-[8vw] font-[family-name:var(--font-libre-baskerville)] italic"
             style={{
-              textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+              textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
               marginTop: '-12vw',
               paddingLeft: '5vw',
               fontWeight: 900,
             }}
           >
-            Where Coffee<br />Meets Culture
+            Drip • Drop • Vibe
           </h2>
           <p
             className="text-white text-[7.2vw] font-[family-name:var(--font-libre-baskerville)] italic"
             style={{
               textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
-              marginTop: '5vw',
+              marginTop: '2vw',
               paddingLeft: '5vw',
               fontWeight: 900,
             }}
           >
-            Drip • Drop • Vibe
+            Craft drinks.<br />Curated sound.
           </p>
 
           {/* Buttons */}
@@ -503,7 +503,7 @@ export default function PageMobile() {
                 src="/images/artwork/performance.png"
                 alt="Jazz performance"
                 className="rounded-lg object-cover"
-                style={{ width: '30vw', height: '30vw', float: 'left', marginRight: '3vw', marginBottom: '2vw' }}
+                style={{ width: '30vw', height: '30vw', float: 'left', marginRight: '3vw', marginBottom: '2vw', marginTop: '2vw', }}
               />
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
@@ -531,7 +531,7 @@ export default function PageMobile() {
           </div>
           </div>
 
-          {/* === Featured Sips Section === */}
+          {/* === The Pour Section === */}
           <div
             className="rounded-xl"
             style={{ marginTop: '4vw', marginInline: '4vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
@@ -539,6 +539,40 @@ export default function PageMobile() {
           <div
             className="rounded-lg overflow-hidden bg-[#2d1f1a]"
           >
+            {/* Limited Press Banner */}
+            <div
+              className="bg-[#d9bc52] noisy flex flex-col items-center justify-center"
+              style={{
+                position: 'relative',
+                overflow: 'hidden',
+                paddingBlock: '1.5vw',
+                boxShadow: '0 0 12px rgba(217,188,82,0.6), 0 0 24px rgba(217,188,82,0.3)',
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%)',
+                  animation: 'shimmer 2.5s ease-in-out infinite',
+                  zIndex: 1,
+                  pointerEvents: 'none',
+                }}
+              />
+              <span
+                className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-black"
+                style={{ fontSize: '4.5vw', letterSpacing: '0.1em', position: 'relative', zIndex: 2 }}
+              >
+                Limited Press
+              </span>
+              <span
+                className="font-[family-name:var(--font-inter)] text-black/70"
+                style={{ fontSize: '3.8vw', position: 'relative', zIndex: 2 }}
+              >
+                In rotation for a limited time
+              </span>
+            </div>
+
             {/* Title */}
             <div
               className="text-center"
@@ -548,8 +582,16 @@ export default function PageMobile() {
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
                 style={{ fontSize: '5vw', letterSpacing: '0.15em' }}
               >
-                Featured Sips
+                &ldquo;The Pour&rdquo;
               </span>
+              <div>
+                <span
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white italic"
+                  style={{ fontSize: '5vw' }}
+                >
+                  What&apos;s in your cup?
+                </span>
+              </div>
             </div>
 
             {/* Category Labels */}
@@ -566,46 +608,37 @@ export default function PageMobile() {
                     textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                   }}
                 >
-                  <img
-                    src="/images/menu_cup.svg?v=3"
-                    className="inline-block mr-1"
-                    style={{
-                      width: '4vw',
-                      height: '4vw',
-                      marginTop: '-1vw',
-                      filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))',
-                    }}
-                  /> Coffee
+                  Espresso<br />+ Coffee
                 </span>
               </div>
               <div
                 className="flex-1 bg-[#2a7d7d] noisy text-center flex items-center justify-center"
-                style={{ height: 'vw' }}
+                style={{ height: '12vw' }}
               >
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                   style={{
-                    fontSize: '3.vw',
+                    fontSize: '3.6vw',
                     letterSpacing: '0.07em',
                     textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                   }}
                 >
-                  Tea
+                  Tea<br />+ Matcha
                 </span>
               </div>
               <div
                 className="flex-1 bg-[#6b4c8c] noisy text-center flex items-center justify-center"
-                style={{ height: 'vw' }}
+                style={{ height: '12vw' }}
               >
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                   style={{
-                    fontSize: '3.1vw',
+                    fontSize: '3.6vw',
                     letterSpacing: '0.07em',
                     textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                   }}
                 >
-                  Energy Drinks
+                  Energy<br />+ Boba
                 </span>
               </div>
             </div>

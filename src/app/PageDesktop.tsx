@@ -150,26 +150,26 @@ export default function PageDesktop() {
           style={{ width: '55vw', marginLeft: '-4vw', marginTop: '-6vw' }}
         />
         <h2
-          className="text-white text-[5vw] font-[family-name:var(--font-libre-baskerville)] leading-tight uppercase tracking-tight"
+          className="text-white text-[5vw] font-[family-name:var(--font-libre-baskerville)] italic"
           style={{
-            textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+            textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
             marginTop: '-8vw',
             paddingLeft: '5vw',
             fontWeight: 900,
           }}
         >
-          Where Coffee<br />Meets Culture
+          Drip • Drop • Vibe
         </h2>
         <p
           className="text-white text-[5.2vw] font-[family-name:var(--font-libre-baskerville)] italic"
           style={{
             textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
-            marginTop: '2vw',
+            marginTop: '1vw',
             paddingLeft: '4.5vw',
             fontWeight: 900,
           }}
         >
-          Drip • Drop • Vibe
+          Craft drinks.<br />Curated sound.
         </p>
 
         {/* Buttons */}
@@ -177,7 +177,7 @@ export default function PageDesktop() {
           className="flex items-center justify-center"
           style={{
             paddingLeft: '0vw',
-            paddingTop: '3.5vw',
+            paddingTop: '2.75vw',
             gap: '1.5vw',
           }}
         >
@@ -574,15 +574,15 @@ export default function PageDesktop() {
               <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
               {/* Coffee */}
-              <div className="bg-[#f06830] noisy flex items-center justify-center" style={{ height: '3.5vw' }}>
+              <div className="bg-[#f06830] noisy flex items-center justify-center" style={{ height: '4vw' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{ fontSize: '1.2vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                  style={{ fontSize: '1.3vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
                 >
-                  Coffee
+                  Coffee/Espresso
                 </span>
               </div>
-              <div className="flex items-center" style={{ paddingBlock: '1.2vw', paddingLeft: '2vw', paddingRight: '1.2vw', gap: '3vw' }}>
+              <div className="flex items-center" style={{ paddingBlock: '0.9vw', paddingLeft: '2vw', paddingRight: '1.2vw', gap: '3vw' }}>
                 <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '5.5vw', height: '5.5vw' }}>
                   <span className="text-[#555555]" style={{ fontSize: '0.8vw' }}>IMG</span>
                 </div>
@@ -592,15 +592,15 @@ export default function PageDesktop() {
               </div>
 
               {/* Tea */}
-              <div className="bg-[#2a7d7d] noisy flex items-center justify-center" style={{ height: '3.5vw' }}>
+              <div className="bg-[#2a7d7d] noisy flex items-center justify-center" style={{ height: '4vw' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{ fontSize: '1.2vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                  style={{ fontSize: '1.3vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
                 >
-                  Tea
+                  Tea/Matcha
                 </span>
               </div>
-              <div className="flex items-center" style={{ paddingBlock: '1.2vw', paddingLeft: '2vw', paddingRight: '1.2vw', gap: '3vw' }}>
+              <div className="flex items-center" style={{ paddingBlock: '0.9vw', paddingLeft: '2vw', paddingRight: '1.2vw', gap: '3vw' }}>
                 <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '5.5vw', height: '5.5vw' }}>
                   <span className="text-[#555555]" style={{ fontSize: '0.8vw' }}>IMG</span>
                 </div>
@@ -610,15 +610,15 @@ export default function PageDesktop() {
               </div>
 
               {/* Energy Drinks */}
-              <div className="bg-[#6b4c8c] noisy flex items-center justify-center" style={{ height: '3.5vw' }}>
+              <div className="bg-[#6b4c8c] noisy flex items-center justify-center" style={{ height: '4vw' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{ fontSize: '1.2vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                  style={{ fontSize: '1.3vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
                 >
-                  Energy Drinks
+                  Energy/Boba
                 </span>
               </div>
-              <div className="flex items-center" style={{ paddingBlock: '1.2vw', paddingLeft: '2vw', paddingRight: '1.2vw', gap: '3vw' }}>
+              <div className="flex items-center" style={{ paddingBlock: '0.9vw', paddingLeft: '2vw', paddingRight: '1.2vw', gap: '3vw' }}>
                 <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '5.5vw', height: '5.5vw' }}>
                   <span className="text-[#555555]" style={{ fontSize: '0.8vw' }}>IMG</span>
                 </div>
