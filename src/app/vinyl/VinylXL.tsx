@@ -386,26 +386,20 @@ export default function VinylXL() {
                     {[
                       "All", "Now Spinning", "New Releases", "Best Sellers",
                       "Rock", "Electronic", "Hip-Hop", "Indie", "Jazz", "Country", "Pop", "Funk",
-                    ].map((option, i) => {
-                      const count = option === "All"
-                        ? totalItems
-                        : vinylSections.find((s) => s.id === option)?.items.length ?? 0;
-                      return (
+                    ].map((option, i) => (
                         <button
                           key={option}
                           onClick={() => { setSelectedFilter(option); setDropdownOpen(false); }}
-                          className="flex items-center justify-between w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                          className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
                           style={{
                             fontSize: '22.4px',
                             padding: '16.8px 35px',
                             borderTop: i > 0 ? '1px solid rgba(255,255,255,0.1)' : 'none',
                           }}
                         >
-                          <span>{option}</span>
-                          <span className="text-white/70 font-[family-name:var(--font-inter)]" style={{ fontSize: '19.6px' }}>({count})</span>
+                          {option}
                         </button>
-                      );
-                    })}
+                    ))}
                   </div>
                 </div>
               )}
@@ -486,12 +480,6 @@ export default function VinylXL() {
                               {item.artist}
                             </p>
                           </div>
-                          <span
-                            className="font-[family-name:var(--font-inter)] ml-auto"
-                            style={{ fontSize: '29.6px', flexShrink: 0, color: item.stock <= 1 ? '#f06830' : 'rgba(255,255,255,0.5)' }}
-                          >
-                            {item.stock} in stock
-                          </span>
                         </div>
                       ))}
                     </div>
@@ -612,16 +600,6 @@ export default function VinylXL() {
                           <p className="text-white/60 font-[family-name:var(--font-inter)]" style={{ fontSize: '21px', marginTop: '4.2px' }}>
                             {item.artist}
                           </p>
-                          <p
-                            className="font-[family-name:var(--font-inter)]"
-                            style={{
-                              fontSize: '28px',
-                              marginTop: '7px',
-                              color: item.stock <= 1 ? '#f06830' : 'rgba(255,255,255,0.5)',
-                            }}
-                          >
-                            {item.stock} in stock
-                          </p>
                         </div>
                       </div>
                     </div>
@@ -679,16 +657,6 @@ export default function VinylXL() {
                             </h4>
                             <p className="text-white/60 font-[family-name:var(--font-inter)]" style={{ fontSize: '21px', marginTop: '4.2px' }}>
                               {item.artist}
-                            </p>
-                            <p
-                              className="font-[family-name:var(--font-inter)]"
-                              style={{
-                                fontSize: '28px',
-                                marginTop: '7px',
-                                color: item.stock <= 1 ? '#f06830' : 'rgba(255,255,255,0.5)',
-                              }}
-                            >
-                              {item.stock} in stock
                             </p>
                           </div>
                         </div>

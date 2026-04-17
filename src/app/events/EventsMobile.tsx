@@ -120,15 +120,6 @@ export default function EventsMobile() {
           {/* Page Title */}
           <div className="text-center" style={{ marginTop: '14vw', marginBottom: '6.1vw' }}>
             <div className="flex items-center justify-center" style={{ gap: '3.1vw' }}>
-              <img
-                src="/images/calendar.svg"
-                alt=""
-                className="pointer-events-none"
-                style={{
-                  width: '14vw',
-                  filter: 'brightness(0) invert(1) drop-shadow(0px 0px 10px rgba(0,0,0,0.5))',
-                }}
-              />
               <h1
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
                 style={{
@@ -136,31 +127,43 @@ export default function EventsMobile() {
                   fontWeight: 900,
                   letterSpacing: '-0.02em',
                   textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
-                  paddingLeft: '1.2vw',
+                  marginTop: '3vw',
                 }}
               >
                 Events
               </h1>
             </div>
+            <p
+              className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
+              style={{
+                fontSize: '6.9vw',
+                fontWeight: 900,
+                letterSpacing: '0.2em',
+                marginTop: '0vw',
+                textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
+              }}
+            >
+              Drip • Drop • Vibe
+            </p>
           </div>
 
           {/* Text + Calendar Section */}
           <div
             className="rounded-xl"
-            style={{ marginInline: '4vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+            style={{ marginInline: '3vw', marginTop: '-3vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
           >
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
               {/* Text */}
-              <div style={{ padding: '5vw' }}>
+              <div style={{ paddingBlock: '5vw', paddingInline: '3vw', }}>
                 <p
-                  className="font-[family-name:var(--font-libre-baskerville)] text-white"
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white italic"
                   style={{
                     fontSize: '3.8vw',
                     lineHeight: '1.7',
                     textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
                   }}
                 >
-                  Drip. Drop. Vibe.
+                  Where the vibe comes to life
                 </p>
                 <p
                   className="font-[family-name:var(--font-libre-baskerville)] text-white"
@@ -171,32 +174,18 @@ export default function EventsMobile() {
                     marginTop: '3vw',
                   }}
                 >
-                  This isn&apos;t just a coffee shop — it&apos;s where the room comes alive.
-                  Espresso Groove is your stage, your hangout, your nightly soundtrack.
+                  Events on the calendar — listening parties, music, mics, trivia, and more.
                 </p>
                 <p
-                  className="font-[family-name:var(--font-libre-baskerville)] text-white"
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold"
                   style={{
-                    fontSize: '3.8vw',
+                    fontSize: '3.6vw',
                     lineHeight: '1.7',
                     textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
                     marginTop: '3vw',
                   }}
                 >
-                  From laid-back vinyl listening sessions to open mics, trivia nights, and intimate acoustic
-                  sets — every event is part of the experience. The coffee flows, the records spin, and
-                  the vibe builds.
-                </p>
-                <p
-                  className="font-[family-name:var(--font-libre-baskerville)] text-white"
-                  style={{
-                    fontSize: '3.8vw',
-                    lineHeight: '1.7',
-                    textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
-                    marginTop: '3vw',
-                  }}
-                >
-                  Check the calendar. Pull up. Stay awhile.
+                  Your stage. Your hangout. Your soundtrack.
                 </p>
               </div>
 

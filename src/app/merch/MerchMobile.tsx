@@ -19,7 +19,7 @@ export default function MerchMobile() {
         {/* Content Layer */}
         <div className="relative z-10 min-h-screen flex flex-col">
           {/* Page Title + Coming Soon */}
-          <div className="text-center" style={{ marginTop: '5vw' }}>
+          <div className="text-center" style={{ marginTop: '20vw' }}>
             <h1
               className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
               style={{
