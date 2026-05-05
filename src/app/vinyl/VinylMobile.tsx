@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import MobileNav from "../components/MobileNav";
@@ -21,7 +21,7 @@ const vinylSections = [
     ],
   },
   {
-    id: "New Releases",
+    id: "Fresh Drops",
     items: [
       { name: "COWBOY CARTER", artist: "Beyoncé", stock: 2, img: "/images/artwork/cowboy-carter.jpg" },
       { name: "HIT ME HARD AND SOFT", artist: "Billie Eilish", stock: 4, img: "/images/artwork/hit-me-hard-and-soft.jpg" },
@@ -31,7 +31,7 @@ const vinylSections = [
     ],
   },
   {
-    id: "Best Sellers",
+    id: "The Groove Pick",
     items: [
       { name: "RUMOURS", artist: "Fleetwood Mac", stock: 6, img: "/images/artwork/rumours.jpg" },
       { name: "ABBEY ROAD", artist: "The Beatles", stock: 3, img: "/images/artwork/abbey-road.jpg" },
@@ -122,13 +122,203 @@ const vinylSections = [
   },
 ];
 
+function StacksVinylRow({ vinyls, autoScroll = false, isActive = true }: { vinyls: { name: string; artist: string; img: string }[]; autoScroll?: boolean; isActive?: boolean }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [scrollRatio, setScrollRatio] = useState(0);
+  const [thumbWidth, setThumbWidth] = useState(0);
+  const isPausedRef = useRef(false);
+  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const scrollPosRef = useRef(0);
+
+  const updateScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    if (maxScroll <= 0) { setScrollRatio(0); setThumbWidth(100); return; }
+    setScrollRatio(el.scrollLeft / maxScroll);
+    setThumbWidth((el.clientWidth / el.scrollWidth) * 100);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    updateScroll();
+    el.addEventListener("scroll", updateScroll);
+    return () => el.removeEventListener("scroll", updateScroll);
+  }, [updateScroll]);
+
+  // Auto-scroll: drift right→left at constant speed, snap back when one full set has scrolled past.
+  // Only runs while isActive — when focus shifts away, we freeze in place.
+  // We track position in a float ref because iOS Safari floors writes to scrollLeft,
+  // which would prevent sub-pixel speeds (e.g. 0.5/frame) from ever accumulating.
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!autoScroll || !isActive) {
+      isPausedRef.current = false;
+      if (resumeTimerRef.current) {
+        clearTimeout(resumeTimerRef.current);
+        resumeTimerRef.current = null;
+      }
+      return;
+    }
+    if (!el) return;
+
+    scrollPosRef.current = el.scrollLeft;
+    const speed = 0.5; // px per frame (~30 px/sec at 60fps)
+    let rafId = 0;
+
+    const tick = () => {
+      if (!el) return;
+      if (isPausedRef.current) {
+        // While paused, the user may be dragging — keep our tracker in sync with their scroll.
+        scrollPosRef.current = el.scrollLeft;
+      } else {
+        scrollPosRef.current += speed;
+        el.scrollLeft = scrollPosRef.current;
+      }
+      // Seamless loop: when scrolled past one full copy, jump back by that distance.
+      // Because the second copy is identical to the first, the snap is invisible.
+      if (el.children.length >= vinyls.length + 1) {
+        const first = el.children[0] as HTMLElement;
+        const secondCopyFirst = el.children[vinyls.length] as HTMLElement;
+        const loopDistance = secondCopyFirst.offsetLeft - first.offsetLeft;
+        if (loopDistance > 0 && scrollPosRef.current >= loopDistance) {
+          scrollPosRef.current -= loopDistance;
+          el.scrollLeft = scrollPosRef.current;
+        }
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+
+    return () => cancelAnimationFrame(rafId);
+  }, [autoScroll, isActive, vinyls.length]);
+
+  const handleInteractionStart = () => {
+    if (!autoScroll) return;
+    isPausedRef.current = true;
+    if (resumeTimerRef.current) {
+      clearTimeout(resumeTimerRef.current);
+      resumeTimerRef.current = null;
+    }
+  };
+
+  const handleInteractionEnd = () => {
+    if (!autoScroll) return;
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    resumeTimerRef.current = setTimeout(() => {
+      isPausedRef.current = false;
+      resumeTimerRef.current = null;
+    }, 2000);
+  };
+
+  const items = autoScroll ? [...vinyls, ...vinyls] : vinyls;
+
+  return (
+    <>
+      <div
+        ref={scrollRef}
+        className="flex overflow-x-auto overflow-y-hidden hide-scrollbar"
+        style={{ gap: '3vw', paddingLeft: '4vw', paddingRight: '4vw', paddingBottom: '3vw', paddingTop: '3vw' }}
+        onPointerDown={handleInteractionStart}
+        onPointerUp={handleInteractionEnd}
+        onPointerCancel={handleInteractionEnd}
+        onWheel={() => { handleInteractionStart(); handleInteractionEnd(); }}
+      >
+        {items.map((vinyl, vi) => (
+          <div
+            key={vi}
+            className="flex-shrink-0 rounded-xl"
+            style={{
+              width: '35vw',
+              padding: '.8vw',
+              paddingBottom: '3vw',
+              background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
+            }}
+          >
+            <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
+              <div className="bg-[#1a1310] overflow-hidden" style={{ width: '100%', aspectRatio: '1' }}>
+                <img src={vinyl.img} alt={vinyl.name} loading="lazy" className="w-full h-full object-cover" />
+              </div>
+              <div style={{ padding: '1.5vw' }}>
+                <h4
+                  className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight overflow-hidden whitespace-nowrap text-ellipsis"
+                  style={{ fontSize: '5vw' }}
+                >
+                  {vinyl.name}
+                </h4>
+                <p className="text-white/60 font-[family-name:var(--font-inter)] overflow-hidden whitespace-nowrap text-ellipsis" style={{ fontSize: '3.8vw', marginTop: '0.5vw' }}>
+                  {vinyl.artist}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      {!autoScroll && (
+        <div
+          style={{
+            marginLeft: '4vw',
+            marginRight: '4vw',
+            marginBottom: '3vw',
+            height: '1vw',
+            backgroundColor: 'rgba(255,255,255,0.2)',
+            borderRadius: '999px',
+            position: 'relative',
+          }}
+        >
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: `${scrollRatio * (100 - thumbWidth)}%`,
+              width: `${thumbWidth}%`,
+              height: '100%',
+              backgroundColor: '#ffffff',
+              borderRadius: '999px',
+            }}
+          />
+        </div>
+      )}
+    </>
+  );
+}
+
 export default function VinylMobile() {
   const [navVisible, setNavVisible] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchFocused, setSearchFocused] = useState(false);
   const touchStartY = React.useRef<number | null>(null);
+
+  // Track which Dig the Stacks row is most-visible — only that row's carousel auto-scrolls.
+  const [activeStacksTitle, setActiveStacksTitle] = useState<string | null>(null);
+  const stacksRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
+
+  useEffect(() => {
+    if (selectedFilter !== "Dig the Stacks") {
+      setActiveStacksTitle(null);
+      return;
+    }
+    const ratios = new Map<string, number>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const title = (entry.target as HTMLElement).dataset.stacksTitle;
+          if (title) ratios.set(title, entry.intersectionRatio);
+        }
+        let bestTitle: string | null = null;
+        let bestRatio = 0;
+        for (const [title, ratio] of ratios.entries()) {
+          if (ratio > bestRatio) { bestTitle = title; bestRatio = ratio; }
+        }
+        setActiveStacksTitle(bestTitle);
+      },
+      { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] }
+    );
+    for (const el of stacksRowRefs.current.values()) observer.observe(el);
+    return () => observer.disconnect();
+  }, [selectedFilter]);
 
   // Flatten all vinyl items for search
   const allVinylItems = vinylSections.flatMap((s) =>
@@ -281,6 +471,14 @@ export default function VinylMobile() {
               className="h-screen bg-cover bg-center"
               style={{ backgroundImage: "url('/images/vibe_background.png')", }}
             />
+            <div
+              className="h-screen bg-cover bg-center"
+              style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(-1)" }}
+            />
+            <div
+              className="h-screen bg-cover bg-center"
+              style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(1)" }}
+            />
           </>
         )}
       </div>
@@ -374,7 +572,7 @@ export default function VinylMobile() {
             >
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold"
-                style={{ fontSize: '4vw' }}
+                style={{ fontSize: selectedFilter === "The Groove Pick" ? '3.65vw' : '4vw' }}
               >
                 {selectedFilter}
               </span>
@@ -402,40 +600,55 @@ export default function VinylMobile() {
                   background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
                 }}
               >
-                <div className="rounded-lg overflow-y-auto bg-[#2d1f1a]" style={{ maxHeight: '60vw' }}>
-                  {[
-                    "All",
-                    "Now Spinning",
-                    "New Releases",
-                    "Best Sellers",
-                    "Rock",
-                    "Electronic",
-                    "Hip-Hop",
-                    "Indie",
-                    "Jazz",
-                    "Country",
-                    "Pop",
-                    "Funk",
-                  ].map((option, i) => {
-                    const count = option === "All"
-                      ? allVinylItems.length
-                      : vinylSections.find((s) => s.id === option)?.items.length ?? 0;
-                    return (
-                    <button
-                      key={option}
-                      onClick={() => { setSelectedFilter(option); setDropdownOpen(false); }}
-                      className="flex items-center justify-between w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
-                      style={{
-                        fontSize: '3.8vw',
-                        padding: '3vw 5vw',
-                        borderTop: i > 0 ? '1px solid rgba(255,255,255,0.1)' : 'none',
-                      }}
-                    >
-                      <span>{option}</span>
-                      <span className="text-white/70 font-[family-name:var(--font-inter)]" style={{ fontSize: '3.6vw' }}>({count})</span>
-                    </button>
-                    );
-                  })}
+                <div className="rounded-lg bg-[#2d1f1a]">
+                  {/* All */}
+                  <button
+                    onClick={() => { setSelectedFilter("All"); setDropdownOpen(false); }}
+                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
+                    style={{ fontSize: '3.8vw', padding: '3vw 5vw' }}
+                  >
+                    All
+                  </button>
+
+                  {/* Now Spinning */}
+                  <button
+                    onClick={() => { setSelectedFilter("Now Spinning"); setDropdownOpen(false); }}
+                    className="flex flex-col w-full text-left cursor-pointer hover:bg-white/10 transition-colors"
+                    style={{ padding: '3vw 5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '3.8vw' }}>Now Spinning</span>
+                    <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '3vw', marginTop: '0.5vw' }}>What&apos;s playing in the<br />house right now.</span>
+                  </button>
+
+                  {/* Fresh Drops */}
+                  <button
+                    onClick={() => { setSelectedFilter("Fresh Drops"); setDropdownOpen(false); }}
+                    className="flex flex-col w-full text-left cursor-pointer hover:bg-white/10 transition-colors"
+                    style={{ padding: '3vw 4.8vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '3.8vw' }}>Fresh Drops</span>
+                    <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '3vw', marginTop: '0.5vw' }}>New arrivals and recent<br />releases worth pulling up for</span>
+                  </button>
+
+                  {/* The Groove Pick */}
+                  <button
+                    onClick={() => { setSelectedFilter("The Groove Pick"); setDropdownOpen(false); }}
+                    className="flex flex-col w-full text-left cursor-pointer hover:bg-white/10 transition-colors"
+                    style={{ padding: '3vw 5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '3.8vw' }}>The Groove Pick</span>
+                    <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '3vw', marginTop: '0.5vw' }}>Staff favorites, deep cuts,<br /><span style={{ whiteSpace: 'nowrap' }}>and personal recommendations</span></span>
+                  </button>
+
+                  {/* Dig the Stacks */}
+                  <button
+                    onClick={() => { setSelectedFilter("Dig the Stacks"); setDropdownOpen(false); }}
+                    className="flex flex-col w-full text-left cursor-pointer hover:bg-white/10 transition-colors"
+                    style={{ padding: '3vw 5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '3.8vw' }}>Dig the Stacks</span>
+                    <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '3vw', marginTop: '0.5vw' }}>Rock, Indie, Hip-Hop, and everything in between</span>
+                  </button>
                 </div>
               </div>
             )}
@@ -464,7 +677,7 @@ export default function VinylMobile() {
                 placeholder="Search vinyl..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                onFocus={() => setSearchFocused(true)}
+
                 className="bg-transparent text-white font-[family-name:var(--font-libre-baskerville)] outline-none w-full placeholder-white/40"
                 style={{ fontSize: '16px' }}
               />
@@ -561,16 +774,6 @@ export default function VinylMobile() {
                         {item.artist}
                       </p>
                     </div>
-                    <span
-                      className="font-[family-name:var(--font-inter)] ml-auto"
-                      style={{
-                        fontSize: '3.5vw',
-                        flexShrink: 0,
-                        color: item.stock <= 1 ? '#f06830' : 'rgba(255,255,255,0.5)',
-                      }}
-                    >
-                      {item.stock} in stock
-                    </span>
                   </div>
                   );
                 })}
@@ -628,8 +831,169 @@ export default function VinylMobile() {
           </p>
         </div>
 
+        {/* Dig the Stacks Sections */}
+        {selectedFilter === "Dig the Stacks" && (
+          <>
+            {[
+              {
+                title: "Turn It Up",
+                desc: "Rock, Punk, and high-energy sound",
+                vinyls: [
+                  { name: "NEVERMIND", artist: "Nirvana", img: "/images/artwork/nevermind.jpg" },
+                  { name: "OK COMPUTER", artist: "Radiohead", img: "/images/artwork/ok-computer.jpg" },
+                  { name: "LED ZEPPELIN IV", artist: "Led Zeppelin", img: "/images/artwork/led-zeppelin-iv.jpg" },
+                  { name: "THE JOSHUA TREE", artist: "U2", img: "/images/artwork/joshua-tree.jpg" },
+                  { name: "APPETITE FOR DESTRUCTION", artist: "Guns N' Roses", img: "/images/artwork/appetite-for-destruction.jpg" },
+                  { name: "BACK IN BLACK", artist: "AC/DC", img: "/images/artwork/back-in-black.jpg" },
+                  { name: "PARANOID", artist: "Black Sabbath", img: "/images/artwork/paranoid.jpg" },
+                  { name: "LONDON CALLING", artist: "The Clash", img: "/images/artwork/london-calling.jpg" },
+                  { name: "BORN TO RUN", artist: "Bruce Springsteen", img: "/images/artwork/born-to-run.jpg" },
+                  { name: "WHO'S NEXT", artist: "The Who", img: "/images/artwork/whos-next.jpg" },
+                  { name: "MASTER OF PUPPETS", artist: "Metallica", img: "/images/artwork/master-of-puppets.jpg" },
+                  { name: "RAGE AGAINST THE MACHINE", artist: "Rage Against the Machine", img: "/images/artwork/rage-against-the-machine.jpg" },
+                  { name: "TEN", artist: "Pearl Jam", img: "/images/artwork/ten-pearl-jam.jpg" },
+                  { name: "SONGS FOR THE DEAF", artist: "Queens of the Stone Age", img: "/images/artwork/songs-for-the-deaf.jpg" },
+                  { name: "NEVER MIND THE BOLLOCKS", artist: "Sex Pistols", img: "/images/artwork/never-mind-the-bollocks.jpg" },
+                ],
+              },
+              {
+                title: "Smooth Operator",
+                desc: "Jazz, Soul, and R&B",
+                vinyls: [
+                  { name: "KIND OF BLUE", artist: "Miles Davis", img: "/images/artwork/kind-of-blue.jpg" },
+                  { name: "INNERVISIONS", artist: "Stevie Wonder", img: "/images/artwork/innervisions.jpg" },
+                  { name: "OFF THE WALL", artist: "Michael Jackson", img: "/images/artwork/off-the-wall.jpg" },
+                  { name: "SUPERFLY", artist: "Curtis Mayfield", img: "/images/artwork/superfly.jpg" },
+                  { name: "A LOVE SUPREME", artist: "John Coltrane", img: "/images/artwork/a-love-supreme.jpg" },
+                  { name: "WHAT'S GOING ON", artist: "Marvin Gaye", img: "/images/artwork/whats-going-on.jpg" },
+                  { name: "SONGS IN THE KEY OF LIFE", artist: "Stevie Wonder", img: "/images/artwork/songs-in-the-key-of-life.jpg" },
+                  { name: "BACK TO BLACK", artist: "Amy Winehouse", img: "/images/artwork/back-to-black.jpg" },
+                  { name: "VOODOO", artist: "D'Angelo", img: "/images/artwork/voodoo.jpg" },
+                  { name: "AJA", artist: "Steely Dan", img: "/images/artwork/aja.jpg" },
+                  { name: "LADY SOUL", artist: "Aretha Franklin", img: "/images/artwork/lady-soul.jpg" },
+                  { name: "SONGS IN A MINOR", artist: "Alicia Keys", img: "/images/artwork/songs-in-a-minor.jpg" },
+                  { name: "LADY SINGS THE BLUES", artist: "Billie Holiday", img: "/images/artwork/lady-sings-the-blues.jpg" },
+                  { name: "BITCHES BREW", artist: "Miles Davis", img: "/images/artwork/bitches-brew.jpg" },
+                  { name: "CHANNEL ORANGE", artist: "Frank Ocean", img: "/images/artwork/channel-orange.jpg" },
+                ],
+              },
+              {
+                title: "Low End Theory",
+                desc: "Hip-Hop, Boom Bap, and Beats",
+                vinyls: [
+                  { name: "ILLMATIC", artist: "Nas", img: "/images/artwork/illmatic.jpg" },
+                  { name: "TO PIMP A BUTTERFLY", artist: "Kendrick Lamar", img: "/images/artwork/to-pimp-a-butterfly.jpg" },
+                  { name: "READY TO DIE", artist: "Notorious B.I.G.", img: "/images/artwork/ready-to-die.jpg" },
+                  { name: "MADVILLAINY", artist: "Madvillain", img: "/images/artwork/madvillainy.jpg" },
+                  { name: "THE MISEDUCATION OF LAURYN HILL", artist: "Lauryn Hill", img: "/images/artwork/miseducation.jpg" },
+                  { name: "THE CHRONIC", artist: "Dr. Dre", img: "/images/artwork/the-chronic.jpg" },
+                  { name: "ENTER THE WU-TANG (36 CHAMBERS)", artist: "Wu-Tang Clan", img: "/images/artwork/36-chambers.jpg" },
+                  { name: "AQUEMINI", artist: "OutKast", img: "/images/artwork/aquemini.jpg" },
+                  { name: "THE LOW END THEORY", artist: "A Tribe Called Quest", img: "/images/artwork/low-end-theory-tribe.jpg" },
+                  { name: "PAID IN FULL", artist: "Eric B. & Rakim", img: "/images/artwork/paid-in-full.jpg" },
+                  { name: "REASONABLE DOUBT", artist: "Jay-Z", img: "/images/artwork/reasonable-doubt.jpg" },
+                  { name: "BLACK ON BOTH SIDES", artist: "Mos Def", img: "/images/artwork/black-on-both-sides.jpg" },
+                  { name: "THE COLLEGE DROPOUT", artist: "Kanye West", img: "/images/artwork/college-dropout.jpg" },
+                  { name: "GET RICH OR DIE TRYIN'", artist: "50 Cent", img: "/images/artwork/get-rich-or-die-tryin.jpg" },
+                  { name: "2001", artist: "Dr. Dre", img: "/images/artwork/2001-dre.jpg" },
+                ],
+              },
+              {
+                title: "Neon Nights",
+                desc: "Electronic, Synth, and Dance",
+                vinyls: [
+                  { name: "RANDOM ACCESS MEMORIES", artist: "Daft Punk", img: "/images/artwork/random-access-memories.jpg" },
+                  { name: "DISCOVERY", artist: "Daft Punk", img: "/images/artwork/discovery.jpg" },
+                  { name: "CROSS", artist: "Justice", img: "/images/artwork/cross-justice.jpg" },
+                  { name: "HOMEWORK", artist: "Daft Punk", img: "/images/artwork/homework.jpg" },
+                  { name: "MUSIC HAS THE RIGHT TO CHILDREN", artist: "Boards of Canada", img: "/images/artwork/music-has-the-right.jpg" },
+                  { name: "SELECTED AMBIENT WORKS 85-92", artist: "Aphex Twin", img: "/images/artwork/selected-ambient-works.jpg" },
+                  { name: "THE FAT OF THE LAND", artist: "The Prodigy", img: "/images/artwork/fat-of-the-land.jpg" },
+                  { name: "ENDTRODUCING", artist: "DJ Shadow", img: "/images/artwork/endtroducing.jpg" },
+                  { name: "PLAY", artist: "Moby", img: "/images/artwork/play-moby.jpg" },
+                  { name: "TRANS-EUROPE EXPRESS", artist: "Kraftwerk", img: "/images/artwork/trans-europe-express.jpg" },
+                  { name: "UNTRUE", artist: "Burial", img: "/images/artwork/untrue.jpg" },
+                  { name: "SINCE I LEFT YOU", artist: "The Avalanches", img: "/images/artwork/since-i-left-you.jpg" },
+                  { name: "DUMMY", artist: "Portishead", img: "/images/artwork/dummy.jpg" },
+                  { name: "MEZZANINE", artist: "Massive Attack", img: "/images/artwork/mezzanine.jpg" },
+                  { name: "CONFESSIONS ON A DANCE FLOOR", artist: "Madonna", img: "/images/artwork/confessions-on-a-dance-floor.jpg" },
+                ],
+              },
+              {
+                title: "Roots & Dust",
+                desc: "Country, Folk, and Americana",
+                vinyls: [
+                  { name: "JOLENE", artist: "Dolly Parton", img: "/images/artwork/jolene.jpg" },
+                  { name: "AT FOLSOM PRISON", artist: "Johnny Cash", img: "/images/artwork/at-folsom-prison.jpg" },
+                  { name: "GOLDEN HOUR", artist: "Kacey Musgraves", img: "/images/artwork/golden-hour.jpg" },
+                  { name: "TRAVELLER", artist: "Chris Stapleton", img: "/images/artwork/traveller.jpg" },
+                  { name: "RED HEADED STRANGER", artist: "Willie Nelson", img: "/images/artwork/red-headed-stranger.jpg" },
+                  { name: "BLOOD ON THE TRACKS", artist: "Bob Dylan", img: "/images/artwork/blood-on-the-tracks.jpg" },
+                  { name: "HARVEST", artist: "Neil Young", img: "/images/artwork/harvest.jpg" },
+                  { name: "PINK MOON", artist: "Nick Drake", img: "/images/artwork/pink-moon.jpg" },
+                  { name: "BLUE", artist: "Joni Mitchell", img: "/images/artwork/blue-joni-mitchell.jpg" },
+                  { name: "WILDFLOWERS", artist: "Tom Petty", img: "/images/artwork/wildflowers.jpg" },
+                  { name: "STARDUST", artist: "Willie Nelson", img: "/images/artwork/stardust.jpg" },
+                  { name: "COAL MINER'S DAUGHTER", artist: "Loretta Lynn", img: "/images/artwork/coal-miners-daughter.jpg" },
+                  { name: "MUSIC FROM BIG PINK", artist: "The Band", img: "/images/artwork/music-from-big-pink.jpg" },
+                  { name: "HONKY TONK HEROES", artist: "Waylon Jennings", img: "/images/artwork/honky-tonk-heroes.jpg" },
+                  { name: "WILL THE CIRCLE BE UNBROKEN", artist: "Nitty Gritty Dirt Band", img: "/images/artwork/will-the-circle-be-unbroken.jpg" },
+                ],
+              },
+              {
+                title: "Main Stage",
+                desc: "Pop, Indie, and Funk",
+                vinyls: [
+                  { name: "FUTURE NOSTALGIA", artist: "Dua Lipa", img: "/images/artwork/future-nostalgia.jpg" },
+                  { name: "RUMOURS", artist: "Fleetwood Mac", img: "/images/artwork/rumours.jpg" },
+                  { name: "MOTHERSHIP CONNECTION", artist: "Parliament", img: "/images/artwork/mothership-connection.jpg" },
+                  { name: "1989", artist: "Taylor Swift", img: "/images/artwork/1989.jpg" },
+                  { name: "IS THIS IT", artist: "The Strokes", img: "/images/artwork/is-this-it.jpg" },
+                  { name: "THRILLER", artist: "Michael Jackson", img: "/images/artwork/thriller.jpg" },
+                  { name: "LEMONADE", artist: "Beyoncé", img: "/images/artwork/lemonade.jpg" },
+                  { name: "BORN THIS WAY", artist: "Lady Gaga", img: "/images/artwork/born-this-way.jpg" },
+                  { name: "FUNERAL", artist: "Arcade Fire", img: "/images/artwork/funeral.jpg" },
+                  { name: "IN THE AEROPLANE OVER THE SEA", artist: "Neutral Milk Hotel", img: "/images/artwork/aeroplane-over-the-sea.jpg" },
+                  { name: "LOVELESS", artist: "My Bloody Valentine", img: "/images/artwork/loveless.jpg" },
+                  { name: "MAGGOT BRAIN", artist: "Funkadelic", img: "/images/artwork/maggot-brain.jpg" },
+                  { name: "PARACHUTES", artist: "Coldplay", img: "/images/artwork/parachutes.jpg" },
+                  { name: "MODERN VAMPIRES OF THE CITY", artist: "Vampire Weekend", img: "/images/artwork/modern-vampires-of-the-city.jpg" },
+                  { name: "CURRENTS", artist: "Tame Impala", img: "/images/artwork/currents.jpg" },
+                ],
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                ref={(el) => {
+                  if (el) stacksRowRefs.current.set(item.title, el);
+                  else stacksRowRefs.current.delete(item.title);
+                }}
+                data-stacks-title={item.title}
+                style={{ paddingInline: '4vw', marginTop: '4vw' }}
+              >
+                <div
+                  className="rounded-xl"
+                  style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+                >
+                  <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
+                    <div className="text-center" style={{ padding: '4vw', paddingBottom: '0' }}>
+                      <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold uppercase" style={{ fontSize: '4.5vw' }}>
+                        {item.title}
+                      </span>
+                      <p className="font-[family-name:var(--font-libre-baskerville)] text-white italic" style={{ fontSize: '4.5vw', marginTop: '1vw' }}>
+                        {item.desc}
+                      </p>
+                    </div>
+                    <StacksVinylRow vinyls={item.vinyls} autoScroll isActive={item.title === activeStacksTitle} />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </>
+        )}
+
         {/* Vinyl Sections */}
-        {visibleSections.map((section) => (
+        {selectedFilter !== "Dig the Stacks" && visibleSections.map((section) => (
           <div key={section.id} id={`section-${section.id}`} style={{ paddingLeft: '4vw', paddingRight: '4vw', marginTop: '6vw' }}>
             <div
               className="rounded-xl"
@@ -703,16 +1067,6 @@ export default function VinylMobile() {
                             style={{ fontSize: '3.8vw', marginTop: '1vw' }}
                           >
                             {item.artist}
-                          </p>
-                          <p
-                            className="font-[family-name:var(--font-inter)]"
-                            style={{
-                              fontSize: '5vw',
-                              marginTop: '2vw',
-                              color: item.stock <= 1 ? '#f06830' : 'rgba(255,255,255,0.5)',
-                            }}
-                          >
-                            {item.stock} in stock
                           </p>
                         </div>
                       </div>
