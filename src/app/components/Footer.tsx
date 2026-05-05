@@ -61,7 +61,7 @@ export default function Footer({ style, className }: { style?: React.CSSProperti
                 className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
                 style={{ fontSize: '4.5vw' , fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
               >
-                3540 Belle Terre Blvd • Unit C
+                3500 Belle Terre Blvd • Suite C
               </p>
               <p
                 className="text-white font-[family-name:var(--font-inter)]"

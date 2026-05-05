@@ -28,6 +28,11 @@ const vinylSections = [
       { name: "THE TORTURED POETS DEPARTMENT", artist: "Taylor Swift", stock: 1, img: "/images/artwork/tortured-poets.jpg" },
       { name: "BRAT", artist: "Charli XCX", stock: 3, img: "/images/artwork/brat.jpg" },
       { name: "GNX", artist: "Kendrick Lamar", stock: 2, img: "/images/artwork/gnx.jpg" },
+      { name: "SHORT N' SWEET", artist: "Sabrina Carpenter", stock: 3, img: "/images/artwork/short-n-sweet.jpg" },
+      { name: "CHROMAKOPIA", artist: "Tyler, The Creator", stock: 2, img: "/images/artwork/chromakopia.jpg" },
+      { name: "CHARM", artist: "Clairo", stock: 4, img: "/images/artwork/charm-clairo.jpg" },
+      { name: "MOON MUSIC", artist: "Coldplay", stock: 2, img: "/images/artwork/moon-music.jpg" },
+      { name: "ROMANCE", artist: "Fontaines D.C.", stock: 3, img: "/images/artwork/romance-fontaines.jpg" },
     ],
   },
   {
@@ -38,91 +43,145 @@ const vinylSections = [
       { name: "BACK TO BLACK", artist: "Amy Winehouse", stock: 2, img: "/images/artwork/back-to-black.jpg" },
       { name: "THRILLER", artist: "Michael Jackson", stock: 4, img: "/images/artwork/thriller.jpg" },
       { name: "LEGEND", artist: "Bob Marley", stock: 5, img: "/images/artwork/legend.jpg" },
-    ],
-  },
-  {
-    id: "Rock",
-    items: [
-      { name: "DARK SIDE OF THE MOON", artist: "Pink Floyd", stock: 2, img: "/images/artwork/dark-side-of-the-moon.jpg" },
-      { name: "LED ZEPPELIN IV", artist: "Led Zeppelin", stock: 3, img: "/images/artwork/led-zeppelin-iv.jpg" },
-      { name: "NEVERMIND", artist: "Nirvana", stock: 1, img: "/images/artwork/nevermind.jpg" },
-      { name: "THE JOSHUA TREE", artist: "U2", stock: 4, img: "/images/artwork/joshua-tree.jpg" },
-      { name: "APPETITE FOR DESTRUCTION", artist: "Guns N' Roses", stock: 2, img: "/images/artwork/appetite-for-destruction.jpg" },
-    ],
-  },
-  {
-    id: "Electronic",
-    items: [
-      { name: "RANDOM ACCESS MEMORIES", artist: "Daft Punk", stock: 3, img: "/images/artwork/random-access-memories.jpg" },
-      { name: "DISCOVERY", artist: "Daft Punk", stock: 2, img: "/images/artwork/discovery.jpg" },
-      { name: "HOMEWORK", artist: "Daft Punk", stock: 4, img: "/images/artwork/homework.jpg" },
-      { name: "CROSS", artist: "Justice", stock: 1, img: "/images/artwork/cross-justice.jpg" },
-      { name: "MUSIC HAS THE RIGHT TO CHILDREN", artist: "Boards of Canada", stock: 2, img: "/images/artwork/music-has-the-right.jpg" },
-    ],
-  },
-  {
-    id: "Hip-Hop",
-    items: [
-      { name: "ILLMATIC", artist: "Nas", stock: 2, img: "/images/artwork/illmatic.jpg" },
-      { name: "TO PIMP A BUTTERFLY", artist: "Kendrick Lamar", stock: 3, img: "/images/artwork/to-pimp-a-butterfly.jpg" },
-      { name: "THE MISEDUCATION OF LAURYN HILL", artist: "Lauryn Hill", stock: 1, img: "/images/artwork/miseducation.jpg" },
-      { name: "READY TO DIE", artist: "Notorious B.I.G.", stock: 4, img: "/images/artwork/ready-to-die.jpg" },
-      { name: "MADVILLAINY", artist: "Madvillain", stock: 2, img: "/images/artwork/madvillainy.jpg" },
-    ],
-  },
-  {
-    id: "Indie",
-    items: [
-      { name: "IN THE AEROPLANE OVER THE SEA", artist: "Neutral Milk Hotel", stock: 3, img: "/images/artwork/aeroplane-over-the-sea.jpg" },
-      { name: "IS THIS IT", artist: "The Strokes", stock: 5, img: "/images/artwork/is-this-it.jpg" },
-      { name: "FUNERAL", artist: "Arcade Fire", stock: 2, img: "/images/artwork/funeral.jpg" },
-      { name: "OK COMPUTER", artist: "Radiohead", stock: 1, img: "/images/artwork/ok-computer.jpg" },
-      { name: "LOVELESS", artist: "My Bloody Valentine", stock: 2, img: "/images/artwork/loveless.jpg" },
-    ],
-  },
-  {
-    id: "Jazz",
-    items: [
-      { name: "BLUE TRAIN", artist: "John Coltrane", stock: 4, img: "/images/artwork/blue-train.jpg" },
-      { name: "MAIDEN VOYAGE", artist: "Herbie Hancock", stock: 3, img: "/images/artwork/maiden-voyage.jpg" },
-      { name: "MOANIN'", artist: "Art Blakey", stock: 2, img: "/images/artwork/moanin.jpg" },
-      { name: "SAXOPHONE COLOSSUS", artist: "Sonny Rollins", stock: 1, img: "/images/artwork/saxophone-colossus.jpg" },
-      { name: "SOMETHIN' ELSE", artist: "Cannonball Adderley", stock: 3, img: "/images/artwork/somethin-else.jpg" },
-    ],
-  },
-  {
-    id: "Country",
-    items: [
-      { name: "JOLENE", artist: "Dolly Parton", stock: 5, img: "/images/artwork/jolene.jpg" },
-      { name: "AT FOLSOM PRISON", artist: "Johnny Cash", stock: 2, img: "/images/artwork/at-folsom-prison.jpg" },
-      { name: "TRAVELLER", artist: "Chris Stapleton", stock: 3, img: "/images/artwork/traveller.jpg" },
-      { name: "GOLDEN HOUR", artist: "Kacey Musgraves", stock: 4, img: "/images/artwork/golden-hour.jpg" },
-      { name: "RED HEADED STRANGER", artist: "Willie Nelson", stock: 1, img: "/images/artwork/red-headed-stranger.jpg" },
-    ],
-  },
-  {
-    id: "Pop",
-    items: [
-      { name: "FUTURE NOSTALGIA", artist: "Dua Lipa", stock: 3, img: "/images/artwork/future-nostalgia.jpg" },
-      { name: "AFTER HOURS", artist: "The Weeknd", stock: 2, img: "/images/artwork/after-hours.jpg" },
-      { name: "1989", artist: "Taylor Swift", stock: 6, img: "/images/artwork/1989.jpg" },
-      { name: "LEMONADE", artist: "Beyoncé", stock: 1, img: "/images/artwork/lemonade.jpg" },
-      { name: "CHANNEL ORANGE", artist: "Frank Ocean", stock: 2, img: "/images/artwork/channel-orange.jpg" },
-    ],
-  },
-  {
-    id: "Funk",
-    items: [
-      { name: "MOTHERSHIP CONNECTION", artist: "Parliament", stock: 2, img: "/images/artwork/mothership-connection.jpg" },
-      { name: "SUPERFLY", artist: "Curtis Mayfield", stock: 3, img: "/images/artwork/superfly.jpg" },
-      { name: "MAGGOT BRAIN", artist: "Funkadelic", stock: 1, img: "/images/artwork/maggot-brain.jpg" },
-      { name: "OFF THE WALL", artist: "Michael Jackson", stock: 4, img: "/images/artwork/off-the-wall.jpg" },
-      { name: "INNERVISIONS", artist: "Stevie Wonder", stock: 3, img: "/images/artwork/innervisions.jpg" },
+      { name: "PURPLE RAIN", artist: "Prince", stock: 2, img: "/images/artwork/purple-rain.jpg" },
+      { name: "PET SOUNDS", artist: "The Beach Boys", stock: 3, img: "/images/artwork/pet-sounds.jpg" },
+      { name: "SGT. PEPPER'S LONELY HEARTS CLUB BAND", artist: "The Beatles", stock: 1, img: "/images/artwork/sgt-peppers.jpg" },
+      { name: "EXILE ON MAIN ST.", artist: "The Rolling Stones", stock: 2, img: "/images/artwork/exile-on-main-st.jpg" },
+      { name: "DARK SIDE OF THE MOON", artist: "Pink Floyd", stock: 4, img: "/images/artwork/dark-side-of-the-moon.jpg" },
     ],
   },
 ];
 
-function StacksVinylRow({ vinyls, autoScroll = false, isActive = true }: { vinyls: { name: string; artist: string; img: string }[]; autoScroll?: boolean; isActive?: boolean }) {
+const digTheStacksSections = [
+  {
+    title: "Turn It Up",
+    desc: "Rock, Punk, and high-energy sound",
+    vinyls: [
+      { name: "NEVERMIND", artist: "Nirvana", img: "/images/artwork/nevermind.jpg" },
+      { name: "OK COMPUTER", artist: "Radiohead", img: "/images/artwork/ok-computer.jpg" },
+      { name: "LED ZEPPELIN IV", artist: "Led Zeppelin", img: "/images/artwork/led-zeppelin-iv.jpg" },
+      { name: "THE JOSHUA TREE", artist: "U2", img: "/images/artwork/joshua-tree.jpg" },
+      { name: "APPETITE FOR DESTRUCTION", artist: "Guns N' Roses", img: "/images/artwork/appetite-for-destruction.jpg" },
+      { name: "BACK IN BLACK", artist: "AC/DC", img: "/images/artwork/back-in-black.jpg" },
+      { name: "PARANOID", artist: "Black Sabbath", img: "/images/artwork/paranoid.jpg" },
+      { name: "LONDON CALLING", artist: "The Clash", img: "/images/artwork/london-calling.jpg" },
+      { name: "BORN TO RUN", artist: "Bruce Springsteen", img: "/images/artwork/born-to-run.jpg" },
+      { name: "WHO'S NEXT", artist: "The Who", img: "/images/artwork/whos-next.jpg" },
+      { name: "MASTER OF PUPPETS", artist: "Metallica", img: "/images/artwork/master-of-puppets.jpg" },
+      { name: "RAGE AGAINST THE MACHINE", artist: "Rage Against the Machine", img: "/images/artwork/rage-against-the-machine.jpg" },
+      { name: "TEN", artist: "Pearl Jam", img: "/images/artwork/ten-pearl-jam.jpg" },
+      { name: "SONGS FOR THE DEAF", artist: "Queens of the Stone Age", img: "/images/artwork/songs-for-the-deaf.jpg" },
+      { name: "NEVER MIND THE BOLLOCKS", artist: "Sex Pistols", img: "/images/artwork/never-mind-the-bollocks.jpg" },
+    ],
+  },
+  {
+    title: "Smooth Operator",
+    desc: "Jazz, Soul, and R&B",
+    vinyls: [
+      { name: "KIND OF BLUE", artist: "Miles Davis", img: "/images/artwork/kind-of-blue.jpg" },
+      { name: "INNERVISIONS", artist: "Stevie Wonder", img: "/images/artwork/innervisions.jpg" },
+      { name: "OFF THE WALL", artist: "Michael Jackson", img: "/images/artwork/off-the-wall.jpg" },
+      { name: "SUPERFLY", artist: "Curtis Mayfield", img: "/images/artwork/superfly.jpg" },
+      { name: "A LOVE SUPREME", artist: "John Coltrane", img: "/images/artwork/a-love-supreme.jpg" },
+      { name: "WHAT'S GOING ON", artist: "Marvin Gaye", img: "/images/artwork/whats-going-on.jpg" },
+      { name: "SONGS IN THE KEY OF LIFE", artist: "Stevie Wonder", img: "/images/artwork/songs-in-the-key-of-life.jpg" },
+      { name: "BACK TO BLACK", artist: "Amy Winehouse", img: "/images/artwork/back-to-black.jpg" },
+      { name: "VOODOO", artist: "D'Angelo", img: "/images/artwork/voodoo.jpg" },
+      { name: "AJA", artist: "Steely Dan", img: "/images/artwork/aja.jpg" },
+      { name: "LADY SOUL", artist: "Aretha Franklin", img: "/images/artwork/lady-soul.jpg" },
+      { name: "SONGS IN A MINOR", artist: "Alicia Keys", img: "/images/artwork/songs-in-a-minor.jpg" },
+      { name: "LADY SINGS THE BLUES", artist: "Billie Holiday", img: "/images/artwork/lady-sings-the-blues.jpg" },
+      { name: "BITCHES BREW", artist: "Miles Davis", img: "/images/artwork/bitches-brew.jpg" },
+      { name: "CHANNEL ORANGE", artist: "Frank Ocean", img: "/images/artwork/channel-orange.jpg" },
+    ],
+  },
+  {
+    title: "Low End Theory",
+    desc: "Hip-Hop, Boom Bap, and Beats",
+    vinyls: [
+      { name: "ILLMATIC", artist: "Nas", img: "/images/artwork/illmatic.jpg" },
+      { name: "TO PIMP A BUTTERFLY", artist: "Kendrick Lamar", img: "/images/artwork/to-pimp-a-butterfly.jpg" },
+      { name: "READY TO DIE", artist: "Notorious B.I.G.", img: "/images/artwork/ready-to-die.jpg" },
+      { name: "MADVILLAINY", artist: "Madvillain", img: "/images/artwork/madvillainy.jpg" },
+      { name: "THE MISEDUCATION OF LAURYN HILL", artist: "Lauryn Hill", img: "/images/artwork/miseducation.jpg" },
+      { name: "THE CHRONIC", artist: "Dr. Dre", img: "/images/artwork/the-chronic.jpg" },
+      { name: "ENTER THE WU-TANG (36 CHAMBERS)", artist: "Wu-Tang Clan", img: "/images/artwork/36-chambers.jpg" },
+      { name: "AQUEMINI", artist: "OutKast", img: "/images/artwork/aquemini.jpg" },
+      { name: "THE LOW END THEORY", artist: "A Tribe Called Quest", img: "/images/artwork/low-end-theory-tribe.jpg" },
+      { name: "PAID IN FULL", artist: "Eric B. & Rakim", img: "/images/artwork/paid-in-full.jpg" },
+      { name: "REASONABLE DOUBT", artist: "Jay-Z", img: "/images/artwork/reasonable-doubt.jpg" },
+      { name: "BLACK ON BOTH SIDES", artist: "Mos Def", img: "/images/artwork/black-on-both-sides.jpg" },
+      { name: "THE COLLEGE DROPOUT", artist: "Kanye West", img: "/images/artwork/college-dropout.jpg" },
+      { name: "GET RICH OR DIE TRYIN'", artist: "50 Cent", img: "/images/artwork/get-rich-or-die-tryin.jpg" },
+      { name: "2001", artist: "Dr. Dre", img: "/images/artwork/2001-dre.jpg" },
+    ],
+  },
+  {
+    title: "Neon Nights",
+    desc: "Electronic, Synth, and Dance",
+    vinyls: [
+      { name: "RANDOM ACCESS MEMORIES", artist: "Daft Punk", img: "/images/artwork/random-access-memories.jpg" },
+      { name: "DISCOVERY", artist: "Daft Punk", img: "/images/artwork/discovery.jpg" },
+      { name: "CROSS", artist: "Justice", img: "/images/artwork/cross-justice.jpg" },
+      { name: "HOMEWORK", artist: "Daft Punk", img: "/images/artwork/homework.jpg" },
+      { name: "MUSIC HAS THE RIGHT TO CHILDREN", artist: "Boards of Canada", img: "/images/artwork/music-has-the-right.jpg" },
+      { name: "SELECTED AMBIENT WORKS 85-92", artist: "Aphex Twin", img: "/images/artwork/selected-ambient-works.jpg" },
+      { name: "THE FAT OF THE LAND", artist: "The Prodigy", img: "/images/artwork/fat-of-the-land.jpg" },
+      { name: "ENDTRODUCING", artist: "DJ Shadow", img: "/images/artwork/endtroducing.jpg" },
+      { name: "PLAY", artist: "Moby", img: "/images/artwork/play-moby.jpg" },
+      { name: "TRANS-EUROPE EXPRESS", artist: "Kraftwerk", img: "/images/artwork/trans-europe-express.jpg" },
+      { name: "UNTRUE", artist: "Burial", img: "/images/artwork/untrue.jpg" },
+      { name: "SINCE I LEFT YOU", artist: "The Avalanches", img: "/images/artwork/since-i-left-you.jpg" },
+      { name: "DUMMY", artist: "Portishead", img: "/images/artwork/dummy.jpg" },
+      { name: "MEZZANINE", artist: "Massive Attack", img: "/images/artwork/mezzanine.jpg" },
+      { name: "CONFESSIONS ON A DANCE FLOOR", artist: "Madonna", img: "/images/artwork/confessions-on-a-dance-floor.jpg" },
+    ],
+  },
+  {
+    title: "Roots & Dust",
+    desc: "Country, Folk, and Americana",
+    vinyls: [
+      { name: "JOLENE", artist: "Dolly Parton", img: "/images/artwork/jolene.jpg" },
+      { name: "AT FOLSOM PRISON", artist: "Johnny Cash", img: "/images/artwork/at-folsom-prison.jpg" },
+      { name: "GOLDEN HOUR", artist: "Kacey Musgraves", img: "/images/artwork/golden-hour.jpg" },
+      { name: "TRAVELLER", artist: "Chris Stapleton", img: "/images/artwork/traveller.jpg" },
+      { name: "RED HEADED STRANGER", artist: "Willie Nelson", img: "/images/artwork/red-headed-stranger.jpg" },
+      { name: "BLOOD ON THE TRACKS", artist: "Bob Dylan", img: "/images/artwork/blood-on-the-tracks.jpg" },
+      { name: "HARVEST", artist: "Neil Young", img: "/images/artwork/harvest.jpg" },
+      { name: "PINK MOON", artist: "Nick Drake", img: "/images/artwork/pink-moon.jpg" },
+      { name: "BLUE", artist: "Joni Mitchell", img: "/images/artwork/blue-joni-mitchell.jpg" },
+      { name: "WILDFLOWERS", artist: "Tom Petty", img: "/images/artwork/wildflowers.jpg" },
+      { name: "STARDUST", artist: "Willie Nelson", img: "/images/artwork/stardust.jpg" },
+      { name: "COAL MINER'S DAUGHTER", artist: "Loretta Lynn", img: "/images/artwork/coal-miners-daughter.jpg" },
+      { name: "MUSIC FROM BIG PINK", artist: "The Band", img: "/images/artwork/music-from-big-pink.jpg" },
+      { name: "HONKY TONK HEROES", artist: "Waylon Jennings", img: "/images/artwork/honky-tonk-heroes.jpg" },
+      { name: "WILL THE CIRCLE BE UNBROKEN", artist: "Nitty Gritty Dirt Band", img: "/images/artwork/will-the-circle-be-unbroken.jpg" },
+    ],
+  },
+  {
+    title: "Main Stage",
+    desc: "Pop, Indie, and Funk",
+    vinyls: [
+      { name: "FUTURE NOSTALGIA", artist: "Dua Lipa", img: "/images/artwork/future-nostalgia.jpg" },
+      { name: "RUMOURS", artist: "Fleetwood Mac", img: "/images/artwork/rumours.jpg" },
+      { name: "MOTHERSHIP CONNECTION", artist: "Parliament", img: "/images/artwork/mothership-connection.jpg" },
+      { name: "1989", artist: "Taylor Swift", img: "/images/artwork/1989.jpg" },
+      { name: "IS THIS IT", artist: "The Strokes", img: "/images/artwork/is-this-it.jpg" },
+      { name: "THRILLER", artist: "Michael Jackson", img: "/images/artwork/thriller.jpg" },
+      { name: "LEMONADE", artist: "Beyoncé", img: "/images/artwork/lemonade.jpg" },
+      { name: "BORN THIS WAY", artist: "Lady Gaga", img: "/images/artwork/born-this-way.jpg" },
+      { name: "FUNERAL", artist: "Arcade Fire", img: "/images/artwork/funeral.jpg" },
+      { name: "IN THE AEROPLANE OVER THE SEA", artist: "Neutral Milk Hotel", img: "/images/artwork/aeroplane-over-the-sea.jpg" },
+      { name: "LOVELESS", artist: "My Bloody Valentine", img: "/images/artwork/loveless.jpg" },
+      { name: "MAGGOT BRAIN", artist: "Funkadelic", img: "/images/artwork/maggot-brain.jpg" },
+      { name: "PARACHUTES", artist: "Coldplay", img: "/images/artwork/parachutes.jpg" },
+      { name: "MODERN VAMPIRES OF THE CITY", artist: "Vampire Weekend", img: "/images/artwork/modern-vampires-of-the-city.jpg" },
+      { name: "CURRENTS", artist: "Tame Impala", img: "/images/artwork/currents.jpg" },
+    ],
+  },
+];
+
+function StacksVinylRow({ vinyls, autoScroll = false, isActive = true, rowTitle, variant = "stacks" }: { vinyls: { name: string; artist: string; img: string }[]; autoScroll?: boolean; isActive?: boolean; rowTitle?: string; variant?: "stacks" | "regular" }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [scrollRatio, setScrollRatio] = useState(0);
   const [thumbWidth, setThumbWidth] = useState(0);
@@ -214,12 +273,22 @@ function StacksVinylRow({ vinyls, autoScroll = false, isActive = true }: { vinyl
 
   const items = autoScroll ? [...vinyls, ...vinyls] : vinyls;
 
+  const isRegular = variant === "regular";
+  const containerStyle = isRegular
+    ? { gap: '4vw', paddingLeft: '3vw', paddingRight: '3vw', paddingBottom: '4vw' }
+    : { gap: '3vw', paddingLeft: '4vw', paddingRight: '4vw', paddingBottom: '3vw', paddingTop: '3vw' };
+  const cardStyle = isRegular
+    ? { width: '40.7vw', paddingTop: '1.2vw', paddingLeft: '1.2vw', paddingRight: '1.2vw', paddingBottom: '6.5vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }
+    : { width: '35vw', padding: '.8vw', paddingBottom: '3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' };
+  const innerPadding = isRegular ? '3vw' : '1.5vw';
+  const idPrefix = isRegular ? 'card' : 'stacks-card';
+
   return (
     <>
       <div
         ref={scrollRef}
         className="flex overflow-x-auto overflow-y-hidden hide-scrollbar"
-        style={{ gap: '3vw', paddingLeft: '4vw', paddingRight: '4vw', paddingBottom: '3vw', paddingTop: '3vw' }}
+        style={containerStyle}
         onPointerDown={handleInteractionStart}
         onPointerUp={handleInteractionEnd}
         onPointerCancel={handleInteractionEnd}
@@ -228,19 +297,15 @@ function StacksVinylRow({ vinyls, autoScroll = false, isActive = true }: { vinyl
         {items.map((vinyl, vi) => (
           <div
             key={vi}
+            id={vi < vinyls.length && rowTitle ? `${idPrefix}-${rowTitle}-${vi}` : undefined}
             className="flex-shrink-0 rounded-xl"
-            style={{
-              width: '35vw',
-              padding: '.8vw',
-              paddingBottom: '3vw',
-              background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
-            }}
+            style={cardStyle}
           >
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
               <div className="bg-[#1a1310] overflow-hidden" style={{ width: '100%', aspectRatio: '1' }}>
                 <img src={vinyl.img} alt={vinyl.name} loading="lazy" className="w-full h-full object-cover" />
               </div>
-              <div style={{ padding: '1.5vw' }}>
+              <div style={{ padding: innerPadding }}>
                 <h4
                   className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight overflow-hidden whitespace-nowrap text-ellipsis"
                   style={{ fontSize: '5vw' }}
@@ -287,32 +352,55 @@ function StacksVinylRow({ vinyls, autoScroll = false, isActive = true }: { vinyl
 export default function VinylMobile() {
   const [navVisible, setNavVisible] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [selectedFilter, setSelectedFilter] = useState("All");
+  const [selectedFilter, setSelectedFilter] = useState("Dig the Stacks");
   const [searchQuery, setSearchQuery] = useState("");
+  const [hasRestored, setHasRestored] = useState(false);
+
+  // Restore last-used filter from localStorage on mount.
+  useEffect(() => {
+    const stored = localStorage.getItem("vinyl-filter");
+    const valid = ["Now Spinning", "Fresh Drops", "The Groove Pick", "Dig the Stacks"];
+    if (stored && valid.includes(stored)) setSelectedFilter(stored);
+    setHasRestored(true);
+  }, []);
+
+  // Persist filter changes — but only after the restore has run, so the initial
+  // mount's "Dig the Stacks" default doesn't clobber a previously saved filter.
+  useEffect(() => {
+    if (!hasRestored) return;
+    localStorage.setItem("vinyl-filter", selectedFilter);
+  }, [selectedFilter, hasRestored]);
   const touchStartY = React.useRef<number | null>(null);
 
   // Track which Dig the Stacks row is most-visible — only that row's carousel auto-scrolls.
   const [activeStacksTitle, setActiveStacksTitle] = useState<string | null>(null);
   const stacksRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
 
+  // Search-arrival freeze: when the user clicks a search result, the destination
+  // carousel sits still until they touch/move on the page.
+  const [searchArrival, setSearchArrival] = useState(false);
+
   useEffect(() => {
-    if (selectedFilter !== "Dig the Stacks") {
-      setActiveStacksTitle(null);
-      return;
-    }
+    if (!searchArrival) return;
+    const clear = () => setSearchArrival(false);
+    document.addEventListener("pointerdown", clear, { once: true });
+    return () => document.removeEventListener("pointerdown", clear);
+  }, [searchArrival]);
+
+  useEffect(() => {
     const ratios = new Map<string, number>();
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          const title = (entry.target as HTMLElement).dataset.stacksTitle;
-          if (title) ratios.set(title, entry.intersectionRatio);
+          const key = (entry.target as HTMLElement).dataset.rowKey;
+          if (key) ratios.set(key, entry.intersectionRatio);
         }
-        let bestTitle: string | null = null;
+        let bestKey: string | null = null;
         let bestRatio = 0;
-        for (const [title, ratio] of ratios.entries()) {
-          if (ratio > bestRatio) { bestTitle = title; bestRatio = ratio; }
+        for (const [key, ratio] of ratios.entries()) {
+          if (ratio > bestRatio) { bestKey = key; bestRatio = ratio; }
         }
-        setActiveStacksTitle(bestTitle);
+        setActiveStacksTitle(bestKey);
       },
       { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] }
     );
@@ -320,11 +408,41 @@ export default function VinylMobile() {
     return () => observer.disconnect();
   }, [selectedFilter]);
 
-  // Flatten all vinyl items for search
-  const allVinylItems = vinylSections.flatMap((s) =>
-    s.items.map((item) => ({ ...item, section: s.id }))
-  );
-  const searchResults = searchQuery.length > 0
+  // Build a unified search index: regular vinyl sections plus Dig the Stacks groups.
+  type SearchEntry = {
+    name: string;
+    artist: string;
+    img: string;
+    kind: "regular" | "stacks";
+    rowKey: string; // section.id for regular, group.title for stacks
+    section: string; // display label used in the result row
+    itemIndex: number;
+  };
+  const allVinylItems: SearchEntry[] = [
+    ...vinylSections.flatMap((s) =>
+      s.items.map((item, i) => ({
+        name: item.name,
+        artist: item.artist,
+        img: item.img,
+        kind: "regular" as const,
+        rowKey: s.id,
+        section: s.id,
+        itemIndex: i,
+      }))
+    ),
+    ...digTheStacksSections.flatMap((g) =>
+      g.vinyls.map((v, i) => ({
+        name: v.name,
+        artist: v.artist,
+        img: v.img,
+        kind: "stacks" as const,
+        rowKey: g.title,
+        section: g.title,
+        itemIndex: i,
+      }))
+    ),
+  ];
+  const searchResults: SearchEntry[] = searchQuery.length > 0
     ? allVinylItems.filter(
         (item) =>
           item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -333,33 +451,47 @@ export default function VinylMobile() {
       )
     : [];
 
-  const visibleSections = selectedFilter === "All"
-    ? vinylSections
-    : vinylSections.filter((s) => s.id === selectedFilter);
+  const visibleSections = vinylSections.filter((s) => s.id === selectedFilter);
 
-  const scrollToItem = useCallback((sectionId: string, itemIndex: number) => {
-    // Show all sections so the target is visible
-    setSelectedFilter("All");
+  const scrollToItem = useCallback((entry: SearchEntry) => {
     setSearchQuery("");
     (document.activeElement as HTMLElement)?.blur();
 
-    // Wait for re-render then scroll
-    setTimeout(() => {
-      const sectionEl = document.getElementById(`section-${sectionId}`);
-      if (sectionEl) {
-        sectionEl.scrollIntoView({ behavior: "smooth", block: "center" });
-
-        // Scroll the horizontal list to the card
-        setTimeout(() => {
-          const cardEl = document.getElementById(`card-${sectionId}-${itemIndex}`);
-          if (cardEl && cardEl.parentElement) {
-            const container = cardEl.parentElement;
-            const scrollLeft = cardEl.offsetLeft - container.offsetLeft - (container.clientWidth / 2) + (cardEl.clientWidth / 2);
-            container.scrollTo({ left: scrollLeft, behavior: "smooth" });
-          }
-        }, 400);
-      }
-    }, 100);
+    if (entry.kind === "stacks") {
+      setSelectedFilter("Dig the Stacks");
+      setSearchArrival(true);
+      setTimeout(() => {
+        const sectionEl = document.getElementById(`stacks-section-${entry.rowKey}`);
+        if (sectionEl) {
+          sectionEl.scrollIntoView({ behavior: "smooth", block: "center" });
+          setTimeout(() => {
+            const cardEl = document.getElementById(`stacks-card-${entry.rowKey}-${entry.itemIndex}`);
+            if (cardEl && cardEl.parentElement) {
+              const container = cardEl.parentElement;
+              const scrollLeft = cardEl.offsetLeft - container.offsetLeft - (container.clientWidth / 2) + (cardEl.clientWidth / 2);
+              container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+            }
+          }, 400);
+        }
+      }, 100);
+    } else {
+      setSelectedFilter(entry.rowKey);
+      setSearchArrival(true);
+      setTimeout(() => {
+        const sectionEl = document.getElementById(`section-${entry.rowKey}`);
+        if (sectionEl) {
+          sectionEl.scrollIntoView({ behavior: "smooth", block: "center" });
+          setTimeout(() => {
+            const cardEl = document.getElementById(`card-${entry.rowKey}-${entry.itemIndex}`);
+            if (cardEl && cardEl.parentElement) {
+              const container = cardEl.parentElement;
+              const scrollLeft = cardEl.offsetLeft - container.offsetLeft - (container.clientWidth / 2) + (cardEl.clientWidth / 2);
+              container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+            }
+          }, 400);
+        }
+      }, 100);
+    }
   }, []);
 
   return (
@@ -601,20 +733,11 @@ export default function VinylMobile() {
                 }}
               >
                 <div className="rounded-lg bg-[#2d1f1a]">
-                  {/* All */}
-                  <button
-                    onClick={() => { setSelectedFilter("All"); setDropdownOpen(false); }}
-                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
-                    style={{ fontSize: '3.8vw', padding: '3vw 5vw' }}
-                  >
-                    All
-                  </button>
-
                   {/* Now Spinning */}
                   <button
                     onClick={() => { setSelectedFilter("Now Spinning"); setDropdownOpen(false); }}
                     className="flex flex-col w-full text-left cursor-pointer hover:bg-white/10 transition-colors"
-                    style={{ padding: '3vw 5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                    style={{ padding: '3vw 5vw' }}
                   >
                     <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '3.8vw' }}>Now Spinning</span>
                     <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '3vw', marginTop: '0.5vw' }}>What&apos;s playing in the<br />house right now.</span>
@@ -739,11 +862,7 @@ export default function VinylMobile() {
               </button>
               <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
               <div className="overflow-y-auto" style={{ maxHeight: '60vw' }}>
-                {searchResults.map((item, i) => {
-                  // Find the index of this item within its section
-                  const section = vinylSections.find((s) => s.id === item.section);
-                  const itemIndex = section?.items.findIndex((si) => si.name === item.name && si.artist === item.artist) ?? 0;
-                  return (
+                {searchResults.map((item, i) => (
                   <div
                     key={`${item.name}-${i}`}
                     className="flex items-center font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors"
@@ -752,7 +871,7 @@ export default function VinylMobile() {
                       gap: '3vw',
                       borderTop: i > 0 ? '1px solid rgba(255,255,255,0.1)' : 'none',
                     }}
-                    onClick={() => scrollToItem(item.section, itemIndex)}
+                    onClick={() => scrollToItem(item)}
                   >
                     <img
                       src={item.img}
@@ -775,8 +894,7 @@ export default function VinylMobile() {
                       </p>
                     </div>
                   </div>
-                  );
-                })}
+                ))}
               </div>
               </div>
             </div>
@@ -832,143 +950,17 @@ export default function VinylMobile() {
         </div>
 
         {/* Dig the Stacks Sections */}
-        {selectedFilter === "Dig the Stacks" && (
+        {hasRestored && selectedFilter === "Dig the Stacks" && (
           <>
-            {[
-              {
-                title: "Turn It Up",
-                desc: "Rock, Punk, and high-energy sound",
-                vinyls: [
-                  { name: "NEVERMIND", artist: "Nirvana", img: "/images/artwork/nevermind.jpg" },
-                  { name: "OK COMPUTER", artist: "Radiohead", img: "/images/artwork/ok-computer.jpg" },
-                  { name: "LED ZEPPELIN IV", artist: "Led Zeppelin", img: "/images/artwork/led-zeppelin-iv.jpg" },
-                  { name: "THE JOSHUA TREE", artist: "U2", img: "/images/artwork/joshua-tree.jpg" },
-                  { name: "APPETITE FOR DESTRUCTION", artist: "Guns N' Roses", img: "/images/artwork/appetite-for-destruction.jpg" },
-                  { name: "BACK IN BLACK", artist: "AC/DC", img: "/images/artwork/back-in-black.jpg" },
-                  { name: "PARANOID", artist: "Black Sabbath", img: "/images/artwork/paranoid.jpg" },
-                  { name: "LONDON CALLING", artist: "The Clash", img: "/images/artwork/london-calling.jpg" },
-                  { name: "BORN TO RUN", artist: "Bruce Springsteen", img: "/images/artwork/born-to-run.jpg" },
-                  { name: "WHO'S NEXT", artist: "The Who", img: "/images/artwork/whos-next.jpg" },
-                  { name: "MASTER OF PUPPETS", artist: "Metallica", img: "/images/artwork/master-of-puppets.jpg" },
-                  { name: "RAGE AGAINST THE MACHINE", artist: "Rage Against the Machine", img: "/images/artwork/rage-against-the-machine.jpg" },
-                  { name: "TEN", artist: "Pearl Jam", img: "/images/artwork/ten-pearl-jam.jpg" },
-                  { name: "SONGS FOR THE DEAF", artist: "Queens of the Stone Age", img: "/images/artwork/songs-for-the-deaf.jpg" },
-                  { name: "NEVER MIND THE BOLLOCKS", artist: "Sex Pistols", img: "/images/artwork/never-mind-the-bollocks.jpg" },
-                ],
-              },
-              {
-                title: "Smooth Operator",
-                desc: "Jazz, Soul, and R&B",
-                vinyls: [
-                  { name: "KIND OF BLUE", artist: "Miles Davis", img: "/images/artwork/kind-of-blue.jpg" },
-                  { name: "INNERVISIONS", artist: "Stevie Wonder", img: "/images/artwork/innervisions.jpg" },
-                  { name: "OFF THE WALL", artist: "Michael Jackson", img: "/images/artwork/off-the-wall.jpg" },
-                  { name: "SUPERFLY", artist: "Curtis Mayfield", img: "/images/artwork/superfly.jpg" },
-                  { name: "A LOVE SUPREME", artist: "John Coltrane", img: "/images/artwork/a-love-supreme.jpg" },
-                  { name: "WHAT'S GOING ON", artist: "Marvin Gaye", img: "/images/artwork/whats-going-on.jpg" },
-                  { name: "SONGS IN THE KEY OF LIFE", artist: "Stevie Wonder", img: "/images/artwork/songs-in-the-key-of-life.jpg" },
-                  { name: "BACK TO BLACK", artist: "Amy Winehouse", img: "/images/artwork/back-to-black.jpg" },
-                  { name: "VOODOO", artist: "D'Angelo", img: "/images/artwork/voodoo.jpg" },
-                  { name: "AJA", artist: "Steely Dan", img: "/images/artwork/aja.jpg" },
-                  { name: "LADY SOUL", artist: "Aretha Franklin", img: "/images/artwork/lady-soul.jpg" },
-                  { name: "SONGS IN A MINOR", artist: "Alicia Keys", img: "/images/artwork/songs-in-a-minor.jpg" },
-                  { name: "LADY SINGS THE BLUES", artist: "Billie Holiday", img: "/images/artwork/lady-sings-the-blues.jpg" },
-                  { name: "BITCHES BREW", artist: "Miles Davis", img: "/images/artwork/bitches-brew.jpg" },
-                  { name: "CHANNEL ORANGE", artist: "Frank Ocean", img: "/images/artwork/channel-orange.jpg" },
-                ],
-              },
-              {
-                title: "Low End Theory",
-                desc: "Hip-Hop, Boom Bap, and Beats",
-                vinyls: [
-                  { name: "ILLMATIC", artist: "Nas", img: "/images/artwork/illmatic.jpg" },
-                  { name: "TO PIMP A BUTTERFLY", artist: "Kendrick Lamar", img: "/images/artwork/to-pimp-a-butterfly.jpg" },
-                  { name: "READY TO DIE", artist: "Notorious B.I.G.", img: "/images/artwork/ready-to-die.jpg" },
-                  { name: "MADVILLAINY", artist: "Madvillain", img: "/images/artwork/madvillainy.jpg" },
-                  { name: "THE MISEDUCATION OF LAURYN HILL", artist: "Lauryn Hill", img: "/images/artwork/miseducation.jpg" },
-                  { name: "THE CHRONIC", artist: "Dr. Dre", img: "/images/artwork/the-chronic.jpg" },
-                  { name: "ENTER THE WU-TANG (36 CHAMBERS)", artist: "Wu-Tang Clan", img: "/images/artwork/36-chambers.jpg" },
-                  { name: "AQUEMINI", artist: "OutKast", img: "/images/artwork/aquemini.jpg" },
-                  { name: "THE LOW END THEORY", artist: "A Tribe Called Quest", img: "/images/artwork/low-end-theory-tribe.jpg" },
-                  { name: "PAID IN FULL", artist: "Eric B. & Rakim", img: "/images/artwork/paid-in-full.jpg" },
-                  { name: "REASONABLE DOUBT", artist: "Jay-Z", img: "/images/artwork/reasonable-doubt.jpg" },
-                  { name: "BLACK ON BOTH SIDES", artist: "Mos Def", img: "/images/artwork/black-on-both-sides.jpg" },
-                  { name: "THE COLLEGE DROPOUT", artist: "Kanye West", img: "/images/artwork/college-dropout.jpg" },
-                  { name: "GET RICH OR DIE TRYIN'", artist: "50 Cent", img: "/images/artwork/get-rich-or-die-tryin.jpg" },
-                  { name: "2001", artist: "Dr. Dre", img: "/images/artwork/2001-dre.jpg" },
-                ],
-              },
-              {
-                title: "Neon Nights",
-                desc: "Electronic, Synth, and Dance",
-                vinyls: [
-                  { name: "RANDOM ACCESS MEMORIES", artist: "Daft Punk", img: "/images/artwork/random-access-memories.jpg" },
-                  { name: "DISCOVERY", artist: "Daft Punk", img: "/images/artwork/discovery.jpg" },
-                  { name: "CROSS", artist: "Justice", img: "/images/artwork/cross-justice.jpg" },
-                  { name: "HOMEWORK", artist: "Daft Punk", img: "/images/artwork/homework.jpg" },
-                  { name: "MUSIC HAS THE RIGHT TO CHILDREN", artist: "Boards of Canada", img: "/images/artwork/music-has-the-right.jpg" },
-                  { name: "SELECTED AMBIENT WORKS 85-92", artist: "Aphex Twin", img: "/images/artwork/selected-ambient-works.jpg" },
-                  { name: "THE FAT OF THE LAND", artist: "The Prodigy", img: "/images/artwork/fat-of-the-land.jpg" },
-                  { name: "ENDTRODUCING", artist: "DJ Shadow", img: "/images/artwork/endtroducing.jpg" },
-                  { name: "PLAY", artist: "Moby", img: "/images/artwork/play-moby.jpg" },
-                  { name: "TRANS-EUROPE EXPRESS", artist: "Kraftwerk", img: "/images/artwork/trans-europe-express.jpg" },
-                  { name: "UNTRUE", artist: "Burial", img: "/images/artwork/untrue.jpg" },
-                  { name: "SINCE I LEFT YOU", artist: "The Avalanches", img: "/images/artwork/since-i-left-you.jpg" },
-                  { name: "DUMMY", artist: "Portishead", img: "/images/artwork/dummy.jpg" },
-                  { name: "MEZZANINE", artist: "Massive Attack", img: "/images/artwork/mezzanine.jpg" },
-                  { name: "CONFESSIONS ON A DANCE FLOOR", artist: "Madonna", img: "/images/artwork/confessions-on-a-dance-floor.jpg" },
-                ],
-              },
-              {
-                title: "Roots & Dust",
-                desc: "Country, Folk, and Americana",
-                vinyls: [
-                  { name: "JOLENE", artist: "Dolly Parton", img: "/images/artwork/jolene.jpg" },
-                  { name: "AT FOLSOM PRISON", artist: "Johnny Cash", img: "/images/artwork/at-folsom-prison.jpg" },
-                  { name: "GOLDEN HOUR", artist: "Kacey Musgraves", img: "/images/artwork/golden-hour.jpg" },
-                  { name: "TRAVELLER", artist: "Chris Stapleton", img: "/images/artwork/traveller.jpg" },
-                  { name: "RED HEADED STRANGER", artist: "Willie Nelson", img: "/images/artwork/red-headed-stranger.jpg" },
-                  { name: "BLOOD ON THE TRACKS", artist: "Bob Dylan", img: "/images/artwork/blood-on-the-tracks.jpg" },
-                  { name: "HARVEST", artist: "Neil Young", img: "/images/artwork/harvest.jpg" },
-                  { name: "PINK MOON", artist: "Nick Drake", img: "/images/artwork/pink-moon.jpg" },
-                  { name: "BLUE", artist: "Joni Mitchell", img: "/images/artwork/blue-joni-mitchell.jpg" },
-                  { name: "WILDFLOWERS", artist: "Tom Petty", img: "/images/artwork/wildflowers.jpg" },
-                  { name: "STARDUST", artist: "Willie Nelson", img: "/images/artwork/stardust.jpg" },
-                  { name: "COAL MINER'S DAUGHTER", artist: "Loretta Lynn", img: "/images/artwork/coal-miners-daughter.jpg" },
-                  { name: "MUSIC FROM BIG PINK", artist: "The Band", img: "/images/artwork/music-from-big-pink.jpg" },
-                  { name: "HONKY TONK HEROES", artist: "Waylon Jennings", img: "/images/artwork/honky-tonk-heroes.jpg" },
-                  { name: "WILL THE CIRCLE BE UNBROKEN", artist: "Nitty Gritty Dirt Band", img: "/images/artwork/will-the-circle-be-unbroken.jpg" },
-                ],
-              },
-              {
-                title: "Main Stage",
-                desc: "Pop, Indie, and Funk",
-                vinyls: [
-                  { name: "FUTURE NOSTALGIA", artist: "Dua Lipa", img: "/images/artwork/future-nostalgia.jpg" },
-                  { name: "RUMOURS", artist: "Fleetwood Mac", img: "/images/artwork/rumours.jpg" },
-                  { name: "MOTHERSHIP CONNECTION", artist: "Parliament", img: "/images/artwork/mothership-connection.jpg" },
-                  { name: "1989", artist: "Taylor Swift", img: "/images/artwork/1989.jpg" },
-                  { name: "IS THIS IT", artist: "The Strokes", img: "/images/artwork/is-this-it.jpg" },
-                  { name: "THRILLER", artist: "Michael Jackson", img: "/images/artwork/thriller.jpg" },
-                  { name: "LEMONADE", artist: "Beyoncé", img: "/images/artwork/lemonade.jpg" },
-                  { name: "BORN THIS WAY", artist: "Lady Gaga", img: "/images/artwork/born-this-way.jpg" },
-                  { name: "FUNERAL", artist: "Arcade Fire", img: "/images/artwork/funeral.jpg" },
-                  { name: "IN THE AEROPLANE OVER THE SEA", artist: "Neutral Milk Hotel", img: "/images/artwork/aeroplane-over-the-sea.jpg" },
-                  { name: "LOVELESS", artist: "My Bloody Valentine", img: "/images/artwork/loveless.jpg" },
-                  { name: "MAGGOT BRAIN", artist: "Funkadelic", img: "/images/artwork/maggot-brain.jpg" },
-                  { name: "PARACHUTES", artist: "Coldplay", img: "/images/artwork/parachutes.jpg" },
-                  { name: "MODERN VAMPIRES OF THE CITY", artist: "Vampire Weekend", img: "/images/artwork/modern-vampires-of-the-city.jpg" },
-                  { name: "CURRENTS", artist: "Tame Impala", img: "/images/artwork/currents.jpg" },
-                ],
-              },
-            ].map((item, index) => (
+            {digTheStacksSections.map((item, index) => (
               <div
                 key={index}
+                id={`stacks-section-${item.title}`}
                 ref={(el) => {
                   if (el) stacksRowRefs.current.set(item.title, el);
                   else stacksRowRefs.current.delete(item.title);
                 }}
-                data-stacks-title={item.title}
+                data-row-key={item.title}
                 style={{ paddingInline: '4vw', marginTop: '4vw' }}
               >
                 <div
@@ -984,7 +976,12 @@ export default function VinylMobile() {
                         {item.desc}
                       </p>
                     </div>
-                    <StacksVinylRow vinyls={item.vinyls} autoScroll isActive={item.title === activeStacksTitle} />
+                    <StacksVinylRow
+                      rowTitle={item.title}
+                      vinyls={item.vinyls}
+                      autoScroll
+                      isActive={item.title === activeStacksTitle && !searchArrival}
+                    />
                   </div>
                 </div>
               </div>
@@ -993,8 +990,17 @@ export default function VinylMobile() {
         )}
 
         {/* Vinyl Sections */}
-        {selectedFilter !== "Dig the Stacks" && visibleSections.map((section) => (
-          <div key={section.id} id={`section-${section.id}`} style={{ paddingLeft: '4vw', paddingRight: '4vw', marginTop: '6vw' }}>
+        {hasRestored && selectedFilter !== "Dig the Stacks" && visibleSections.map((section) => (
+          <div
+            key={section.id}
+            id={`section-${section.id}`}
+            ref={(el) => {
+              if (el) stacksRowRefs.current.set(section.id, el);
+              else stacksRowRefs.current.delete(section.id);
+            }}
+            data-row-key={section.id}
+            style={{ paddingLeft: '4vw', paddingRight: '4vw', marginTop: '6vw' }}
+          >
             <div
               className="rounded-xl"
               style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
@@ -1023,56 +1029,13 @@ export default function VinylMobile() {
                   )}
                 </div>
 
-                {/* Horizontal Scrolling Cards */}
-                <div
-                  className="flex overflow-x-auto"
-                  style={{ gap: '4vw', paddingLeft: '3vw', paddingRight: '3vw', paddingBottom: '4vw' }}
-                >
-                  {section.items.map((item, index) => (
-                    <div
-                      key={index}
-                      id={`card-${section.id}-${index}`}
-                      className="flex-shrink-0 rounded-xl"
-                      style={{
-                        width: '40.7vw',
-                        paddingTop: '1.2vw',
-                        paddingLeft: '1.2vw',
-                        paddingRight: '1.2vw',
-                        paddingBottom: '6.5vw',
-                        background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
-                      }}
-                    >
-                      <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
-                        {/* Album Art */}
-                        <div
-                          className="bg-[#1a1310] overflow-hidden"
-                          style={{ width: '100%', height: '40.7vw' }}
-                        >
-                          <img
-                            src={item.img}
-                            alt={item.name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        {/* Info */}
-                        <div style={{ padding: '3vw' }}>
-                          <h4
-                            className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight overflow-hidden whitespace-nowrap text-ellipsis"
-                            style={{ fontSize: '5vw' }}
-                          >
-                            {item.name}
-                          </h4>
-                          <p
-                            className="text-white/60 font-[family-name:var(--font-inter)]"
-                            style={{ fontSize: '3.8vw', marginTop: '1vw' }}
-                          >
-                            {item.artist}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <StacksVinylRow
+                  variant="regular"
+                  rowTitle={section.id}
+                  vinyls={section.items}
+                  autoScroll
+                  isActive={section.id === activeStacksTitle && !searchArrival}
+                />
               </div>
             </div>
           </div>

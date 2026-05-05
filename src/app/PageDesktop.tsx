@@ -847,7 +847,7 @@ export default function PageDesktop() {
                         className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
                         style={{ fontSize: '2vw' }}
                       >
-                        3540 Belle Terre Blvd • Unit C
+                        3500 Belle Terre Blvd • Suite C
                       </p>
                       <p
                         className="text-white/70 font-[family-name:var(--font-inter)]"

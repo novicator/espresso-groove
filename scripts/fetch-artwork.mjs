@@ -2,6 +2,18 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const albums = [
+  // Fresh Drops additions
+  { slug: 'short-n-sweet', name: "Short n' Sweet", artist: 'Sabrina Carpenter' },
+  { slug: 'chromakopia', name: 'CHROMAKOPIA', artist: 'Tyler, The Creator' },
+  { slug: 'charm-clairo', name: 'Charm', artist: 'Clairo' },
+  { slug: 'moon-music', name: 'Moon Music', artist: 'Coldplay' },
+  { slug: 'romance-fontaines', name: 'Romance', artist: 'Fontaines D.C.' },
+  // The Groove Pick additions
+  { slug: 'purple-rain', name: 'Purple Rain', artist: 'Prince' },
+  { slug: 'pet-sounds', name: 'Pet Sounds', artist: 'The Beach Boys' },
+  { slug: 'sgt-peppers', name: "Sgt. Pepper's Lonely Hearts Club Band", artist: 'The Beatles' },
+  { slug: 'exile-on-main-st', name: 'Exile on Main St.', artist: 'The Rolling Stones' },
+
   // Turn It Up
   { slug: 'back-in-black', name: 'Back in Black', artist: 'AC/DC' },
   { slug: 'paranoid', name: 'Paranoid', artist: 'Black Sabbath' },

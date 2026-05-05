@@ -57,7 +57,7 @@ export default function DesktopFooterXL() {
                 </svg>
                 <div>
                   <p className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium" style={{ fontSize: '23.8px', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
-                    3540 Belle Terre Blvd • Unit C
+                    3500 Belle Terre Blvd • Suite C
                   </p>
                   <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '21px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 700 }}>
                     Myrtle Beach, SC 29579
