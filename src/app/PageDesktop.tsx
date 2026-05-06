@@ -711,7 +711,7 @@ export default function PageDesktop() {
                         >
                           {item.name}
                         </h4>
-                        <p className="text-white/60 font-[family-name:var(--font-inter)]" style={{ fontSize: '1.4vw', marginTop: '0.2vw' }}>
+                        <p className="text-white/60 font-[family-name:var(--font-inter)] overflow-hidden whitespace-nowrap text-ellipsis" style={{ fontSize: '1.4vw', marginTop: '0.2vw' }}>
                           {item.artist}
                         </p>
                       </div>
