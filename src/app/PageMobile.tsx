@@ -984,7 +984,7 @@ export default function PageMobile() {
                     className="text-white/70 font-[family-name:var(--font-inter)]"
                     style={{ fontSize: '3.6vw' }}
                   >
-                    Myrtle Beach, SC 29579
+                    Myrtle Beach, SC 29526
                   </p>
                 </div>
               </a>

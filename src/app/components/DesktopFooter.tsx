@@ -59,7 +59,7 @@ export default function DesktopFooter() {
                   3500 Belle Terre Blvd • Suite C
                 </p>
                 <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '1.5vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 700 }}>
-                  Myrtle Beach, SC 29579
+                  Myrtle Beach, SC 29526
                 </p>
               </div>
             </a>

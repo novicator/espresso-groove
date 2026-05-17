@@ -67,7 +67,7 @@ export default function Footer({ style, className }: { style?: React.CSSProperti
                 className="text-white font-[family-name:var(--font-inter)]"
                 style={{ fontSize: '4.2vw' , textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 700 }}
               >
-                Myrtle Beach, SC 29579
+                Myrtle Beach, SC 29526
               </p>
             </div>
           </a>

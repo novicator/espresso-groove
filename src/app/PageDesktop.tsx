@@ -853,7 +853,7 @@ export default function PageDesktop() {
                         className="text-white/70 font-[family-name:var(--font-inter)]"
                         style={{ fontSize: '1.8vw' }}
                       >
-                        Myrtle Beach, SC 29579
+                        Myrtle Beach, SC 29526
                       </p>
                     </div>
                   </a>
