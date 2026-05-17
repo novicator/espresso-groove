@@ -130,7 +130,7 @@ export default function NowSpinningMobile() {
                                 }}
                             >
                                 Every rotation tells a story. We pick a genre, dive deep into the sound, and craft
-                                a coffee, tea, and energy drink inspired by the mood behind the music. Explore the
+                                drinks inspired by the mood behind the music. Explore the
                                 genre, sip the lineup, and take home the vinyl that started it all.
                             </p>
                         </div>
@@ -162,14 +162,14 @@ export default function NowSpinningMobile() {
                                     style={{ width: '14.2vw', height: '0.8vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
                                 />
                                 <span
-                                    className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
+                                    className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
                                     style={{
-                                        fontSize: '16.3vw',
+                                        fontSize: '6.3vw',
                                         textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
                                         fontWeight: 900,
                                     }}
                                 >
-                                    Jazz
+                                    60s Revolution
                                 </span>
                                 <div
                                     className="bg-white"

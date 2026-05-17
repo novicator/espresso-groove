@@ -104,7 +104,7 @@ export default function NowSpinningDesktop() {
                 }}
               >
                 Every rotation tells a story. We pick a genre, dive deep into the sound, and craft
-                a coffee, tea, and energy drink inspired by the mood behind the music. Explore the
+                drinks inspired by the mood behind the music. Explore the
                 genre, sip the lineup, and take home the vinyl that started it all.
               </p>
             </div>
@@ -119,7 +119,7 @@ export default function NowSpinningDesktop() {
               <h2
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center"
                 style={{
-                  fontSize: '4.5vw',
+                  fontSize: '4vw',
                   fontWeight: 900,
                   letterSpacing: '0.15em',
                   textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
@@ -131,21 +131,21 @@ export default function NowSpinningDesktop() {
               {/* Jazz with dashes */}
               <div
                 className="flex items-center justify-center"
-                style={{ gap: '3.5vw', marginTop: '0.2vw' }}
+                style={{ gap: '3.5vw', marginTop: '1vw' }}
               >
                 <div
                   className="bg-white"
                   style={{ width: '6vw', height: '0.4vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
                 />
                 <span
-                  className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
                   style={{
-                    fontSize: '7vw',
+                    fontSize: '4.1vw',
                     textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
                     fontWeight: 900,
                   }}
                 >
-                  Jazz
+                  The 60s Revolution
                 </span>
                 <div
                   className="bg-white"
@@ -197,7 +197,7 @@ export default function NowSpinningDesktop() {
                         textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                       }}
                     >
-                      Featured Sips
+                      Limited Press
                     </span>
                   </button>
                 </div>

@@ -59,7 +59,7 @@ export default function PageDesktop() {
 
   return (
     <>
-      <DesktopNav hideOnTop />
+      <DesktopNav />
       <style jsx global>{`
         @keyframes logoGlowPulseMobile {
           0% {
@@ -143,10 +143,10 @@ export default function PageDesktop() {
           src="/images/Expresso groove.svg"
           alt="Espresso Groove"
           className="logo-glow"
-          style={{ width: '55vw', marginLeft: '-4vw', marginTop: '-6vw' }}
+          style={{ width: '50vw', marginLeft: '-3vw', marginTop: '-2vw' }}
         />
         <h2
-          className="text-white text-[5vw] font-[family-name:var(--font-libre-baskerville)] italic"
+          className="text-white text-[4.3vw] font-[family-name:var(--font-libre-baskerville)]"
           style={{
             textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
             marginTop: '-8vw',
@@ -154,10 +154,10 @@ export default function PageDesktop() {
             fontWeight: 900,
           }}
         >
-          Drip • Drop • Vibe
+          Coffee & Records
         </h2>
         <p
-          className="text-white text-[5.2vw] font-[family-name:var(--font-libre-baskerville)] italic"
+          className="text-white text-[4.5vw] font-[family-name:var(--font-libre-baskerville)] italic"
           style={{
             textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
             marginTop: '1vw',
@@ -170,7 +170,7 @@ export default function PageDesktop() {
 
         {/* Buttons */}
         <div
-          className="flex items-center justify-center"
+          className="hidden flex items-center justify-center"
           style={{
             paddingLeft: '0vw',
             paddingTop: '2.75vw',
@@ -335,108 +335,25 @@ export default function PageDesktop() {
           style={{
             width: '28vw',
             right: '7vw',
-            top: '21vw',
+            top: '17vw',
             filter: 'drop-shadow(0px 0px 15px rgba(255,150,50,0.5))',
           }}
         />
 
-        {/* === Gradient Divider + Now Playing + Gradient Divider 2 === */}
-        <div style={{ marginTop: '-3vw' }}>
-
-          {/* Music Notes Divider 1 */}
-          <div style={{ paddingTop: '5vw', marginTop: '0vw' }}>
-            <MiniMusicNotes isPlaying={true} size="desktop" />
-          </div>
-
-          {/* Now Playing Section */}
-          <style>{`
-            @keyframes eq-bounce {
-              0%, 100% { transform: scaleY(1); background-color: #ffffff; box-shadow: 0 0 4px #ffffff99; }
-              33% { transform: scaleY(0.4); background-color: #ffffff; box-shadow: 0 0 4px #ffffff99; }
-              66% { transform: scaleY(0.7); background-color: #ffffff; box-shadow: 0 0 4px #ffffff99; }
-            }
-          `}</style>
-          <div
-            className="w-full flex items-center justify-center"
-            style={{ gap: '5vw', paddingBlock: '2vw' }}
-          >
-            {/* Left Equalizer */}
-            <div className="flex items-end self-stretch">
-              {[
-                { h: 0.3, c: '#ffffff' }, { h: 0.5, c: '#ffffff' }, { h: 0.4, c: '#ffffff' },
-                { h: 0.6, c: '#ffffff' }, { h: 0.35, c: '#ffffff' }, { h: 0.55, c: '#ffffff' }
-              ].map((b, i) => (
-                <div
-                  key={i}
-                  className="rounded-full"
-                  style={{
-                    width: '2vw',
-                    height: (b.h * 100) + '%',
-                    backgroundColor: b.c,
-                    boxShadow: '0 0 4px ' + b.c + '99',
-                    animation: 'eq-bounce ' + (1.1 + i * 0.15) + 's ease-in-out infinite',
-                    transformOrigin: 'bottom',
-                  }}
-                />
-              ))}
-            </div>
-
-            {/* Center Text */}
-            <div className="flex flex-col items-center shrink-0">
-              <span
-                className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
-                style={{
-                  fontSize: '4.6vw',
-                  textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
-                  fontWeight: 900,
-                }}
-              >
-                Now Playing
-              </span>
-              <span
-                className="font-[family-name:var(--font-libre-baskerville)] text-white italic whitespace-nowrap"
-                style={{ fontSize: '4.6vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
-              >
-                Espresso Groove Radio
-              </span>
-            </div>
-
-            {/* Right Equalizer */}
-            <div className="flex items-end self-stretch" style={{ gap: 'vw' }}>
-              {[
-                { h: 0.55, c: '#ffffff' }, { h: 0.35, c: '#ffffff' }, { h: 0.6, c: '#ffffff' },
-                { h: 0.4, c: '#ffffff' }, { h: 0.5, c: '#ffffff' }, { h: 0.3, c: '#ffffff' }
-              ].map((b, i) => (
-                <div
-                  key={i}
-                  className="rounded-full"
-                  style={{
-                    width: '2vw',
-                    height: (b.h * 100) + '%',
-                    backgroundColor: b.c,
-                    boxShadow: '0 0 4px ' + b.c + '99',
-                    animation: 'eq-bounce ' + (1.1 + i * 0.15) + 's ease-in-out infinite',
-                    transformOrigin: 'bottom',
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Music Notes Divider 2 */}
+        {/* === Music Notes Divider === */}
+        <div style={{ marginTop: '5vw' }}>
           <MiniMusicNotes isPlaying={true} size="desktop" />
-
         </div>
 
         {/* Now Spinning */}
         <div
           className="flex items-center justify-center"
-          style={{ gap: '4vw', marginTop: '4.1vw' }}
+          style={{ gap: '4vw', marginTop: '2.1vw' }}
         >
           <div
             className="bg-white"
             style={{
-              width: '14.3vw',
+              width: '10.3vw',
               height: '0.7vw',
               boxShadow: '0 0 6px rgba(0,0,0,0.9)',
             }}
@@ -444,7 +361,7 @@ export default function PageDesktop() {
           <span
             className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
             style={{
-              fontSize: '4.6vw',
+              fontSize: '4vw',
               textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
               fontWeight: 900,
             }}
@@ -454,55 +371,55 @@ export default function PageDesktop() {
           <div
             className="bg-white"
             style={{
-              width: '14.3vw',
+              width: '10.3vw',
               height: '0.7vw',
               boxShadow: '0 0 6px rgba(0,0,0,.9)',
             }}
           />
         </div>
 
-        {/* Jazz */}
-        <div
-          className="flex items-center justify-center"
-          style={{ gap: '4.1vw', marginTop: '3.1vw' }}
-        >
-          <div
-            className="bg-white"
-            style={{ width: '14.2vw', height: '0.8vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
-          />
-          <span
-            className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
-            style={{
-              fontSize: '8.8vw',
-              textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
-              fontWeight: 900,
-            }}
-          >
-            Jazz
-          </span>
-          <div
-            className="bg-white"
-            style={{ width: '14.2vw', height: '0.8vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
-          />
-        </div>
-
         {/* Brown Box */}
         <div
           className="rounded-xl"
-          style={{ marginInline: '4vw', marginTop: '4vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+          style={{ marginInline: '4vw', marginTop: '2.5vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
         >
-          <div className="rounded-lg overflow-hidden bg-[#2d1f1a]" style={{ padding: '3vw' }}>
+          <div className="rounded-lg overflow-hidden bg-[#2d1f1a]" style={{ padding: '2vw' }}>
             <p
-              className="font-[family-name:var(--font-libre-baskerville)] text-white"
+              className="font-[family-name:var(--font-libre-baskerville)] text-white text-center"
               style={{
-                fontSize: '2.1vw',
+                fontSize: '2.4vw',
                 lineHeight: '1.6',
                 textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
               }}
             >
-              We spin a genre and let the music shape the menu — a signature coffee, tea, and energy drink built around the sound. Dig into the history, taste the lineup, and browse the vinyl. Hit the Now Spinning page for the full story.
+             We spin a genre and let the music shape change to inspire the menu.
             </p>
           </div>
+        </div>
+
+        {/* Jazz */}
+        <div
+          className="flex items-center justify-center"
+          style={{ gap: '4.1vw', marginTop: '2.5vw' }}
+        >
+          <div
+            className="bg-white"
+            style={{ width: '12.2vw', height: '0.8vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+          />
+          <span
+            className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
+            style={{
+              fontSize: '4vw',
+              textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+              fontWeight: 900,
+            }}
+          >
+            The 60s Revolution
+          </span>
+          <div
+            className="bg-white"
+            style={{ width: '12.2vw', height: '0.8vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+          />
         </div>
 
         {/* === Three Column Row === */}
@@ -512,15 +429,15 @@ export default function PageDesktop() {
           <div className="flex-1 rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
               {/* Title */}
-              <div className="text-center" style={{ paddingBlock: '2vw' }}>
+              <div className="text-center" style={{ paddingBlock: '1.2vw' }}>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                  style={{ fontSize: '2vw', letterSpacing: '0.15em' }}
+                  style={{ fontSize: '1.8vw', letterSpacing: '0.15em' }}
                 >
-                  Jazz History
+                  Behind the Groove
                 </span>
               </div>
-              <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+              <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', marginTop: '-0.7vw', }} />
 
               {/* Image + Text (float wrap) */}
               <div style={{ padding: '1.5vw' }}>
@@ -534,7 +451,7 @@ export default function PageDesktop() {
                   className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                   style={{ fontSize: '1.2vw' }}
                 >
-                  In the early 1900s, the streets of New Orleans were alive with a new sound. African rhythms met blues and ragtime to create something entirely new. It wasn&apos;t just music — it was freedom, expression, and revolution all at once. From the brass bands of Congo Square to the smoky clubs of Storyville, jazz was born not on a stage, but in the soul of a city. By the 1920s, it had migrated north — Chicago, Kansas City, Harlem...
+                  The 60s weren&apos;t just a decade; they were an electric shift. It was the era where the single gave way to the album. Artists began creating <span style={{ fontWeight: 700 }}>albums</span> — a complete journey meant to be hard from Side A to Side B with deep, complex stories that changed how people thought about politics, love, and art. From the sun-drenched melodies of the British Invasion to the psychedelic explorations of the Sunset Strip...
                 </p>
               </div>
 
@@ -564,7 +481,7 @@ export default function PageDesktop() {
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
                   style={{ fontSize: '2vw', letterSpacing: '0.15em' }}
                 >
-                  Featured Sips
+                  Limited Press
                 </span>
               </div>
               <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
@@ -665,10 +582,10 @@ export default function PageDesktop() {
                 <div className="flex items-center justify-center" style={{ gap: '1.5vw', marginTop: '0.8vw' }}>
                   <div style={{ width: '3vw', height: '0.3vw', backgroundColor: 'white' }} />
                   <span
-                    className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                    style={{ fontSize: '2vw', letterSpacing: '0.15em' }}
+                    className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold whitespace-nowrap"
+                    style={{ fontSize: '1.3vw', letterSpacing: '0.15em' }}
                   >
-                    Jazz
+                    60s Revolution
                   </span>
                   <div style={{ width: '3vw', height: '0.3vw', backgroundColor: 'white' }} />
                 </div>
@@ -766,16 +683,13 @@ export default function PageDesktop() {
 
         </div>
 
-        {/* Drip • Drop • Vibe */}
-        <p
-          className="text-white font-[family-name:var(--font-libre-baskerville)] italic text-center"
-          style={{ fontSize: '6vw', fontWeight: 900, marginTop: '5vw', textShadow: '2px 2px 8px rgba(0,0,0,0.)' }}
-        >
-          Drip • Drop • Vibe
-        </p>
+        {/* === Music Notes Divider === */}
+        <div style={{ marginTop: '5vw' }}>
+          <MiniMusicNotes isPlaying={true} size="desktop" />
+        </div>
 
         {/* === About Us + The Vibe === */}
-        <div className="flex" style={{ gap: '2vw', marginTop: '4vw', paddingInline: '4vw' }}>
+        <div className="flex" style={{ gap: '2vw', marginTop: '3vw', paddingInline: '4vw' }}>
 
           {/* LEFT: About Us */}
           <div className="flex-1">
@@ -792,7 +706,7 @@ export default function PageDesktop() {
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
                 style={{ fontSize: '2.8vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
               >
-                About Us
+                Find the Groove
               </span>
               <div
                 className="bg-white"
@@ -802,18 +716,6 @@ export default function PageDesktop() {
 
             <div className="rounded-xl w-full" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
               <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
-                {/* Our Store Title */}
-                <div
-                  className="text-center border-b border-white"
-                  style={{ paddingBlock: '2vw' }}
-                >
-                  <span
-                    className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                    style={{ fontSize: '2.3vw', letterSpacing: '0.15em' }}
-                  >
-                    Our Store
-                  </span>
-                </div>
 
                 {/* Store Photo Placeholder */}
                 <div
@@ -871,13 +773,25 @@ export default function PageDesktop() {
                         className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
                         style={{ fontSize: '2vw' }}
                       >
-                        Mon–Fri: 7am–9pm
+                        Tue–Fri: 7am–6pm
                       </p>
                       <p
                         className="text-white/70 font-[family-name:var(--font-inter)]"
                         style={{ fontSize: '1.8vw' }}
                       >
-                        Sat–Sun: 8am–10pm
+                        Sat: 8am–7pm
+                      </p>
+                      <p
+                        className="text-white/70 font-[family-name:var(--font-inter)]"
+                        style={{ fontSize: '1.8vw' }}
+                      >
+                        Sun: 8am–5pm
+                      </p>
+                      <p
+                        className="text-white/70 font-[family-name:var(--font-inter)]"
+                        style={{ fontSize: '1.8vw' }}
+                      >
+                        Monday: Unplugged <br></br>(Flipping the records & prepping the beans. See you Tuesday at 7AM.)
                       </p>
                     </div>
                   </div>
@@ -885,7 +799,7 @@ export default function PageDesktop() {
                   {/* Phone */}
                   <a
                     href="tel:+10000000000"
-                    className="flex items-center"
+                    className="hidden flex items-center"
                     style={{ gap: '1.5vw', marginTop: '1.5vw' }}
                   >
                     <svg className="text-white flex-shrink-0" style={{ width: '3.5vw', height: '3.5vw' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -909,7 +823,7 @@ export default function PageDesktop() {
                       className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
                       style={{ fontSize: '2.2vw' }}
                     >
-                      Get Directions →
+                      Find Us →
                     </span>
                   </div>
                 </div>
@@ -932,7 +846,7 @@ export default function PageDesktop() {
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
                 style={{ fontSize: '2.8vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
               >
-                The Vibe
+                Drip • Drop • Vibe
               </span>
               <div
                 className="bg-white"
@@ -941,24 +855,42 @@ export default function PageDesktop() {
             </div>
 
             {/* The Vibe Text */}
-            <div style={{ paddingInline: '2vw', paddingTop: '2vw', textShadow: '2px 2px 8px rgba(0,0,0,0)' }}>
+            <div style={{ paddingInline: '2vw', paddingTop: '0vw', textShadow: '2px 2px 8px rgba(0,0,0,0)' }}>
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                style={{ fontSize: '2.5vw', fontWeight: 900 }}
+                style={{ fontSize: '2vw', fontWeight: 900 }}
               >
-                <span className="font-[900]">Espresso Groove</span> was born from a simple idea:
+                Espresso Groove spun out of a simple idea:
               </p>
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                style={{ fontSize: '2.5vw', fontWeight: 900, marginTop: '1.5vw' }}
+                style={{ fontSize: '2vw', fontWeight: 900, marginTop: '1.5vw' }}
               >
-                A space where the ritual of coffee meets the soul of music. Great espresso and great vinyl share something in common — they&apos;re both meant to be <span className="font-[800]">savored</span>, not rushed.
+                The ritual of a crafted drink and the soul of a good record belong in the same room.
               </p>
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                style={{ fontSize: '2.5vw', fontWeight: 900, marginTop: '1.5vw' }}
+                style={{ fontSize: '2vw', fontWeight: 600, marginTop: '1.5vw' }}
               >
-                Pull up a chair. Flip through the crates. Espresso <span className="font-[900]">drips</span>, the needle <span className="font-[800]">drops</span>, and the <span className="font-[800]">vibe</span> takes over.
+                We believe great espresso and great vinyl share a common thread — they&apos;re both meant to be savored, not rushed. Every three weeks, we launch a new <span style={{ fontWeight: 900 }}>Rotation</span>: a curated pairing of sound and taste designed to let you settle in.
+              </p>
+              <p
+                className="text-white font-[family-name:var(--font-inter)] leading-relaxed italic"
+                style={{ fontSize: '2.3vw', fontWeight: 900, marginTop: '1.5vw', paddingLeft: '2vw' }}
+              >
+                Espresso <span className="uppercase">drips</span>.
+              </p>
+              <p
+                className="text-white font-[family-name:var(--font-inter)] leading-relaxed italic"
+                style={{ fontSize: '2.3vw', fontWeight: 900, marginTop: '0.8vw', paddingLeft: '4vw' }}
+              >
+                The needle <span className="uppercase">drops</span>.
+              </p>
+              <p
+                className="text-white font-[family-name:var(--font-inter)] leading-relaxed italic"
+                style={{ fontSize: '2.3vw', fontWeight: 900, marginTop: '0.8vw', paddingLeft: '6vw' }}
+              >
+                The <span className="uppercase">vibe</span> takes over.
               </p>
             </div>
           </div>

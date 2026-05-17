@@ -42,7 +42,7 @@ export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { on
         className="flex-[0.6] bg-white noisy flex items-center justify-center"
         style={{ height: h }}
       >
-        <svg style={{ width: size === 'xl' ? '32px' : '2vw', height: size === 'xl' ? '32px' : '2vw' }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg style={{ width: size === 'xl' ? '48px' : '3vw', height: size === 'xl' ? '48px' : '3vw' }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id={`home-gradient-${size}`} x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#f06830" />
@@ -50,13 +50,16 @@ export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { on
               <stop offset="100%" stopColor="#6b4c8c" />
             </linearGradient>
           </defs>
-          <path
-            d="M3 11L12 3L21 11V20C21 20.5523 20.5523 21 20 21H15V14H9V21H4C3.44772 21 3 20.5523 3 20V11Z"
-            fill={`url(#home-gradient-${size})`}
-            stroke={`url(#home-gradient-${size})`}
-            strokeWidth="1.5"
-            strokeLinejoin="round"
-          />
+          {/* Record disc */}
+          <circle cx="12" cy="12" r="10" fill={`url(#home-gradient-${size})`} />
+          {/* Grooves */}
+          <circle cx="12" cy="12" r="8.2" fill="none" stroke="rgba(0,0,0,0.35)" strokeWidth="0.35" />
+          <circle cx="12" cy="12" r="6.8" fill="none" stroke="rgba(0,0,0,0.35)" strokeWidth="0.35" />
+          <circle cx="12" cy="12" r="5.4" fill="none" stroke="rgba(0,0,0,0.35)" strokeWidth="0.35" />
+          {/* Center label */}
+          <circle cx="12" cy="12" r="3.6" fill={`url(#home-gradient-${size})`} stroke="rgba(255,255,255,0.55)" strokeWidth="0.4" />
+          {/* Spindle hole */}
+          <circle cx="12" cy="12" r="0.75" fill="#ffffff" />
         </svg>
       </Link>
 
