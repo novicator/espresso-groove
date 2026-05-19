@@ -4,7 +4,6 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import MusicNotes from "./components/MusicNotes";
 import MiniMusicNotes from "./components/MiniMusicNotes";
-import Footer from "./components/Footer";
 import MobileNav from "./components/MobileNav";
 
 export default function PageMobile() {
@@ -950,7 +949,8 @@ export default function PageMobile() {
           </div>
           </div>
 
-          <Footer />
+          {/* Bottom spacer */}
+          <div style={{ height: '15vw' }} />
 
         </div>
 
