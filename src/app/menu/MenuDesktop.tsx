@@ -325,29 +325,29 @@ export default function MenuDesktop() {
 
                     {/* 2 - Now Spinning Description */}
                     <div className="flex-[2]" style={{ padding: '1.5vw 2vw' }}>
-                      <div className="text-center" style={{ paddingTop: '1vw' }}>
+                      <div className="text-center" style={{ marginTop: '-0.1vw' }}>
                         <span
                           className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                          style={{ fontSize: '2.2vw', letterSpacing: '0.15em' }}
+                          style={{ fontSize: '2vw', letterSpacing: '0.15em' }}
                         >
                           Now Spinning
                         </span>
                         <div className="flex items-center justify-center" style={{ gap: '1vw', marginTop: '0.5vw' }}>
-                          <div style={{ width: '3.3vw', height: '0.4vw', backgroundColor: 'white' }} />
+                          <div style={{ width: '2.3vw', height: '0.3vw', backgroundColor: 'white' }} />
                           <span
-                            className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                            style={{ fontSize: '2.4vw', letterSpacing: '0.15em' }}
+                            className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold whitespace-nowrap"
+                            style={{ fontSize: '1.7vw', letterSpacing: '0.15em' }}
                           >
-                            Jazz
+                            60s Revolution
                           </span>
-                          <div style={{ width: '3.3vw', height: '0.4vw', backgroundColor: 'white' }} />
+                          <div style={{ width: '2.3vw', height: '0.3vw', backgroundColor: 'white' }} />
                         </div>
                       </div>
                       <p
                         className="font-[family-name:var(--font-libre-baskerville)] text-white/80 text-left"
                         style={{ fontSize: '1.55vw', lineHeight: '1.7', marginTop: '1vw' }}
                       >
-                        Each featured genre inspires three signature drinks — one coffee, one tea, one energy —
+                        Each featured genre inspires three signature drinks, one coffee, one tea, one energy,
                         crafted to match the mood of the music on the turntable.
                       </p>
                     </div>
@@ -397,13 +397,10 @@ export default function MenuDesktop() {
                               Coffee<br />+ Espresso
                             </span>
                           </div>
-                          <div className="flex flex-col items-center" style={{ padding: '1.8vw 1vw', gap: '1vw' }}>
-                            <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '3vw', marginTop: '-0.5vw', }}>
+                          <div className="flex-1 flex flex-col items-center justify-center" style={{ padding: '1.8vw 1vw', gap: '1vw' }}>
+                            <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '3vw' }}>
                               Blue Note Brew
                             </span>
-                            <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center" style={{ width: '8vw', height: '8vw', marginTop: '-0vw', }}>
-                              <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
-                            </div>
                           </div>
                         </div>
 
@@ -417,13 +414,10 @@ export default function MenuDesktop() {
                               Tea<br />+ Matcha
                             </span>
                           </div>
-                          <div className="flex flex-col items-center" style={{ padding: '1.8vw 1vw', gap: '1vw' }}>
-                            <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '3vw', marginTop: '-0.5vw' }}>
+                          <div className="flex-1 flex flex-col items-center justify-center" style={{ padding: '1.8vw 1vw', gap: '1vw' }}>
+                            <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '3vw' }}>
                               Coltrane Chai
                             </span>
-                            <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center" style={{ width: '8vw', height: '8vw', marginTop: '0vw' }}>
-                              <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
-                            </div>
                           </div>
                         </div>
 
@@ -437,13 +431,10 @@ export default function MenuDesktop() {
                               Energy<br />+ Boba
                             </span>
                           </div>
-                          <div className="flex flex-col items-center" style={{ padding: '1.8vw 1vw', gap: '1vw' }}>
-                            <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '3vw', marginTop: '-0.5vw' }}>
+                          <div className="flex-1 flex flex-col items-center justify-center" style={{ padding: '1.8vw 1vw', gap: '1vw' }}>
+                            <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '3vw' }}>
                               Bebop Blast
                             </span>
-                            <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center" style={{ width: '8vw', height: '8vw', marginTop: '0vw' }}>
-                              <span className="text-[#555555]" style={{ fontSize: '1vw' }}>IMG</span>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -465,9 +456,6 @@ export default function MenuDesktop() {
                   <div className="flex" style={{ padding: '1.5vw 1vw', gap: '0.5vw' }}>
                     {coffeeItems.map((item, index) => (
                       <div key={`coffee-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '0.5vw', borderRight: index < coffeeItems.length - 1 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 0.5vw' }}>
-                        <div className="bg-[#f06830]/20 noisy rounded-lg flex items-center justify-center" style={{ width: '7vw', height: '6vw' }}>
-                          <img src="/images/menu_cup.svg?v=3" style={{ width: '3.5vw', height: '2.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
-                        </div>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
                           style={{ fontSize: '2.8vw', marginTop: '1.3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
                         <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '1.6vw' }}>{item.desc}</p>
@@ -489,9 +477,6 @@ export default function MenuDesktop() {
                   <div className="flex" style={{ padding: '1.5vw 1vw', gap: '0.5vw' }}>
                     {teaItems.map((item, index) => (
                       <div key={`tea-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '0.5vw', borderRight: index < teaItems.length - 1 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 0.5vw' }}>
-                        <div className="bg-[#2a7d7d]/20 noisy rounded-lg flex items-center justify-center" style={{ width: '7vw', height: '6vw' }}>
-                          <img src="/images/menu_cup.svg?v=3" style={{ width: '3.5vw', height: '2.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
-                        </div>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
                           style={{ fontSize: '2.8vw', marginTop: '1.3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
                         <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '1.6vw', whiteSpace: 'pre-line' }}>{item.desc}</p>
@@ -513,9 +498,6 @@ export default function MenuDesktop() {
                   <div className="flex" style={{ padding: '1.5vw 1vw', gap: '0.5vw' }}>
                     {energyItems.map((item, index) => (
                       <div key={`energy-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '0.5vw', borderRight: index < energyItems.length - 1 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 0.5vw' }}>
-                        <div className="bg-[#6b4c8c]/30 noisy rounded-lg flex items-center justify-center" style={{ width: '7vw', height: '6vw' }}>
-                          <img src="/images/menu_cup.svg?v=3" style={{ width: '3.5vw', height: '2.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
-                        </div>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
                           style={{ fontSize: '2.8vw', marginTop: '1.3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
                         <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: item.smallDesc ? '1.5vw' : '1.6vw' }}>{item.desc}</p>
@@ -543,9 +525,6 @@ export default function MenuDesktop() {
                       { name: "SCONE", desc: "Crumbly, buttery, pairs with any drink" },
                     ].map((item, index) => (
                       <div key={`bakery-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '0.5vw', borderRight: index < 4 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 0.5vw' }}>
-                        <div className="bg-[#6F4E37]/20 noisy rounded-lg flex items-center justify-center" style={{ width: '7vw', height: '6vw' }}>
-                          <img src="/images/menu_cup.svg?v=3" style={{ width: '3.5vw', height: '2.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
-                        </div>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
                           style={{ fontSize: item.smallName ? '2.6vw' : '2.8vw', marginTop: '1.3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
                         <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '1.6vw' }}>{item.desc}</p>
@@ -573,9 +552,6 @@ export default function MenuDesktop() {
                       { name: "AFFOGATO", desc: "Vanilla gelato drowned in espresso" },
                     ].map((item, index) => (
                       <div key={`dessert-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '0.5vw', borderRight: index < 4 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 0.5vw' }}>
-                        <div className="bg-[#24ADFF]/20 noisy rounded-lg flex items-center justify-center" style={{ width: '7vw', height: '6vw' }}>
-                          <img src="/images/menu_cup.svg?v=3" style={{ width: '3.5vw', height: '2.5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
-                        </div>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
                           style={{ fontSize: item.smallName ? '2.6vw' : '2.8vw', marginTop: '1.3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
                         <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '1.6vw' }}>{item.desc}</p>

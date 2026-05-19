@@ -18,33 +18,7 @@ type Event = {
   color: string;
 };
 
-const sampleEvents: Record<string, Event[]> = {
-  "2026-04-03": [
-    { title: "Trivia Night", time: "7:00 PM", description: "Test your knowledge — coffee & prizes on the line.", color: "#f06830" },
-  ],
-  "2026-04-05": [
-    { title: "Acoustic Saturday", time: "6:00 PM", description: "Live acoustic sets from local artists.", color: "#2a7d7d" },
-  ],
-  "2026-04-10": [
-    { title: "Open Mic Night", time: "7:30 PM", description: "Your stage, your sound. Sign up at the counter.", color: "#4CAF50" },
-  ],
-  "2026-04-12": [
-    { title: "Vinyl Listening Party", time: "5:00 PM", description: "Full album playthrough on our house system. This month: Rumours.", color: "#24ADFF" },
-  ],
-  "2026-04-17": [
-    { title: "Poetry Night", time: "7:00 PM", description: "Spoken word, open floor. Bring your voice.", color: "#d9bc52" },
-  ],
-  "2026-04-19": [
-    { title: "Acoustic Saturday", time: "6:00 PM", description: "Live acoustic sets from local artists.", color: "#2a7d7d" },
-  ],
-  "2026-04-24": [
-    { title: "Trivia Night", time: "7:00 PM", description: "Test your knowledge — coffee & prizes on the line.", color: "#f06830" },
-  ],
-  "2026-04-26": [
-    { title: "Vinyl Listening Party", time: "5:00 PM", description: "Full album playthrough on our house system. This month: Rumours.", color: "#24ADFF" },
-    { title: "Open Mic Night", time: "7:30 PM", description: "Your stage, your sound. Sign up at the counter.", color: "#4CAF50" },
-  ],
-};
+const sampleEvents: Record<string, Event[]> = {};
 
 function getDaysInMonth(year: number, month: number) {
   return new Date(year, month + 1, 0).getDate();
@@ -185,7 +159,7 @@ export default function EventsDesktop() {
                   marginTop: '1.5vw',
                 }}
               >
-                Events on the calendar — listening parties, music, mics, trivia, and more.
+                Events on the calendar, listening parties, music, mics, trivia, and more.
               </p>
               <p
                 className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold"
@@ -397,7 +371,7 @@ export default function EventsDesktop() {
                     className="font-[family-name:var(--font-libre-baskerville)] text-white text-center"
                     style={{ fontSize: '1.6vw' }}
                   >
-                    No events this day — but the coffee&apos;s still on.
+                    No events this day, but the coffee&apos;s still on.
                   </p>
                 )}
               </div>

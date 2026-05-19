@@ -419,11 +419,21 @@ export default function MenuMobile() {
             <div className="mx-auto" style={{ height: '0.4vw', width: '60%', marginTop: '2vw', marginBottom: '2vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
             <div>
               <span
+                className="font-[family-name:var(--font-libre-baskerville)] text-center text-white uppercase font-bold"
+                style={{ fontSize: '5vw', letterSpacing: '0.15em' }}
+              >
+                Now Spinning
+              </span>
+            </div>
+            <div className="flex items-center justify-center" style={{ gap: '3vw', marginTop: '1.5vw' }}>
+              <div style={{ width: '4vw', height: '0.6vw', backgroundColor: 'white' }} />
+              <span
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
                 style={{ fontSize: '5vw', letterSpacing: '0.15em' }}
               >
-                Now Spinning - Jazz
+                60s Revolution
               </span>
+              <div style={{ width: '4vw', height: '0.6vw', backgroundColor: 'white' }} />
             </div>
           </div>
 
@@ -486,12 +496,6 @@ export default function MenuMobile() {
               >
                 Blue Note Brew
               </span>
-              <div
-                className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0"
-                style={{ width: '18vw', height: '18vw' }}
-              >
-                <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
-              </div>
             </div>
 
             {/* Tea Card */}
@@ -502,12 +506,6 @@ export default function MenuMobile() {
               >
                 Coltrane Chai
               </span>
-              <div
-                className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0"
-                style={{ width: '18vw', height: '18vw' }}
-              >
-                <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
-              </div>
             </div>
 
             {/* Energy Card */}
@@ -518,12 +516,6 @@ export default function MenuMobile() {
               >
                 Bebop Blast
               </span>
-              <div
-                className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0"
-                style={{ width: '18vw', height: '18vw' }}
-              >
-                <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
-              </div>
             </div>
           </div>
 
@@ -554,9 +546,6 @@ export default function MenuMobile() {
                 <div key={`coffee-${index}`}>
                   {index > 0 && <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
                   <div className="flex" style={{ padding: '3vw 4vw', gap: '3vw' }}>
-                    <div className="bg-[#f06830]/20 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '10vw', height: '10vw' }}>
-                      <img src="/images/menu_cup.svg?v=3" style={{ width: '5vw', height: '5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
-                    </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
@@ -587,9 +576,6 @@ export default function MenuMobile() {
                 <div key={`tea-${index}`}>
                   {index > 0 && <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
                   <div className="flex" style={{ padding: '3vw 4vw', gap: '3vw' }}>
-                    <div className="bg-[#2a7d7d]/20 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '10vw', height: '10vw' }}>
-                      <img src="/images/menu_cup.svg?v=3" style={{ width: '5vw', height: '5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
-                    </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
@@ -620,9 +606,6 @@ export default function MenuMobile() {
                 <div key={`energy-${index}`}>
                   {index > 0 && <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
                   <div className="flex" style={{ padding: '3vw 4vw', gap: '3vw' }}>
-                    <div className="bg-[#6b4c8c]/30 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '10vw', height: '10vw' }}>
-                      <span style={{ fontSize: '4.5vw' }}>⚡</span>
-                    </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
@@ -651,9 +634,6 @@ export default function MenuMobile() {
                 <div key={`bakery-${index}`}>
                   {index > 0 && <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
                   <div className="flex" style={{ padding: '3vw 4vw', gap: '3vw' }}>
-                    <div className="bg-[#6F4E37]/20 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '10vw', height: '10vw' }}>
-                      <img src="/images/menu_cup.svg?v=3" style={{ width: '5vw', height: '5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
-                    </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
@@ -682,9 +662,6 @@ export default function MenuMobile() {
                 <div key={`dessert-${index}`}>
                   {index > 0 && <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
                   <div className="flex" style={{ padding: '3vw 4vw', gap: '3vw' }}>
-                    <div className="bg-[#24ADFF]/20 noisy rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: '10vw', height: '10vw' }}>
-                      <img src="/images/menu_cup.svg?v=3" style={{ width: '5vw', height: '5vw', opacity: 0.7, filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.8))' }} />
-                    </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
                         <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"

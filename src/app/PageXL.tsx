@@ -447,8 +447,8 @@ export default function PageXL() {
                   {/* Image + Text (float wrap) */}
                   <div style={{ padding: '21px' }}>
                     <img
-                      src="/images/artwork/performance.png"
-                      alt="Jazz performance"
+                      src="/images/artwork/60s-revolution.png"
+                      alt="60s Revolution turntable"
                       className="rounded-lg object-cover"
                       style={{ width: '140px', height: '140px', float: 'left', marginRight: '21px', marginTop: '7px' }}
                     />
@@ -456,7 +456,7 @@ export default function PageXL() {
                       className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                       style={{ fontSize: '16.8px' }}
                     >
-                      The 60s weren&apos;t just a decade; they were an electric shift. It was the era where the single gave way to the album. Artists began creating <span style={{ fontWeight: 700 }}>albums</span> — a complete journey meant to be hard from Side A to Side B with deep, complex stories that changed how people thought about politics, love, and art. From the sun-drenched melodies of the British Invasion to the psychedelic explorations of the Sunset Strip...
+                      The 60s weren&apos;t just a decade; they were an electric shift. It was the era where the single gave way to the album. Artists began creating <span style={{ fontWeight: 700 }}>albums</span>, a complete journey meant to be hard from Side A to Side B with deep, complex stories that changed how people thought about politics, love, and art. From the sun-drenched melodies of the British Invasion to the psychedelic explorations of the Sunset Strip...
                     </p>
                   </div>
 
@@ -501,9 +501,6 @@ export default function PageXL() {
                     </span>
                   </div>
                   <div className="flex items-center" style={{ paddingBlock: '13.8px', paddingLeft: '28px', paddingRight: '16.8px', gap: '42px' }}>
-                    <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '77px', height: '77px' }}>
-                      <span className="text-[#555555]" style={{ fontSize: '11.2px' }}>IMG</span>
-                    </div>
                     <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '30.8px' }}>
                       Blue Note Brew
                     </span>
@@ -519,9 +516,6 @@ export default function PageXL() {
                     </span>
                   </div>
                   <div className="flex items-center" style={{ paddingBlock: '13.8px', paddingLeft: '28px', paddingRight: '16.8px', gap: '42px' }}>
-                    <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '77px', height: '77px' }}>
-                      <span className="text-[#555555]" style={{ fontSize: '11.2px' }}>IMG</span>
-                    </div>
                     <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '30.8px' }}>
                       Coltrane Chai
                     </span>
@@ -537,9 +531,6 @@ export default function PageXL() {
                     </span>
                   </div>
                   <div className="flex items-center" style={{ paddingBlock: '13.8px', paddingLeft: '28px', paddingRight: '16.8px', gap: '42px' }}>
-                    <div className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0" style={{ width: '77px', height: '77px' }}>
-                      <span className="text-[#555555]" style={{ fontSize: '11.2px' }}>IMG</span>
-                    </div>
                     <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '30.8px' }}>
                       Bebop Blast
                     </span>
@@ -602,11 +593,11 @@ export default function PageXL() {
                     style={{ gap: '21px', paddingLeft: '21px', paddingRight: '21px', paddingTop: '14px', paddingBottom: '28px' }}
                   >
                     {[
-                      { name: "KIND OF BLUE", artist: "Miles Davis", img: "/images/artwork/kind-of-blue.jpg" },
-                      { name: "A LOVE SUPREME", artist: "John Coltrane", img: "/images/artwork/a-love-supreme.jpg" },
-                      { name: "HEAD HUNTERS", artist: "Herbie Hancock", img: "/images/artwork/head-hunters.jpg" },
-                      { name: "MINGUS AH UM", artist: "Charles Mingus", img: "/images/artwork/mingus-ah-um.jpg" },
-                      { name: "TIME OUT", artist: "Dave Brubeck", img: "/images/artwork/time-out.jpg" },
+                      { name: "SGT. PEPPER'S", artist: "The Beatles", img: "/images/artwork/sgt-peppers.jpg" },
+                      { name: "ARE YOU EXPERIENCED", artist: "Jimi Hendrix Experience", img: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/67/45/006745f5-95d5-5a06-35ed-d515e9cfd7d8/dj.tbwlxwoh.jpg/600x600bb.jpg" },
+                      { name: "PET SOUNDS", artist: "The Beach Boys", img: "/images/artwork/pet-sounds.jpg" },
+                      { name: "HIGHWAY 61 REVISITED", artist: "Bob Dylan", img: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ff/c0/f8ffc056-55b4-2033-657d-32492d1eea25/827969239926.jpg/600x600bb.jpg" },
+                      { name: "ABBEY ROAD", artist: "The Beatles", img: "/images/artwork/abbey-road.jpg" },
                     ].map((item, index) => (
                       <div
                         key={index}
@@ -742,7 +733,7 @@ export default function PageXL() {
                     <div style={{ paddingInline: '22px', paddingBlock: '14px', }}>
                       {/* Address */}
                       <a
-                        href="https://maps.google.com/?q=Espresso+Groove"
+                        href="https://www.google.com/maps/search/?api=1&query=3500+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-start"
@@ -823,7 +814,10 @@ export default function PageXL() {
 
                       {/* Get Directions */}
                       <div style={{ height: '5.6px', marginTop: '12px', marginLeft: '-28px', marginRight: '-28px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-                      <div
+                      <a
+                        href="https://www.google.com/maps/search/?api=1&query=3500+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-center justify-center"
                         style={{ paddingTop: '11px', gap: '14px' }}
                       >
@@ -833,7 +827,7 @@ export default function PageXL() {
                         >
                           Find Us →
                         </span>
-                      </div>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -880,7 +874,7 @@ export default function PageXL() {
                     className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                     style={{ fontSize: '23.98px', fontWeight: 600, marginTop: '17.99px' }}
                   >
-                    We believe great espresso and great vinyl share a common thread — they&apos;re both meant to be savored, not rushed. Every three weeks, we launch a new <span style={{ fontWeight: 900 }}>Rotation</span>: a curated pairing of sound and taste designed to let you settle in.
+                    We believe great espresso and great vinyl share a common thread, they&apos;re both meant to be savored, not rushed. Every three weeks, we launch a new <span style={{ fontWeight: 900 }}>Rotation</span>: a curated pairing of sound and taste designed to let you settle in.
                   </p>
                   <p
                     className="text-white font-[family-name:var(--font-inter)] leading-relaxed italic"

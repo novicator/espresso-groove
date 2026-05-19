@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(highway)",
+      "Bash(velvet)",
+      "Bash(sgt)",
+      "Bash(pet-sounds)",
+      "Bash(abbey\")"
+    ]
+  }
+}

@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import MobileNav from "../components/MobileNav";
 
 export default function NowSpinningMobile() {
-    const [activeTab, setActiveTab] = useState<string>("Jazz History");
+    const [activeTab, setActiveTab] = useState<string>("History");
     const scrollRef = useRef<HTMLDivElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
     const [scrollRatio, setScrollRatio] = useState(0);
@@ -65,7 +65,7 @@ export default function NowSpinningMobile() {
             <div className="relative overflow-hidden min-h-screen">
                 {/* Background Layer */}
                 <div className="absolute inset-0 z-0">
-                    {activeTab === "Jazz History" ? (
+                    {activeTab === "History" ? (
                         <>
                             <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(-1)" }} />
                             <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(1)" }} />
@@ -76,7 +76,7 @@ export default function NowSpinningMobile() {
                             <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(1)" }} />
                             <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(-1)" }} />
                         </>
-                    ) : activeTab === "Featured Sips" ? (
+                    ) : activeTab === "Limited Press" ? (
                         <>
                             <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(-1)" }} />
                             <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/menu_background_full.png')", transform: "scaleY(1)" }} />
@@ -181,7 +181,7 @@ export default function NowSpinningMobile() {
                             <div className="flex" style={{ marginTop: '4vw', marginInline: '-5vw' }}>
                                 <div className="flex-1 flex justify-center">
                                     <button
-                                        onClick={() => setActiveTab("Jazz History")}
+                                        onClick={() => setActiveTab("History")}
                                         className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#f06830]"
                                         style={{
                                             height: '9vw',
@@ -198,13 +198,13 @@ export default function NowSpinningMobile() {
                                                 textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                                             }}
                                         >
-                                            Jazz History
+                                            History
                                         </span>
                                     </button>
                                 </div>
                                 <div className="flex-1 flex justify-center">
                                     <button
-                                        onClick={() => setActiveTab("Featured Sips")}
+                                        onClick={() => setActiveTab("Limited Press")}
                                         className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#2a7d7d]"
                                         style={{
                                             height: '9vw',
@@ -221,7 +221,7 @@ export default function NowSpinningMobile() {
                                                 textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                                             }}
                                         >
-                                            Featured Sips
+                                            Limited Press
                                         </span>
                                     </button>
                                 </div>
@@ -268,13 +268,13 @@ export default function NowSpinningMobile() {
                             <div style={{ height: '0.8vw', marginTop: '3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
                             {/* Tab Content */}
-                            {activeTab === "Jazz History" && (
+                            {activeTab === "History" && (
                                 <div>
                                     {/* Section 1: Origins */}
                                     <div style={{ marginTop: '4vw' }}>
                                         <img
-                                            src="/images/artwork/performance.png"
-                                            alt="Jazz performance"
+                                            src="/images/artwork/60s-revolution.png"
+                                            alt="60s Revolution turntable"
                                             className="rounded-lg object-cover"
                                             style={{ width: '35vw', height: '35vw', float: 'left', marginRight: '3vw', marginBottom: '2vw' }}
                                         />
@@ -282,13 +282,13 @@ export default function NowSpinningMobile() {
                                             className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                                             style={{ fontSize: '4vw' }}
                                         >
-                                            In the early 1900s, the streets of New Orleans were alive with a new sound. African rhythms met blues and ragtime to create something entirely new. It wasn&apos;t just music — it was freedom, expression, and revolution all at once. From the brass bands of Congo Square to the smoky clubs of Storyville, jazz was born not on a stage, but in the soul of a city.
+                                            The 60s weren&apos;t just a decade; they were an electric shift. It was the era where the single gave way to the album. Artists began creating <span style={{ fontWeight: 700 }}>albums</span>, a complete journey meant to be heard from Side A to Side B with deep, complex stories that changed how people thought about politics, love, and art. From the sun-drenched melodies of the British Invasion to the psychedelic explorations of the Sunset Strip, the 60s proved that music could be a movement. In basement clubs and massive festivals, artists began to use the studio as an instrument, blending blues, folk, and rock into a sound that felt like the future. When the needle hit those specific records, the world actually felt different.
                                         </p>
                                         <p
                                             className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                                             style={{ fontSize: '4vw', marginTop: '4vw' }}
                                         >
-                                            By the 1920s, jazz had migrated north — Chicago, Kansas City, Harlem. It became the soundtrack of speakeasies and the anthem of a generation refusing to sit still. Swing took over the dance halls. Big bands filled ballrooms from coast to coast. The world was moving faster, and jazz was the pulse keeping time.
+                                            At <span style={{ fontWeight: 700 }}>Espresso Groove</span>, we&apos;re starting where the modern ritual began: with the pioneers who taught us how to listen.
                                         </p>
                                     </div>
 
@@ -305,8 +305,8 @@ export default function NowSpinningMobile() {
 
                                     <div style={{ marginTop: '4vw' }}>
                                         <img
-                                            src="/images/artwork/hands_on_piano.png"
-                                            alt="Hands on piano"
+                                            src="/images/artwork/60s-revolution-2.png"
+                                            alt="60s Revolution guitarist"
                                             className="rounded-lg object-cover"
                                             style={{ width: '40vw', height: '40vw', float: 'right', marginLeft: '3vw', marginBottom: '2vw' }}
                                         />
@@ -314,13 +314,13 @@ export default function NowSpinningMobile() {
                                             className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                                             style={{ fontSize: '4vw' }}
                                         >
-                                            Louis Armstrong didn&apos;t just play the trumpet — he reinvented what it meant to be a soloist. His gravelly voice and fearless improvisation turned jazz from an ensemble art into a platform for individual genius. Then came Duke Ellington, who composed not just songs but entire worlds. His orchestra wasn&apos;t a band — it was a living, breathing instrument.
+                                            The Beatles didn&apos;t just write songs, they reinvented what an album could be. Each new release wasn&apos;t a collection of tracks; it was a leap forward in sound, structure, and ambition. Then came Bob Dylan, who proved a song could carry the weight of a generation, turning lyrics into literature and the protest song into a movement.
                                         </p>
                                         <p
                                             className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                                             style={{ fontSize: '4vw', marginTop: '4vw' }}
                                         >
-                                            Charlie Parker and Dizzy Gillespie shattered every rule in the book with bebop — fast, complex, unapologetic. Thelonious Monk played notes that weren&apos;t supposed to work, and somehow they were the only ones that made sense. Miles Davis refused to stay in one lane, reinventing himself and the genre with every decade — from cool jazz to modal to fusion. And John Coltrane? He turned the saxophone into a prayer, chasing something spiritual that most of us can only feel, never name.
+                                            Jimi Hendrix turned the electric guitar into a language no one had heard before,feedback, fire, and pure invention. Jimmy Page built cathedrals out of distortion with Led Zeppelin, while Janis Joplin tore her voice open and gave it back to the room. Aretha Franklin demanded respect and rewrote what soul could sound like. The Rolling Stones bottled the raw nerve of the blues and made it dangerous again. Every one of them refused to play it safe,and the records they cut still feel like a dare half a century later.
                                         </p>
                                     </div>
 
@@ -332,17 +332,17 @@ export default function NowSpinningMobile() {
                                         className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center font-bold"
                                         style={{ fontSize: '5vw', letterSpacing: '0.15em', marginTop: '5vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                                     >
-                                        The Records That Defined Jazz
+                                        Records of the Revolution
                                     </h3>
 
                                     <div className="grid grid-cols-2" style={{ gap: '3vw', marginTop: '4vw' }}>
                                         {[
-                                            { src: '/images/artwork/kind-of-blue.jpg', title: 'Kind of Blue', artist: 'Miles Davis' },
-                                            { src: '/images/artwork/blue-train.jpg', title: 'Blue Train', artist: 'John Coltrane' },
-                                            { src: '/images/artwork/a-love-supreme.jpg', title: 'A Love Supreme', artist: 'John Coltrane' },
-                                            { src: '/images/artwork/time-out.jpg', title: 'Time Out', artist: 'Dave Brubeck' },
-                                            { src: '/images/artwork/maiden-voyage.jpg', title: 'Maiden Voyage', artist: 'Herbie Hancock' },
-                                            { src: '/images/artwork/moanin.jpg', title: "Moanin'", artist: 'Art Blakey' },
+                                            { src: '/images/artwork/sgt-peppers.jpg', title: "Sgt. Pepper's", artist: 'The Beatles' },
+                                            { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/67/45/006745f5-95d5-5a06-35ed-d515e9cfd7d8/dj.tbwlxwoh.jpg/600x600bb.jpg', title: 'Are You Experienced', artist: 'Jimi Hendrix Experience' },
+                                            { src: '/images/artwork/pet-sounds.jpg', title: 'Pet Sounds', artist: 'The Beach Boys' },
+                                            { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ff/c0/f8ffc056-55b4-2033-657d-32492d1eea25/827969239926.jpg/600x600bb.jpg', title: 'Highway 61 Revisited', artist: 'Bob Dylan' },
+                                            { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/92/93/39/9293397f-a707-237e-ec7e-0ca613a67e3c/06UMGIM04143.rgb.jpg/600x600bb.jpg', title: 'The Velvet Underground & Nico', artist: 'The Velvet Underground' },
+                                            { src: '/images/artwork/abbey-road.jpg', title: 'Abbey Road', artist: 'The Beatles' },
                                         ].map((album) => (
                                             <div key={album.title} className="text-center">
                                                 <img
@@ -375,21 +375,21 @@ export default function NowSpinningMobile() {
                                         className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center font-bold"
                                         style={{ fontSize: '5vw', letterSpacing: '0.15em', marginTop: '5vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                                     >
-                                        Jazz Lives On
+                                        The Sound Lives On
                                     </h3>
 
                                     <p
                                         className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                                         style={{ fontSize: '4vw', marginTop: '4vw' }}
                                     >
-                                        Jazz never died — it just learned new languages. You hear it in the hip-hop samples that loop Coltrane&apos;s phrases, in the neo-soul that borrows its harmonic warmth, in the lo-fi beats that carry its late-night intimacy. Artists like Robert Glasper, Kamasi Washington, and Nubya Garcia are proving that jazz isn&apos;t a museum piece — it&apos;s a living conversation that keeps finding new voices.
+                                        The sound of the 60s never went away, it just learned new instruments. You hear it in the indie bands chasing Lennon&apos;s vocal harmonies, in the producers sampling Page&apos;s riffs, in the festival lineups still built on the blueprint Woodstock drew up. From Jack White to Tame Impala to Arctic Monkeys, an entire generation of artists is still mining the records cut between 1964 and 1971.
                                     </p>
 
                                     <p
                                         className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                                         style={{ fontSize: '4vw', marginTop: '4vw' }}
                                     >
-                                        That&apos;s why we chose jazz as our first rotation. It&apos;s the genre that taught music how to be free — how to listen, respond, and create in the moment. At Espresso Groove, we believe great coffee and great records share the same philosophy: slow down, pay attention, and let the moment move you.
+                                        That&apos;s why we chose the 60s as our first rotation. It&apos;s the decade that taught music how to take chances, to mean something, to make the room stop and listen. At Espresso Groove, we believe great coffee and great records share the same philosophy: slow down, pay attention, and let the moment move you.
                                     </p>
 
                                     <div style={{ paddingTop: '5vw' }} />
@@ -405,11 +405,11 @@ export default function NowSpinningMobile() {
                                         style={{ gap: '4vw', marginInline: '-5vw', paddingLeft: '5vw', paddingRight: '5vw', paddingBottom: '4vw' }}
                                     >
                                         {[
-                                            { name: "KIND OF BLUE", artist: "Miles Davis", img: "/images/artwork/kind-of-blue.jpg", stock: 3 },
-                                            { name: "A LOVE SUPREME", artist: "John Coltrane", img: "/images/artwork/a-love-supreme.jpg", stock: 1 },
-                                            { name: "HEAD HUNTERS", artist: "Herbie Hancock", img: "/images/artwork/head-hunters.jpg", stock: 5 },
-                                            { name: "MINGUS AH UM", artist: "Charles Mingus", img: "/images/artwork/mingus-ah-um.jpg", stock: 2 },
-                                            { name: "TIME OUT", artist: "Dave Brubeck", img: "/images/artwork/time-out.jpg", stock: 4 },
+                                            { name: "SGT. PEPPER'S", artist: "The Beatles", img: "/images/artwork/sgt-peppers.jpg", stock: 3 },
+                                            { name: "ARE YOU EXPERIENCED", artist: "Jimi Hendrix Experience", img: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/67/45/006745f5-95d5-5a06-35ed-d515e9cfd7d8/dj.tbwlxwoh.jpg/600x600bb.jpg", stock: 1 },
+                                            { name: "PET SOUNDS", artist: "The Beach Boys", img: "/images/artwork/pet-sounds.jpg", stock: 5 },
+                                            { name: "HIGHWAY 61 REVISITED", artist: "Bob Dylan", img: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ff/c0/f8ffc056-55b4-2033-657d-32492d1eea25/827969239926.jpg/600x600bb.jpg", stock: 2 },
+                                            { name: "ABBEY ROAD", artist: "The Beatles", img: "/images/artwork/abbey-road.jpg", stock: 4 },
                                         ].map((item, index) => (
                                             <div
                                                 key={index}
@@ -482,7 +482,7 @@ export default function NowSpinningMobile() {
                                 </div>
                             )}
 
-                            {activeTab === "Featured Sips" && (
+                            {activeTab === "Limited Press" && (
                                 <div style={{ marginTop: '4vw' }}>
                                     {/* Category Labels */}
                                     <div className="flex" style={{ marginInline: '-5vw' }}>
@@ -543,12 +543,6 @@ export default function NowSpinningMobile() {
                                             >
                                                 Blue Note Brew
                                             </span>
-                                            <div
-                                                className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0"
-                                                style={{ width: '18vw', height: '18vw' }}
-                                            >
-                                                <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
-                                            </div>
                                         </div>
 
                                         {/* Tea Card */}
@@ -559,12 +553,6 @@ export default function NowSpinningMobile() {
                                             >
                                                 Coltrane Chai
                                             </span>
-                                            <div
-                                                className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0"
-                                                style={{ width: '18vw', height: '18vw' }}
-                                            >
-                                                <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
-                                            </div>
                                         </div>
 
                                         {/* Energy Card */}
@@ -575,12 +563,6 @@ export default function NowSpinningMobile() {
                                             >
                                                 Bebop Blast
                                             </span>
-                                            <div
-                                                className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0"
-                                                style={{ width: '18vw', height: '18vw' }}
-                                            >
-                                                <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
-                                            </div>
                                         </div>
                                     </div>
 

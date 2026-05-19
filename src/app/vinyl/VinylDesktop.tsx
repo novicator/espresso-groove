@@ -9,13 +9,13 @@ import Footer from "../components/Footer";
 const vinylSections = [
   {
     id: "Now Spinning",
-    subtitle: "Jazz",
+    subtitle: "60s Revolution",
     items: [
-      { name: "KIND OF BLUE", artist: "Miles Davis", stock: 3, img: "/images/artwork/kind-of-blue.jpg" },
-      { name: "A LOVE SUPREME", artist: "John Coltrane", stock: 1, img: "/images/artwork/a-love-supreme.jpg" },
-      { name: "HEAD HUNTERS", artist: "Herbie Hancock", stock: 5, img: "/images/artwork/head-hunters.jpg" },
-      { name: "MINGUS AH UM", artist: "Charles Mingus", stock: 2, img: "/images/artwork/mingus-ah-um.jpg" },
-      { name: "TIME OUT", artist: "Dave Brubeck", stock: 4, img: "/images/artwork/time-out.jpg" },
+      { name: "SGT. PEPPER'S", artist: "The Beatles", stock: 3, img: "/images/artwork/sgt-peppers.jpg" },
+      { name: "ARE YOU EXPERIENCED", artist: "Jimi Hendrix Experience", stock: 1, img: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/67/45/006745f5-95d5-5a06-35ed-d515e9cfd7d8/dj.tbwlxwoh.jpg/600x600bb.jpg" },
+      { name: "PET SOUNDS", artist: "The Beach Boys", stock: 5, img: "/images/artwork/pet-sounds.jpg" },
+      { name: "HIGHWAY 61 REVISITED", artist: "Bob Dylan", stock: 2, img: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ff/c0/f8ffc056-55b4-2033-657d-32492d1eea25/827969239926.jpg/600x600bb.jpg" },
+      { name: "ABBEY ROAD", artist: "The Beatles", stock: 4, img: "/images/artwork/abbey-road.jpg" },
     ],
   },
   {
@@ -914,7 +914,7 @@ export default function VinylDesktop() {
                       className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
                       style={{ fontSize: '3.5vw', letterSpacing: '0.15em', marginTop: '-0.5vw' }}
                     >
-                      Jazz
+                      60s Revolution
                     </span>
                     <div style={{ width: '5vw', height: '0.5vw', backgroundColor: 'white' }} />
                   </div>
@@ -926,11 +926,11 @@ export default function VinylDesktop() {
                   style={{ gap: '2vw', paddingLeft: '2vw', paddingRight: '2vw', paddingBottom: '3vw' }}
                 >
                   {[
-                    { name: "KIND OF BLUE", artist: "Miles Davis", stock: 3, img: "/images/artwork/kind-of-blue.jpg" },
-                    { name: "A LOVE SUPREME", artist: "John Coltrane", stock: 1, img: "/images/artwork/a-love-supreme.jpg" },
-                    { name: "HEAD HUNTERS", artist: "Herbie Hancock", stock: 5, img: "/images/artwork/head-hunters.jpg" },
-                    { name: "MINGUS AH UM", artist: "Charles Mingus", stock: 2, img: "/images/artwork/mingus-ah-um.jpg" },
-                    { name: "TIME OUT", artist: "Dave Brubeck", stock: 4, img: "/images/artwork/time-out.jpg" },
+                    { name: "SGT. PEPPER'S", artist: "The Beatles", stock: 3, img: "/images/artwork/sgt-peppers.jpg" },
+                    { name: "ARE YOU EXPERIENCED", artist: "Jimi Hendrix Experience", stock: 1, img: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/67/45/006745f5-95d5-5a06-35ed-d515e9cfd7d8/dj.tbwlxwoh.jpg/600x600bb.jpg" },
+                    { name: "PET SOUNDS", artist: "The Beach Boys", stock: 5, img: "/images/artwork/pet-sounds.jpg" },
+                    { name: "HIGHWAY 61 REVISITED", artist: "Bob Dylan", stock: 2, img: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ff/c0/f8ffc056-55b4-2033-657d-32492d1eea25/827969239926.jpg/600x600bb.jpg" },
+                    { name: "ABBEY ROAD", artist: "The Beatles", stock: 4, img: "/images/artwork/abbey-road.jpg" },
                   ].map((item, index) => (
                     <div
                       key={index}
@@ -941,6 +941,7 @@ export default function VinylDesktop() {
                         paddingRight: '0.5vw',
                         paddingBottom: '2vw',
                         background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
+                        minWidth: 0,
                       }}
                     >
                       <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">

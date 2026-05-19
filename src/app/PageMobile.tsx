@@ -441,8 +441,8 @@ export default function PageMobile() {
                 When the Needle Changed the World
               </p>
               <img
-                src="/images/artwork/performance.png"
-                alt="Jazz performance"
+                src="/images/artwork/60s-revolution.png"
+                alt="60s Revolution turntable"
                 className="rounded-lg object-cover"
                 style={{ width: '30vw', height: '30vw', float: 'left', marginRight: '3vw', marginBottom: '2vw', marginTop: '2vw', }}
               />
@@ -450,7 +450,7 @@ export default function PageMobile() {
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                 style={{ fontSize: '3.7vw' }}
               >
-                The 60s weren&apos;t just a decade; they were an electric shift. It was the era where the single gave way to the album. Artists began creating <span style={{ fontWeight: 700 }}>albums</span> — a complete journey meant to be hard from Side A to Side B...
+                The 60s weren&apos;t just a decade; they were an electric shift. It was the era where the single gave way to the album. Artists began creating <span style={{ fontWeight: 700 }}>albums</span>, a complete journey meant to be hard from Side A to Side B...
               </p>
             </div>
 
@@ -553,12 +553,6 @@ export default function PageMobile() {
                 >
                   Blue Note Brew
                 </span>
-                <div
-                  className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0"
-                  style={{ width: '18vw', height: '18vw' }}
-                >
-                  <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
-                </div>
               </div>
 
               {/* Tea Card */}
@@ -569,12 +563,6 @@ export default function PageMobile() {
                 >
                   Coltrane Chai
                 </span>
-                <div
-                  className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0"
-                  style={{ width: '18vw', height: '18vw' }}
-                >
-                  <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
-                </div>
               </div>
 
               {/* Energy Card */}
@@ -585,12 +573,6 @@ export default function PageMobile() {
                 >
                   Bebop Blast
                 </span>
-                <div
-                  className="bg-[#d4d4d4] rounded-lg flex items-center justify-center shrink-0"
-                  style={{ width: '18vw', height: '18vw' }}
-                >
-                  <span className="text-[#555555]" style={{ fontSize: '2.5vw' }}>IMG</span>
-                </div>
               </div>
             </div>
 
@@ -674,11 +656,11 @@ export default function PageMobile() {
                 style={{ gap: '3vw', marginTop: '3vw', paddingLeft: '4vw', paddingRight: '4vw', paddingBottom: '3vw' }}
               >
                 {[
-                  { name: "KIND OF BLUE", artist: "Miles Davis", img: "/images/artwork/kind-of-blue.jpg" },
-                  { name: "A LOVE SUPREME", artist: "John Coltrane", img: "/images/artwork/a-love-supreme.jpg" },
-                  { name: "HEAD HUNTERS", artist: "Herbie Hancock", img: "/images/artwork/head-hunters.jpg" },
-                  { name: "MINGUS AH UM", artist: "Charles Mingus", img: "/images/artwork/mingus-ah-um.jpg" },
-                  { name: "TIME OUT", artist: "Dave Brubeck", img: "/images/artwork/time-out.jpg" },
+                  { name: "SGT. PEPPER'S", artist: "The Beatles", img: "/images/artwork/sgt-peppers.jpg" },
+                  { name: "ARE YOU EXPERIENCED", artist: "Jimi Hendrix Experience", img: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/67/45/006745f5-95d5-5a06-35ed-d515e9cfd7d8/dj.tbwlxwoh.jpg/600x600bb.jpg" },
+                  { name: "PET SOUNDS", artist: "The Beach Boys", img: "/images/artwork/pet-sounds.jpg" },
+                  { name: "HIGHWAY 61 REVISITED", artist: "Bob Dylan", img: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ff/c0/f8ffc056-55b4-2033-657d-32492d1eea25/827969239926.jpg/600x600bb.jpg" },
+                  { name: "ABBEY ROAD", artist: "The Beatles", img: "/images/artwork/abbey-road.jpg" },
                 ].map((item, index) => (
                   <div
                     key={index}
@@ -701,7 +683,7 @@ export default function PageMobile() {
                         >
                           {item.name}
                         </h4>
-                        <p className="text-white/60 font-[family-name:var(--font-inter)]" style={{ fontSize: '3.8vw', marginTop: '0.5vw' }}>
+                        <p className="text-white/60 font-[family-name:var(--font-inter)] overflow-hidden whitespace-nowrap text-ellipsis" style={{ fontSize: '3.8vw', marginTop: '0.5vw' }}>
                           {item.artist}
                         </p>
                       </div>
@@ -799,7 +781,7 @@ export default function PageMobile() {
               className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
               style={{ fontSize: '4.4vw', fontWeight: 600, marginTop: '3vw' }}
             >
-              We believe great espresso and great vinyl share a common thread — they&apos;re both meant to be savored, not rushed. Every three weeks, we launch a new <span style={{ fontWeight: 900 }}>Rotation</span>: a curated pairing of sound and taste designed to let you settle in.
+              We believe great espresso and great vinyl share a common thread, they&apos;re both meant to be savored, not rushed. Every three weeks, we launch a new <span style={{ fontWeight: 900 }}>Rotation</span>: a curated pairing of sound and taste designed to let you settle in.
             </p>
             <p
               className="text-white font-[family-name:var(--font-inter)] leading-relaxed italic"
@@ -869,7 +851,7 @@ export default function PageMobile() {
             <div style={{ padding: '4vw' }}>
               {/* Address */}
               <a
-                href="https://maps.google.com/?q=Espresso+Groove"
+                href="https://www.google.com/maps/search/?api=1&query=3500+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start"
@@ -950,7 +932,10 @@ export default function PageMobile() {
 
               {/* Get Directions */}
               <div style={{ height: '0.4vw', marginTop: '4vw', marginLeft: '-4vw', marginRight: '-4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-              <div
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=3500+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center"
                 style={{ paddingTop: '3vw', gap: '2vw' }}
               >
@@ -960,7 +945,7 @@ export default function PageMobile() {
                 >
                   Find Us →
                 </span>
-              </div>
+              </a>
             </div>
           </div>
           </div>
