@@ -29,7 +29,7 @@ const energyItems = [
 ];
 import DesktopNav from "../components/DesktopNav";
 
-type FilterType = "All" | "The Pour" | "Espresso/Coffee" | "Tea/Matcha" | "Energy/Boba" | "Bakery" | "Dessert";
+type FilterType = "All" | "The Drip" | "Espresso/Coffee" | "Tea/Matcha" | "Energy/Boba" | "Bakery" | "Dessert";
 
 export default function MenuDesktop() {
   const [activeFilter, setActiveFilter] = useState<FilterType>("All");
@@ -123,18 +123,8 @@ export default function MenuDesktop() {
         {/* === CONTENT LAYER === */}
         <div className="relative z-10">
           {/* Page Title */}
-          <div className="text-center" style={{ marginTop: '6vw', marginBottom: '3.71vw' }}>
+          <div className="text-center relative" style={{ marginTop: '6vw', marginBottom: '3.71vw' }}>
             <div className="flex items-center justify-center" style={{ gap: '1.86vw' }}>
-              <img
-                src="/images/mug.svg"
-                alt=""
-                className="pointer-events-none"
-                style={{
-                  width: '11.37vw',
-                  transform: 'translateY(2.35vw) translateX(0.81vw) scale(1.2)',
-                  filter: 'drop-shadow(0px 0px 10px rgba(255,150,50,0.5))',
-                }}
-              />
               <h1
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
                 style={{
@@ -142,10 +132,9 @@ export default function MenuDesktop() {
                   fontWeight: 900,
                   letterSpacing: '-0.02em',
                   textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
-                  paddingLeft: '0.74vw',
                 }}
               >
-                The Menu
+                Menu
               </h1>
             </div>
             <p
@@ -154,9 +143,7 @@ export default function MenuDesktop() {
                 fontSize: '4.14vw',
                 fontWeight: 900,
                 letterSpacing: '0.2em',
-                marginTop: '-1.91vw',
-                paddingLeft: '3.1vw',
-                marginLeft: '12.61vw',
+                marginTop: '0vw',
                 textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
               }}
             >
@@ -215,7 +202,7 @@ export default function MenuDesktop() {
 
                     <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                       <div
-                        onClick={() => { setActiveFilter("The Pour"); setDropdownOpen(false); }}
+                        onClick={() => { setActiveFilter("The Drip"); setDropdownOpen(false); }}
                         className="bg-[#d9bc52] noisy flex flex-col items-center justify-center cursor-pointer"
                         style={{
                           position: 'relative',
@@ -242,11 +229,11 @@ export default function MenuDesktop() {
                         </span>
                       </div>
                       <button
-                        onClick={() => { setActiveFilter("The Pour"); setDropdownOpen(false); }}
+                        onClick={() => { setActiveFilter("The Drip"); setDropdownOpen(false); }}
                         className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
                         style={{ fontSize: '1.6vw', padding: '1.2vw 2.5vw' }}
                       >
-                        The Pour
+                        The Drip
                       </button>
                     </div>
 
@@ -300,14 +287,14 @@ export default function MenuDesktop() {
             <div className="rounded-xl" style={{ padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
               <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
 
-                {(activeFilter === "All" || activeFilter === "The Pour") && (<>
-                  {/* 1 - The Pour Title (now at the top) */}
+                {(activeFilter === "All" || activeFilter === "The Drip") && (<>
+                  {/* 1 - The Drip Title (now at the top) */}
                   <div className="text-center" style={{ paddingBlock: '1vw' }}>
                     <span
                       className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
                       style={{ fontSize: '2.1vw', letterSpacing: '0.15em' }}
                     >
-                      &ldquo;The Pour&rdquo;
+                      The Drip
                     </span>
                     <div>
                       <span
@@ -338,7 +325,7 @@ export default function MenuDesktop() {
                             className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold whitespace-nowrap"
                             style={{ fontSize: '1.7vw', letterSpacing: '0.15em' }}
                           >
-                            60s Revolution
+                            60<span className="lowercase">s</span> Revolution
                           </span>
                           <div style={{ width: '2.3vw', height: '0.3vw', backgroundColor: 'white' }} />
                         </div>

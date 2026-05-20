@@ -1022,7 +1022,7 @@ export default function VinylMobile() {
                         className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold whitespace-nowrap"
                         style={{ fontSize: '4.5vw', letterSpacing: '0.15em', marginTop: '1vw' }}
                       >
-                        {section.subtitle}
+                        60<span className="lowercase">s</span> Revolution
                       </span>
                       <div style={{ width: '8vw', height: '0.7vw', backgroundColor: 'white' }} />
                     </div>

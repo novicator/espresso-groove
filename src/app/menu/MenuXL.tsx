@@ -29,7 +29,7 @@ const energyItems = [
   { name: "STATIC SHOCK", desc: "Passion fruit with guarana & electrolytes", smallDesc: true },
 ];
 
-type FilterType = "All" | "The Pour" | "Espresso/Coffee" | "Tea/Matcha" | "Energy/Boba" | "Bakery" | "Dessert";
+type FilterType = "All" | "The Drip" | "Espresso/Coffee" | "Tea/Matcha" | "Energy/Boba" | "Bakery" | "Dessert";
 
 export default function MenuXL() {
   const [activeFilter, setActiveFilter] = useState<FilterType>("All");
@@ -81,38 +81,25 @@ export default function MenuXL() {
             {/* Page Title */}
             <div className="text-center" style={{ marginTop: '72px', marginBottom: '44.5px' }}>
               <div className="flex items-center justify-center" style={{ gap: '22.3px' }}>
-                <img
-                  src="/images/mug.svg"
-                  alt=""
-                  className="pointer-events-none"
-                  style={{
-                    width: '136.3px',
-                    transform: 'translateY(28.2px) translateX(9.7px) scale(1.2)',
-                    filter: 'drop-shadow(0px 0px 10px rgba(255,150,50,0.5))',
-                  }}
-                />
                 <h1
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
                   style={{
-                    fontSize: '79.3px',
+                    fontSize: '90.8px',
                     fontWeight: 900,
                     letterSpacing: '-0.02em',
                     textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
-                    paddingLeft: '8.9px',
                   }}
                 >
-                  The Menu
+                  Menu
                 </h1>
               </div>
               <p
                 className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
                 style={{
-                  fontSize: '49.6px',
+                  fontSize: '62.3px',
                   fontWeight: 900,
                   letterSpacing: '0.2em',
-                  marginTop: '-22.9px',
-                  paddingLeft: '37.2px',
-                  marginLeft: '151.2px',
+                  marginTop: '-10px',
                   textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
                 }}
               >
@@ -171,7 +158,7 @@ export default function MenuXL() {
 
                       <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                         <div
-                          onClick={() => { setActiveFilter("The Pour"); setDropdownOpen(false); }}
+                          onClick={() => { setActiveFilter("The Drip"); setDropdownOpen(false); }}
                           className="bg-[#d9bc52] noisy flex flex-col items-center justify-center cursor-pointer"
                           style={{
                             position: 'relative',
@@ -198,11 +185,11 @@ export default function MenuXL() {
                           </span>
                         </div>
                         <button
-                          onClick={() => { setActiveFilter("The Pour"); setDropdownOpen(false); }}
+                          onClick={() => { setActiveFilter("The Drip"); setDropdownOpen(false); }}
                           className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
                           style={{ fontSize: '19.2px', padding: '14.4px 30px' }}
                         >
-                          The Pour
+                          The Drip
                         </button>
                       </div>
 
@@ -256,14 +243,14 @@ export default function MenuXL() {
               <div className="rounded-xl" style={{ padding: '4.8px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
                 <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
 
-                  {(activeFilter === "All" || activeFilter === "The Pour") && (<>
-                    {/* 1 - The Pour Title (now at the top) */}
+                  {(activeFilter === "All" || activeFilter === "The Drip") && (<>
+                    {/* 1 - The Drip Title (now at the top) */}
                     <div className="text-center" style={{ paddingBlock: '12px' }}>
                       <span
                         className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
                         style={{ fontSize: '25.2px', letterSpacing: '0.15em' }}
                       >
-                        &ldquo;The Pour&rdquo;
+                        The Drip
                       </span>
                       <div>
                         <span
@@ -294,7 +281,7 @@ export default function MenuXL() {
                               className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold whitespace-nowrap"
                               style={{ fontSize: '19.8px', letterSpacing: '0.15em' }}
                             >
-                              60s Revolution
+                              60<span className="lowercase">s</span> Revolution
                             </span>
                             <div style={{ width: '30.6px', height: '4.8px', backgroundColor: 'white' }} />
                           </div>

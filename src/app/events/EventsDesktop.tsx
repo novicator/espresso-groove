@@ -106,7 +106,7 @@ export default function EventsDesktop() {
             <h1
               className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
               style={{
-                fontSize: '6.6vw',
+                fontSize: '6.61vw',
                 fontWeight: 900,
                 letterSpacing: '-0.02em',
                 textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
@@ -121,7 +121,7 @@ export default function EventsDesktop() {
               fontSize: '4.14vw',
               fontWeight: 900,
               letterSpacing: '0.2em',
-              marginTop: '-1vw',
+              marginTop: '0vw',
               textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
             }}
           >

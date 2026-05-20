@@ -89,7 +89,7 @@ export default function EventsXL() {
               <h1
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
                 style={{
-                  fontSize: '79.1px',
+                  fontSize: '80.8px',
                   fontWeight: 900,
                   letterSpacing: '-0.02em',
                   textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
@@ -101,10 +101,10 @@ export default function EventsXL() {
             <p
               className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
               style={{
-                fontSize: '49.6px',
+                fontSize: '55.3px',
                 fontWeight: 900,
                 letterSpacing: '0.2em',
-                marginTop: '-12px',
+                marginTop: '-10px',
                 textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
               }}
             >

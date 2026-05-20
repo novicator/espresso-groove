@@ -638,11 +638,11 @@ export default function VinylDesktop() {
           </div>
 
           {/* Page Title */}
-          <div className="flex flex-col items-center" style={{ marginTop: '-1vw', marginBottom: '6.1vw', paddingLeft: '24vw', width: 'fit-content' }}>
+          <div className="text-center" style={{ marginTop: '-1vw', marginBottom: '6.1vw' }}>
             <h1
               className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
               style={{
-                fontSize: '7.7vw',
+                fontSize: '6.61vw',
                 fontWeight: 900,
                 letterSpacing: '-0.02em',
                 textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
@@ -914,7 +914,7 @@ export default function VinylDesktop() {
                       className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
                       style={{ fontSize: '3.5vw', letterSpacing: '0.15em', marginTop: '-0.5vw' }}
                     >
-                      60s Revolution
+                      60<span className="lowercase">s</span> Revolution
                     </span>
                     <div style={{ width: '5vw', height: '0.5vw', backgroundColor: 'white' }} />
                   </div>

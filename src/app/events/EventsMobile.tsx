@@ -110,7 +110,7 @@ export default function EventsMobile() {
             <p
               className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
               style={{
-                fontSize: '6.9vw',
+                fontSize: '6.2vw',
                 fontWeight: 900,
                 letterSpacing: '0.2em',
                 marginTop: '0vw',

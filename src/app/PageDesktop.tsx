@@ -392,7 +392,7 @@ export default function PageDesktop() {
                 textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
               }}
             >
-             We spin a genre and let the music shape change to inspire the menu.
+             We spin a genre and let the music inspire the menu.
             </p>
           </div>
         </div>
@@ -414,7 +414,7 @@ export default function PageDesktop() {
               fontWeight: 900,
             }}
           >
-            The 60s Revolution
+            The 60<span className="lowercase">s</span> Revolution
           </span>
           <div
             className="bg-white"
@@ -423,10 +423,14 @@ export default function PageDesktop() {
         </div>
 
         {/* === Three Column Row === */}
-        <div className="flex" style={{ gap: '2vw', marginTop: '4vw', paddingInline: '4vw' }}>
+        <div className="flex" style={{ gap: '2vw', marginTop: '1vw', paddingInline: '4vw' }}>
 
           {/* LEFT: Jazz History */}
-          <div className="flex-1 rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
+          <div className="flex-1 flex flex-col items-center" style={{ order: 3, gap: '1vw' }}>
+            <span className="text-white font-[family-name:var(--font-libre-baskerville)] italic" style={{ fontSize: '3vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
+              Vibe
+            </span>
+            <div className="w-full rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
               {/* Title */}
               <div className="text-center" style={{ paddingBlock: '1.2vw' }}>
@@ -472,8 +476,14 @@ export default function PageDesktop() {
             </div>
           </div>
 
+          </div>
+
           {/* MIDDLE: Featured Sips */}
-          <div className="flex-1 rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
+          <div className="flex-1 flex flex-col items-center" style={{ order: 1, gap: '1vw' }}>
+            <span className="text-white font-[family-name:var(--font-libre-baskerville)] italic" style={{ fontSize: '3vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
+              Drip
+            </span>
+            <div className="w-full rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
               {/* Title */}
               <div className="text-center" style={{ paddingBlock: '2vw' }}>
@@ -546,7 +556,7 @@ export default function PageDesktop() {
                   style={{ paddingBlock: '0vw', gap: '1vw' }}
                 >
                   <span className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '1.8vw' }}>
-                    View Menu
+                    Menu
                   </span>
                   <span className="text-white" style={{ fontSize: '3vw' }}>→</span>
                 </a>
@@ -554,8 +564,14 @@ export default function PageDesktop() {
             </div>
           </div>
 
+          </div>
+
           {/* RIGHT: Now Spinning Jazz Vinyl */}
-          <div className="flex-1 rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw', minWidth: 0 }}>
+          <div className="flex-1 flex flex-col items-center" style={{ order: 2, gap: '1vw', minWidth: 0 }}>
+            <span className="text-white font-[family-name:var(--font-libre-baskerville)] italic" style={{ fontSize: '3vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
+              Drop
+            </span>
+            <div className="w-full rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
               {/* Title */}
               <div className="text-center" style={{ paddingBlock: '2vw' }}>
@@ -582,7 +598,7 @@ export default function PageDesktop() {
                     className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold whitespace-nowrap"
                     style={{ fontSize: '1.3vw', letterSpacing: '0.15em' }}
                   >
-                    60s Revolution
+                    60<span className="lowercase">s</span> Revolution
                   </span>
                   <div style={{ width: '3vw', height: '0.3vw', backgroundColor: 'white' }} />
                 </div>
@@ -676,6 +692,7 @@ export default function PageDesktop() {
                 </a>
               </div>
             </div>
+          </div>
           </div>
 
         </div>

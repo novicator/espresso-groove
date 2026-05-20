@@ -6,7 +6,7 @@ import DesktopFooter from "../components/DesktopFooter";
 import DesktopNav from "../components/DesktopNav";
 
 export default function NowSpinningDesktop() {
-  const [activeTab, setActiveTab] = useState<string>("History");
+  const [activeTab, setActiveTab] = useState<string>("Behind the Groove");
 
   return (
     <>
@@ -75,11 +75,10 @@ export default function NowSpinningDesktop() {
           {/* Page Title */}
           <div className="text-center" style={{ marginTop: '6vw', marginBottom: '3vw' }}>
             <div className="flex items-center justify-center" style={{ gap: '1vw' }}>
-              <span className="text-white" style={{ fontSize: '4.5vw', textShadow: '0px 0px 10px rgba(0,0,0,0.5)' }}>★</span>
               <h1
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
                 style={{
-                  fontSize: '4.5vw',
+                  fontSize: '6.61vw',
                   fontWeight: 900,
                   letterSpacing: '-0.02em',
                   textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
@@ -88,6 +87,18 @@ export default function NowSpinningDesktop() {
                 Now Spinning
               </h1>
             </div>
+            <p
+              className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
+              style={{
+                fontSize: '4.14vw',
+                fontWeight: 900,
+                letterSpacing: '0.2em',
+                marginTop: '0vw',
+                textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
+              }}
+            >
+              Drip • Drop • Vibe
+            </p>
           </div>
 
           {/* BOX 1 - Description Text */}
@@ -145,7 +156,7 @@ export default function NowSpinningDesktop() {
                     fontWeight: 900,
                   }}
                 >
-                  The 60s Revolution
+                  The 60<span className="lowercase">s</span> Revolution
                 </span>
                 <div
                   className="bg-white"
@@ -157,13 +168,13 @@ export default function NowSpinningDesktop() {
               <div className="flex" style={{ marginTop: '2.5vw' }}>
                 <div className="flex-1 flex justify-center">
                   <button
-                    onClick={() => setActiveTab("History")}
+                    onClick={() => setActiveTab("Behind the Groove")}
                     className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#f06830]"
                     style={{
                       height: '5vw',
-                      width: '24vw',
+                      width: '29vw',
                       borderRadius: '999px',
-                      border: activeTab === "History" ? '2px solid rgba(255,255,255,0.6)' : '2px solid rgba(255,255,255,0.2)',
+                      border: activeTab === "Behind the Groove" ? '2px solid rgba(255,255,255,0.6)' : '2px solid rgba(255,255,255,0.2)',
                     }}
                   >
                     <span
@@ -174,7 +185,7 @@ export default function NowSpinningDesktop() {
                         textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                       }}
                     >
-                      History
+                      Behind the Groove
                     </span>
                   </button>
                 </div>
@@ -244,7 +255,7 @@ export default function NowSpinningDesktop() {
               <div style={{ height: '0.4vw', marginTop: '1.5vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
               {/* Tab Content */}
-              {activeTab === "History" && (
+              {activeTab === "Behind the Groove" && (
                 <div>
                   {/* Section 1: Origins */}
                   <div style={{ marginTop: '2.5vw' }}>
@@ -252,17 +263,17 @@ export default function NowSpinningDesktop() {
                       src="/images/artwork/60s-revolution.png"
                       alt="60s Revolution turntable"
                       className="rounded-lg object-cover"
-                      style={{ width: '18vw', height: '18vw', float: 'left', marginRight: '2vw', marginBottom: '1vw' }}
+                      style={{ width: '18vw', height: '18vw', float: 'left', marginRight: '2vw', marginBottom: '1vw', marginTop: '1.5vw', }}
                     />
                     <p
                       className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                      style={{ fontSize: '1.8vw' }}
+                      style={{ fontSize: '1.6vw' }}
                     >
                       The 60s weren&apos;t just a decade; they were an electric shift. It was the era where the single gave way to the album. Artists began creating <span style={{ fontWeight: 700 }}>albums</span>, a complete journey meant to be heard from Side A to Side B with deep, complex stories that changed how people thought about politics, love, and art. From the sun-drenched melodies of the British Invasion to the psychedelic explorations of the Sunset Strip, the 60s proved that music could be a movement. In basement clubs and massive festivals, artists began to use the studio as an instrument, blending blues, folk, and rock into a sound that felt like the future. When the needle hit those specific records, the world actually felt different.
                     </p>
                     <p
                       className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                      style={{ fontSize: '1.8vw', marginTop: '2vw' }}
+                      style={{ fontSize: '1.6vw', marginTop: '2vw' }}
                     >
                       At <span style={{ fontWeight: 700 }}>Espresso Groove</span>, we&apos;re starting where the modern ritual began: with the pioneers who taught us how to listen.
                     </p>
@@ -274,7 +285,7 @@ export default function NowSpinningDesktop() {
                   {/* Section 2: The Legends */}
                   <h3
                     className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center font-bold"
-                    style={{ fontSize: '3vw', letterSpacing: '0.15em', marginTop: '3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                    style={{ fontSize: '3.5vw', letterSpacing: '0.15em', marginTop: '3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                   >
                     The Legends
                   </h3>
@@ -286,17 +297,66 @@ export default function NowSpinningDesktop() {
                       className="rounded-lg object-cover"
                       style={{ width: '20vw', height: '20vw', float: 'right', marginLeft: '2vw', marginBottom: '1vw' }}
                     />
-                    <p
-                      className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                      style={{ fontSize: '1.8vw' }}
-                    >
-                      The Beatles didn&apos;t just write songs, they reinvented what an album could be. Each new release wasn&apos;t a collection of tracks; it was a leap forward in sound, structure, and ambition. Then came Bob Dylan, who proved a song could carry the weight of a generation, turning lyrics into literature and the protest song into a movement.
+                    <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed italic" style={{ fontSize: '1.7vw', fontWeight: 700 }}>
+                      The 60<span className="lowercase">s</span> didn&apos;t just change music, they changed culture.
                     </p>
-                    <p
-                      className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                      style={{ fontSize: '1.8vw', marginTop: '2vw' }}
-                    >
-                      Jimi Hendrix turned the electric guitar into a language no one had heard before,feedback, fire, and pure invention. Jimmy Page built cathedrals out of distortion with Led Zeppelin, while Janis Joplin tore her voice open and gave it back to the room. Aretha Franklin demanded respect and rewrote what soul could sound like. The Rolling Stones bottled the raw nerve of the blues and made it dangerous again. Every one of them refused to play it safe,and the records they cut still feel like a dare half a century later.
+
+                    <div style={{ marginTop: '1.5vw' }}>
+                      <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '1.6vw', fontWeight: 700 }}>
+                        Bob Dylan - Highway 61 Revisited
+                      </p>
+                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '1.6vw' }}>
+                        Turned lyrics into protest, poetry, and the voice of a generation.
+                      </p>
+                    </div>
+
+                    <div style={{ marginTop: '1.2vw' }}>
+                      <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '1.6vw', fontWeight: 700 }}>
+                        Nina Simone - I Put a Spell on You
+                      </p>
+                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '1.6vw' }}>
+                        One of the most powerful artistic voices of the civil rights era. Elegant, intense, timeless.
+                      </p>
+                    </div>
+
+                    <div style={{ marginTop: '1.2vw' }}>
+                      <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '1.6vw', fontWeight: 700 }}>
+                        The Beatles - Abbey Road
+                      </p>
+                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '1.6vw' }}>
+                        Redefined what an album could be, turning each release into a full sonic experience.
+                      </p>
+                    </div>
+
+                    <div style={{ marginTop: '1.2vw' }}>
+                      <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '1.6vw', fontWeight: 700 }}>
+                        The Beach Boys - Pet Sounds
+                      </p>
+                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '1.6vw' }}>
+                        Blended sunshine harmonies with groundbreaking studio experimentation that reshaped pop music forever.
+                      </p>
+                    </div>
+
+                    <div style={{ marginTop: '1.2vw' }}>
+                      <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '1.6vw', fontWeight: 700 }}>
+                        Jimi Hendrix - Electric Ladyland
+                      </p>
+                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '1.6vw' }}>
+                        Reinvented the electric guitar with feedback, fire, and fearless experimentation.
+                      </p>
+                    </div>
+
+                    <div style={{ marginTop: '1.2vw' }}>
+                      <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '1.6vw', fontWeight: 700 }}>
+                        The Velvet Underground & Nico
+                      </p>
+                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '1.6vw' }}>
+                        Turned art rock into something raw, experimental, and decades ahead of its time.
+                      </p>
+                    </div>
+
+                    <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed italic" style={{ fontSize: '1.7vw', fontWeight: 700, marginTop: '2vw' }}>
+                      They didn&apos;t play it safe, and decades later, the records still feel alive.
                     </p>
                   </div>
 
@@ -311,14 +371,14 @@ export default function NowSpinningDesktop() {
                     Records of the Revolution
                   </h3>
 
-                  <div className="grid grid-cols-3" style={{ gap: '2vw', marginTop: '2.5vw' }}>
+                  <div className="grid grid-cols-3" style={{ gap: '2vw', marginTop: '2.5vw', paddingInline: '8vw' }}>
                     {[
-                      { src: '/images/artwork/sgt-peppers.jpg', title: "Sgt. Pepper's", artist: 'The Beatles' },
-                      { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/67/45/006745f5-95d5-5a06-35ed-d515e9cfd7d8/dj.tbwlxwoh.jpg/600x600bb.jpg', title: 'Are You Experienced', artist: 'Jimi Hendrix Experience' },
-                      { src: '/images/artwork/pet-sounds.jpg', title: 'Pet Sounds', artist: 'The Beach Boys' },
                       { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ff/c0/f8ffc056-55b4-2033-657d-32492d1eea25/827969239926.jpg/600x600bb.jpg', title: 'Highway 61 Revisited', artist: 'Bob Dylan' },
-                      { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/92/93/39/9293397f-a707-237e-ec7e-0ca613a67e3c/06UMGIM04143.rgb.jpg/600x600bb.jpg', title: 'The Velvet Underground & Nico', artist: 'The Velvet Underground' },
+                      { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/18/db/05/18db0507-f276-d93d-a4a7-e856a3f1590a/13UAAIM08283.rgb.jpg/600x600bb.jpg', title: 'I Put a Spell on You', artist: 'Nina Simone' },
                       { src: '/images/artwork/abbey-road.jpg', title: 'Abbey Road', artist: 'The Beatles' },
+                      { src: '/images/artwork/pet-sounds.jpg', title: 'Pet Sounds', artist: 'The Beach Boys' },
+                      { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a6/b8/45/a6b84589-6ff7-a462-9ff9-170b724980d5/dj.wjkdwlks.jpg/600x600bb.jpg', title: 'Electric Ladyland', artist: 'Jimi Hendrix' },
+                      { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/92/93/39/9293397f-a707-237e-ec7e-0ca613a67e3c/06UMGIM04143.rgb.jpg/600x600bb.jpg', title: 'The Velvet Underground & Nico', artist: 'The Velvet Underground' },
                     ].map((album) => (
                       <div key={album.title} className="text-center">
                         <img
@@ -329,13 +389,13 @@ export default function NowSpinningDesktop() {
                         />
                         <p
                           className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold uppercase"
-                          style={{ fontSize: '2vw', marginTop: '0.8vw', textShadow: '1px 1px 4px rgba(0,0,0,0.6)' }}
+                          style={{ fontSize: '1.5vw', marginTop: '0.6vw', textShadow: '1px 1px 4px rgba(0,0,0,0.6)' }}
                         >
                           {album.title}
                         </p>
                         <p
                           className="text-white/60 font-[family-name:var(--font-inter)]"
-                          style={{ fontSize: '2vw' }}
+                          style={{ fontSize: '1.5vw' }}
                         >
                           {album.artist}
                         </p>
@@ -349,21 +409,21 @@ export default function NowSpinningDesktop() {
                   {/* Section 4: Jazz Lives On */}
                   <h3
                     className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center font-bold"
-                    style={{ fontSize: '3vw', letterSpacing: '0.15em', marginTop: '3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                    style={{ fontSize: '3.5vw', letterSpacing: '0.15em', marginTop: '3vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                   >
                     The Sound Lives On
                   </h3>
 
                   <p
                     className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                    style={{ fontSize: '1.8vw', marginTop: '2.5vw' }}
+                    style={{ fontSize: '1.6vw', marginTop: '2.5vw' }}
                   >
                     The sound of the 60s never went away, it just learned new instruments. You hear it in the indie bands chasing Lennon&apos;s vocal harmonies, in the producers sampling Page&apos;s riffs, in the festival lineups still built on the blueprint Woodstock drew up. From Jack White to Tame Impala to Arctic Monkeys, an entire generation of artists is still mining the records cut between 1964 and 1971.
                   </p>
 
                   <p
                     className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                    style={{ fontSize: '1.8vw', marginTop: '2vw', paddingBottom: '2vw' }}
+                    style={{ fontSize: '1.6vw', marginTop: '2vw', paddingBottom: '2vw' }}
                   >
                     That&apos;s why we chose the 60s as our first rotation. It&apos;s the decade that taught music how to take chances, to mean something, to make the room stop and listen. At Espresso Groove, we believe great coffee and great records share the same philosophy: slow down, pay attention, and let the moment move you.
                   </p>
@@ -390,6 +450,7 @@ export default function NowSpinningDesktop() {
                           padding: '0.5vw',
                           paddingBottom: '2.5vw',
                           background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
+                          minWidth: 0,
                         }}
                       >
                         <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">

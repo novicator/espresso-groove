@@ -5,7 +5,7 @@ import Link from "next/link";
 import Footer from "../components/Footer";
 import MobileNav from "../components/MobileNav";
 
-type FilterType = "All" | "The Pour" | "Espresso/Coffee" | "Tea/Matcha" | "Energy/Boba" | "Bakery" | "Dessert";
+type FilterType = "All" | "The Drip" | "Espresso/Coffee" | "Tea/Matcha" | "Energy/Boba" | "Bakery" | "Dessert";
 
 // All vw values converted from px based on 393px width
 // Formula: px ÷ 393 × 100 = vw
@@ -165,7 +165,7 @@ export default function MenuMobile() {
       <div className="relative z-10" style={{  }}>
         {/* Page Title */}
         {/* mt-2=8px=2vw, mb-6=24px=6.1vw */}
-        <div className="text-center" style={{ marginTop: '14vw', marginBottom: '6.1vw' }}>
+        <div className="text-center" style={{ marginTop: '14vw', marginBottom: '6.1vw', }}>
           {/* gap-3=12px=3.1vw */}
           <div className="flex items-center justify-center" style={{ gap: '3.1vw' }}>
             {/* w-18=72px=18.3vw, translateY(15px)=3.8vw, translateX(5px)=1.3vw, scale(1.2) kept */}
@@ -175,7 +175,7 @@ export default function MenuMobile() {
               className="pointer-events-none"
               style={{
                 width: '18.3vw',
-                transform: 'translateY(3.8vw) translateX(1.3vw) scale(1.2)',
+                transform: 'translateY(3.8vw) translateX(-13vw) scale(1.2)',
                 filter: 'drop-shadow(0px 0px 10px rgba(255,150,50,0.5))',
               }}
             />
@@ -190,14 +190,14 @@ export default function MenuMobile() {
                 paddingLeft: '1.2vw',
               }}
             >
-              The Menu
+              Menu
             </h1>
           </div>
           {/* text-[28px]=7.1vw, -mt-3=12px=3.1vw, translateY(-3px)=0.8vw, ml-20=80px=20.4vw, translateX(5px)=1.3vw */}
           <p
             className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
             style={{
-              fontSize: '6.7vw',
+              fontSize: '6.2vw',
               fontWeight: 900,
               letterSpacing: '0.2em',
               marginTop: '-3.1vw',
@@ -260,10 +260,10 @@ export default function MenuMobile() {
                     All
                   </button>
 
-                  {/* Limited Press Gold Banner + The Pour */}
+                  {/* Limited Press Gold Banner + The Drip */}
                   <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                     <div
-                      onClick={() => { setActiveFilter("The Pour"); setDropdownOpen(false); }}
+                      onClick={() => { setActiveFilter("The Drip"); setDropdownOpen(false); }}
                       className="bg-[#d9bc52] noisy flex flex-col items-center justify-center cursor-pointer"
                       style={{
                         position: 'relative',
@@ -296,11 +296,11 @@ export default function MenuMobile() {
                       </span>
                     </div>
                     <button
-                      onClick={() => { setActiveFilter("The Pour"); setDropdownOpen(false); }}
+                      onClick={() => { setActiveFilter("The Drip"); setDropdownOpen(false); }}
                       className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
                       style={{ fontSize: '3.8vw', padding: '3vw 5vw' }}
                     >
-                      The Pour
+                      The Drip
                     </button>
                   </div>
 
@@ -354,8 +354,8 @@ export default function MenuMobile() {
           </div>
         </div>
 
-        {/* The Pour Section - on "All" or "The Pour" */}
-        {(activeFilter === "All" || activeFilter === "The Pour") && (
+        {/* The Drip Section - on "All" or "The Drip" */}
+        {(activeFilter === "All" || activeFilter === "The Drip") && (
         <div
           className="rounded-xl"
           style={{ marginInline: '4vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
@@ -406,7 +406,7 @@ export default function MenuMobile() {
               className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
               style={{ fontSize: '5vw', letterSpacing: '0.15em' }}
             >
-              &ldquo;The Pour&rdquo;
+              The Drip
             </span>
             <div>
               <span
@@ -431,7 +431,7 @@ export default function MenuMobile() {
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
                 style={{ fontSize: '5vw', letterSpacing: '0.15em' }}
               >
-                60s Revolution
+                60<span className="lowercase">s</span> Revolution
               </span>
               <div style={{ width: '4vw', height: '0.6vw', backgroundColor: 'white' }} />
             </div>

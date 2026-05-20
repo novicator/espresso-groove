@@ -593,11 +593,11 @@ export default function VinylXL() {
 
           <div style={{ maxWidth: '1400px', margin: '0 auto', zoom: 0.857 }}>
             {/* Page Title */}
-            <div className="flex flex-col items-center" style={{ marginTop: '-30px', marginBottom: '85.4px', paddingLeft: '336px', width: 'fit-content' }}>
+            <div className="text-center" style={{ marginTop: '-30px', marginBottom: '85.4px' }}>
               <h1
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
                 style={{
-                  fontSize: '107.8px',
+                  fontSize: '90.8px',
                   fontWeight: 900,
                   letterSpacing: '-0.02em',
                   textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
@@ -612,7 +612,7 @@ export default function VinylXL() {
                   fontSize: '62.3px',
                   fontWeight: 900,
                   letterSpacing: '0.2em',
-                  marginTop: '0px',
+                  marginTop: '-10px',
                   textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
                 }}
               >
@@ -865,7 +865,7 @@ export default function VinylXL() {
                         className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
                         style={{ fontSize: '49px', letterSpacing: '0.15em', marginTop: '-7px' }}
                       >
-                        60s Revolution
+                        60<span className="lowercase">s</span> Revolution
                       </span>
                       <div style={{ width: '70px', height: '7px', backgroundColor: 'white' }} />
                     </div>
