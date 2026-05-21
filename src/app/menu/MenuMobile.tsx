@@ -5,7 +5,7 @@ import Link from "next/link";
 import Footer from "../components/Footer";
 import MobileNav from "../components/MobileNav";
 
-type FilterType = "All" | "The Drip" | "Espresso/Coffee" | "Tea/Matcha" | "Energy/Boba" | "Bakery" | "Dessert";
+type FilterType = "All" | "The Drip" | "Espresso/Coffee" | "Tea/Matcha" | "Energy/Boba" | "Bakery";
 
 // All vw values converted from px based on 393px width
 // Formula: px ÷ 393 × 100 = vw
@@ -40,14 +40,6 @@ const bakeryItems = [
   { name: "BANANA BREAD", desc: "Moist, warm, homestyle slice" },
   { name: "CINNAMON ROLL", desc: "Glazed swirl of cinnamon and sugar" },
   { name: "SCONE", desc: "Crumbly, buttery, pairs with any drink" },
-];
-
-const dessertItems = [
-  { name: "TIRAMISU", desc: "Espresso-soaked layers of mascarpone" },
-  { name: "BROWNIE", desc: "Rich, fudgy, chocolate perfection" },
-  { name: "CHEESECAKE SLICE", desc: "Creamy New York-style classic" },
-  { name: "COOKIE", desc: "Warm chocolate chip, baked fresh" },
-  { name: "AFFOGATO", desc: "Vanilla gelato drowned in espresso" },
 ];
 
 export default function MenuMobile() {
@@ -339,15 +331,6 @@ export default function MenuMobile() {
                   >
                     Bakery
                   </button>
-
-                  {/* Dessert */}
-                  <button
-                    onClick={() => { setActiveFilter("Dessert"); setDropdownOpen(false); }}
-                    className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
-                    style={{ fontSize: '3.8vw', padding: '3vw 5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
-                  >
-                    Dessert
-                  </button>
                 </div>
               </div>
             )}
@@ -632,34 +615,6 @@ export default function MenuMobile() {
               </div>
               {bakeryItems.map((item, index) => (
                 <div key={`bakery-${index}`}>
-                  {index > 0 && <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
-                  <div className="flex" style={{ padding: '3vw 4vw', gap: '3vw' }}>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between" style={{ gap: '2vw' }}>
-                        <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
-                          style={{ fontSize: '5.7vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                      </div>
-                      <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3.7vw', marginTop: '0.5vw' }}>{item.desc}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </>
-            )}
-
-            {/* Dessert Section */}
-            {(activeFilter === "All" || activeFilter === "Dessert") && (
-            <>
-              <div className="bg-[#24ADFF] noisy" style={{ padding: '2.5vw 4vw' }}>
-                <p
-                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{ fontSize: '4.6vw', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-                >
-                  Dessert
-                </p>
-              </div>
-              {dessertItems.map((item, index) => (
-                <div key={`dessert-${index}`}>
                   {index > 0 && <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
                   <div className="flex" style={{ padding: '3vw 4vw', gap: '3vw' }}>
                     <div className="flex-1 min-w-0">

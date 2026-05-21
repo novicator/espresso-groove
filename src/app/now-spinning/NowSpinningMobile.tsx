@@ -132,16 +132,37 @@ export default function NowSpinningMobile() {
                     >
                         <div className="rounded-lg overflow-hidden bg-[#2d1f1a]" style={{ padding: '5vw' }}>
                             <p
+                                className="font-[family-name:var(--font-libre-baskerville)] text-white text-center font-bold uppercase"
+                                style={{
+                                    fontSize: '6vw',
+                                    letterSpacing: '0.1em',
+                                    textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+                                }}
+                            >
+                                The Drop
+                            </p>
+                            <p
                                 className="font-[family-name:var(--font-libre-baskerville)] text-white"
                                 style={{
                                     fontSize: '3.8vw',
                                     lineHeight: '1.7',
                                     textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
+                                    marginTop: '3vw',
                                 }}
                             >
-                                Every rotation tells a story. We pick a genre, dive deep into the sound, and craft
-                                drinks inspired by the mood behind the music. Explore the
-                                genre, sip the lineup, and take home the vinyl that started it all.
+                                Every rotation tells a story. We pick a genre, dive deep into the sound, and craft coffee, tea, and energy/boba drinks inspired by the mood behind the music.
+                            </p>
+                            <p
+                                className="font-[family-name:var(--font-libre-baskerville)] text-white text-center italic"
+                                style={{
+                                    fontSize: '3.8vw',
+                                    lineHeight: '1.7',
+                                    textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
+                                    marginTop: '3vw',
+                                    fontWeight: 700,
+                                }}
+                            >
+                                Sip the drinks. Spin the Vinyl. Stay for the vibe.
                             </p>
                         </div>
 

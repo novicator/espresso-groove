@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import MusicNotes from "./MusicNotes";
 
 export default function Footer({ style, className }: { style?: React.CSSProperties; className?: string }) {
@@ -178,63 +177,7 @@ export default function Footer({ style, className }: { style?: React.CSSProperti
           </a>
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="flex flex-col w-full" style={{ marginTop: '8vw' }}>
-          <Link href="/menu" className="relative w-full bg-[#f06830] noisy flex items-center justify-center" style={{ height: '13vw' }}>
-            <span
-              className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
-              style={{
-                fontSize: '5.6vw',
-                textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
-                letterSpacing: '0.1em',
-              }}
-            >Menu</span>
-          </Link>
-
-          <Link href="/vinyl" className="relative w-full bg-[#2a7d7d] noisy flex items-center justify-center" style={{ height: '13vw' }}>
-            <span
-              className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
-              style={{
-                fontSize: '5.6vw',
-                textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
-                letterSpacing: '0.2em',
-              }}
-            >Vinyl</span>
-          </Link>
-
-          <Link href="/merch" className="relative w-full bg-[#6b4c8c] noisy flex items-center justify-center" style={{ height: '13vw' }}>
-            <span
-              className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
-              style={{
-                fontSize: '5.6vw',
-                textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
-                letterSpacing: '0.12em',
-              }}
-            >Merch</span>
-          </Link>
-
-          <Link href="/events" className="relative w-full bg-[#24ADFF] noisy flex items-center justify-center" style={{ height: '13vw' }}>
-            <span
-              className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
-              style={{
-                fontSize: '5.6vw',
-                textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
-                letterSpacing: '0.12em',
-              }}
-            >Events</span>
-          </Link>
-
-          <Link href="/now-spinning" className="relative w-full bg-[#6F4E37] noisy flex items-center justify-center" style={{ height: '13vw' }}>
-            <span
-              className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-white"
-              style={{
-                fontSize: '5.6vw',
-                textShadow: '1px 1px 0 rgba(255,255,255,0.4), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
-                letterSpacing: '0.1em',
-              }}
-            >Now Spinning</span>
-          </Link>
-        </div>
+        <div style={{ height: '15vw' }} />
 
       </div>
     </div>

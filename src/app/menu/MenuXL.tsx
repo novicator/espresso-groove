@@ -29,7 +29,7 @@ const energyItems = [
   { name: "STATIC SHOCK", desc: "Passion fruit with guarana & electrolytes", smallDesc: true },
 ];
 
-type FilterType = "All" | "The Drip" | "Espresso/Coffee" | "Tea/Matcha" | "Energy/Boba" | "Bakery" | "Dessert";
+type FilterType = "All" | "The Drip" | "Espresso/Coffee" | "Tea/Matcha" | "Energy/Boba" | "Bakery";
 
 export default function MenuXL() {
   const [activeFilter, setActiveFilter] = useState<FilterType>("All");
@@ -223,14 +223,6 @@ export default function MenuXL() {
                         style={{ fontSize: '19.2px', padding: '14.4px 30px', borderTop: '1px solid rgba(255,255,255,0.1)' }}
                       >
                         Bakery
-                      </button>
-
-                      <button
-                        onClick={() => { setActiveFilter("Dessert"); setDropdownOpen(false); }}
-                        className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
-                        style={{ fontSize: '19.2px', padding: '14.4px 30px', borderTop: '1px solid rgba(255,255,255,0.1)' }}
-                      >
-                        Dessert
                       </button>
                     </div>
                   </div>
@@ -468,33 +460,6 @@ export default function MenuXL() {
                         { name: "SCONE", desc: "Crumbly, buttery, pairs with any drink" },
                       ].map((item, index) => (
                         <div key={`bakery-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '6px', borderRight: index < 4 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 6px' }}>
-                          <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
-                            style={{ fontSize: item.smallName ? '31.2px' : '33.6px', marginTop: '15.6px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                          <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '19.2px' }}>{item.desc}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </>)}
-
-                  {(activeFilter === "All" || activeFilter === "Dessert") && (<>
-                    {/* Dessert Section */}
-                    <div className="bg-[#24ADFF] noisy" style={{ padding: '12px 24px' }}>
-                      <p
-                        className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                        style={{ fontSize: '24px', letterSpacing: '0.07em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-                      >
-                        Dessert
-                      </p>
-                    </div>
-                    <div className="flex" style={{ padding: '18px 12px', gap: '6px' }}>
-                      {[
-                        { name: "TIRAMISU", desc: "Espresso-soaked layers of mascarpone" },
-                        { name: "BROWNIE", desc: "Rich, fudgy, chocolate perfection" },
-                        { name: "CHEESECAKE SLICE", desc: "Creamy New York-style classic", smallName: true },
-                        { name: "COOKIE", desc: "Warm chocolate chip, baked fresh" },
-                        { name: "AFFOGATO", desc: "Vanilla gelato drowned in espresso" },
-                      ].map((item, index) => (
-                        <div key={`dessert-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '6px', borderRight: index < 4 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 6px' }}>
                           <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
                             style={{ fontSize: item.smallName ? '31.2px' : '33.6px', marginTop: '15.6px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
                           <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '19.2px' }}>{item.desc}</p>

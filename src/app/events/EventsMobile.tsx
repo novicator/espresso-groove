@@ -130,14 +130,14 @@ export default function EventsMobile() {
               {/* Text */}
               <div style={{ paddingBlock: '5vw', paddingInline: '3vw', }}>
                 <p
-                  className="font-[family-name:var(--font-libre-baskerville)] text-white italic"
+                  className="font-[family-name:var(--font-libre-baskerville)] text-white italic text-center"
                   style={{
                     fontSize: '3.8vw',
                     lineHeight: '1.7',
                     textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
                   }}
                 >
-                  Where the vibe comes to life
+                  Where the Drip, Drop, Vibe comes to life.
                 </p>
                 <p
                   className="font-[family-name:var(--font-libre-baskerville)] text-white"

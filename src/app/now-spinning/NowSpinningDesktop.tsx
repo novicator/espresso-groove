@@ -107,16 +107,37 @@ export default function NowSpinningDesktop() {
           >
             <div className="bg-[#2d1f1a]" style={{ borderRadius: '0.7vw', padding: '2.5vw' }}>
               <p
+                className="font-[family-name:var(--font-libre-baskerville)] text-white text-center font-bold uppercase"
+                style={{
+                  fontSize: '2.8vw',
+                  letterSpacing: '0.1em',
+                  textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+                }}
+              >
+                The Drop
+              </p>
+              <p
                 className="font-[family-name:var(--font-libre-baskerville)] text-white"
                 style={{
                   fontSize: '1.9vw',
                   lineHeight: '1.7',
                   textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
+                  marginTop: '1.5vw',
                 }}
               >
-                Every rotation tells a story. We pick a genre, dive deep into the sound, and craft
-                drinks inspired by the mood behind the music. Explore the
-                genre, sip the lineup, and take home the vinyl that started it all.
+                Every rotation tells a story. We pick a genre, dive deep into the sound, and craft coffee, tea, and energy/boba drinks inspired by the mood behind the music.
+              </p>
+              <p
+                className="font-[family-name:var(--font-libre-baskerville)] text-white text-center italic"
+                style={{
+                  fontSize: '1.9vw',
+                  lineHeight: '1.7',
+                  textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
+                  marginTop: '1.5vw',
+                  fontWeight: 700,
+                }}
+              >
+                Sip the drinks. Spin the Vinyl. Stay for the vibe.
               </p>
             </div>
           </div>

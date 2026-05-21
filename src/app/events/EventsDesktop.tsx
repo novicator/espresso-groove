@@ -141,14 +141,14 @@ export default function EventsDesktop() {
           >
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a]" style={{ borderRadius: '0.7vw', padding: '2vw' }}>
               <p
-                className="font-[family-name:var(--font-libre-baskerville)] text-white italic"
+                className="font-[family-name:var(--font-libre-baskerville)] text-white italic text-center"
                 style={{
                   fontSize: '1.8vw',
                   lineHeight: '.5',
                   textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
                 }}
               >
-                Where the vibe comes to life
+                Where the Drip, Drop, Vibe comes to life.
               </p>
               <p
                 className="font-[family-name:var(--font-libre-baskerville)] text-white"
