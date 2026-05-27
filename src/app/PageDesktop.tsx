@@ -143,7 +143,7 @@ export default function PageDesktop() {
           src="/images/Expresso groove.svg"
           alt="Espresso Groove"
           className="logo-glow"
-          style={{ width: '50vw', marginLeft: '-3vw', marginTop: '-2vw' }}
+          style={{ width: '58vw', marginLeft: '-5vw', marginTop: '-2vw' }}
         />
         <h2
           className="text-white text-[4.3vw] font-[family-name:var(--font-libre-baskerville)]"
@@ -157,7 +157,7 @@ export default function PageDesktop() {
           Coffee & Records
         </h2>
         <p
-          className="text-white text-[4.5vw] font-[family-name:var(--font-libre-baskerville)] italic"
+          className="text-white text-[3.7vw] font-[family-name:var(--font-libre-baskerville)] italic"
           style={{
             textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
             marginTop: '1vw',
@@ -165,7 +165,7 @@ export default function PageDesktop() {
             fontWeight: 900,
           }}
         >
-          Craft drinks.<br />Curated sound.
+          Craft drinks<br />Curated sound
         </p>
 
         {/* Buttons */}
@@ -430,7 +430,7 @@ export default function PageDesktop() {
             <span className="text-white font-[family-name:var(--font-libre-baskerville)] italic" style={{ fontSize: '3vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
               Vibe
             </span>
-            <div className="w-full rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
+            <Link href="/now-spinning" className="w-full rounded-xl block" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
               {/* Title */}
               <div className="text-center" style={{ paddingBlock: '1.2vw' }}>
@@ -462,8 +462,7 @@ export default function PageDesktop() {
               {/* Learn More */}
               <div className="mt-auto">
                 <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-                <a
-                  href="/now-spinning"
+                <div
                   className="flex items-center justify-center"
                   style={{ paddingBlock: '0vw', gap: '1vw' }}
                 >
@@ -471,10 +470,10 @@ export default function PageDesktop() {
                     Now Spinning
                   </span>
                   <span className="text-white" style={{ fontSize: '3vw' }}>→</span>
-                </a>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
 
           </div>
 
@@ -483,7 +482,7 @@ export default function PageDesktop() {
             <span className="text-white font-[family-name:var(--font-libre-baskerville)] italic" style={{ fontSize: '3vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
               Drip
             </span>
-            <div className="w-full rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
+            <Link href="/menu" className="w-full rounded-xl block" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
               {/* Title */}
               <div className="text-center" style={{ paddingBlock: '2vw' }}>
@@ -550,8 +549,7 @@ export default function PageDesktop() {
               {/* View Menu */}
               <div className="mt-auto">
                 <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-                <a
-                  href="/menu"
+                <div
                   className="flex items-center justify-center"
                   style={{ paddingBlock: '0vw', gap: '1vw' }}
                 >
@@ -559,10 +557,10 @@ export default function PageDesktop() {
                     Menu
                   </span>
                   <span className="text-white" style={{ fontSize: '3vw' }}>→</span>
-                </a>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
 
           </div>
 
@@ -571,7 +569,7 @@ export default function PageDesktop() {
             <span className="text-white font-[family-name:var(--font-libre-baskerville)] italic" style={{ fontSize: '3vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
               Drop
             </span>
-            <div className="w-full rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
+            <Link href="/vinyl" className="w-full rounded-xl block" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '44.5vw' }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
               {/* Title */}
               <div className="text-center" style={{ paddingBlock: '2vw' }}>
@@ -655,6 +653,8 @@ export default function PageDesktop() {
                 ref={trackRef}
                 style={{ marginInline: '1.5vw', marginBottom: '1vw', height: '0.3vw', backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: '999px', position: 'relative', cursor: 'pointer' }}
                 onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
                   if (!scrollRef.current || !trackRef.current) return;
                   const rect = trackRef.current.getBoundingClientRect();
                   const clickRatio = (e.clientX - rect.left) / rect.width;
@@ -663,7 +663,8 @@ export default function PageDesktop() {
                 }}
               >
                 <div
-                  onMouseDown={handleThumbMouseDown}
+                  onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); handleThumbMouseDown(e); }}
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
                   style={{
                     position: 'absolute',
                     top: 0,
@@ -680,8 +681,7 @@ export default function PageDesktop() {
               {/* Vinyl Footer */}
               <div className="mt-auto">
                 <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-                <a
-                  href="/vinyl"
+                <div
                   className="flex items-center justify-center"
                   style={{ paddingBlock: '0vw', gap: '1vw' }}
                 >
@@ -689,10 +689,10 @@ export default function PageDesktop() {
                     Vinyl
                   </span>
                   <span className="text-white" style={{ fontSize: '3vw' }}>→</span>
-                </a>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
           </div>
 
         </div>

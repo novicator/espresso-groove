@@ -144,7 +144,7 @@ export default function PageXL() {
               src="/images/Expresso groove.svg"
               alt="Espresso Groove"
               className="logo-glow"
-              style={{ width: '599.50px', marginLeft: '-35.97px', marginTop: '10.98px' }}
+              style={{ width: '750.50px', marginLeft: '-60.97px', marginTop: '10.98px' }}
             />
             <h2
               className="text-white font-[family-name:var(--font-libre-baskerville)]"
@@ -161,14 +161,14 @@ export default function PageXL() {
             <p
               className="text-white font-[family-name:var(--font-libre-baskerville)] italic"
               style={{
-                fontSize: '53.96px',
+                fontSize: '45.96px',
                 textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
                 marginTop: '11.99px',
                 paddingLeft: '53.96px',
                 fontWeight: 900,
               }}
             >
-              Craft drinks.<br />Curated sound.
+              Craft drinks<br />Curated sound
             </p>
 
             {/* Buttons */}
@@ -338,7 +338,7 @@ export default function PageXL() {
               style={{
                 width: '392px',
                 right: '115px',
-                top: '115px',
+                top: '205px',
                 filter: 'drop-shadow(0px 0px 15px rgba(255,150,50,0.5))',
               }}
             />
@@ -435,7 +435,7 @@ export default function PageXL() {
                 <span className="text-white font-[family-name:var(--font-libre-baskerville)] italic" style={{ fontSize: '42px', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
                   Vibe
                 </span>
-                <div className="w-full rounded-xl" style={{ padding: '11.2px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '623px' }}>
+                <Link href="/now-spinning" className="w-full rounded-xl block" style={{ padding: '11.2px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '623px' }}>
                 <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
                   {/* Title */}
                   <div className="text-center" style={{ paddingBlock: '12px' }}>
@@ -467,8 +467,7 @@ export default function PageXL() {
                   {/* Learn More */}
                   <div className="mt-auto">
                     <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-                    <a
-                      href="/now-spinning"
+                    <div
                       className="flex items-center justify-center"
                       style={{ paddingBlock: '0px', gap: '14px' }}
                     >
@@ -476,10 +475,10 @@ export default function PageXL() {
                         Now Spinning
                       </span>
                       <span className="text-white" style={{ fontSize: '42px' }}>→</span>
-                    </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
 
               </div>
 
@@ -488,7 +487,7 @@ export default function PageXL() {
                 <span className="text-white font-[family-name:var(--font-libre-baskerville)] italic" style={{ fontSize: '42px', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
                   Drip
                 </span>
-                <div className="w-full rounded-xl" style={{ padding: '11.2px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '623px' }}>
+                <Link href="/menu" className="w-full rounded-xl block" style={{ padding: '11.2px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '623px' }}>
                 <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
                   {/* Title */}
                   <div className="text-center" style={{ paddingBlock: '28px' }}>
@@ -549,8 +548,7 @@ export default function PageXL() {
                   {/* View Menu */}
                   <div className="mt-auto">
                     <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-                    <a
-                      href="/menu"
+                    <div
                       className="flex items-center justify-center"
                       style={{ paddingBlock: '0px', gap: '14px' }}
                     >
@@ -558,10 +556,10 @@ export default function PageXL() {
                         Menu
                       </span>
                       <span className="text-white" style={{ fontSize: '42px' }}>→</span>
-                    </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
 
               </div>
 
@@ -570,7 +568,7 @@ export default function PageXL() {
                 <span className="text-white font-[family-name:var(--font-libre-baskerville)] italic" style={{ fontSize: '42px', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
                   Drop
                 </span>
-                <div className="w-full rounded-xl" style={{ padding: '11.2px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '623px' }}>
+                <Link href="/vinyl" className="w-full rounded-xl block" style={{ padding: '11.2px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', height: '623px' }}>
                 <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full flex flex-col">
                   {/* Title */}
                   <div className="text-center" style={{ paddingBlock: '28px' }}>
@@ -653,6 +651,8 @@ export default function PageXL() {
                     ref={trackRef}
                     style={{ marginInline: '21px', marginBottom: '14px', height: '4.2px', backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: '999px', position: 'relative', cursor: 'pointer' }}
                     onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
                       if (!scrollRef.current || !trackRef.current) return;
                       const rect = trackRef.current.getBoundingClientRect();
                       const clickRatio = (e.clientX - rect.left) / rect.width;
@@ -661,7 +661,8 @@ export default function PageXL() {
                     }}
                   >
                     <div
-                      onMouseDown={handleThumbMouseDown}
+                      onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); handleThumbMouseDown(e); }}
+                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
                       style={{
                         position: 'absolute',
                         top: 0,
@@ -678,8 +679,7 @@ export default function PageXL() {
                   {/* Vinyl Footer */}
                   <div className="mt-auto">
                     <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-                    <a
-                      href="/vinyl"
+                    <div
                       className="flex items-center justify-center"
                       style={{ paddingBlock: '0px', gap: '14px' }}
                     >
@@ -687,10 +687,10 @@ export default function PageXL() {
                         Vinyl
                       </span>
                       <span className="text-white" style={{ fontSize: '42px' }}>→</span>
-                    </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
               </div>
 
             </div>

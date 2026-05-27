@@ -162,7 +162,7 @@ export default function NowSpinningMobile() {
                                     fontWeight: 700,
                                 }}
                             >
-                                Sip the drinks. Spin the Vinyl. Stay for the vibe.
+                                Sip the drinks. Spin the vinyl. Stay for the vibe.
                             </p>
                         </div>
 
@@ -462,14 +462,14 @@ export default function NowSpinningMobile() {
                                         className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                                         style={{ fontSize: '4vw', marginTop: '4vw' }}
                                     >
-                                        The sound of the 60s never went away, it just learned new instruments. You hear it in the indie bands chasing Lennon&apos;s vocal harmonies, in the producers sampling Page&apos;s riffs, in the festival lineups still built on the blueprint Woodstock drew up. From Jack White to Tame Impala to Arctic Monkeys, an entire generation of artists is still mining the records cut between 1964 and 1971.
+                                        The sound of the 60s never disappeared. It just changed shape. You still hear it in indie guitars, layered harmonies, vintage tones, and artists chasing the same fearless energy that redefined modern music. From Jack White to Tame Impala to The Black Keys, today&apos;s sound still echoes the revolution that changed everything.
                                     </p>
 
                                     <p
                                         className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
                                         style={{ fontSize: '4vw', marginTop: '4vw' }}
                                     >
-                                        That&apos;s why we chose the 60s as our first rotation. It&apos;s the decade that taught music how to take chances, to mean something, to make the room stop and listen. At Espresso Groove, we believe great coffee and great records share the same philosophy: slow down, pay attention, and let the moment move you.
+                                        That&apos;s why the 60s are now spinning at Espresso Groove. It was the decade that taught music to break rules, say something real, and make people stop and listen. At Espresso Groove, we believe that great coffee and great records were never meant to be rushed. Sip slowly. Spin something timeless. Stay in the moment.
                                     </p>
 
                                     <div style={{ paddingTop: '5vw' }} />

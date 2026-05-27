@@ -148,7 +148,7 @@ export default function EventsDesktop() {
                   textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
                 }}
               >
-                Where the Drip, Drop, Vibe comes to life.
+                Where the Drip • Drop • Vibe comes to life.
               </p>
               <p
                 className="font-[family-name:var(--font-libre-baskerville)] text-white"
@@ -159,7 +159,7 @@ export default function EventsDesktop() {
                   marginTop: '1.5vw',
                 }}
               >
-                Events on the calendar, listening parties, music, mics, trivia, and more.
+                Events on the calendar:<br />listening parties, live music, open mics, trivia nights, and more.
               </p>
               <p
                 className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold"
@@ -170,7 +170,7 @@ export default function EventsDesktop() {
                   marginTop: '1.5vw',
                 }}
               >
-                Your stage. Your hangout. Your soundtrack.
+                Sip. Spin. Stay.
               </p>
             </div>
           </div>
@@ -371,7 +371,7 @@ export default function EventsDesktop() {
                     className="font-[family-name:var(--font-libre-baskerville)] text-white text-center"
                     style={{ fontSize: '1.6vw' }}
                   >
-                    No events this day, but the coffee&apos;s still on.
+                    No events today. The drinks and records are still flowing.
                   </p>
                 )}
               </div>

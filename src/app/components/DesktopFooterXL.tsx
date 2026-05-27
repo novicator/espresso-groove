@@ -74,7 +74,14 @@ export default function DesktopFooterXL() {
                     Sun: 8am–5pm
                   </p>
                   <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '21px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 700 }}>
-                    Monday: Unplugged <br />(Flipping the records & prepping the beans. See you Tuesday at 7AM.)
+                    Monday: Unplugged <br />
+                    <span style={{ display: 'inline-block', width: 0, verticalAlign: 'top' }}>
+                      <span className="whitespace-nowrap">(Flipping the records & prepping the beans.</span>
+                    </span>
+                    <br />
+                    <span style={{ display: 'inline-block', width: 0, verticalAlign: 'top' }}>
+                      <span className="whitespace-nowrap">See you Tuesday at 7am.)</span>
+                    </span>
                   </p>
                 </div>
               </div>

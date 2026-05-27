@@ -326,8 +326,7 @@ export default function MenuDesktop() {
                         className="font-[family-name:var(--font-libre-baskerville)] text-white/80 text-left"
                         style={{ fontSize: '1.55vw', lineHeight: '1.7', marginTop: '1vw' }}
                       >
-                        Each featured genre inspires three signature drinks, one coffee, one tea, one energy,
-                        crafted to match the mood of the music on the turntable.
+                        Each featured genre inspires <span className="font-black">limited press</span> drinks crafted to match the mood of the music on the turntable.
                       </p>
                     </div>
 

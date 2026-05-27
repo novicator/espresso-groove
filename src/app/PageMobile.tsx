@@ -130,7 +130,7 @@ export default function PageMobile() {
             src="/images/Expresso groove.svg"
             alt="Espresso Groove"
             className="logo-glow"
-            style={{ width: '85vw', marginLeft: '-6vw', marginTop: '2vw',}}
+            style={{ width: '110vw', marginLeft: '-10vw', marginTop: '2vw',}}
           />
           <h2
             className="text-white text-[8vw] font-[family-name:var(--font-libre-baskerville)]"
@@ -144,7 +144,7 @@ export default function PageMobile() {
             Coffee & Records
           </h2>
           <p
-            className="text-white text-[7.2vw] font-[family-name:var(--font-libre-baskerville)] italic"
+            className="text-white text-[6.2vw] font-[family-name:var(--font-libre-baskerville)] italic"
             style={{
               textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
               marginTop: '2vw',
@@ -152,7 +152,7 @@ export default function PageMobile() {
               fontWeight: 900,
             }}
           >
-            Craft drinks.<br />Curated sound.
+            Craft drinks<br />Curated sound
           </p>
 
           <div style={{ height: '90vw' }}></div>
@@ -422,7 +422,7 @@ export default function PageMobile() {
             <span className="text-white font-[family-name:var(--font-libre-baskerville)] italic" style={{ fontSize: '7vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
               Vibe
             </span>
-            <div className="w-full rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
+            <Link href="/now-spinning" className="w-full rounded-xl block" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
           <div
             className="rounded-lg overflow-hidden bg-[#2d1f1a]"
           >
@@ -461,8 +461,7 @@ export default function PageMobile() {
 
             {/* Learn More */}
             <div style={{ height: '0.4vw', marginTop: '0vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-            <a
-              href="/now-spinning"
+            <div
               className="flex items-center justify-center"
               style={{ paddingInline: '4vw', paddingBlock: '3vw', gap: '2vw' }}
             >
@@ -473,9 +472,9 @@ export default function PageMobile() {
                 Now Spinning
               </span>
               <span className="text-white" style={{ fontSize: '3.5vw' }}>→</span>
-            </a>
+            </div>
           </div>
-          </div>
+          </Link>
 
           </div>
 
@@ -487,7 +486,7 @@ export default function PageMobile() {
             <span className="text-white font-[family-name:var(--font-libre-baskerville)] italic" style={{ fontSize: '7vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
               Drip
             </span>
-            <div className="w-full rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
+            <Link href="/menu" className="w-full rounded-xl block" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
           <div
             className="rounded-lg overflow-hidden bg-[#2d1f1a]"
           >
@@ -589,8 +588,7 @@ export default function PageMobile() {
 
             {/* View Featured Menu */}
             <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-            <Link
-              href="/menu"
+            <div
               className="flex items-center justify-center"
               style={{ paddingBlock: '3vw', gap: '2vw' }}
             >
@@ -600,10 +598,10 @@ export default function PageMobile() {
               >
                 Menu →
               </span>
-            </Link>
+            </div>
 
           </div>
-          </div>
+          </Link>
 
           </div>
 
@@ -615,7 +613,7 @@ export default function PageMobile() {
             <span className="text-white font-[family-name:var(--font-libre-baskerville)] italic" style={{ fontSize: '7vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
               Drop
             </span>
-            <div className="w-full rounded-xl" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
+            <Link href="/vinyl" className="w-full rounded-xl block" style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
             <div className="rounded-lg overflow-hidden bg-[#2d1f1a] flex flex-col" style={{ height: '115vw' }}>
               {/* Title */}
               <div
@@ -739,8 +737,7 @@ export default function PageMobile() {
 
               {/* View Vinyl */}
               <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
-              <Link
-                href="/vinyl"
+              <div
                 className="flex items-center justify-center"
                 style={{ paddingBlock: '3vw', gap: '2vw' }}
               >
@@ -750,9 +747,9 @@ export default function PageMobile() {
                 >
                   View All Vinyl →
                 </span>
-              </Link>
+              </div>
             </div>
-          </div>
+          </Link>
           </div>
 
           </div>
