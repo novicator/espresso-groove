@@ -182,7 +182,7 @@ export default function DesktopFooter() {
                 type="button"
                 onClick={() => setContactOpen(false)}
                 aria-label="Close contact form"
-                className="absolute text-white leading-none"
+                className="absolute text-white leading-none cursor-pointer"
                 style={{ top: '1.2vw', right: '1.5vw', fontSize: '2.4vw', fontWeight: 700 }}
               >
                 &times;
