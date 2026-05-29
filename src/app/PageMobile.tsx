@@ -1067,7 +1067,7 @@ export default function PageMobile() {
                 type="button"
                 onClick={() => setContactOpen(false)}
                 aria-label="Close contact form"
-                className="absolute text-white leading-none"
+                className="absolute text-white leading-none cursor-pointer"
                 style={{ top: '3.5vw', right: '4.5vw', fontSize: '7vw', fontWeight: 700 }}
               >
                 &times;
