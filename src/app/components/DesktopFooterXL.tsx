@@ -1,9 +1,32 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import MusicNotes from "./MusicNotes";
+import { sendContactForm, type ContactStatus } from "../lib/contact";
 
 export default function DesktopFooterXL() {
+  const [contactOpen, setContactOpen] = useState(false);
+  const [contactStatus, setContactStatus] = useState<ContactStatus>("idle");
+
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setContactStatus("sending");
+    const ok = await sendContactForm(form);
+    if (ok) {
+      form.reset();
+      setContactStatus("success");
+    } else {
+      setContactStatus("error");
+    }
+  };
+
+  const openContact = () => {
+    setContactStatus("idle");
+    setContactOpen(true);
+  };
+
   return (
     <div>
       {/* === Music Notes (full width) === */}
@@ -39,7 +62,7 @@ export default function DesktopFooterXL() {
             </h3>
             <div style={{ marginTop: '21px' }}>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=3500+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
+                href="https://www.google.com/maps/search/?api=1&query=3540+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start"
@@ -51,7 +74,7 @@ export default function DesktopFooterXL() {
                 </svg>
                 <div>
                   <p className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium" style={{ fontSize: '23.8px', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
-                    3500 Belle Terre Blvd • Suite C
+                    3540 Belle Terre Blvd • Suite C
                   </p>
                   <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '21px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 700 }}>
                     Myrtle Beach, SC 29526
@@ -90,30 +113,26 @@ export default function DesktopFooterXL() {
 
           {/* Right: Contact Us + Navigate */}
           <div className="flex-1" style={{ marginLeft: '28px', }}>
-            <h3
-              className="text-white font-[family-name:var(--font-bebas-neue)] uppercase"
-              style={{ fontSize: '42px', letterSpacing: '0.15em', textShadow: '2px 2px 8px rgba(0,0,0,0.3)', fontWeight: 700, marginTop: '42px', marginLeft: '-14px' }}
-            >
-              Contact Us
-            </h3>
-            <div style={{ marginTop: '21px', marginLeft: '-14px' }}>
-              <a href="tel:+10000000000" className="hidden flex items-center" style={{ gap: '9.8px' }}>
-                <svg className="text-white flex-shrink-0" style={{ width: '42px', height: '42px', filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.6))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <p className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '23.8px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}>
-                  (000) 000-0000
-                </p>
-              </a>
-
-              <a href="mailto:espressogroove@gmail.com" className="flex items-center" style={{ gap: '9.8px', marginTop: '21px' }}>
-                <svg className="text-white flex-shrink-0" style={{ width: '42px', height: '42px', filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.6))' }} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <p className="text-white font-[family-name:var(--font-libre-baskerville)]" style={{ fontSize: '23.8px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}>
-                  espressogroove@gmail.com
-                </p>
-              </a>
+            {/* Contact Button */}
+            <div style={{ marginTop: '42px', marginLeft: '-14px' }}>
+              <button
+                type="button"
+                onClick={openContact}
+                className="rounded-full inline-block"
+                style={{ padding: '3px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+              >
+                <div
+                  className="rounded-full bg-[#2d1f1a] flex items-center justify-center"
+                  style={{ paddingBlock: '14px', paddingInline: '49px' }}
+                >
+                  <span
+                    className="text-white font-[family-name:var(--font-libre-baskerville)] uppercase"
+                    style={{ fontSize: '26px', fontWeight: 900, letterSpacing: '0.1em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                  >
+                    Contact Us
+                  </span>
+                </div>
+              </button>
             </div>
 
             {/* Follow Us */}
@@ -144,6 +163,126 @@ export default function DesktopFooterXL() {
 
         </div>
       </div>
+
+      {/* === Contact Form Modal === */}
+      {contactOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          style={{ background: 'rgba(0,0,0,0.65)', padding: '24px' }}
+          onClick={() => setContactOpen(false)}
+        >
+          <div
+            className="rounded-2xl"
+            style={{ width: '560px', maxWidth: '92vw', padding: '3px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
+              className="rounded-2xl bg-[#2d1f1a] relative"
+              style={{ padding: '36px', maxHeight: '85vh', overflowY: 'auto' }}
+            >
+              <button
+                type="button"
+                onClick={() => setContactOpen(false)}
+                aria-label="Close contact form"
+                className="absolute text-white leading-none"
+                style={{ top: '18px', right: '22px', fontSize: '34px', fontWeight: 700 }}
+              >
+                &times;
+              </button>
+
+              <h4
+                className="text-white font-[family-name:var(--font-bebas-neue)] uppercase"
+                style={{ fontSize: '38px', letterSpacing: '0.12em', textShadow: '2px 2px 8px rgba(0,0,0,0.4)' }}
+              >
+                Contact Us
+              </h4>
+
+              {contactStatus === "success" ? (
+                <p
+                  className="text-white font-[family-name:var(--font-libre-baskerville)] text-center"
+                  style={{ fontSize: '24px', fontWeight: 900, marginTop: '36px', marginBottom: '28px', lineHeight: 1.5 }}
+                >
+                  Thanks! We&apos;ll be in touch soon.
+                </p>
+              ) : (
+                <form
+                  className="flex flex-col"
+                  style={{ gap: '16px', marginTop: '26px' }}
+                  onSubmit={handleContactSubmit}
+                >
+                  <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} />
+                  <div className="flex" style={{ gap: '16px' }}>
+                    <input
+                      type="text"
+                      name="firstName"
+                      placeholder="First Name"
+                      autoComplete="given-name"
+                      className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
+                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '14px', fontSize: '18px' }}
+                    />
+                    <input
+                      type="text"
+                      name="lastName"
+                      placeholder="Last Name"
+                      autoComplete="family-name"
+                      className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
+                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '14px', fontSize: '18px' }}
+                    />
+                  </div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    autoComplete="email"
+                    required
+                    className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '14px', fontSize: '18px' }}
+                  />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    autoComplete="tel"
+                    className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '14px', fontSize: '18px' }}
+                  />
+                  <textarea
+                    name="message"
+                    placeholder="Message"
+                    rows={4}
+                    required
+                    className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)] resize-none"
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '14px', fontSize: '18px' }}
+                  />
+                  {contactStatus === "error" && (
+                    <p className="text-center" style={{ color: '#ff9b6b', fontSize: '16px' }}>
+                      Something went wrong. Please try again.
+                    </p>
+                  )}
+                  <button
+                    type="submit"
+                    disabled={contactStatus === "sending"}
+                    className="rounded-full"
+                    style={{ marginTop: '8px', padding: '3px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', opacity: contactStatus === "sending" ? 0.6 : 1 }}
+                  >
+                    <div
+                      className="rounded-full bg-[#2d1f1a] flex items-center justify-center"
+                      style={{ paddingBlock: '14px' }}
+                    >
+                      <span
+                        className="text-white font-[family-name:var(--font-libre-baskerville)] uppercase"
+                        style={{ fontSize: '22px', fontWeight: 900, letterSpacing: '0.12em' }}
+                      >
+                        {contactStatus === "sending" ? "Sending..." : "Send"}
+                      </span>
+                    </div>
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

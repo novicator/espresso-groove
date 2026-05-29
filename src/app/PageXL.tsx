@@ -750,7 +750,7 @@ export default function PageXL() {
                     <div style={{ paddingInline: '22px', paddingBlock: '14px', }}>
                       {/* Address */}
                       <a
-                        href="https://www.google.com/maps/search/?api=1&query=3500+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
+                        href="https://www.google.com/maps/search/?api=1&query=3540+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-start"
@@ -765,7 +765,7 @@ export default function PageXL() {
                             className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
                             style={{ fontSize: '24px' }}
                           >
-                            3500 Belle Terre Blvd • Suite C
+                            3540 Belle Terre Blvd • Suite C
                           </p>
                           <p
                             className="text-white/70 font-[family-name:var(--font-inter)]"
@@ -832,7 +832,7 @@ export default function PageXL() {
                       {/* Get Directions */}
                       <div style={{ height: '5.6px', marginTop: '12px', marginLeft: '-28px', marginRight: '-28px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
                       <a
-                        href="https://www.google.com/maps/search/?api=1&query=3500+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
+                        href="https://www.google.com/maps/search/?api=1&query=3540+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center"

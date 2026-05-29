@@ -39,7 +39,7 @@ export default function Footer({ style, className }: { style?: React.CSSProperti
         <div style={{ paddingLeft: '4vw', marginTop: '3vw' }}>
           {/* Address */}
           <a
-            href="https://www.google.com/maps/search/?api=1&query=3500+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
+            href="https://www.google.com/maps/search/?api=1&query=3540+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-start"
@@ -54,7 +54,7 @@ export default function Footer({ style, className }: { style?: React.CSSProperti
                 className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
                 style={{ fontSize: '4.5vw' , fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
               >
-                3500 Belle Terre Blvd • Suite C
+                3540 Belle Terre Blvd • Suite C
               </p>
               <p
                 className="text-white font-[family-name:var(--font-inter)]"
