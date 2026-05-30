@@ -157,7 +157,7 @@ export default function MenuMobile() {
       <div className="relative z-10" style={{  }}>
         {/* Page Title */}
         {/* mt-2=8px=2vw, mb-6=24px=6.1vw */}
-        <div className="text-center" style={{ marginTop: '14vw', marginBottom: '6.1vw', }}>
+        <div className="text-center" style={{ marginTop: '19vw', marginBottom: '6.1vw', }}>
           {/* gap-3=12px=3.1vw */}
           <div className="flex items-center justify-center" style={{ gap: '3.1vw' }}>
             {/* w-18=72px=18.3vw, translateY(15px)=3.8vw, translateX(5px)=1.3vw, scale(1.2) kept */}

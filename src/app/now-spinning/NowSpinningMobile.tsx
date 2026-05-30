@@ -96,7 +96,7 @@ export default function NowSpinningMobile() {
                 {/* Content Layer */}
                 <div className="relative z-10">
                     {/* Page Title */}
-                    <div className="text-center" style={{ marginTop: '14vw', marginBottom: '6.1vw' }}>
+                    <div className="text-center" style={{ marginTop: '18vw', marginBottom: '6.1vw' }}>
                         <div className="flex items-center justify-center" style={{ gap: '3.1vw' }}>
                             <h1
                                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"

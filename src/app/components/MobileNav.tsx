@@ -24,11 +24,12 @@ export default function MobileNav({ onShow, hideOnTop }: { onShow?: () => void; 
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-50 flex transition-transform duration-300"
+      className="fixed top-0 left-0 right-0 z-50 flex flex-col transition-transform duration-300"
       style={{
         transform: visible ? 'translateY(0)' : 'translateY(-100%)',
       }}
     >
+      <div className="flex">
       <Link
         href="/"
         onClick={(e) => {
@@ -157,6 +158,28 @@ export default function MobileNav({ onShow, hideOnTop }: { onShow?: () => void; 
           Spinning
         </span>
       </Link>
+      </div>
+
+      {/* Gradient divider */}
+      <div style={{ height: '0.6vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+
+      {/* Contact Us bar */}
+      <button
+        type="button"
+        onClick={() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' })}
+        className="noisy flex items-center justify-center cursor-pointer"
+        style={{ height: '6vw', background: '#2d1f1a', border: 0, padding: 0 }}
+      >
+        <span
+          className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase"
+          style={{ color: '#ffffff', fontSize: '3.4vw', letterSpacing: '0.18em' }}
+        >
+          Contact Us
+        </span>
+      </button>
+
+      {/* Gradient divider */}
+      <div style={{ height: '0.6vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
     </div>
   );
 }

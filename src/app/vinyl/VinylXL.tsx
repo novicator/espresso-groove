@@ -537,12 +537,12 @@ export default function VinylXL() {
         </div>
 
         {/* === CONTENT LAYER (px values based on 1400px) === */}
-        <div className="relative z-10 transition-all duration-300" style={{ paddingTop: navVisible ? '56px' : '0' }}>
+        <div className="relative z-10 transition-all duration-300" style={{ paddingTop: navVisible ? '87px' : '0' }}>
           {/* We Buy Vinyl Banner (full width) */}
           <div
             className="bg-[#d9bc52] noisy flex items-center justify-center"
             style={{
-              height: '63px',
+              height: '45px',
               position: 'relative',
               overflow: 'hidden',
               boxShadow: '0 0 12px rgba(217,188,82,0.6), 0 0 24px rgba(217,188,82,0.3)',

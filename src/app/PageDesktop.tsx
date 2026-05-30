@@ -143,7 +143,7 @@ export default function PageDesktop() {
           src="/images/Expresso groove.svg"
           alt="Espresso Groove"
           className="logo-glow"
-          style={{ width: '58vw', marginLeft: '-5vw', marginTop: '-2vw' }}
+          style={{ width: '58vw', marginLeft: '-5vw', marginTop: '1vw' }}
         />
         <h2
           className="text-white text-[4.3vw] font-[family-name:var(--font-libre-baskerville)]"

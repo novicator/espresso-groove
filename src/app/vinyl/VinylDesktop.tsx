@@ -573,7 +573,7 @@ export default function VinylDesktop() {
             />
           </div>
           {/* Right vinyl - top right, spinning counterclockwise */}
-          <div className="absolute" style={{ right: '-27vw', top: '-10vw', width: '60vw', height: '70vw' }}>
+          <div className="absolute" style={{ right: '-27vw', top: '-8vw', width: '60vw', height: '70vw' }}>
             <img
               src="/images/vinyl.svg"
               alt=""
@@ -583,12 +583,12 @@ export default function VinylDesktop() {
         </div>
 
         {/* === CONTENT LAYER === */}
-        <div className="relative z-10 transition-all duration-300" style={{ paddingTop: navVisible ? '4vw' : '0' }}>
+        <div className="relative z-10 transition-all duration-300" style={{ paddingTop: navVisible ? '7.6vw' : '0' }}>
           {/* We Buy Vinyl Banner */}
           <div
             className="bg-[#d9bc52] noisy flex items-center justify-center"
             style={{
-              height: '4.5vw',
+              height: '3.5vw',
               position: 'relative',
               overflow: 'hidden',
               boxShadow: '0 0 12px rgba(217,188,82,0.6), 0 0 24px rgba(217,188,82,0.3)',
@@ -618,7 +618,7 @@ export default function VinylDesktop() {
           </div>
 
           {/* Page Title */}
-          <div className="text-center" style={{ marginTop: '-1vw', marginBottom: '6.1vw' }}>
+          <div className="text-center" style={{ marginTop: '-2vw', marginBottom: '6.1vw' }}>
             <h1
               className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
               style={{

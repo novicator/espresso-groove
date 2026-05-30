@@ -73,7 +73,7 @@ export default function NowSpinningDesktop() {
         {/* === CONTENT LAYER === */}
         <div className="relative z-10">
           {/* Page Title */}
-          <div className="text-center" style={{ marginTop: '6vw', marginBottom: '3vw' }}>
+          <div className="text-center" style={{ marginTop: '9vw', marginBottom: '3vw' }}>
             <div className="flex items-center justify-center" style={{ gap: '1vw' }}>
               <h1
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"

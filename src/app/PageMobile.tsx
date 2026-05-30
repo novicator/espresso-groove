@@ -6,6 +6,7 @@ import MusicNotes from "./components/MusicNotes";
 import MiniMusicNotes from "./components/MiniMusicNotes";
 import MobileNav from "./components/MobileNav";
 import { sendContactForm, type ContactStatus } from "./lib/contact";
+import ContactDropdown from "./components/ContactDropdown";
 
 export default function PageMobile() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -159,7 +160,7 @@ export default function PageMobile() {
             src="/images/Expresso groove.svg"
             alt="Espresso Groove"
             className="logo-glow"
-            style={{ width: '110vw', marginLeft: '-10vw', marginTop: '2vw',}}
+            style={{ width: '110vw', marginLeft: '-10vw', marginTop: '8vw',}}
           />
           <h2
             className="text-white text-[8vw] font-[family-name:var(--font-libre-baskerville)]"
@@ -1094,6 +1095,7 @@ export default function PageMobile() {
                   onSubmit={handleContactSubmit}
                 >
                   <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} />
+                  <ContactDropdown size="mobile" />
                   <div className="flex" style={{ gap: '3vw' }}>
                     <input
                       type="text"

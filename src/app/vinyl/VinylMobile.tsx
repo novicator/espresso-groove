@@ -597,7 +597,7 @@ export default function VinylMobile() {
 
       {/* Vinyl clip wrapper - prevents horizontal overflow without affecting vertical scroll */}
       <div className="absolute inset-0 z-[5] pointer-events-none" style={{ clipPath: 'inset(0)' }}>
-      <div className="absolute" style={{ right: '-58vw', top: '-8vw', width: '120vw', height: '120vw' }}>
+      <div className="absolute" style={{ right: '-58vw', top: '-4vw', width: '120vw', height: '120vw' }}>
         <img
           src="/images/vinyl.svg"
           alt=""
@@ -607,12 +607,12 @@ export default function VinylMobile() {
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-10 transition-all duration-300" style={{ paddingTop: navVisible ? '10vw' : '0' }}>
+      <div className="relative z-10 transition-all duration-300" style={{ paddingTop: navVisible ? '17.2vw' : '0' }}>
         {/* We Buy Vinyl Banner */}
         <div
           className="bg-[#d9bc52] noisy flex items-center justify-center"
           style={{
-            height: '10vw',
+            height: '7vw',
             position: 'relative',
             overflow: 'hidden',
             boxShadow: '0 0 12px rgba(217,188,82,0.6), 0 0 24px rgba(217,188,82,0.3)',

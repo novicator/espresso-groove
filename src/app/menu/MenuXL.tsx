@@ -79,7 +79,7 @@ export default function MenuXL() {
         <div className="relative z-10">
           <div style={{ maxWidth: '1200px', margin: '0 auto', zoom: 0.88 }}>
             {/* Page Title */}
-            <div className="text-center" style={{ marginTop: '72px', marginBottom: '44.5px' }}>
+            <div className="text-center" style={{ marginTop: '102px', marginBottom: '44.5px' }}>
               <div className="flex items-center justify-center" style={{ gap: '22.3px' }}>
                 <h1
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
@@ -470,9 +470,9 @@ export default function MenuXL() {
                 </div>
               </div>
             </div>
-
-            <DesktopFooterXL />
           </div>
+
+          <DesktopFooterXL />
         </div>
 
       </div>

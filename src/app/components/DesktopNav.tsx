@@ -4,8 +4,11 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { onShow?: () => void; hideOnTop?: boolean; size?: "desktop" | "xl" } = {}) {
-  const h = size === "xl" ? '56px' : '4vw';
-  const fs = size === "xl" ? '19.6px' : '1.4vw';
+  const h = size === "xl" ? '46px' : '4vw';
+  const fs = size === "xl" ? '16.5px' : '1.4vw';
+  const ch = size === "xl" ? '35px' : '3vw';
+  const cfs = size === "xl" ? '20px' : '1.8vw';
+  const gh = size === "xl" ? '3px' : '0.3vw';
   const [visible, setVisible] = useState(!hideOnTop);
 
   useEffect(() => {
@@ -26,11 +29,12 @@ export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { on
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-50 flex transition-transform duration-300"
+      className="fixed top-0 left-0 right-0 z-50 flex flex-col transition-transform duration-300"
       style={{
         transform: visible ? 'translateY(0)' : 'translateY(-100%)',
       }}
     >
+      <div className="flex">
       <Link
         href="/"
         onClick={(e) => {
@@ -42,7 +46,7 @@ export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { on
         className="flex-[0.6] bg-white noisy flex items-center justify-center"
         style={{ height: h }}
       >
-        <svg style={{ width: size === 'xl' ? '48px' : '3vw', height: size === 'xl' ? '48px' : '3vw' }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg style={{ width: size === 'xl' ? '40px' : '3vw', height: size === 'xl' ? '40px' : '3vw' }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id={`home-gradient-${size}`} x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#f06830" />
@@ -147,6 +151,28 @@ export default function DesktopNav({ onShow, hideOnTop, size = "desktop" }: { on
           Now Spinning
         </span>
       </Link>
+      </div>
+
+      {/* Gradient divider */}
+      <div style={{ height: gh, background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+
+      {/* Contact Us bar */}
+      <button
+        type="button"
+        onClick={() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' })}
+        className="noisy flex items-center justify-center cursor-pointer"
+        style={{ height: ch, background: '#2d1f1a', border: 0, padding: 0 }}
+      >
+        <span
+          className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase"
+          style={{ color: '#ffffff', fontSize: cfs, letterSpacing: '0.18em' }}
+        >
+          Contact Us
+        </span>
+      </button>
+
+      {/* Gradient divider */}
+      <div style={{ height: gh, background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
     </div>
   );
 }

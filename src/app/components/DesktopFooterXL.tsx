@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import MusicNotes from "./MusicNotes";
 import { sendContactForm, type ContactStatus } from "../lib/contact";
+import ContactDropdown from "./ContactDropdown";
 
 export default function DesktopFooterXL() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function DesktopFooterXL() {
   };
 
   return (
-    <div>
+    <div id="site-footer-xl">
       {/* === Music Notes (full width) === */}
       <MusicNotes isPlaying={true} size="xlFixed" />
 
@@ -211,6 +212,7 @@ export default function DesktopFooterXL() {
                   onSubmit={handleContactSubmit}
                 >
                   <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} />
+                  <ContactDropdown size="xl" />
                   <div className="flex" style={{ gap: '16px' }}>
                     <input
                       type="text"

@@ -144,7 +144,7 @@ export default function PageXL() {
               src="/images/Expresso groove.svg"
               alt="Espresso Groove"
               className="logo-glow"
-              style={{ width: '750.50px', marginLeft: '-60.97px', marginTop: '10.98px' }}
+              style={{ width: '750.50px', marginLeft: '-60.97px', marginTop: '25.98px' }}
             />
             <h2
               className="text-white font-[family-name:var(--font-libre-baskerville)]"

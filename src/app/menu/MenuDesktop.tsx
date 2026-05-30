@@ -123,7 +123,7 @@ export default function MenuDesktop() {
         {/* === CONTENT LAYER === */}
         <div className="relative z-10">
           {/* Page Title */}
-          <div className="text-center relative" style={{ marginTop: '6vw', marginBottom: '3.71vw' }}>
+          <div className="text-center relative" style={{ marginTop: '8vw', marginBottom: '3.71vw' }}>
             <div className="flex items-center justify-center" style={{ gap: '1.86vw' }}>
               <h1
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"

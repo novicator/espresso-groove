@@ -84,7 +84,7 @@ export default function EventsXL() {
       <div className="relative z-10">
         <div style={{ maxWidth: '1199px', margin: '0 auto' }}>
           {/* Page Title */}
-          <div className="text-center" style={{ marginTop: '72px', marginBottom: '36px' }}>
+          <div className="text-center" style={{ marginTop: '92px', marginBottom: '36px' }}>
             <div className="flex items-center justify-center" style={{ gap: '18px' }}>
               <h1
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
@@ -360,9 +360,9 @@ export default function EventsXL() {
               </div>
             </>
           )}
-
-          <DesktopFooterXL />
         </div>
+
+        <DesktopFooterXL />
       </div>
 
     </div>
