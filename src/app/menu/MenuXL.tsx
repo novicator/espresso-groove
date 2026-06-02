@@ -5,30 +5,6 @@ import Link from "next/link";
 import DesktopFooterXL from "../components/DesktopFooterXL";
 import DesktopNav from "../components/DesktopNav";
 
-const coffeeItems = [
-  { name: "HOUSE BLEND", desc: "Rich, smooth, everyday classic" },
-  { name: "ESPRESSO", desc: "Bold and concentrated" },
-  { name: "CAPPUCCINO", desc: "Espresso with steamed milk foam" },
-  { name: "AMERICANO", desc: "Espresso with hot water, smooth finish" },
-  { name: "FLAT WHITE", desc: "Velvety microfoam over double espresso" },
-];
-
-const teaItems = [
-  { name: "CHAI LATTE", desc: "Spiced chai with steamed milk" },
-  { name: "GREEN TEA", desc: "Classic organic\ngreen tea" },
-  { name: "EARL GREY", desc: "Bergamot-infused black tea" },
-  { name: "MATCHA LATTE", desc: "Ceremonial grade matcha with oat milk" },
-  { name: "JASMINE PEARL", desc: "Delicate hand-rolled jasmine green tea" },
-];
-
-const energyItems = [
-  { name: "BASS DROP", desc: "Citrus blast with a caffeine kick" },
-  { name: "VINYL RUSH", desc: "Berry mix with B12 & taurine" },
-  { name: "GROOVE FUEL", desc: "Tropical mango with green tea extract" },
-  { name: "NEON PULSE", desc: "Watermelon lime with ginseng boost" },
-  { name: "STATIC SHOCK", desc: "Passion fruit with guarana & electrolytes", smallDesc: true },
-];
-
 type FilterType = "All" | "The Drip" | "Espresso/Coffee" | "Tea/Matcha" | "Energy/Boba" | "Bakery";
 
 export default function MenuXL() {
@@ -319,56 +295,36 @@ export default function MenuXL() {
                           </span>
                         </div>
 
-                        {/* 4 - Category Labels + Featured Drinks */}
-                        <div className="flex flex-1">
-                          {/* Coffee + Espresso */}
-                          <div className="flex-1 flex flex-col">
-                            <div className="bg-[#f06830] noisy text-center flex items-center justify-center" style={{ height: '78px' }}>
-                              <span
-                                className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                                style={{ fontSize: '21.6px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
-                              >
-                                Coffee<br />+ Espresso
-                              </span>
-                            </div>
-                            <div className="flex-1 flex flex-col items-center justify-center" style={{ padding: '21.6px 12px', gap: '12px' }}>
-                              <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '36px' }}>
-                                Blue Note Brew
-                              </span>
-                            </div>
+                        {/* 4 - Iced Drinks Header + Drink Cards */}
+                        <div className="flex flex-col flex-1">
+                          {/* Iced Drinks header (single, full-width) */}
+                          <div className="bg-[#24ADFF] noisy text-center flex items-center justify-center" style={{ height: '78px' }}>
+                            <span
+                              className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                              style={{ fontSize: '26.4px', letterSpacing: '0.1em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                            >
+                              Iced Drinks
+                            </span>
                           </div>
 
-                          {/* Tea + Matcha */}
-                          <div className="flex-1 flex flex-col">
-                            <div className="bg-[#2a7d7d] noisy text-center flex items-center justify-center" style={{ height: '78px' }}>
-                              <span
-                                className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                                style={{ fontSize: '21.6px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
-                              >
-                                Tea<br />+ Matcha
-                              </span>
-                            </div>
-                            <div className="flex-1 flex flex-col items-center justify-center" style={{ padding: '21.6px 12px', gap: '12px' }}>
-                              <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '36px' }}>
-                                Coltrane Chai
-                              </span>
-                            </div>
-                          </div>
+                          {/* Drink cards row */}
+                          <div className="flex flex-1">
+                            {[
+                              { name: "PURPLE HAZE", desc: "Lemon lavender vanilla latte with butterfly pea cold foam and purple shimmer." },
+                              { name: "SUNDAY MORNING", desc: "Banana vanilla cold brew with sweet cream foam and vanilla wafer crumbles." },
+                            ].map((item, index) => (
+                              <div key={`ice-${index}`} className="flex-1 flex flex-col items-center justify-center" style={{ padding: '18px 12px 36px 12px', gap: '5px', borderRight: '1px solid rgba(255,255,255,0.15)' }}>
+                                <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
+                                  style={{ fontSize: '28.8px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
+                                <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '16.4px' }}>{item.desc}</p>
+                              </div>
+                            ))}
 
-                          {/* Energy + Boba */}
-                          <div className="flex-1 flex flex-col">
-                            <div className="bg-[#6b4c8c] noisy text-center flex items-center justify-center" style={{ height: '78px' }}>
-                              <span
-                                className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                                style={{ fontSize: '21.6px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
-                              >
-                                Energy<br />+ Boba
-                              </span>
-                            </div>
-                            <div className="flex-1 flex flex-col items-center justify-center" style={{ padding: '21.6px 12px', gap: '12px' }}>
-                              <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '36px' }}>
-                                Bebop Blast
-                              </span>
+                            {/* Strawberry Fields - standalone for individual editing */}
+                            <div className="flex-1 flex flex-col items-center justify-center" style={{ padding: '18px 12px 36px 12px', gap: '5px' }}>
+                              <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
+                                style={{ fontSize: '28.8px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>STRAWBERRY FIELDS</h3>
+                              <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '16.4px' }}>Strawberry passionfruit refresher with popping pearls.</p>
                             </div>
                           </div>
                         </div>
@@ -387,14 +343,13 @@ export default function MenuXL() {
                         Espresso/Coffee
                       </p>
                     </div>
-                    <div className="flex" style={{ padding: '18px 12px', gap: '6px' }}>
-                      {coffeeItems.map((item, index) => (
-                        <div key={`coffee-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '6px', borderRight: index < coffeeItems.length - 1 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 6px' }}>
-                          <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
-                            style={{ fontSize: '33.6px', marginTop: '15.6px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                          <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '19.2px' }}>{item.desc}</p>
-                        </div>
-                      ))}
+                    <div className="flex items-center justify-center" style={{ padding: '60px 30px' }}>
+                      <p
+                        className="text-white italic font-[family-name:var(--font-libre-baskerville)]"
+                        style={{ fontSize: '40px', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                      >
+                        Coming Soon
+                      </p>
                     </div>
                   </>)}
 
@@ -408,14 +363,13 @@ export default function MenuXL() {
                         Tea/Matcha
                       </p>
                     </div>
-                    <div className="flex" style={{ padding: '18px 12px', gap: '6px' }}>
-                      {teaItems.map((item, index) => (
-                        <div key={`tea-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '6px', borderRight: index < teaItems.length - 1 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 6px' }}>
-                          <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
-                            style={{ fontSize: '33.6px', marginTop: '15.6px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                          <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '19.2px', whiteSpace: 'pre-line' }}>{item.desc}</p>
-                        </div>
-                      ))}
+                    <div className="flex items-center justify-center" style={{ padding: '60px 30px' }}>
+                      <p
+                        className="text-white italic font-[family-name:var(--font-libre-baskerville)]"
+                        style={{ fontSize: '40px', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                      >
+                        Coming Soon
+                      </p>
                     </div>
                   </>)}
 
@@ -429,14 +383,13 @@ export default function MenuXL() {
                         Energy/Boba
                       </p>
                     </div>
-                    <div className="flex" style={{ padding: '18px 12px', gap: '6px' }}>
-                      {energyItems.map((item, index) => (
-                        <div key={`energy-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '6px', borderRight: index < energyItems.length - 1 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 6px' }}>
-                          <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
-                            style={{ fontSize: '33.6px', marginTop: '15.6px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                          <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: item.smallDesc ? '18px' : '19.2px' }}>{item.desc}</p>
-                        </div>
-                      ))}
+                    <div className="flex items-center justify-center" style={{ padding: '60px 30px' }}>
+                      <p
+                        className="text-white italic font-[family-name:var(--font-libre-baskerville)]"
+                        style={{ fontSize: '40px', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                      >
+                        Coming Soon
+                      </p>
                     </div>
                   </>)}
 
@@ -450,20 +403,13 @@ export default function MenuXL() {
                         Bakery
                       </p>
                     </div>
-                    <div className="flex" style={{ padding: '18px 12px', gap: '6px' }}>
-                      {[
-                        { name: "CROISSANT", desc: "Buttery, flaky, classic French pastry" },
-                        { name: "BLUEBERRY MUFFIN", desc: "Fresh blueberries in a soft crumb", smallName: true },
-                        { name: "BANANA BREAD", desc: "Moist, warm, homestyle slice" },
-                        { name: "CINNAMON ROLL", desc: "Glazed swirl of cinnamon and sugar" },
-                        { name: "SCONE", desc: "Crumbly, buttery, pairs with any drink" },
-                      ].map((item, index) => (
-                        <div key={`bakery-${index}`} className="flex-1 flex flex-col items-center" style={{ gap: '6px', borderRight: index < 4 ? '1px solid rgba(255,255,255,0.15)' : 'none', padding: '0 6px' }}>
-                          <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
-                            style={{ fontSize: item.smallName ? '31.2px' : '33.6px', marginTop: '15.6px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                          <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '19.2px' }}>{item.desc}</p>
-                        </div>
-                      ))}
+                    <div className="flex items-center justify-center" style={{ padding: '60px 30px' }}>
+                      <p
+                        className="text-white italic font-[family-name:var(--font-libre-baskerville)]"
+                        style={{ fontSize: '40px', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                      >
+                        Coming Soon
+                      </p>
                     </div>
                   </>)}
 

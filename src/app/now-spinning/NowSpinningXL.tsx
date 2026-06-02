@@ -331,39 +331,31 @@ export default function NowSpinningXL() {
 
                 {activeTab === "Limited Press" && (
                   <div style={{ marginTop: '35px' }}>
-                    <div className="flex" style={{ marginInline: '-42px' }}>
-                      <div className="flex-1 bg-[#f06830] noisy text-center flex items-center justify-center" style={{ height: '63px' }}>
-                        <span className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase" style={{ fontSize: '28px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}>
-                          Coffee + Espresso
-                        </span>
-                      </div>
-                      <div className="flex-1 bg-[#2a7d7d] noisy text-center flex items-center justify-center" style={{ height: '63px' }}>
-                        <span className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase" style={{ fontSize: '28px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}>
-                          Tea + Matcha
-                        </span>
-                      </div>
-                      <div className="flex-1 bg-[#6b4c8c] noisy text-center flex items-center justify-center" style={{ height: '63px' }}>
-                        <span className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase" style={{ fontSize: '28px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}>
-                          Energy + Boba
+                    <div style={{ marginInline: '-42px' }}>
+                      <div className="bg-[#24ADFF] noisy text-center flex items-center justify-center" style={{ height: '63px' }}>
+                        <span className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase" style={{ fontSize: '31px', letterSpacing: '0.1em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}>
+                          Iced Drinks
                         </span>
                       </div>
                     </div>
 
-                    <div className="flex" style={{ padding: '35px 0', gap: '21px' }}>
-                      <div className="flex-1 flex flex-col items-center" style={{ gap: '14px' }}>
-                        <span className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '56px' }}>
-                          Blue Note Brew
-                        </span>
-                      </div>
-                      <div className="flex-1 flex flex-col items-center" style={{ gap: '14px' }}>
-                        <span className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '56px' }}>
-                          Coltrane Chai
-                        </span>
-                      </div>
-                      <div className="flex-1 flex flex-col items-center" style={{ gap: '14px' }}>
-                        <span className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '56px' }}>
-                          Bebop Blast
-                        </span>
+                    <div className="flex" style={{ padding: '35px 0', gap: '0px' }}>
+                      {[
+                        { name: "PURPLE HAZE", desc: "Lemon lavender vanilla latte with butterfly pea cold foam and purple shimmer." },
+                        { name: "SUNDAY MORNING", desc: "Banana vanilla cold brew with sweet cream foam and vanilla wafer crumbles." },
+                      ].map((item, index) => (
+                        <div key={`ice-${index}`} className="flex-1 flex flex-col items-center justify-center" style={{ gap: '8px', padding: '0 14px', borderRight: '1px solid rgba(255,255,255,0.15)' }}>
+                          <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
+                            style={{ fontSize: '42px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
+                          <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '21px' }}>{item.desc}</p>
+                        </div>
+                      ))}
+
+                      {/* Strawberry Fields - standalone for individual editing */}
+                      <div className="flex-1 flex flex-col items-center justify-center" style={{ gap: '8px', padding: '0 14px 28px 14px' }}>
+                        <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
+                          style={{ fontSize: '42px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>STRAWBERRY FIELDS</h3>
+                        <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '21px' }}>Strawberry passionfruit refresher with popping pearls.</p>
                       </div>
                     </div>
                   </div>

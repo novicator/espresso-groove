@@ -370,7 +370,8 @@ export default function EventsMobile() {
                       className="font-[family-name:var(--font-libre-baskerville)] text-white text-center"
                       style={{ fontSize: '3.8vw' }}
                     >
-                      No events today. The drinks and records are still flowing.
+                      No events today.<br />
+                      The drinks and records are still flowing.
                     </p>
                   )}
                 </div>

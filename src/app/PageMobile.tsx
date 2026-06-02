@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import MusicNotes from "./components/MusicNotes";
 import MiniMusicNotes from "./components/MiniMusicNotes";
@@ -10,28 +10,71 @@ import ContactDropdown from "./components/ContactDropdown";
 
 export default function PageMobile() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [scrollRatio, setScrollRatio] = useState(0);
-  const [thumbWidth, setThumbWidth] = useState(0);
   const [contactOpen, setContactOpen] = useState(false);
   const [contactStatus, setContactStatus] = useState<ContactStatus>("idle");
+  const [vinylAutoScroll, setVinylAutoScroll] = useState(true);
+  const vinylPausedRef = useRef(false);
+  const vinylResumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const vinylScrollPosRef = useRef(0);
 
-  const updateScroll = useCallback(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const maxScroll = el.scrollWidth - el.clientWidth;
-    if (maxScroll <= 0) { setScrollRatio(0); setThumbWidth(100); return; }
-    setScrollRatio(el.scrollLeft / maxScroll);
-    setThumbWidth((el.clientWidth / el.scrollWidth) * 100);
-  }, []);
+  const VINYL_ITEMS = [
+    { name: "SGT. PEPPER'S", artist: "The Beatles", img: "/images/artwork/sgt-peppers.jpg" },
+    { name: "ARE YOU EXPERIENCED", artist: "Jimi Hendrix Experience", img: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/67/45/006745f5-95d5-5a06-35ed-d515e9cfd7d8/dj.tbwlxwoh.jpg/600x600bb.jpg" },
+    { name: "PET SOUNDS", artist: "The Beach Boys", img: "/images/artwork/pet-sounds.jpg" },
+    { name: "HIGHWAY 61 REVISITED", artist: "Bob Dylan", img: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ff/c0/f8ffc056-55b4-2033-657d-32492d1eea25/827969239926.jpg/600x600bb.jpg" },
+    { name: "ABBEY ROAD", artist: "The Beatles", img: "/images/artwork/abbey-road.jpg" },
+  ];
 
+  // Vinyl carousel is "active" when it's in the viewport (matches vinyl-page row behavior)
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    updateScroll();
-    el.addEventListener("scroll", updateScroll);
-    return () => el.removeEventListener("scroll", updateScroll);
-  }, [updateScroll]);
+    const observer = new IntersectionObserver(
+      ([entry]) => { setVinylAutoScroll(entry.isIntersecting); },
+      { rootMargin: '0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto-scroll right-to-left with seamless loop (snap back invisibly when one full set has scrolled past)
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!vinylAutoScroll || !el) return;
+    vinylScrollPosRef.current = el.scrollLeft;
+    const speed = 0.5;
+    let rafId = 0;
+    const tick = () => {
+      if (!el) return;
+      if (vinylPausedRef.current) {
+        vinylScrollPosRef.current = el.scrollLeft;
+      } else {
+        vinylScrollPosRef.current += speed;
+        el.scrollLeft = vinylScrollPosRef.current;
+      }
+      if (el.children.length >= VINYL_ITEMS.length + 1) {
+        const first = el.children[0] as HTMLElement;
+        const secondCopyFirst = el.children[VINYL_ITEMS.length] as HTMLElement;
+        const loopDistance = secondCopyFirst.offsetLeft - first.offsetLeft;
+        if (loopDistance > 0 && vinylScrollPosRef.current >= loopDistance) {
+          vinylScrollPosRef.current -= loopDistance;
+          el.scrollLeft = vinylScrollPosRef.current;
+        }
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, [vinylAutoScroll, VINYL_ITEMS.length]);
+
+  const handleVinylPauseStart = () => {
+    vinylPausedRef.current = true;
+    if (vinylResumeTimerRef.current) clearTimeout(vinylResumeTimerRef.current);
+  };
+  const handleVinylPauseEnd = () => {
+    if (vinylResumeTimerRef.current) clearTimeout(vinylResumeTimerRef.current);
+    vinylResumeTimerRef.current = setTimeout(() => { vinylPausedRef.current = false; }, 2000);
+  };
 
   const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -534,84 +577,49 @@ export default function PageMobile() {
             </div>
             <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
-            {/* Category Labels */}
-            <div className="flex">
-              <div
-                className="flex-1 bg-[#f06830] noisy text-center flex items-center justify-center"
-                style={{ height: '12vw' }}
+            {/* Category Label */}
+            <div
+              className="bg-[#24ADFF] noisy text-center flex items-center justify-center"
+              style={{ height: '12vw' }}
+            >
+              <span
+                className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                style={{
+                  fontSize: '4.5vw',
+                  letterSpacing: '0.1em',
+                  textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
+                }}
               >
-                <span
-                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{
-                    fontSize: '3.6vw',
-                    letterSpacing: '0.07em',
-                    textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
-                  }}
-                >
-                  Espresso<br />+ Coffee
-                </span>
-              </div>
-              <div
-                className="flex-1 bg-[#2a7d7d] noisy text-center flex items-center justify-center"
-                style={{ height: '12vw' }}
-              >
-                <span
-                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{
-                    fontSize: '3.6vw',
-                    letterSpacing: '0.07em',
-                    textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
-                  }}
-                >
-                  Tea<br />+ Matcha
-                </span>
-              </div>
-              <div
-                className="flex-1 bg-[#6b4c8c] noisy text-center flex items-center justify-center"
-                style={{ height: '12vw' }}
-              >
-                <span
-                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                  style={{
-                    fontSize: '3.6vw',
-                    letterSpacing: '0.07em',
-                    textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
-                  }}
-                >
-                  Energy<br />+ Boba
-                </span>
-              </div>
+                Iced Drinks
+              </span>
             </div>
 
-            {/* Product Cards Row */}
-            <div className="flex" style={{ padding: '3vw', gap: '2vw' }}>
-              {/* Coffee Card */}
-              <div className="flex-1 flex flex-col items-center" style={{ gap: '2vw' }}>
+            {/* Product Cards Stack */}
+            <div className="flex flex-col">
+              <div className="text-center" style={{ paddingBlock: '3vw' }}>
                 <span
                   className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
                   style={{ fontSize: '5vw' }}
                 >
-                  Blue Note Brew
+                  Purple Haze
                 </span>
               </div>
-
-              {/* Tea Card */}
-              <div className="flex-1 flex flex-col items-center" style={{ gap: '2vw' }}>
+              <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+              <div className="text-center" style={{ paddingBlock: '3vw' }}>
                 <span
                   className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
                   style={{ fontSize: '5vw' }}
                 >
-                  Coltrane Chai
+                  Sunday Morning
                 </span>
               </div>
-
-              {/* Energy Card */}
-              <div className="flex-1 flex flex-col items-center" style={{ gap: '2vw' }}>
+              <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+              <div className="text-center" style={{ paddingBlock: '3vw' }}>
                 <span
                   className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
                   style={{ fontSize: '5vw' }}
                 >
-                  Bebop Blast
+                  Strawberry Fields
                 </span>
               </div>
             </div>
@@ -699,14 +707,12 @@ export default function PageMobile() {
                 ref={scrollRef}
                 className="flex overflow-x-auto overflow-y-hidden hide-scrollbar"
                 style={{ gap: '3vw', marginTop: '3vw', paddingLeft: '4vw', paddingRight: '4vw', paddingBottom: '3vw' }}
+                onPointerDown={handleVinylPauseStart}
+                onPointerUp={handleVinylPauseEnd}
+                onPointerCancel={handleVinylPauseEnd}
+                onWheel={() => { handleVinylPauseStart(); handleVinylPauseEnd(); }}
               >
-                {[
-                  { name: "SGT. PEPPER'S", artist: "The Beatles", img: "/images/artwork/sgt-peppers.jpg" },
-                  { name: "ARE YOU EXPERIENCED", artist: "Jimi Hendrix Experience", img: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/67/45/006745f5-95d5-5a06-35ed-d515e9cfd7d8/dj.tbwlxwoh.jpg/600x600bb.jpg" },
-                  { name: "PET SOUNDS", artist: "The Beach Boys", img: "/images/artwork/pet-sounds.jpg" },
-                  { name: "HIGHWAY 61 REVISITED", artist: "Bob Dylan", img: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ff/c0/f8ffc056-55b4-2033-657d-32492d1eea25/827969239926.jpg/600x600bb.jpg" },
-                  { name: "ABBEY ROAD", artist: "The Beatles", img: "/images/artwork/abbey-road.jpg" },
-                ].map((item, index) => (
+                {[...VINYL_ITEMS, ...VINYL_ITEMS].map((item, index) => (
                   <div
                     key={index}
                     className="flex-shrink-0 rounded-xl"
@@ -714,6 +720,7 @@ export default function PageMobile() {
                       width: '35vw',
                       padding: '.8vw',
                       paddingBottom: '3vw',
+                      marginTop: '3vw',
                       background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
                     }}
                   >
@@ -735,32 +742,6 @@ export default function PageMobile() {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              {/* Scroll Indicator */}
-              <div
-                ref={trackRef}
-                style={{
-                  marginLeft: '4vw',
-                  marginRight: '4vw',
-                  marginTop: '1vw',
-                  height: '1vw',
-                  backgroundColor: 'rgba(255,255,255,0.2)',
-                  borderRadius: '999px',
-                  position: 'relative',
-                }}
-              >
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: `${scrollRatio * (100 - thumbWidth)}%`,
-                    width: `${thumbWidth}%`,
-                    height: '100%',
-                    backgroundColor: '#ffffff',
-                    borderRadius: '999px',
-                  }}
-                />
               </div>
 
               <div className="flex-1"></div>

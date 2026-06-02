@@ -1,61 +1,76 @@
 "use client";
 
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import MiniMusicNotes from "./components/MiniMusicNotes";
 import DesktopFooter from "./components/DesktopFooter";
 import DesktopNav from "./components/DesktopNav";
 
+const VINYL_ITEMS = [
+  { name: "SGT. PEPPER'S", artist: "The Beatles", img: "/images/artwork/sgt-peppers.jpg" },
+  { name: "ARE YOU EXPERIENCED", artist: "Jimi Hendrix Experience", img: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/67/45/006745f5-95d5-5a06-35ed-d515e9cfd7d8/dj.tbwlxwoh.jpg/600x600bb.jpg" },
+  { name: "PET SOUNDS", artist: "The Beach Boys", img: "/images/artwork/pet-sounds.jpg" },
+  { name: "HIGHWAY 61 REVISITED", artist: "Bob Dylan", img: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ff/c0/f8ffc056-55b4-2033-657d-32492d1eea25/827969239926.jpg/600x600bb.jpg" },
+  { name: "ABBEY ROAD", artist: "The Beatles", img: "/images/artwork/abbey-road.jpg" },
+];
+
 export default function PageDesktop() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [scrollRatio, setScrollRatio] = useState(0);
-  const [thumbWidth, setThumbWidth] = useState(0);
-  const isDragging = useRef(false);
-  const dragStartX = useRef(0);
-  const dragStartScroll = useRef(0);
+  const [vinylAutoScroll, setVinylAutoScroll] = useState(true);
+  const vinylPausedRef = useRef(false);
+  const vinylResumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const vinylScrollPosRef = useRef(0);
 
-  const updateScroll = useCallback(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const maxScroll = el.scrollWidth - el.clientWidth;
-    if (maxScroll <= 0) { setScrollRatio(0); setThumbWidth(100); return; }
-    setScrollRatio(el.scrollLeft / maxScroll);
-    setThumbWidth((el.clientWidth / el.scrollWidth) * 100);
-  }, []);
-
+  // Vinyl carousel is "active" when it's in the viewport (matches vinyl-page row behavior)
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    updateScroll();
-    el.addEventListener("scroll", updateScroll);
-    return () => el.removeEventListener("scroll", updateScroll);
-  }, [updateScroll]);
-
-  const handleThumbMouseDown = useCallback((e: React.MouseEvent) => {
-    isDragging.current = true;
-    dragStartX.current = e.clientX;
-    dragStartScroll.current = scrollRef.current?.scrollLeft ?? 0;
-    e.preventDefault();
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isDragging.current || !scrollRef.current || !trackRef.current) return;
-      const trackWidth = trackRef.current.clientWidth;
-      const maxScroll = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
-      const dx = e.clientX - dragStartX.current;
-      const scrollDx = (dx / trackWidth) * maxScroll;
-      scrollRef.current.scrollLeft = dragStartScroll.current + scrollDx;
-    };
-
-    const handleMouseUp = () => {
-      isDragging.current = false;
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
+    const observer = new IntersectionObserver(
+      ([entry]) => { setVinylAutoScroll(entry.isIntersecting); },
+      { rootMargin: '0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
+
+  // Auto-scroll right-to-left with seamless loop (snap back invisibly when one full set has scrolled past)
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!vinylAutoScroll || !el) return;
+    vinylScrollPosRef.current = el.scrollLeft;
+    const speed = 0.5;
+    let rafId = 0;
+    const tick = () => {
+      if (!el) return;
+      if (vinylPausedRef.current) {
+        vinylScrollPosRef.current = el.scrollLeft;
+      } else {
+        vinylScrollPosRef.current += speed;
+        el.scrollLeft = vinylScrollPosRef.current;
+      }
+      if (el.children.length >= VINYL_ITEMS.length + 1) {
+        const first = el.children[0] as HTMLElement;
+        const secondCopyFirst = el.children[VINYL_ITEMS.length] as HTMLElement;
+        const loopDistance = secondCopyFirst.offsetLeft - first.offsetLeft;
+        if (loopDistance > 0 && vinylScrollPosRef.current >= loopDistance) {
+          vinylScrollPosRef.current -= loopDistance;
+          el.scrollLeft = vinylScrollPosRef.current;
+        }
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, [vinylAutoScroll]);
+
+  const handleVinylPauseStart = () => {
+    vinylPausedRef.current = true;
+    if (vinylResumeTimerRef.current) clearTimeout(vinylResumeTimerRef.current);
+  };
+  const handleVinylPauseEnd = () => {
+    if (vinylResumeTimerRef.current) clearTimeout(vinylResumeTimerRef.current);
+    vinylResumeTimerRef.current = setTimeout(() => { vinylPausedRef.current = false; }, 2000);
+  };
 
   return (
     <>
@@ -495,53 +510,33 @@ export default function PageDesktop() {
               </div>
               <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
-              {/* Coffee */}
-              <div className="flex-1 flex flex-col">
-                <div className="bg-[#f06830] noisy flex items-center justify-center" style={{ height: '4vw' }}>
-                  <span
-                    className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                    style={{ fontSize: '1.3vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
-                  >
-                    Coffee/Espresso
-                  </span>
-                </div>
-                <div className="flex-1 flex items-center" style={{ paddingLeft: '2vw', paddingRight: '1.2vw' }}>
-                  <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '2.2vw' }}>
-                    Blue Note Brew
-                  </span>
-                </div>
+              {/* Iced Drinks header (single, full-width) */}
+              <div className="bg-[#24ADFF] noisy flex items-center justify-center" style={{ height: '4vw' }}>
+                <span
+                  className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
+                  style={{ fontSize: '1.5vw', letterSpacing: '0.1em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
+                >
+                  Iced Drinks
+                </span>
               </div>
 
-              {/* Tea */}
+              {/* Three equal drink cards with gradient dividers */}
               <div className="flex-1 flex flex-col">
-                <div className="bg-[#2a7d7d] noisy flex items-center justify-center" style={{ height: '4vw' }}>
-                  <span
-                    className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                    style={{ fontSize: '1.3vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
-                  >
-                    Tea/Matcha
+                <div className="flex-1 flex items-center justify-center">
+                  <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '2.2vw' }}>
+                    Purple Haze
                   </span>
                 </div>
-                <div className="flex-1 flex items-center" style={{ paddingLeft: '2vw', paddingRight: '1.2vw' }}>
-                  <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '2.2vw' }}>
-                    Coltrane Chai
+                <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+                <div className="flex-1 flex items-center justify-center">
+                  <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '2.2vw' }}>
+                    Sunday Morning
                   </span>
                 </div>
-              </div>
-
-              {/* Energy Drinks */}
-              <div className="flex-1 flex flex-col">
-                <div className="bg-[#6b4c8c] noisy flex items-center justify-center" style={{ height: '4vw' }}>
-                  <span
-                    className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
-                    style={{ fontSize: '1.3vw', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}
-                  >
-                    Energy/Boba
-                  </span>
-                </div>
-                <div className="flex-1 flex items-center" style={{ paddingLeft: '2vw', paddingRight: '1.2vw' }}>
-                  <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide" style={{ fontSize: '2.2vw' }}>
-                    Bebop Blast
+                <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+                <div className="flex-1 flex items-center justify-center">
+                  <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '2.2vw' }}>
+                    Strawberry Fields
                   </span>
                 </div>
               </div>
@@ -590,15 +585,14 @@ export default function PageDesktop() {
                 >
                   Now Spinning
                 </span>
-                <div className="flex items-center justify-center" style={{ gap: '1.5vw', marginTop: '0.8vw' }}>
-                  <div style={{ width: '3vw', height: '0.3vw', backgroundColor: 'white' }} />
+                <div className="flex items-center justify-center" style={{ gap: '1vw', marginTop: '0.8vw' }}>
                   <span
                     className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold whitespace-nowrap"
-                    style={{ fontSize: '1.3vw', letterSpacing: '0.15em' }}
+                    style={{ fontSize: '1.7vw', letterSpacing: '0.15em' }}
                   >
                     60<span className="lowercase">s</span> Revolution
                   </span>
-                  <div style={{ width: '3vw', height: '0.3vw', backgroundColor: 'white' }} />
+                  
                 </div>
               </div>
 
@@ -607,39 +601,38 @@ export default function PageDesktop() {
                 ref={scrollRef}
                 className="flex overflow-x-auto overflow-y-hidden hide-scrollbar"
                 style={{ gap: '1.5vw', paddingLeft: '1.5vw', paddingRight: '1.5vw', paddingTop: '1vw', paddingBottom: '2vw' }}
+                onPointerDown={handleVinylPauseStart}
+                onPointerUp={handleVinylPauseEnd}
+                onPointerCancel={handleVinylPauseEnd}
+                onWheel={() => { handleVinylPauseStart(); handleVinylPauseEnd(); }}
               >
-                {[
-                  { name: "SGT. PEPPER'S", artist: "The Beatles", img: "/images/artwork/sgt-peppers.jpg" },
-                  { name: "ARE YOU EXPERIENCED", artist: "Jimi Hendrix Experience", img: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/67/45/006745f5-95d5-5a06-35ed-d515e9cfd7d8/dj.tbwlxwoh.jpg/600x600bb.jpg" },
-                  { name: "PET SOUNDS", artist: "The Beach Boys", img: "/images/artwork/pet-sounds.jpg" },
-                  { name: "HIGHWAY 61 REVISITED", artist: "Bob Dylan", img: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ff/c0/f8ffc056-55b4-2033-657d-32492d1eea25/827969239926.jpg/600x600bb.jpg" },
-                  { name: "ABBEY ROAD", artist: "The Beatles", img: "/images/artwork/abbey-road.jpg" },
-                ].map((item, index) => (
+                {[...VINYL_ITEMS, ...VINYL_ITEMS].map((item, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 rounded-xl"
+                    className="rounded-xl"
                     style={{
                       width: '12vw',
-                      height: '19.5vw',
-                      paddingTop: '0.4vw',
-                      paddingLeft: '0.4vw',
-                      paddingRight: '0.4vw',
-                      paddingBottom: '0.4vw',
+                      flexShrink: 0,
+                      paddingTop: '0.5vw',
+                      paddingLeft: '0.5vw',
+                      paddingRight: '0.5vw',
+                      paddingBottom: '2vw',
+                      marginTop: '0.6vw',
                       background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
                     }}
                   >
                     <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
-                      <div className="bg-[#1a1310] overflow-hidden" style={{ width: '100%', height: '11vw',  }}>
+                      <div className="bg-[#1a1310] overflow-hidden" style={{ width: '100%', aspectRatio: '1' }}>
                         <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
                       </div>
-                      <div style={{ paddingInline: '0.5vw', paddingBlock: '0.5vw', }}>
+                      <div style={{ padding: '1vw' }}>
                         <h4
                           className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight overflow-hidden whitespace-nowrap text-ellipsis"
                           style={{ fontSize: '1.8vw' }}
                         >
                           {item.name}
                         </h4>
-                        <p className="text-white/60 font-[family-name:var(--font-inter)] overflow-hidden whitespace-nowrap text-ellipsis" style={{ fontSize: '1.4vw', marginTop: '0.2vw' }}>
+                        <p className="text-white/60 font-[family-name:var(--font-inter)] overflow-hidden whitespace-nowrap text-ellipsis" style={{ fontSize: '1.4vw', marginTop: '0.3vw' }}>
                           {item.artist}
                         </p>
                       </div>
@@ -648,35 +641,6 @@ export default function PageDesktop() {
                 ))}
               </div>
 
-              {/* Scroll Indicator */}
-              <div
-                ref={trackRef}
-                style={{ marginInline: '1.5vw', marginBottom: '1vw', height: '0.3vw', backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: '999px', position: 'relative', cursor: 'pointer' }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  if (!scrollRef.current || !trackRef.current) return;
-                  const rect = trackRef.current.getBoundingClientRect();
-                  const clickRatio = (e.clientX - rect.left) / rect.width;
-                  const maxScroll = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
-                  scrollRef.current.scrollTo({ left: clickRatio * maxScroll, behavior: 'smooth' });
-                }}
-              >
-                <div
-                  onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); handleThumbMouseDown(e); }}
-                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: `${scrollRatio * (100 - thumbWidth)}%`,
-                    width: `${thumbWidth}%`,
-                    height: '100%',
-                    backgroundColor: '#ffffff',
-                    borderRadius: '999px',
-                    cursor: 'grab',
-                  }}
-                />
-              </div>
 
               {/* Vinyl Footer */}
               <div className="mt-auto">
