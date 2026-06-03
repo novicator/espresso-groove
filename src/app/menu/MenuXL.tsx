@@ -60,10 +60,11 @@ export default function MenuXL() {
                 <h1
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
                   style={{
-                    fontSize: '90.8px',
+                    fontSize: '75.8px',
                     fontWeight: 900,
                     letterSpacing: '-0.02em',
                     textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+                    marginTop: '20px',
                   }}
                 >
                   Menu
@@ -72,7 +73,7 @@ export default function MenuXL() {
               <p
                 className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
                 style={{
-                  fontSize: '62.3px',
+                  fontSize: '55.3px',
                   fontWeight: 900,
                   letterSpacing: '0.2em',
                   marginTop: '-10px',
@@ -84,7 +85,7 @@ export default function MenuXL() {
             </div>
 
             {/* Dropdown */}
-            <div className="relative" style={{ paddingInline: '48px', marginTop: '-20px' }}>
+            <div className="relative" style={{ paddingInline: '48px', marginTop: '-35px' }}>
               <div
                 className="rounded-full mx-auto relative"
                 style={{ padding: '4.8px', width: '720px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
@@ -207,7 +208,7 @@ export default function MenuXL() {
             </div>
 
             {/* Menu Content Box */}
-            <div style={{ paddingInline: '48px', paddingBottom: '48px', marginTop: '24px' }}>
+            <div style={{ paddingInline: '0px', paddingBottom: '48px', marginTop: '24px' }}>
               <div className="rounded-xl" style={{ padding: '4.8px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}>
                 <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
 
@@ -243,20 +244,20 @@ export default function MenuXL() {
                           >
                             Now Spinning
                           </span>
-                          <div className="flex items-center justify-center" style={{ gap: '12px', marginTop: '6px' }}>
-                            <div style={{ width: '30.6px', height: '4.8px', backgroundColor: 'white' }} />
+                          <div className="flex items-center justify-center" style={{ gap: '8px', marginTop: '6px' }}>
+                            <div style={{ width: '30.6px', height: '2.8px', backgroundColor: 'white' }} />
                             <span
                               className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold whitespace-nowrap"
                               style={{ fontSize: '19.8px', letterSpacing: '0.15em' }}
                             >
                               60<span className="lowercase">s</span> Revolution
                             </span>
-                            <div style={{ width: '30.6px', height: '4.8px', backgroundColor: 'white' }} />
+                            <div style={{ width: '30.6px', height: '2.8px', backgroundColor: 'white' }} />
                           </div>
                         </div>
                         <p
                           className="font-[family-name:var(--font-libre-baskerville)] text-white/80 text-left"
-                          style={{ fontSize: '18.6px', lineHeight: '1.7', marginTop: '12px' }}
+                          style={{ fontSize: '20.6px', lineHeight: '1.7', marginTop: '17px' }}
                         >
                           Each featured genre inspires <span className="font-black">limited press</span> drinks crafted to match the mood of the music on the turntable.
                         </p>
@@ -288,7 +289,7 @@ export default function MenuXL() {
                             }}
                           />
                           <span
-                            className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-black"
+                            className="font-[family-name:var(--font-libre-baskerville)] font-bold whitespace-nowrap uppercase text-black"
                             style={{ fontSize: '20.4px', letterSpacing: '0.15em', position: 'relative', zIndex: 2 }}
                           >
                             Limited Press - <span style={{ fontWeight: 400, fontSize: '20.4px', letterSpacing: '0.05em' }}> In rotation for a limited time</span>

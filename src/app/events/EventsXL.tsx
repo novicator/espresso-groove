@@ -89,10 +89,11 @@ export default function EventsXL() {
               <h1
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
                 style={{
-                  fontSize: '80.8px',
+                  fontSize: '60.8px',
                   fontWeight: 900,
                   letterSpacing: '-0.02em',
                   textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+                  marginTop: '10px',
                 }}
               >
                 Events
@@ -101,7 +102,7 @@ export default function EventsXL() {
             <p
               className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
               style={{
-                fontSize: '55.3px',
+                fontSize: '45.3px',
                 fontWeight: 900,
                 letterSpacing: '0.2em',
                 marginTop: '-10px',
@@ -159,11 +160,11 @@ export default function EventsXL() {
 
             {/* BOTTOM BOX - Calendar */}
             <div
-              style={{ width: '720px', padding: '4.8px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '12px', marginTop: '6px' }}
+              style={{ width: '899px', padding: '4.8px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '12px', marginTop: '6px' }}
             >
-              <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full" style={{ borderRadius: '8.4px', padding: '24px', paddingBottom: '6px' }}>
+              <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full" style={{ borderRadius: '8.4px', padding: '12px 24px 24px 24px', paddingBottom: '5px' }}>
                 {/* Month Navigation */}
-                <div className="flex items-center justify-between" style={{ marginBottom: '24px' }}>
+                <div className="flex items-center justify-between" style={{ marginBottom: '12px',}}>
                   <button
                     onClick={() => {
                       const prev = month === 0 ? 11 : month - 1;
@@ -173,15 +174,15 @@ export default function EventsXL() {
                       setSelectedDay(null);
                     }}
                     className="text-white active:scale-125 duration-150 transition-all"
-                    style={{ padding: '12px' }}
+                    style={{ padding: '12px 12px 12px 12px' }}
                   >
-                    <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '36px', height: '36px' }}>
+                    <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ width: '36px', height: '36px', }}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
                   <span
                     className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                    style={{ fontSize: '32.4px', letterSpacing: '0.1em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                    style={{ fontSize: '27.4px', letterSpacing: '0.1em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                   >
                     {MONTHS[month]} {year}
                   </span>
@@ -203,12 +204,12 @@ export default function EventsXL() {
                 </div>
 
                 {/* Day Headers */}
-                <div className="grid grid-cols-7" style={{ gap: '6px', marginBottom: '12px' }}>
+                <div className="grid grid-cols-7" style={{ gap: '6px', marginBottom: '6px' }}>
                   {DAYS.map((day) => (
                     <div
                       key={day}
                       className="text-center font-[family-name:var(--font-bebas-neue)] text-white/60 uppercase"
-                      style={{ fontSize: '30px', letterSpacing: '0.05em' }}
+                      style={{ fontSize: '25px', letterSpacing: '0.05em' }}
                     >
                       {day}
                     </div>
@@ -216,6 +217,7 @@ export default function EventsXL() {
                 </div>
 
                 {/* Calendar Grid */}
+              <div style={{ maxWidth: '899px', margin: '0 auto' }}>
                 <div className="grid grid-cols-7" style={{ gap: '6px' }}>
                   {Array.from({ length: firstDay }).map((_, i) => (
                     <div key={`empty-${i}`} />
@@ -236,7 +238,7 @@ export default function EventsXL() {
                         onClick={() => setSelectedDay(isSelected ? null : day)}
                         className="flex flex-col items-center justify-center rounded-lg transition-all duration-150"
                         style={{
-                          aspectRatio: '1',
+                          aspectRatio: '2',
                           background: isSelected
                             ? 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)'
                             : isToday
@@ -247,7 +249,7 @@ export default function EventsXL() {
                       >
                         <span
                           className="font-[family-name:var(--font-bebas-neue)] text-white"
-                          style={{ fontSize: '33.6px' }}
+                          style={{ fontSize: '28.6px', marginTop: '12px', }}
                         >
                           {day}
                         </span>
@@ -264,6 +266,7 @@ export default function EventsXL() {
                     );
                   })}
                 </div>
+              </div>
               </div>
             </div>
           </div>

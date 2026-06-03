@@ -455,7 +455,7 @@ export default function PageMobile() {
                   textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
                 }}
               >
-                We spin a genre and let the music inspire the menu.
+                We spin a genre and <br></br>let the music inspire the menu.
               </p>
             </div>
           </div>
@@ -684,7 +684,7 @@ export default function PageMobile() {
               >
                 <div
                   className="bg-white"
-                  style={{ width: '10vw', height: '0.6vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+                  style={{ width: '7vw', height: '0.5vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
                 />
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
@@ -698,7 +698,7 @@ export default function PageMobile() {
                 </span>
                 <div
                   className="bg-white"
-                  style={{ width: '10vw', height: '0.6vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+                  style={{ width: '7vw', height: '0.5vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
                 />
               </div>
 
@@ -871,7 +871,7 @@ export default function PageMobile() {
                 className="text-[#555555] font-[family-name:var(--font-inter)]"
                 style={{ fontSize: '3.5vw' }}
               >
-                Store Photo Coming Soon
+                Store Photos Coming Soon
               </span>
             </div>
 
@@ -1023,6 +1023,8 @@ export default function PageMobile() {
               </svg>
             </a>
           </div>
+
+          
 
         </div>
 

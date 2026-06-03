@@ -105,10 +105,11 @@ export default function MenuDesktop() {
               <h1
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
                 style={{
-                  fontSize: '6.61vw',
+                  fontSize: '5.5vw',
                   fontWeight: 900,
                   letterSpacing: '-0.02em',
                   textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+                  marginTop: '1vw'
                 }}
               >
                 Menu
@@ -117,10 +118,10 @@ export default function MenuDesktop() {
             <p
               className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
               style={{
-                fontSize: '4.14vw',
+                fontSize: '3.8vw',
                 fontWeight: 900,
                 letterSpacing: '0.2em',
-                marginTop: '0vw',
+                marginTop: '-0.7vw',
                 textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
               }}
             >
@@ -129,19 +130,19 @@ export default function MenuDesktop() {
           </div>
 
           {/* Dropdown */}
-          <div className="relative" style={{ paddingInline: '4vw', marginTop: '-1vw' }}>
+          <div className="relative" style={{ paddingInline: '4vw', marginTop: '-3vw' }}>
             <div
               className="rounded-full mx-auto relative"
-              style={{ padding: '0.4vw', width: '60vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+              style={{ padding: '0.4vw', width: '48vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
             >
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 className="flex items-center justify-between rounded-full bg-[#2d1f1a] cursor-pointer w-full"
-                style={{ paddingLeft: '3vw', paddingRight: '2.5vw', paddingTop: '1.2vw', paddingBottom: '1.2vw' }}
+                style={{ paddingLeft: '3vw', paddingRight: '2.5vw', paddingTop: '0.8vw', paddingBottom: '0.8vw' }}
               >
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold"
-                  style={{ fontSize: '1.8vw' }}
+                  style={{ fontSize: '1.5vw' }}
                 >
                   {activeFilter}
                 </span>
@@ -172,7 +173,7 @@ export default function MenuDesktop() {
                     <button
                       onClick={() => { setActiveFilter("All"); setDropdownOpen(false); }}
                       className="flex items-center w-full text-left font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors font-bold"
-                      style={{ fontSize: '1.6vw', padding: '1.2vw 2.5vw' }}
+                      style={{ fontSize: '1.6vw', padding: '1.2vw 2.5vw', }}
                     >
                       All
                     </button>
@@ -199,7 +200,7 @@ export default function MenuDesktop() {
                           }}
                         />
                         <span
-                          className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-black"
+                          className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-black whitespace-nowrap"
                           style={{ fontSize: '1.3vw', letterSpacing: '0.1em', position: 'relative', zIndex: 2 }}
                         >
                           Limited Press -<span style={{ fontWeight: 400, fontSize: '1.3vw', letterSpacing: '0.05em' }}> In rotation for a limited time</span>

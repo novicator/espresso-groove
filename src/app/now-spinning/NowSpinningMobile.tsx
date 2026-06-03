@@ -101,7 +101,7 @@ export default function NowSpinningMobile() {
                             <h1
                                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
                                 style={{
-                                    fontSize: '10vw',
+                                    fontSize: '8.5vw',
                                     fontWeight: 900,
                                     letterSpacing: '-0.02em',
                                     textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
@@ -128,7 +128,7 @@ export default function NowSpinningMobile() {
                     {/* Brown Box */}
                     <div
                         className="rounded-xl"
-                        style={{ marginInline: '4vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+                        style={{ marginInline: '4vw', marginTop: '-4vw',  padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
                     >
                         <div className="rounded-lg overflow-hidden bg-[#2d1f1a]" style={{ padding: '5vw' }}>
                             <p
@@ -225,7 +225,7 @@ export default function NowSpinningMobile() {
                                         <span
                                             className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                                             style={{
-                                                fontSize: '2.7vw',
+                                                fontSize: '2.5vw',
                                                 letterSpacing: '0.02em',
                                                 textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                                             }}
@@ -248,7 +248,7 @@ export default function NowSpinningMobile() {
                                         <span
                                             className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase"
                                             style={{
-                                                fontSize: '2.7vw',
+                                                fontSize: '2.5vw',
                                                 letterSpacing: '0.02em',
                                                 textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)',
                                             }}

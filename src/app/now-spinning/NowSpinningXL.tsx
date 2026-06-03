@@ -54,7 +54,7 @@ export default function NowSpinningXL() {
               <div className="flex items-center justify-center" style={{ gap: '14px' }}>
                 <h1
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
-                  style={{ fontSize: '80px', fontWeight: 900, letterSpacing: '-0.02em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                  style={{ fontSize: '60px', fontWeight: 900, letterSpacing: '-0.02em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                 >
                   Now Spinning
                 </h1>
@@ -62,10 +62,10 @@ export default function NowSpinningXL() {
               <p
                 className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
                 style={{
-                  fontSize: '62.5px',
+                  fontSize: '49.5px',
                   fontWeight: 900,
                   letterSpacing: '0.2em',
-                  marginTop: '0px',
+                  marginTop: '-5px',
                   textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
                 }}
               >
@@ -75,24 +75,24 @@ export default function NowSpinningXL() {
 
             {/* BOX 1 - Description Text */}
             <div
-              style={{ marginInline: '42px', marginBottom: '18.2px', padding: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '14px' }}
+              style={{ marginInline: '105px', marginTop: '-25px', marginBottom: '18.2px', padding: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '14px' }}
             >
-              <div className="bg-[#2d1f1a]" style={{ borderRadius: '9.8px', padding: '35px' }}>
+              <div className="bg-[#2d1f1a]" style={{ borderRadius: '9.8px', padding: '25px 35px 30px 35px' }}>
                 <p
                   className="font-[family-name:var(--font-libre-baskerville)] text-white text-center font-bold uppercase"
-                  style={{ fontSize: '42px', letterSpacing: '0.1em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                  style={{ fontSize: '35px', letterSpacing: '0.1em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                 >
                   The Drop
                 </p>
                 <p
                   className="font-[family-name:var(--font-libre-baskerville)] text-white"
-                  style={{ fontSize: '26.6px', lineHeight: '1.7', textShadow: '1px 1px 4px rgba(0,0,0,0.6)', marginTop: '21px' }}
+                  style={{ fontSize: '22.6px', lineHeight: '1.7', textShadow: '1px 1px 4px rgba(0,0,0,0.6)', marginTop: '8px' }}
                 >
                   Every rotation tells a story. We pick a genre, dive deep into the sound, and craft coffee, tea, and energy/boba drinks inspired by the mood behind the music.
                 </p>
                 <p
                   className="font-[family-name:var(--font-libre-baskerville)] text-white text-center italic"
-                  style={{ fontSize: '26.6px', lineHeight: '1.7', textShadow: '1px 1px 4px rgba(0,0,0,0.6)', marginTop: '21px', fontWeight: 700 }}
+                  style={{ fontSize: '22.6px', lineHeight: '1.7', textShadow: '1px 1px 4px rgba(0,0,0,0.6)', marginTop: '8px', fontWeight: 700 }}
                 >
                   Sip the drinks. Spin the vinyl. Stay for the vibe.
                 </p>
@@ -101,38 +101,38 @@ export default function NowSpinningXL() {
 
             {/* BOX 2 - Featured Genre + Buttons */}
             <div
-              style={{ marginInline: '42px', marginBottom: '56px', padding: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '14px' }}
+              style={{ marginInline: '105px', marginBottom: '0px', padding: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '14px' }}
             >
               <div className="bg-[#2d1f1a]" style={{ borderRadius: '9.8px', padding: '42px' }}>
                 {/* Featured Genre */}
                 <h2
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center"
-                  style={{ fontSize: '63px', fontWeight: 900, letterSpacing: '0.15em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                  style={{ fontSize: '42px', marginTop: '-13px', fontWeight: 900, letterSpacing: '0.15em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                 >
                   Featured Genre
                 </h2>
 
                 {/* Jazz with dashes */}
-                <div className="flex items-center justify-center" style={{ gap: '30px', marginTop: '2.8px' }}>
-                  <div className="bg-white" style={{ width: '74px', height: '5.6px', boxShadow: '0 0 6px rgba(0,0,0,.9)' }} />
+                <div className="flex items-center justify-center" style={{ gap: '28px', marginTop: '2.8px' }}>
+                  <div className="bg-white" style={{ width: '74px', height: '4.6px', boxShadow: '0 0 6px rgba(0,0,0,.9)' }} />
                   <span
                     className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
-                    style={{ fontSize: '58px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
+                    style={{ fontSize: '46px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
                   >
-                    60<span className="lowercase">s</span> Revolution
+                    The 60<span className="lowercase">s</span> Revolution
                   </span>
-                  <div className="bg-white" style={{ width: '74px', height: '5.6px', boxShadow: '0 0 6px rgba(0,0,0,.9)' }} />
+                  <div className="bg-white" style={{ width: '74px', height: '4.6px', boxShadow: '0 0 6px rgba(0,0,0,.9)' }} />
                 </div>
 
                 {/* Three Buttons */}
-                <div className="flex" style={{ marginTop: '35px' }}>
+                <div className="flex" style={{ marginTop: '20px' }}>
                   <div className="flex-1 flex justify-center">
                     <button
                       onClick={() => setActiveTab("Behind the Groove")}
                       className="noisy text-center flex items-center justify-center active:scale-95 duration-150 transition-all bg-[#f06830]"
-                      style={{ height: '70px', width: '410px', borderRadius: '999px', border: activeTab === "Behind the Groove" ? '2px solid rgba(255,255,255,0.6)' : '2px solid rgba(255,255,255,0.2)' }}
+                      style={{ height: '70px', width: '360px', borderRadius: '999px', border: activeTab === "Behind the Groove" ? '2px solid rgba(255,255,255,0.6)' : '2px solid rgba(255,255,255,0.2)' }}
                     >
-                      <span className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase" style={{ fontSize: '25.2px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}>
+                      <span className="font-[family-name:var(--font-libre-baskerville)] font-bold text-white uppercase" style={{ fontSize: '22.2px', letterSpacing: '0.07em', textShadow: '1px 1px 0 rgba(255,255,255,0.15), -1px -1px 0 rgba(0,0,0,0.4), 0 0 8px rgba(0,0,0,1)' }}>
                         Behind the Groove
                       </span>
                     </button>
@@ -164,119 +164,119 @@ export default function NowSpinningXL() {
                 {/* Active Tab Title */}
                 <h2
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center"
-                  style={{ fontSize: '49px', fontWeight: 900, letterSpacing: '0.15em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', marginTop: '42px' }}
+                  style={{ fontSize: '44px', fontWeight: 900, letterSpacing: '0.15em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', marginTop: '28px' }}
                 >
                   {activeTab}
                 </h2>
 
                 {/* Gradient Divider */}
-                <div style={{ height: '5.6px', marginTop: '21px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
+                <div style={{ height: '5.6px', marginTop: '15px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
                 {/* Tab Content */}
                 {activeTab === "Behind the Groove" && (
                   <div>
-                    <div style={{ marginTop: '35px' }}>
-                      <img src="/images/artwork/60s-revolution.png" alt="60s Revolution turntable" className="rounded-lg object-cover" style={{ width: '252px', height: '252px', float: 'left', marginRight: '28px', marginBottom: '14px' }} />
-                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '21.8px' }}>
+                    <div style={{ marginTop: '20px' }}>
+                      <img src="/images/artwork/60s-revolution.png" alt="60s Revolution turntable" className="rounded-lg object-cover" style={{ width: '252px', height: '252px', float: 'left', marginRight: '28px', marginBottom: '14px', marginTop: '10px', }} />
+                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '19.8px' }}>
                         The 60s weren&apos;t just a decade; they were an electric shift. It was the era where the single gave way to the album. Artists began creating <span style={{ fontWeight: 700 }}>albums</span>, a complete journey meant to be heard from Side A to Side B with deep, complex stories that changed how people thought about politics, love, and art. From the sun-drenched melodies of the British Invasion to the psychedelic explorations of the Sunset Strip, the 60s proved that music could be a movement. In basement clubs and massive festivals, artists began to use the studio as an instrument, blending blues, folk, and rock into a sound that felt like the future. When the needle hit those specific records, the world actually felt different.
                       </p>
-                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '21.8px', marginTop: '28px' }}>
+                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '19.8px', marginTop: '28px', marginBottom: '-13px', }}>
                         At <span style={{ fontWeight: 700 }}>Espresso Groove</span>, we&apos;re starting where the modern ritual began: with the pioneers who taught us how to listen.
                       </p>
                     </div>
 
                     <div style={{ height: '5.6px', marginTop: '42px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
-                    <h3 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center font-bold" style={{ fontSize: '49px', letterSpacing: '0.15em', marginTop: '42px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
+                    <h3 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center font-bold" style={{ fontSize: '44px', letterSpacing: '0.15em', marginTop: '28px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
                       The Legends
                     </h3>
 
                     <div style={{ marginTop: '14px' }}>
-                      <img src="/images/artwork/60s-revolution-2.png" alt="60s Revolution guitarist" className="rounded-lg object-cover" style={{ width: '280px', height: '280px', float: 'right', marginLeft: '28px', marginBottom: '14px' }} />
-                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed italic" style={{ fontSize: '23.8px', fontWeight: 700 }}>
+                      <img src="/images/artwork/60s-revolution-2.png" alt="60s Revolution guitarist" className="rounded-lg object-cover" style={{ width: '280px', height: '280px', float: 'right', marginLeft: '28px', marginBottom: '14px', marginTop: '-4px', }} />
+                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed italic" style={{ fontSize: '21.8px', fontWeight: 700, marginTop: '-7px', }}>
                         The 60<span className="lowercase">s</span> didn&apos;t just change music, they changed culture.
                       </p>
 
                       <div style={{ marginTop: '21px' }}>
-                        <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '22.4px', fontWeight: 700 }}>
+                        <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '20.4px', fontWeight: 700 }}>
                           Bob Dylan - Highway 61 Revisited
                         </p>
-                        <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '19.6px' }}>
+                        <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '20.4px' }}>
                           Turned lyrics into protest, poetry, and the voice of a generation.
                         </p>
                       </div>
 
                       <div style={{ marginTop: '16.8px' }}>
-                        <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '22.4px', fontWeight: 700 }}>
+                        <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '20.4px', fontWeight: 700 }}>
                           Nina Simone - I Put a Spell on You
                         </p>
-                        <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '19.6px' }}>
+                        <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '20.4px' }}>
                           One of the most powerful artistic voices of the civil rights era. Elegant, intense, timeless.
                         </p>
                       </div>
 
                       <div style={{ marginTop: '16.8px' }}>
-                        <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '22.4px', fontWeight: 700 }}>
+                        <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '20.4px', fontWeight: 700 }}>
                           The Beatles - Abbey Road
                         </p>
-                        <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '19.6px' }}>
+                        <p className="text-white whitespace-nowrap font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '20.4px' }}>
                           Redefined what an album could be, turning each release into a full sonic experience.
                         </p>
                       </div>
 
                       <div style={{ marginTop: '16.8px' }}>
-                        <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '22.4px', fontWeight: 700 }}>
+                        <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '20.4px', fontWeight: 700 }}>
                           The Beach Boys - Pet Sounds
                         </p>
-                        <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '19.6px' }}>
+                        <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '20.4px' }}>
                           Blended sunshine harmonies with groundbreaking studio experimentation that reshaped pop music forever.
                         </p>
                       </div>
 
                       <div style={{ marginTop: '16.8px' }}>
-                        <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '22.4px', fontWeight: 700 }}>
+                        <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '20.4px', fontWeight: 700 }}>
                           Jimi Hendrix - Electric Ladyland
                         </p>
-                        <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '19.6px' }}>
+                        <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '20.4px' }}>
                           Reinvented the electric guitar with feedback, fire, and fearless experimentation.
                         </p>
                       </div>
 
                       <div style={{ marginTop: '16.8px' }}>
-                        <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '22.4px', fontWeight: 700 }}>
+                        <p className="text-white font-[family-name:var(--font-inter)]" style={{ fontSize: '20.4px', fontWeight: 700 }}>
                           The Velvet Underground & Nico
                         </p>
-                        <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '19.6px' }}>
+                        <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '20.4px' }}>
                           Turned art rock into something raw, experimental, and decades ahead of its time.
                         </p>
                       </div>
 
-                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed italic" style={{ fontSize: '23.8px', fontWeight: 700, marginTop: '28px' }}>
+                      <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed italic" style={{ fontSize: '21.8px', fontWeight: 700, marginTop: '20px', marginBottom: '-14px', }}>
                         They didn&apos;t play it safe, and decades later, the records still feel alive.
                       </p>
                     </div>
 
                     <div style={{ height: '5.6px', marginTop: '42px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
-                    <h3 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center font-bold" style={{ fontSize: '49px', letterSpacing: '0.15em', marginTop: '42px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
+                    <h3 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center font-bold" style={{ fontSize: '40px', letterSpacing: '0.15em', marginTop: '28px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
                       Records of the Revolution
                     </h3>
 
-                    <div className="grid grid-cols-3" style={{ gap: '28px', marginTop: '35px', paddingInline: '96px' }}>
-                      {[
+                    <div className="grid grid-cols-3" style={{ gap: '28px', marginTop: '25px', paddingInline: '66px', marginBottom: '-14px', }}>
+                      {([
                         { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ff/c0/f8ffc056-55b4-2033-657d-32492d1eea25/827969239926.jpg/600x600bb.jpg', title: 'Highway 61 Revisited', artist: 'Bob Dylan' },
-                        { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/18/db/05/18db0507-f276-d93d-a4a7-e856a3f1590a/13UAAIM08283.rgb.jpg/600x600bb.jpg', title: 'I Put a Spell on You', artist: 'Nina Simone' },
+                        { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/18/db/05/18db0507-f276-d93d-a4a7-e856a3f1590a/13UAAIM08283.rgb.jpg/600x600bb.jpg', title: 'I Put a Spell on You', artist: 'Nina Simone', titleNowrap: true, titleSize: '18px' },
                         { src: '/images/artwork/abbey-road.jpg', title: 'Abbey Road', artist: 'The Beatles' },
                         { src: '/images/artwork/pet-sounds.jpg', title: 'Pet Sounds', artist: 'The Beach Boys' },
                         { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a6/b8/45/a6b84589-6ff7-a462-9ff9-170b724980d5/dj.wjkdwlks.jpg/600x600bb.jpg', title: 'Electric Ladyland', artist: 'Jimi Hendrix' },
                         { src: 'https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/92/93/39/9293397f-a707-237e-ec7e-0ca613a67e3c/06UMGIM04143.rgb.jpg/600x600bb.jpg', title: 'The Velvet Underground & Nico', artist: 'The Velvet Underground' },
-                      ].map((album) => (
+                      ] as Array<{ src: string; title: string; artist: string; titleNowrap?: boolean; titleSize?: string; artistNowrap?: boolean; artistSize?: string }>).map((album) => (
                         <div key={album.title} className="text-center">
                           <img src={album.src} alt={`${album.title} by ${album.artist}`} className="rounded-lg object-cover w-full" style={{ aspectRatio: '1' }} />
-                          <p className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold uppercase" style={{ fontSize: '21px', marginTop: '8.4px', textShadow: '1px 1px 4px rgba(0,0,0,0.6)' }}>
+                          <p className={`font-[family-name:var(--font-libre-baskerville)] text-white font-bold uppercase ${album.titleNowrap ? 'whitespace-nowrap' : ''}`} style={{ fontSize: album.titleSize ?? '21px', marginTop: '8.4px', textShadow: '1px 1px 4px rgba(0,0,0,0.6)' }}>
                             {album.title}
                           </p>
-                          <p className="text-white/60 font-[family-name:var(--font-inter)]" style={{ fontSize: '21px' }}>
+                          <p className={`text-white/60 font-[family-name:var(--font-inter)] ${album.artistNowrap ? 'whitespace-nowrap' : ''}`} style={{ fontSize: album.artistSize ?? '21px' }}>
                             {album.artist}
                           </p>
                         </div>
@@ -285,15 +285,15 @@ export default function NowSpinningXL() {
 
                     <div style={{ height: '5.6px', marginTop: '42px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
 
-                    <h3 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center font-bold" style={{ fontSize: '42px', letterSpacing: '0.15em', marginTop: '42px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
+                    <h3 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase text-center font-bold" style={{ fontSize: '40px', letterSpacing: '0.15em', marginTop: '28px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>
                       The Sound Lives On
                     </h3>
 
-                    <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '21.8px', marginTop: '35px' }}>
+                    <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '19.8px', marginTop: '17px' }}>
                       The sound of the 60s never disappeared. It just changed shape. You still hear it in indie guitars, layered harmonies, vintage tones, and artists chasing the same fearless energy that redefined modern music. From Jack White to Tame Impala to The Black Keys, today&apos;s sound still echoes the revolution that changed everything.
                     </p>
 
-                    <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '21.8px', marginTop: '28px', paddingBottom: '28px' }}>
+                    <p className="text-white font-[family-name:var(--font-inter)] leading-relaxed" style={{ fontSize: '19.8px', marginTop: '22px', paddingBottom: '0px' }}>
                       That&apos;s why the 60s are now spinning at Espresso Groove. It was the decade that taught music to break rules, say something real, and make people stop and listen. At Espresso Groove, we believe that great coffee and great records were never meant to be rushed. Sip slowly. Spin something timeless. Stay in the moment.
                     </p>
                   </div>

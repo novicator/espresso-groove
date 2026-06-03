@@ -433,7 +433,7 @@ export default function MenuMobile() {
           {[
             { name: "PURPLE HAZE", desc: "Lemon lavender vanilla latte with butterfly pea cold foam and purple shimmer." },
             { name: "SUNDAY MORNING", desc: "Banana vanilla cold brew with sweet cream foam and vanilla wafer crumbles." },
-            { name: "STRAWBERRY FIELDS", desc: "Strawberry passionfruit refresher with popping pearls." },
+            { name: "STRAWBERRY FIELDS", desc: "Strawberry passionfruit refresher with\npopping pearls." },
           ].map((item, index) => (
             <div key={`ice-${index}`}>
               {index > 0 && <div style={{ height: '0.3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
@@ -443,7 +443,7 @@ export default function MenuMobile() {
                     <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
                       style={{ fontSize: '5.7vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
                   </div>
-                  <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3.7vw', marginTop: '0.5vw' }}>{item.desc}</p>
+                  <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: '3.7vw', marginTop: '0.5vw', whiteSpace: 'pre-line' }}>{item.desc}</p>
                 </div>
               </div>
             </div>

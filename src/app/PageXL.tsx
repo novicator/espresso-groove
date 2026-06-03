@@ -153,7 +153,7 @@ export default function PageXL() {
 
         {/* === CONTENT LAYER (px values based on 1400px viewport) === */}
         <div className="relative z-10">
-          <div className="relative" style={{ maxWidth: '1400px', margin: '0 auto', zoom: 0.857 }}>
+          <div className="relative" style={{ maxWidth: '1450px', margin: '0 auto', zoom: 0.857 }}>
             {/* Logo */}
             <img
               src="/images/Expresso groove.svg"
@@ -712,7 +712,7 @@ export default function PageXL() {
                         className="text-[#555555] font-[family-name:var(--font-inter)]"
                         style={{ fontSize: '25.2px' }}
                       >
-                        Store Photo Coming Soon
+                        Store Photos Coming Soon
                       </span>
                     </div>
 

@@ -565,7 +565,7 @@ export default function VinylDesktop() {
         {/* Vinyl clip wrapper - prevents horizontal overflow */}
         <div className="absolute inset-0 z-[5] pointer-events-none" style={{ clipPath: 'inset(0)' }}>
           {/* Left vinyl - mid left, spinning clockwise */}
-          <div className="absolute" style={{ left: '-30vw', top: '15vw', width: '60vw', height: '70vw' }}>
+          <div className="absolute" style={{ left: '-30vw', top: '12vw', width: '60vw', height: '70vw' }}>
             <img
               src="/images/vinyl.svg"
               alt=""
@@ -622,7 +622,7 @@ export default function VinylDesktop() {
             <h1
               className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
               style={{
-                fontSize: '6.61vw',
+                fontSize: '5.5vw',
                 fontWeight: 900,
                 letterSpacing: '-0.02em',
                 textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
@@ -634,10 +634,10 @@ export default function VinylDesktop() {
             <p
               className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
               style={{
-                fontSize: '4.45vw',
+                fontSize: '3.8vw',
                 fontWeight: 900,
                 letterSpacing: '0.2em',
-                marginTop: '0vw',
+                marginTop: '-0.6vw',
                 textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
               }}
             >
@@ -646,7 +646,7 @@ export default function VinylDesktop() {
           </div>
 
           {/* Dropdown Bar */}
-          <div className="relative flex justify-start" style={{ marginTop: '-4vw', paddingLeft: '30vw' }}>
+          <div className="relative flex justify-start" style={{ marginTop: '-5vw', paddingLeft: '30vw' }}>
             <div
               className="rounded-full relative"
               style={{ padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
@@ -654,11 +654,11 @@ export default function VinylDesktop() {
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 className="flex items-center justify-between rounded-full bg-[#2d1f1a] cursor-pointer"
-                style={{ width: '33vw', height: '4.5vw', paddingLeft: '3vw', paddingRight: '2.5vw', gap: '1.5vw' }}
+                style={{ width: '33vw', height: '4vw', paddingLeft: '3vw', paddingRight: '2.5vw', gap: '1.5vw', }}
               >
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold"
-                  style={{ fontSize: '1.9vw' }}
+                  style={{ fontSize: '1.6vw' }}
                 >
                   {selectedFilter}
                 </span>
@@ -699,30 +699,30 @@ export default function VinylDesktop() {
                     <button
                       onClick={() => { setSelectedFilter("Now Spinning"); setDropdownOpen(false); }}
                       className="flex flex-col w-full text-left cursor-pointer hover:bg-white/10 transition-colors"
-                      style={{ padding: '1.2vw 2.5vw' }}
+                      style={{ padding: '1.2vw 2vw' }}
                     >
-                      <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '1.9vw' }}>Now Spinning</span>
-                      <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '1.5vw', marginTop: '0.3vw' }}>What&apos;s playing in the house right now.</span>
+                      <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '1.6vw' }}>Now Spinning</span>
+                      <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '1.3vw', marginTop: '0.3vw' }}>What&apos;s playing in the house right now.</span>
                     </button>
 
                     {/* Fresh Drops */}
                     <button
                       onClick={() => { setSelectedFilter("Fresh Drops"); setDropdownOpen(false); }}
                       className="flex flex-col w-full text-left cursor-pointer hover:bg-white/10 transition-colors"
-                      style={{ padding: '1.2vw 2.5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                      style={{ padding: '1.2vw 2vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
                     >
-                      <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '1.9vw' }}>Fresh Drops</span>
-                      <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '1.5vw', marginTop: '0.3vw' }}>New arrivals and recent releases worth pulling up for.</span>
+                      <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '1.6vw' }}>Fresh Drops</span>
+                      <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '1.3vw', marginTop: '0.3vw' }}>New arrivals and recent releases worth pulling up for.</span>
                     </button>
 
                     {/* The Groove Pick */}
                     <button
                       onClick={() => { setSelectedFilter("The Groove Pick"); setDropdownOpen(false); }}
                       className="flex flex-col w-full text-left cursor-pointer hover:bg-white/10 transition-colors"
-                      style={{ padding: '1.2vw 2.5vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                      style={{ padding: '1.2vw 2vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
                     >
-                      <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '1.9vw' }}>The Groove Pick</span>
-                      <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '1.5vw', marginTop: '0.3vw' }}>Staff favorites, deep cuts, and personal recommendations.</span>
+                      <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '1.6vw' }}>The Groove Pick</span>
+                      <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '1.3vw', marginTop: '0.3vw' }}>Staff favorites, deep cuts, and personal recommendations.</span>
                     </button>
 
                     {/* Dig the Stacks with submenu */}
@@ -734,10 +734,10 @@ export default function VinylDesktop() {
                       <button
                         onClick={() => setSubDropdownOpen(!subDropdownOpen)}
                         className={`flex flex-col w-full text-left cursor-pointer transition-colors ${subDropdownOpen ? 'bg-white/20' : 'hover:bg-white/10'}`}
-                        style={{ padding: '1.2vw 2.5vw' }}
+                        style={{ padding: '1.2vw 2vw' }}
                       >
-                        <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '1.9vw' }}>Dig the Stacks</span>
-                        <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '1.5vw', marginTop: '0.3vw' }}>Rock, indie, jazz, soul, hip-hop, soundtracks, deep cuts, and everything in between.</span>
+                        <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '1.6vw' }}>Dig the Stacks</span>
+                        <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '1.3vw', marginTop: '0.3vw' }}>Rock, indie, jazz, soul, hip-hop, soundtracks, deep cuts, and everything in between.</span>
                       </button>
 
                       {subDropdownOpen && (
@@ -747,7 +747,7 @@ export default function VinylDesktop() {
                               key={genre}
                               onClick={() => { setStacksSubFilter(genre); setSelectedFilter("Dig the Stacks"); setDropdownOpen(false); setSubDropdownOpen(false); }}
                               className="flex w-full text-left cursor-pointer hover:bg-white/15 transition-colors"
-                              style={{ padding: '0.7vw 4vw', borderTop: '1px solid rgba(255,255,255,0.05)' }}
+                              style={{ padding: '0.7vw 2vw', borderTop: '1px solid rgba(255,255,255,0.05)' }}
                             >
                               <span className="font-[family-name:var(--font-libre-baskerville)] text-white" style={{ fontSize: '1.5vw' }}>{genre}</span>
                             </button>
@@ -762,13 +762,13 @@ export default function VinylDesktop() {
           </div>
 
           {/* Search Bar */}
-          <div className="relative z-50" style={{ paddingLeft: '30vw', paddingRight: '10vw', marginTop: '2vw' }}>
-            <div className="relative" style={{ width: '50vw' }}>
+          <div className="relative z-50" style={{ paddingLeft: '30vw', paddingRight: '10vw', marginTop: '1.3vw' }}>
+            <div className="relative" style={{ width: '50vw',}}>
               <div
                 className="rounded-full"
                 style={{ padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
               >
-                <div className="flex items-center rounded-full bg-[#2d1f1a]" style={{ paddingLeft: '2vw', paddingRight: '2vw', height: '4.5vw', gap: '1vw' }}>
+                <div className="flex items-center rounded-full bg-[#2d1f1a]" style={{ paddingLeft: '2vw', paddingRight: '2vw', height: '4vw', gap: '1vw' }}>
                   <svg
                     className="text-white/50"
                     style={{ width: '2.2vw', height: '2.2vw', flexShrink: 0 }}
@@ -785,7 +785,7 @@ export default function VinylDesktop() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="bg-transparent text-white font-[family-name:var(--font-libre-baskerville)] outline-none w-full placeholder-white/40"
-                    style={{ fontSize: '2vw' }}
+                    style={{ fontSize: '1.8vw' }}
                   />
                 </div>
               </div>
@@ -849,9 +849,9 @@ export default function VinylDesktop() {
             className="noisy relative overflow-hidden"
             style={{
               marginInline: '4vw',
-              marginTop: '3vw',
+              marginTop: '1.5vw',
               marginLeft: '20vw',
-              padding: '2vw 3vw',
+              padding: '1.6vw 3vw',
               borderRadius: '12px',
               background: 'rgba(20,14,10,0.92)',
               border: '1px solid rgba(217,188,82,0.4)',
@@ -870,7 +870,7 @@ export default function VinylDesktop() {
             <p
               className="font-[family-name:var(--font-libre-baskerville)] text-center relative"
               style={{
-                fontSize: '1.8vw',
+                fontSize: '1.9vw',
                 lineHeight: '1.8',
                 zIndex: 1,
               }}
@@ -878,7 +878,7 @@ export default function VinylDesktop() {
               <span
                 className="font-bold"
                 style={{
-                  fontSize: '3vw',
+                  fontSize: '2.7vw',
                   background: 'linear-gradient(to right, #f0c040, #ffe08a, #f0c040)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -895,7 +895,7 @@ export default function VinylDesktop() {
           </div>
 
           {/* Now Spinning - Jazz */}
-          {hasRestored && selectedFilter === "Now Spinning" && <div style={{ paddingLeft: '4vw', paddingRight: '4vw', marginTop: '4vw' }}>
+          {hasRestored && selectedFilter === "Now Spinning" && <div style={{ paddingLeft: '4vw', paddingRight: '4vw', marginTop: '2vw' }}>
             <div
               className="rounded-xl"
               style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
@@ -910,14 +910,14 @@ export default function VinylDesktop() {
                     Now Spinning
                   </span>
                   <div className="flex items-center justify-center" style={{ gap: '2vw', marginTop: '1vw' }}>
-                    <div style={{ width: '5vw', height: '0.5vw', backgroundColor: 'white' }} />
+                    <div style={{ width: '5vw', height: '0.4vw', backgroundColor: 'white' }} />
                     <span
                       className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                      style={{ fontSize: '3.5vw', letterSpacing: '0.15em', marginTop: '-0.5vw' }}
+                      style={{ fontSize: '3.3vw', letterSpacing: '0.15em', marginTop: '-0.5vw' }}
                     >
                       60<span className="lowercase">s</span> Revolution
                     </span>
-                    <div style={{ width: '5vw', height: '0.5vw', backgroundColor: 'white' }} />
+                    <div style={{ width: '5vw', height: '0.4vw', backgroundColor: 'white' }} />
                   </div>
                 </div>
 
@@ -983,7 +983,7 @@ export default function VinylDesktop() {
                 else stacksRowRefs.current.delete(section.id);
               }}
               data-row-key={section.id}
-              style={{ paddingLeft: '4vw', paddingRight: '4vw', marginTop: '4vw' }}
+              style={{ paddingLeft: '4vw', paddingRight: '4vw', marginTop: '2vw' }}
             >
               <div
                 className="rounded-xl"
@@ -1000,13 +1000,14 @@ export default function VinylDesktop() {
                     </span>
                   </div>
 
-                  <StacksVinylRow
-                    variant="regular"
-                    rowTitle={section.id}
-                    vinyls={section.items}
-                    autoScroll
-                    isActive={section.id === activeStacksTitle && !searchArrival}
-                  />
+                  <div className="flex items-center justify-center" style={{ padding: '4vw 2vw' }}>
+                    <p
+                      className="text-white italic font-[family-name:var(--font-libre-baskerville)]"
+                      style={{ fontSize: '3vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                    >
+                      Coming Soon
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1022,7 +1023,7 @@ export default function VinylDesktop() {
                 else stacksRowRefs.current.delete(item.title);
               }}
               data-row-key={item.title}
-              style={{ paddingLeft: '4vw', paddingRight: '4vw', marginTop: '4vw' }}
+              style={{ paddingLeft: '4vw', paddingRight: '4vw', marginTop: '2vw' }}
             >
               <div
                 className="rounded-xl"
@@ -1050,20 +1051,21 @@ export default function VinylDesktop() {
                     </p>
                   </div>
 
-                  <StacksVinylRow
-                    variant="regular"
-                    rowTitle={item.title}
-                    vinyls={item.vinyls}
-                    autoScroll
-                    isActive={item.title === activeStacksTitle && !searchArrival}
-                  />
+                  <div className="flex items-center justify-center" style={{ padding: '4vw 2vw' }}>
+                    <p
+                      className="text-white italic font-[family-name:var(--font-libre-baskerville)]"
+                      style={{ fontSize: '3vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                    >
+                      Coming Soon
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
 
           {/* Bottom spacing */}
-          <div style={{ height: '4vw' }} />
+          <div style={{ height: '0vw' }} />
 
 
           <DesktopFooter />

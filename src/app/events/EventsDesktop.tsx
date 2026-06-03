@@ -106,10 +106,11 @@ export default function EventsDesktop() {
             <h1
               className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
               style={{
-                fontSize: '6.61vw',
+                fontSize: '5vw',
                 fontWeight: 900,
                 letterSpacing: '-0.02em',
                 textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
+                marginTop: '1vw',
               }}
             >
               Events
@@ -118,10 +119,10 @@ export default function EventsDesktop() {
           <p
             className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
             style={{
-              fontSize: '4.14vw',
+              fontSize: '4vw',
               fontWeight: 900,
               letterSpacing: '0.2em',
-              marginTop: '0vw',
+              marginTop: '-0.9vw',
               textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
             }}
           >
@@ -132,7 +133,7 @@ export default function EventsDesktop() {
         {/* Stacked Layout */}
         <div
           className="flex flex-col items-center"
-          style={{ marginInline: '3vw', marginBottom: '4vw', gap: '0.4vw', marginTop: '-2vw' }}
+          style={{ marginInline: '3vw', marginBottom: '0vw', gap: '0.4vw', marginTop: '-2vw' }}
         >
           {/* TOP BOX - Text */}
           <div
@@ -177,11 +178,11 @@ export default function EventsDesktop() {
 
           {/* BOTTOM BOX - Calendar */}
           <div
-            style={{ width: '60vw', padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '1vw', marginTop: '0.5vw', }}
+            style={{ width: '75vw', padding: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', borderRadius: '1vw', marginTop: '0.5vw', }}
           >
-            <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full" style={{ borderRadius: '0.7vw', padding: '2vw', paddingBottom: '0.5vw' }}>
+            <div className="rounded-lg overflow-hidden bg-[#2d1f1a] h-full" style={{ borderRadius: '0.7vw', padding: '1vw 2vw 2vw 2vw', paddingBottom: '0vw' }}>
               {/* Month Navigation */}
-              <div className="flex items-center justify-between" style={{ marginBottom: '2vw' }}>
+              <div className="flex items-center justify-between" style={{ marginBottom: '1vw' }}>
                 <button
                   onClick={() => {
                     const prev = month === 0 ? 11 : month - 1;
@@ -199,7 +200,7 @@ export default function EventsDesktop() {
                 </button>
                 <span
                   className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                  style={{ fontSize: '2.7vw', letterSpacing: '0.1em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                  style={{ fontSize: '2.4vw', letterSpacing: '0.1em', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                 >
                   {MONTHS[month]} {year}
                 </span>
@@ -226,7 +227,7 @@ export default function EventsDesktop() {
                   <div
                     key={day}
                     className="text-center font-[family-name:var(--font-bebas-neue)] text-white/60 uppercase"
-                    style={{ fontSize: '2.5vw', letterSpacing: '0.05em' }}
+                    style={{ fontSize: '2vw', letterSpacing: '0.05em' }}
                   >
                     {day}
                   </div>
@@ -254,7 +255,7 @@ export default function EventsDesktop() {
                       onClick={() => setSelectedDay(isSelected ? null : day)}
                       className="flex flex-col items-center justify-center rounded-lg transition-all duration-150"
                       style={{
-                        aspectRatio: '1',
+                        aspectRatio: '2',
                         background: isSelected
                           ? 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)'
                           : isToday
@@ -265,7 +266,7 @@ export default function EventsDesktop() {
                     >
                       <span
                         className="font-[family-name:var(--font-bebas-neue)] text-white"
-                        style={{ fontSize: '2.8vw' }}
+                        style={{ fontSize: '2.4vw', marginTop: '1vw', }}
                       >
                         {day}
                       </span>

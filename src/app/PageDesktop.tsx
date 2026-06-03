@@ -369,14 +369,14 @@ export default function PageDesktop() {
             className="bg-white"
             style={{
               width: '10.3vw',
-              height: '0.7vw',
+              height: '0.4vw',
               boxShadow: '0 0 6px rgba(0,0,0,0.9)',
             }}
           />
           <span
             className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
             style={{
-              fontSize: '4vw',
+              fontSize: '3vw',
               textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
               fontWeight: 900,
             }}
@@ -387,7 +387,7 @@ export default function PageDesktop() {
             className="bg-white"
             style={{
               width: '10.3vw',
-              height: '0.7vw',
+              height: '0.4vw',
               boxShadow: '0 0 6px rgba(0,0,0,.9)',
             }}
           />
@@ -396,13 +396,13 @@ export default function PageDesktop() {
         {/* Brown Box */}
         <div
           className="rounded-xl"
-          style={{ marginInline: '4vw', marginTop: '2.5vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+          style={{ marginInline: '4vw', marginTop: '2vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
         >
-          <div className="rounded-lg overflow-hidden bg-[#2d1f1a]" style={{ padding: '2vw' }}>
+          <div className="rounded-lg overflow-hidden bg-[#2d1f1a]" style={{ padding: '1vw' }}>
             <p
               className="font-[family-name:var(--font-libre-baskerville)] text-white text-center"
               style={{
-                fontSize: '2.4vw',
+                fontSize: '2vw',
                 lineHeight: '1.6',
                 textShadow: '1px 1px 4px rgba(0,0,0,0.6)',
               }}
@@ -682,7 +682,7 @@ export default function PageDesktop() {
               />
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
-                style={{ fontSize: '2.8vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
+                style={{ fontSize: '2.6vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
               >
                 Find the Groove
               </span>
@@ -698,18 +698,18 @@ export default function PageDesktop() {
                 {/* Store Photo Placeholder */}
                 <div
                   className="w-full bg-[#d4d4d4] flex items-center justify-center"
-                  style={{ height: '20vw' }}
+                  style={{ height: '16vw' }}
                 >
                   <span
                     className="text-[#555555] font-[family-name:var(--font-inter)]"
                     style={{ fontSize: '1.8vw' }}
                   >
-                    Store Photo Coming Soon
+                    Store Photos Coming Soon
                   </span>
                 </div>
 
                 {/* Store Info */}
-                <div style={{ padding: '2vw' }}>
+                <div style={{ padding: '2vw 2vw 1vw 2vw' }}>
                   {/* Address */}
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=3540+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
@@ -725,13 +725,13 @@ export default function PageDesktop() {
                     <div>
                       <p
                         className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                        style={{ fontSize: '2vw' }}
+                        style={{ fontSize: '1.7vw' }}
                       >
                         3540 Belle Terre Blvd • Suite C
                       </p>
                       <p
                         className="text-white/70 font-[family-name:var(--font-inter)]"
-                        style={{ fontSize: '1.8vw' }}
+                        style={{ fontSize: '1.6vw' }}
                       >
                         Myrtle Beach, SC 29526
                       </p>
@@ -749,25 +749,25 @@ export default function PageDesktop() {
                     <div>
                       <p
                         className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                        style={{ fontSize: '2vw' }}
+                        style={{ fontSize: '1.7vw' }}
                       >
                         Tue–Fri: 7am–6pm
                       </p>
                       <p
                         className="text-white/70 font-[family-name:var(--font-inter)]"
-                        style={{ fontSize: '1.8vw' }}
+                        style={{ fontSize: '1.6vw' }}
                       >
                         Sat: 8am–7pm
                       </p>
                       <p
                         className="text-white/70 font-[family-name:var(--font-inter)]"
-                        style={{ fontSize: '1.8vw' }}
+                        style={{ fontSize: '1.6vw' }}
                       >
                         Sun: 8am–5pm
                       </p>
                       <p
                         className="text-white/70 font-[family-name:var(--font-inter)]"
-                        style={{ fontSize: '1.8vw' }}
+                        style={{ fontSize: '1.6vw' }}
                       >
                         Monday: Unplugged <br></br>(Flipping the records & prepping the beans. See you Tuesday at 7AM.)
                       </p>
@@ -798,11 +798,11 @@ export default function PageDesktop() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center"
-                    style={{ paddingTop: '1.5vw', gap: '1vw' }}
+                    style={{ paddingTop: '1vw', gap: '1vw' }}
                   >
                     <span
                       className="text-white font-[family-name:var(--font-libre-baskerville)] font-medium"
-                      style={{ fontSize: '2.2vw' }}
+                      style={{ fontSize: '1.8vw' }}
                     >
                       Find Us →
                     </span>
@@ -825,7 +825,7 @@ export default function PageDesktop() {
               />
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
-                style={{ fontSize: '2.8vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
+                style={{ fontSize: '2.6vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
               >
                 Drip • Drop • Vibe
               </span>
@@ -839,19 +839,19 @@ export default function PageDesktop() {
             <div style={{ paddingInline: '2vw', paddingTop: '0vw', textShadow: '2px 2px 8px rgba(0,0,0,0)' }}>
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                style={{ fontSize: '2vw', fontWeight: 900 }}
+                style={{ fontSize: '1.8vw', fontWeight: 900 }}
               >
                 Espresso Groove spun out of a simple idea:
               </p>
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                style={{ fontSize: '2vw', fontWeight: 900, marginTop: '1.5vw' }}
+                style={{ fontSize: '1.8vw', fontWeight: 900, marginTop: '1.5vw' }}
               >
                 The ritual of a crafted drink and the soul of a good record belong in the same room.
               </p>
               <p
                 className="text-white font-[family-name:var(--font-inter)] leading-relaxed"
-                style={{ fontSize: '2vw', fontWeight: 600, marginTop: '1.5vw' }}
+                style={{ fontSize: '1.8vw', fontWeight: 600, marginTop: '1.5vw' }}
               >
                 We believe great espresso and great vinyl share a common thread, they&apos;re both meant to be savored, not rushed. Every three weeks, we launch a new <span style={{ fontWeight: 900 }}>Rotation</span>: a curated pairing of sound and taste designed to let you settle in.
               </p>
