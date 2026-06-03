@@ -976,12 +976,14 @@ export default function VinylMobile() {
                         {item.desc}
                       </p>
                     </div>
-                    <StacksVinylRow
-                      rowTitle={item.title}
-                      vinyls={item.vinyls}
-                      autoScroll
-                      isActive={item.title === activeStacksTitle && !searchArrival}
-                    />
+                    <div className="flex items-center justify-center" style={{ padding: '10vw 4vw' }}>
+                      <p
+                        className="text-white italic font-[family-name:var(--font-libre-baskerville)]"
+                        style={{ fontSize: '6vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                      >
+                        Coming Soon
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1029,13 +1031,24 @@ export default function VinylMobile() {
                   )}
                 </div>
 
-                <StacksVinylRow
-                  variant="regular"
-                  rowTitle={section.id}
-                  vinyls={section.items}
-                  autoScroll
-                  isActive={section.id === activeStacksTitle && !searchArrival}
-                />
+                {section.id === "Now Spinning" ? (
+                  <StacksVinylRow
+                    variant="regular"
+                    rowTitle={section.id}
+                    vinyls={section.items}
+                    autoScroll
+                    isActive={section.id === activeStacksTitle && !searchArrival}
+                  />
+                ) : (
+                  <div className="flex items-center justify-center" style={{ padding: '10vw 4vw' }}>
+                    <p
+                      className="text-white italic font-[family-name:var(--font-libre-baskerville)]"
+                      style={{ fontSize: '6vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                    >
+                      Coming Soon
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
