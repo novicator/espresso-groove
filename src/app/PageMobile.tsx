@@ -225,7 +225,7 @@ export default function PageMobile() {
               fontWeight: 900,
             }}
           >
-            Craft drinks<br />Curated sound
+            Crafted drinks<br />Curated sound
           </p>
 
           <div style={{ height: '90vw' }}></div>

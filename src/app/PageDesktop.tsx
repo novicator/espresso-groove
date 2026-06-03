@@ -180,7 +180,7 @@ export default function PageDesktop() {
             fontWeight: 900,
           }}
         >
-          Craft drinks<br />Curated sound
+          Crafted drinks<br />Curated sound
         </p>
 
         {/* Buttons */}
