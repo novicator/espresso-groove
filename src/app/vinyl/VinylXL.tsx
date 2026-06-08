@@ -279,24 +279,10 @@ export default function VinylXL() {
   const [navVisible, setNavVisible] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [subDropdownOpen, setSubDropdownOpen] = useState(false);
-  const [selectedFilter, setSelectedFilter] = useState("Dig the Stacks");
+  const [selectedFilter, setSelectedFilter] = useState("Now Spinning");
   const [stacksSubFilter, setStacksSubFilter] = useState("Turn it Up");
   const [searchQuery, setSearchQuery] = useState("");
-  const [hasRestored, setHasRestored] = useState(false);
-
-  // Restore last-used filter from localStorage on mount.
-  useEffect(() => {
-    const stored = localStorage.getItem("vinyl-filter");
-    const valid = ["Now Spinning", "Fresh Drops", "The Groove Pick", "Dig the Stacks"];
-    if (stored && valid.includes(stored)) setSelectedFilter(stored);
-    setHasRestored(true);
-  }, []);
-
-  // Persist filter changes — only after the restore has run.
-  useEffect(() => {
-    if (!hasRestored) return;
-    localStorage.setItem("vinyl-filter", selectedFilter);
-  }, [selectedFilter, hasRestored]);
+  const [hasRestored] = useState(true);
 
   // Track which carousel row is most-visible — only that row's carousel auto-scrolls.
   const [activeStacksTitle, setActiveStacksTitle] = useState<string | null>(null);
