@@ -866,7 +866,7 @@ export default function VinylXL() {
                         className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
                         style={{ fontSize: '40px', letterSpacing: '0.15em', marginTop: '-7px' }}
                       >
-                        The 60<span className="lowercase">s</span> Revolution
+                        60<span className="lowercase">s</span> Revolution
                       </span>
                       <div style={{ width: '50px', height: '5px', backgroundColor: 'white' }} />
                     </div>

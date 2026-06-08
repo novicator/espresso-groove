@@ -368,13 +368,13 @@ export default function PageXL() {
             {/* Now Spinning */}
             <div
               className="flex items-center justify-center"
-              style={{ gap: '47.96px', marginTop: '25.18px' }}
+              style={{ gap: '38.96px', marginTop: '25.18px' }}
             >
               <div
                 className="bg-white"
                 style={{
-                  width: '123.50px',
-                  height: '8.39px',
+                  width: '85.50px',
+                  height: '5px',
                   boxShadow: '0 0 6px rgba(0,0,0,0.9)',
                 }}
               />
@@ -391,8 +391,8 @@ export default function PageXL() {
               <div
                 className="bg-white"
                 style={{
-                  width: '123.50px',
-                  height: '8.39px',
+                  width: '85.50px',
+                  height: '5px',
                   boxShadow: '0 0 6px rgba(0,0,0,.9)',
                 }}
               />
@@ -420,25 +420,25 @@ export default function PageXL() {
             {/* The 60s Revolution */}
             <div
               className="flex items-center justify-center"
-              style={{ gap: '49.16px', marginTop: '29.98px' }}
+              style={{ gap: '40.16px', marginTop: '29.98px' }}
             >
               <div
                 className="bg-white"
-                style={{ width: '146.28px', height: '9.59px', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+                style={{ width: '106.28px', height: '5px', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
               />
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
                 style={{
-                  fontSize: '40.96px',
+                  fontSize: '45.96px',
                   textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
                   fontWeight: 900,
                 }}
               >
-                The 60<span className="lowercase">s</span> Revolution
+                60<span className="lowercase">s</span> Revolution
               </span>
               <div
                 className="bg-white"
-                style={{ width: '146.28px', height: '9.59px', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+                style={{ width: '106.28px', height: '5px', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
               />
             </div>
 
@@ -590,14 +590,21 @@ export default function PageXL() {
                     >
                       Now Spinning
                     </span>
-                    <div className="flex items-center justify-center" style={{ gap: '21px', marginTop: '11.2px' }}>
+                    <div className="flex items-center justify-center" style={{ gap: '14px', marginTop: '11.2px' }}>
+                      <div
+                        className="bg-white"
+                        style={{ width: '22px', height: '2px', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+                      />
                       <span
                         className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold whitespace-nowrap"
                         style={{ fontSize: '23px', letterSpacing: '0.15em' }}
                       >
                         60<span className="lowercase">s</span> Revolution
                       </span>
-                      
+                      <div
+                        className="bg-white"
+                        style={{ width: '22px', height: '2px', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+                      />
                     </div>
                   </div>
 

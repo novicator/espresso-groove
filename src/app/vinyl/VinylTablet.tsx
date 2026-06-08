@@ -2,8 +2,8 @@
 
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import Link from "next/link";
-import Footer from "../components/Footer";
-import MobileNav from "../components/MobileNav";
+import TabletFooter from "../components/TabletFooter";
+import TabletNav from "../components/TabletNav";
 
 // All vw values converted from px based on 393px width
 // Formula: px ÷ 393 × 100 = vw
@@ -253,16 +253,16 @@ function StacksVinylRow({ vinyls, autoScroll = false, isActive = true, rowTitle,
 
   const isRegular = variant === "regular";
   const containerStyle = isRegular
-    ? { gap: '4vw', paddingLeft: '3vw', paddingRight: '3vw', paddingBottom: '4vw' }
-    : { gap: '3vw', paddingLeft: '4vw', paddingRight: '4vw', paddingBottom: '3vw', paddingTop: '3vw' };
+    ? { gap: 'calc(0.02 * var(--cw))', paddingLeft: 'calc(0.03 * var(--cw))', paddingRight: 'calc(0.03 * var(--cw))', paddingBottom: 'calc(0.04 * var(--cw))' }
+    : { gap: 'calc(0.03 * var(--cw))', paddingLeft: 'calc(0.04 * var(--cw))', paddingRight: 'calc(0.04 * var(--cw))', paddingBottom: 'calc(0.04 * var(--cw))', paddingTop: 'calc(0.03 * var(--cw))' };
   const cardStyle = isRegular
-    ? { width: '30.7vw', paddingTop: '1.2vw', paddingLeft: '1.2vw', paddingRight: '1.2vw', paddingBottom: '4.5vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }
-    : { width: '35vw', padding: '.8vw', paddingBottom: '3vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' };
-  const innerPadding = isRegular ? '3vw' : '1.5vw';
+    ? { width: 'calc(0.227 * var(--cw))', paddingTop: 'calc(0.006 * var(--cw))', paddingLeft: 'calc(0.006 * var(--cw))', paddingRight: 'calc(0.006 * var(--cw))', paddingBottom: 'calc(0.025 * var(--cw))', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }
+    : { width: 'calc(0.2 * var(--cw))', padding: 'calc(0.008 * var(--cw))', paddingBottom: 'calc(0.03 * var(--cw))', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' };
+  const innerPadding = isRegular ? 'calc(0.01 * var(--cw))' : 'calc(0.015 * var(--cw))';
   const idPrefix = isRegular ? 'card' : 'stacks-card';
 
   return (
-    <>
+    <div style={{ ['--cw' as string]: 'min(100vw, 715px)' } as React.CSSProperties}>
       <div
         ref={scrollRef}
         className="flex overflow-x-auto overflow-y-hidden hide-scrollbar"
@@ -286,11 +286,11 @@ function StacksVinylRow({ vinyls, autoScroll = false, isActive = true, rowTitle,
               <div style={{ padding: innerPadding }}>
                 <h4
                   className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight overflow-hidden whitespace-nowrap text-ellipsis"
-                  style={{ fontSize: '5vw' }}
+                  style={{ fontSize: 'calc(0.03 * var(--cw))' }}
                 >
                   {vinyl.name}
                 </h4>
-                <p className="text-white/60 font-[family-name:var(--font-inter)] overflow-hidden whitespace-nowrap text-ellipsis" style={{ fontSize: '3.8vw', marginTop: '0.5vw' }}>
+                <p className="text-white/60 font-[family-name:var(--font-inter)] overflow-hidden whitespace-nowrap text-ellipsis" style={{ fontSize: 'calc(0.025 * var(--cw))', marginTop: 0 }}>
                   {vinyl.artist}
                 </p>
               </div>
@@ -301,12 +301,12 @@ function StacksVinylRow({ vinyls, autoScroll = false, isActive = true, rowTitle,
       {!autoScroll && (
         <div
           style={{
-            marginLeft: '4vw',
-            marginRight: '4vw',
-            marginBottom: '3vw',
-            height: '1vw',
+            marginLeft: 'calc(0.04 * var(--cw))',
+            marginRight: 'calc(0.04 * var(--cw))',
+            marginBottom: 'calc(0.03 * var(--cw))',
+            height: 'calc(0.01 * var(--cw))',
             backgroundColor: 'rgba(255,255,255,0.2)',
-            borderRadius: '999px',
+            borderRadius: 'calc(999 * var(--w) / 600)',
             position: 'relative',
           }}
         >
@@ -318,16 +318,16 @@ function StacksVinylRow({ vinyls, autoScroll = false, isActive = true, rowTitle,
               width: `${thumbWidth}%`,
               height: '100%',
               backgroundColor: '#ffffff',
-              borderRadius: '999px',
+              borderRadius: 'calc(999 * var(--w) / 600)',
             }}
           />
         </div>
       )}
-    </>
+    </div>
   );
 }
 
-export default function VinylMobile() {
+export default function VinylTablet() {
   const [navVisible, setNavVisible] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [subDropdownOpen, setSubDropdownOpen] = useState(false);
@@ -476,7 +476,7 @@ export default function VinylMobile() {
 
   return (
     <>
-      <MobileNav onShow={() => setNavVisible(true)} />
+      <TabletNav onShow={() => setNavVisible(true)} />
       <style jsx global>{`
         @keyframes shimmer {
           0% { transform: translateX(-100%); }
@@ -512,17 +512,17 @@ export default function VinylMobile() {
           <>
             {/* Panel 1 */}
             <div
-              className="h-screen bg-cover bg-center"
+              className="h-screen bg-[length:100%_100%]"
               style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(-1)" }}
             />
             {/* Panel 2 */}
             <div
-              className="h-screen bg-cover bg-center"
+              className="h-screen bg-[length:100%_100%]"
               style={{ backgroundImage: "url('/images/background_v2.png')" }}
             />
             {/* Panel 3 */}
             <div
-              className="h-screen bg-cover bg-center"
+              className="h-screen bg-[length:100%_100%]"
               style={{ backgroundImage: "url('/images/new_background_v2.png')" }}
             />
             {/* Panel 4 */}
@@ -565,17 +565,17 @@ export default function VinylMobile() {
           <>
             {/* Panel 1 */}
             <div
-              className="h-screen bg-cover bg-center"
+              className="h-screen bg-[length:100%_100%]"
               style={{ backgroundImage: "url('/images/background_v2.png')", transform: "scaleY(-1)" }}
             />
             {/* Panel 2 - Footer background */}
             <div
-              className="h-screen bg-cover bg-center"
+              className="h-screen  bg-[length:100%_100%]"
               style={{ backgroundImage: "url('/images/menu_background_full.png')", }}
             />
             {/* Panel 3 - Footer background */}
             <div
-              className="h-screen bg-cover bg-center"
+              className="h-screen bg-[length:100%_100%]"
               style={{ backgroundImage: "url('/images/vibe_background.png')", transform: "scaleY(-1)",}}
             />
             {/* Panel 4 - Footer background */}
@@ -597,7 +597,7 @@ export default function VinylMobile() {
 
       {/* Vinyl clip wrapper - prevents horizontal overflow without affecting vertical scroll */}
       <div className="absolute inset-0 z-[5] pointer-events-none" style={{ clipPath: 'inset(0)' }}>
-      <div className="absolute" style={{ right: '-58vw', top: '-4vw', width: '120vw', height: '120vw' }}>
+      <div className="absolute" style={{ right: 'max(-35vw, -262.5px)', top: 'max(-2vw, -15px)', width: 'min(75vw, 562.5px)', height: 'min(75vw, 562.5px)' }}>
         <img
           src="/images/vinyl.svg"
           alt=""
@@ -607,15 +607,17 @@ export default function VinylMobile() {
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-10 transition-all duration-300" style={{ paddingTop: navVisible ? '17.2vw' : '0' }}>
+      <div className="relative z-20 transition-all duration-300" style={{ ['--w' as string]: 'min(100vw, 700px)', paddingTop: navVisible ? '83.568px' : '0', maxWidth: 'var(--w)', margin: '0 auto' } as React.CSSProperties}>
         {/* We Buy Vinyl Banner */}
         <div
           className="bg-[#d9bc52] noisy flex items-center justify-center"
           style={{
-            height: '7vw',
+            height: '28px',
             position: 'relative',
             overflow: 'hidden',
             boxShadow: '0 0 12px rgba(217,188,82,0.6), 0 0 24px rgba(217,188,82,0.3)',
+            width: '100vw',
+            marginLeft: 'calc(50% - 50vw)',
           }}
         >
           <div
@@ -631,7 +633,7 @@ export default function VinylMobile() {
           <span
             className="font-[family-name:var(--font-libre-baskerville)] font-bold uppercase text-black"
             style={{
-              fontSize: '4vw',
+              fontSize: '16.4px',
               letterSpacing: '0.1em',
               position: 'relative',
               zIndex: 2,
@@ -642,28 +644,29 @@ export default function VinylMobile() {
         </div>
 
         {/* Page Title */}
-        <div className="flex flex-col" style={{ marginTop: '2vw', marginBottom: '6.1vw' }}>
+        <div className="flex flex-col" style={{ marginTop: '5.88px', marginBottom: '17.934px' }}>
           <h1
-            className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
+            className="text-center font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
             style={{
-              fontSize: '10.7vw',
+              fontSize: '49.458px',
               fontWeight: 900,
               letterSpacing: '-0.02em',
               textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
-              paddingLeft: '14.1vw',
-              paddingTop: '3vw',
+              paddingLeft: '',
+              marginTop: '-10px',
+              paddingTop: '8.82px',
             }}
           >
             Vinyl
           </h1>
           <p
-            className="font-[family-name:var(--font-bebas-neue)] text-white uppercase"
+            className="text-center font-[family-name:var(--font-bebas-neue)] text-white uppercase"
             style={{
-              fontSize: '6.2vw',
+              fontSize: '36.228px',
               fontWeight: 900,
               letterSpacing: '0.2em',
-              marginTop: '0vw',
-              paddingLeft: '4.5vw',
+              marginTop: '-10px',
+              paddingLeft: '0px',
               textShadow: '1px 1px 4px rgba(0,0,0,0.9)',
             }}
           >
@@ -672,25 +675,25 @@ export default function VinylMobile() {
         </div>
 
         {/* Dropdown Bar */}
-        <div className="relative flex justify-start" style={{ marginTop: '-3vw', paddingLeft: '10vw' }}>
+        <div className="relative flex justify-center" style={{ marginTop: 'calc(-8.82 * var(--w) / 600)', marginLeft: 'calc(-40 * var(--w) / 600)' }}>
           <div
             className="rounded-full relative"
-            style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+            style={{ padding: 'calc(4.352 * var(--w) / 600)', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
           >
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
               className="flex items-center justify-between rounded-full bg-[#2d1f1a] cursor-pointer"
-              style={{ width: '50vw', paddingLeft: '6vw', paddingRight: '5vw', paddingTop: '2vw', paddingBottom: '2vw', gap: '3vw' }}
+              style={{ width: 'calc(347 * var(--w) / 600)', paddingLeft: 'calc(17.64 * var(--w) / 600)', paddingRight: 'calc(14.7 * var(--w) / 600)', paddingTop: 'calc(5.88 * var(--w) / 600)', paddingBottom: 'calc(5.88 * var(--w) / 600)', gap: 'calc(8.82 * var(--w) / 600)' }}
             >
               <span
                 className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold"
-                style={{ fontSize: selectedFilter === "The Groove Pick" ? '3.30vw' : '3.3vw' }}
+                style={{ fontSize: 'calc(16.702 * var(--w) / 600)' }}
               >
                 {selectedFilter}
               </span>
               <svg
                 className={`text-white transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
-                style={{ width: '3.5vw', height: '3.5vw' }}
+                style={{ width: 'calc(10.29 * var(--w) / 600)', height: 'calc(10.29 * var(--w) / 600)' }}
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2.5}
@@ -700,15 +703,23 @@ export default function VinylMobile() {
               </svg>
             </button>
 
+            {/* Click-outside overlay */}
+            {dropdownOpen && (
+              <div
+                className="fixed inset-0 z-[55]"
+                onClick={() => setDropdownOpen(false)}
+              />
+            )}
+
             {/* Dropdown Menu */}
             {dropdownOpen && (
               <div
                 className="absolute left-0 z-[60] rounded-xl overflow-hidden"
                 style={{
                   top: '100%',
-                  marginTop: '1.5vw',
+                  marginTop: 'calc(4.41 * var(--w) / 600)',
                   minWidth: '100%',
-                  padding: '0.8vw',
+                  padding: 'calc(4.352 * var(--w) / 600)',
                   background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
                 }}
               >
@@ -716,42 +727,46 @@ export default function VinylMobile() {
                   {/* Now Spinning */}
                   <button
                     onClick={() => { setSelectedFilter("Now Spinning"); setDropdownOpen(false); }}
-                    className="flex flex-col w-full text-left cursor-pointer hover:bg-white/10 transition-colors whitespace-nowrap"
-                    style={{ padding: '3vw 3vw' }}
+                    className="flex flex-col w-full text-left cursor-pointer hover:bg-white/10 transition-colors"
+                    style={{ padding: '8.82px 12.82px' }}
                   >
-                    <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '3.3vw' }}>Now Spinning</span>
-                    <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '2.8vw', marginTop: '0.5vw' }}>What&apos;s playing in the house right now.</span>
+                    <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: 'calc(16.702 * var(--w) / 600)' }}>Now Spinning</span>
+                    <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: 'calc(14.232 * var(--w) / 600)', marginTop: '1.47px' }}>What&apos;s playing in the house right now.</span>
                   </button>
 
                   {/* Fresh Drops */}
                   <button
                     onClick={() => { setSelectedFilter("Fresh Drops"); setDropdownOpen(false); }}
                     className="flex flex-col w-full text-left cursor-pointer hover:bg-white/10 transition-colors"
-                    style={{ padding: '3vw 3vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                    style={{ padding: '10.82px 12.82px', borderTop: '1px solid rgba(255,255,255,0.1)' }}
                   >
-                    <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '3.3vw' }}>Fresh Drops</span>
-                    <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '2.8vw', marginTop: '0.5vw' }}>New arrivals and recent<br />releases worth pulling up for.</span>
+                    <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: 'calc(16.702 * var(--w) / 600)' }}>Fresh Drops</span>
+                    <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: 'calc(14.232 * var(--w) / 600)', marginTop: '1.47px' }}>New arrivals and recent releases worth pulling up for.</span>
                   </button>
 
                   {/* The Groove Pick */}
                   <button
                     onClick={() => { setSelectedFilter("The Groove Pick"); setDropdownOpen(false); }}
                     className="flex flex-col w-full text-left cursor-pointer hover:bg-white/10 transition-colors"
-                    style={{ padding: '3vw 3vw', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                    style={{ padding: '10.82px 12.82px', borderTop: '1px solid rgba(255,255,255,0.1)' }}
                   >
-                    <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '3.3vw' }}>The Groove Pick</span>
-                    <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '2.8vw', marginTop: '0.5vw' }}>Staff favorites, deep cuts,<br /><span style={{ whiteSpace: 'nowrap' }}>and personal recommendations.</span></span>
+                    <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: 'calc(16.702 * var(--w) / 600)' }}>The Groove Pick</span>
+                    <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: 'calc(14.232 * var(--w) / 600)', marginTop: '1.47px' }}>Staff favorites, deep cuts, and personal recommendations.</span>
                   </button>
 
                   {/* Dig the Stacks with submenu */}
-                  <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div
+                    onMouseEnter={() => setSubDropdownOpen(true)}
+                    onMouseLeave={() => setSubDropdownOpen(false)}
+                    style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}
+                  >
                     <button
                       onClick={() => setSubDropdownOpen(!subDropdownOpen)}
                       className={`flex flex-col w-full text-left cursor-pointer transition-colors ${subDropdownOpen ? 'bg-white/20' : 'hover:bg-white/10'}`}
-                      style={{ padding: '3vw 3vw' }}
+                      style={{ padding: '10.82px 12.82px' }}
                     >
-                      <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: '3.3vw' }}>Dig the Stacks</span>
-                      <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: '2.8vw', marginTop: '0.5vw' }}>Rock, indie, jazz, soul, hip-hop, soundtracks, deep cuts, and everything in between.</span>
+                      <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold" style={{ fontSize: 'calc(16.702 * var(--w) / 600)' }}>Dig the Stacks</span>
+                      <span className="font-[family-name:var(--font-inter)] text-white/40" style={{ fontSize: 'calc(14.232 * var(--w) / 600)', marginTop: '1.47px' }}>Rock, indie, jazz, soul, hip-hop, soundtracks, deep cuts, and everything in between.</span>
                     </button>
 
                     {subDropdownOpen && (
@@ -761,9 +776,9 @@ export default function VinylMobile() {
                             key={genre}
                             onClick={() => { setStacksSubFilter(genre); setSelectedFilter("Dig the Stacks"); setDropdownOpen(false); setSubDropdownOpen(false); }}
                             className="flex w-full text-left cursor-pointer hover:bg-white/15 transition-colors"
-                            style={{ padding: '2vw 3vw', borderTop: '1px solid rgba(255,255,255,0.05)' }}
+                            style={{ padding: '6.82px 12.82px', borderTop: '1px solid rgba(255,255,255,0.05)' }}
                           >
-                            <span className="font-[family-name:var(--font-libre-baskerville)] text-white" style={{ fontSize: '3vw' }}>{genre}</span>
+                            <span className="font-[family-name:var(--font-libre-baskerville)] text-white" style={{ fontSize: 'calc(12.82 * var(--w) / 600)' }}>{genre}</span>
                           </button>
                         ))}
                       </div>
@@ -776,15 +791,16 @@ export default function VinylMobile() {
         </div>
 
         {/* Search Bar */}
-        <div className="relative z-50" style={{ paddingLeft: '10vw', paddingRight: '30vw', marginTop: '2vw' }}>
+        <div className="relative z-50 flex justify-center" style={{ marginTop: 'calc(5.88 * var(--w) / 600)' }}>
+          <div className="relative" style={{ width: 'calc(450 * var(--w) / 600)', marginLeft: 'calc(50 * var(--w) / 600)' }}>
           <div
-            className="rounded-full relative z-50"
-            style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+            className="rounded-full"
+            style={{ padding: 'calc(4.352 * var(--w) / 600)', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
           >
-            <div className="flex items-center rounded-full bg-[#2d1f1a]" style={{ paddingLeft: '4vw', paddingRight: '4vw', paddingTop: '2.5vw', paddingBottom: '2.5vw', gap: '2vw' }}>
+            <div className="flex items-center rounded-full bg-[#2d1f1a]" style={{ paddingLeft: 'calc(11.76 * var(--w) / 600)', paddingRight: 'calc(11.76 * var(--w) / 600)', paddingTop: 'calc(5.88 * var(--w) / 600)', paddingBottom: 'calc(5.88 * var(--w) / 600)', gap: 'calc(5.88 * var(--w) / 600)' }}>
               <svg
                 className="text-white/50"
-                style={{ width: '4vw', height: '4vw', flexShrink: 0 }}
+                style={{ width: 'calc(17.76 * var(--w) / 600)', height: 'calc(17.76 * var(--w) / 600)', flexShrink: 0 }}
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2.5}
@@ -799,7 +815,7 @@ export default function VinylMobile() {
                 onChange={(e) => setSearchQuery(e.target.value)}
 
                 className="bg-transparent text-white font-[family-name:var(--font-libre-baskerville)] outline-none w-full placeholder-white/40"
-                style={{ fontSize: '3vw' }}
+                style={{ fontSize: 'calc(16.72 * var(--w) / 600)' }}
               />
             </div>
           </div>
@@ -826,10 +842,8 @@ export default function VinylMobile() {
             <div
               className="absolute left-0 right-0 z-50 rounded-xl"
               style={{
-                marginTop: '1.5vw',
-                marginLeft: '10vw',
-                marginRight: '10vw',
-                padding: '0.8vw',
+                marginTop: 'calc(4.41 * var(--w) / 600)',
+                padding: 'calc(4.352 * var(--w) / 600)',
                 background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)',
               }}
             >
@@ -838,17 +852,17 @@ export default function VinylMobile() {
                 onClick={() => setSearchQuery("")}
                 className="absolute flex items-center justify-center bg-red-600 rounded-full cursor-pointer active:scale-90 transition-transform"
                 style={{
-                  width: '6vw',
-                  height: '6vw',
-                  top: '-2vw',
-                  right: '-2vw',
+                  width: 'calc(37.64 * var(--w) / 600)',
+                  height: 'calc(37.64 * var(--w) / 600)',
+                  top: 'calc(-8.88 * var(--w) / 600)',
+                  right: 'calc(-10.88 * var(--w) / 600)',
                   zIndex: 10,
                   boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
                 }}
               >
                 <svg
                   className="text-white"
-                  style={{ width: '3.2vw', height: '3.2vw' }}
+                  style={{ width: 'calc(20.408 * var(--w) / 600)', height: 'calc(20.408 * var(--w) / 600)' }}
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={3}
@@ -858,14 +872,14 @@ export default function VinylMobile() {
                 </svg>
               </button>
               <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
-              <div className="overflow-y-auto" style={{ maxHeight: '60vw' }}>
+              <div className="overflow-y-auto" style={{ maxHeight: 'calc(256.4 * var(--w) / 600)' }}>
                 {searchResults.map((item, i) => (
                   <div
                     key={`${item.name}-${i}`}
                     className="flex items-center font-[family-name:var(--font-libre-baskerville)] text-white cursor-pointer hover:bg-white/10 transition-colors"
                     style={{
-                      padding: '3vw 4vw',
-                      gap: '3vw',
+                      padding: '7.82px 11.76px',
+                      gap: 'calc(8.82 * var(--w) / 600)',
                       borderTop: i > 0 ? '1px solid rgba(255,255,255,0.1)' : 'none',
                     }}
                     onClick={() => scrollToItem(item)}
@@ -874,18 +888,18 @@ export default function VinylMobile() {
                       src={item.img}
                       alt={item.name}
                       className="rounded object-cover"
-                      style={{ width: '12vw', height: '12vw', flexShrink: 0 }}
+                      style={{ width: 'calc(50.28 * var(--w) / 600)', height: 'calc(50.28 * var(--w) / 600)', flexShrink: 0 }}
                     />
                     <div style={{ minWidth: 0 }}>
                       <p
                         className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight overflow-hidden whitespace-nowrap text-ellipsis"
-                        style={{ fontSize: '4.7vw' }}
+                        style={{ fontSize: 'calc(22.818 * var(--w) / 600)', paddingTop: '3px', }}
                       >
                         {item.name}
                       </p>
                       <p
                         className="text-white/50 font-[family-name:var(--font-inter)]"
-                        style={{ fontSize: '4vw' }}
+                        style={{ fontSize: 'calc(17.76 * var(--w) / 600)', marginTop: '-2px',}}
                       >
                         {item.artist}
                       </p>
@@ -896,16 +910,17 @@ export default function VinylMobile() {
               </div>
             </div>
           )}
+          </div>
         </div>
 
         {/* Starting At Note */}
         <div
           className="noisy relative overflow-hidden"
           style={{
-            marginInline: '3vw',
-            marginTop: '3vw',
-            padding: '2vw 2vw',
-            borderRadius: '12px',
+            marginInline: 'calc(40.76 * var(--w) / 600)',
+            marginTop: 'calc(8.82 * var(--w) / 600)',
+            padding: '5.88px 8.82px',
+            borderRadius: 'calc(12 * var(--w) / 600)',
             background: 'rgba(20,14,10,0.92)',
             border: '1px solid rgba(217,188,82,0.4)',
           }}
@@ -922,7 +937,7 @@ export default function VinylMobile() {
           <p
             className="font-[family-name:var(--font-libre-baskerville)] text-center relative"
             style={{
-              fontSize: '3vw',
+              fontSize: 'calc(8.82 * var(--w) / 600)',
               lineHeight: '1.8',
               zIndex: 1,
             }}
@@ -930,7 +945,7 @@ export default function VinylMobile() {
             <span
               className="font-bold"
               style={{
-                fontSize: '4.7vw',
+                fontSize: 'calc(24.818 * var(--w) / 600)',
                 background: 'linear-gradient(to right, #f0c040, #ffe08a, #f0c040)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -940,7 +955,7 @@ export default function VinylMobile() {
               The Drop
             </span>
             <br />
-            <span className="text-white/80 whitespace-nowrap" style={{fontSize: '3vw',}}>
+            <span className="text-white/80 whitespace-nowrap" style={{fontSize: 'calc(15.232 * var(--w) / 600)',}}>
               Rare pressings, signed vinyl, and colored variants available.
             </span>
           </p>
@@ -958,28 +973,28 @@ export default function VinylMobile() {
                   else stacksRowRefs.current.delete(item.title);
                 }}
                 data-row-key={item.title}
-                style={{ paddingInline: '4vw', marginTop: '4vw' }}
+                style={{ paddingInline: 'calc(11.76 * var(--w) / 600)', marginTop: 'calc(11.76 * var(--w) / 600)' }}
               >
                 <div
                   className="rounded-xl"
-                  style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+                  style={{ padding: '2.352px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
                 >
                   <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
-                    <div className="text-center" style={{ padding: '4vw', paddingBottom: '0' }}>
-                      <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold uppercase" style={{ fontSize: '4.5vw' }}>
+                    <div className="text-center" style={{ padding: 'calc(11.76 * var(--w) / 600)', paddingBottom: '0' }}>
+                      <span className="font-[family-name:var(--font-libre-baskerville)] text-white font-bold uppercase" style={{ fontSize: 'calc(17.23 * var(--w) / 600)' }}>
                         {item.title}
                       </span>
-                      <p className="font-[family-name:var(--font-libre-baskerville)] text-white" style={{ fontSize: '3.6vw', marginTop: '1vw', letterSpacing: '0.05em' }}>
+                      <p className="font-[family-name:var(--font-libre-baskerville)] text-white" style={{ fontSize: 'calc(15.584 * var(--w) / 600)', marginTop: '2.94px', letterSpacing: '0.05em' }}>
                         {item.genres.join(' • ')}
                       </p>
-                      <p className="font-[family-name:var(--font-libre-baskerville)] text-white italic" style={{ fontSize: '4vw', marginTop: '1vw' }}>
+                      <p className="font-[family-name:var(--font-libre-baskerville)] text-white italic" style={{ fontSize: 'calc(14.76 * var(--w) / 600)', marginTop: '2.94px' }}>
                         {item.desc}
                       </p>
                     </div>
-                    <div className="flex items-center justify-center" style={{ padding: '10vw 4vw' }}>
+                    <div className="flex items-center justify-center" style={{ padding: '29.4px 11.76px' }}>
                       <p
                         className="text-white italic font-[family-name:var(--font-libre-baskerville)]"
-                        style={{ fontSize: '6vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                        style={{ fontSize: 'calc(17.64 * var(--w) / 600)', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
                       >
                         Coming Soon
                       </p>
@@ -992,7 +1007,7 @@ export default function VinylMobile() {
         )}
 
         {/* Vinyl Sections */}
-        {hasRestored && selectedFilter !== "Dig the Stacks" && visibleSections.map((section) => (
+        { hasRestored && selectedFilter !== "Dig the Stacks" && visibleSections.map((section) => (
           <div
             key={section.id}
             id={`section-${section.id}`}
@@ -1001,32 +1016,32 @@ export default function VinylMobile() {
               else stacksRowRefs.current.delete(section.id);
             }}
             data-row-key={section.id}
-            style={{ paddingLeft: '4vw', paddingRight: '4vw', marginTop: '4vw' }}
+            style={{ paddingLeft: 'calc(11.76 * var(--w) / 600)', paddingRight: 'calc(11.76 * var(--w) / 600)', marginTop: 'calc(11.76 * var(--w) / 600)' }}
           >
             <div
               className="rounded-xl"
-              style={{ padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+              style={{ padding: 'calc(4.352 * var(--w) / 600)', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
             >
               <div className="rounded-lg overflow-hidden bg-[#2d1f1a]">
                 {/* Title */}
-                <div className="text-center" style={{ paddingTop: '3vw', paddingBottom: '4vw' }}>
+                <div className="text-center" style={{ paddingTop: 'calc(8.82 * var(--w) / 600)', paddingBottom: 'calc(11.76 * var(--w) / 600)' }}>
                   <span
                     className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold"
-                    style={{ fontSize: '4.7vw', letterSpacing: '0.15em' }}
+                    style={{ fontSize: 'calc(19.23 * var(--w) / 600)', letterSpacing: '0.15em' }}
                   >
                     {section.id}
                   </span>
                   {/* Jazz subtitle - only for Now Spinning */}
                   {section.subtitle && (
-                    <div className="flex items-center justify-center" style={{ gap: '2.7vw', marginTop: '1vw' }}>
-                      <div style={{ width: '5vw', height: '0.7vw', backgroundColor: 'white' }} />
+                    <div className="flex items-center justify-center" style={{ gap: 'calc(8.82 * var(--w) / 600)', marginTop: '2.94px' }}>
+                      <div style={{ width: 'calc(25.7 * var(--w) / 600)', height: '3px', backgroundColor: 'white' }} />
                       <span
                         className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold whitespace-nowrap"
-                        style={{ fontSize: '5.1vw', letterSpacing: '0.15em', marginTop: '0vw' }}
+                        style={{ fontSize: 'calc(23.23 * var(--w) / 600)', letterSpacing: '0.15em', marginTop: '0px' }}
                       >
                         60<span className="lowercase">s</span> Revolution
                       </span>
-                      <div style={{ width: '5vw', height: '0.7vw', backgroundColor: 'white' }} />
+                      <div style={{ width: 'calc(25.7 * var(--w) / 600)', height: '3px', backgroundColor: 'white' }} />
                     </div>
                   )}
                 </div>
@@ -1040,10 +1055,10 @@ export default function VinylMobile() {
                     isActive={section.id === activeStacksTitle && !searchArrival}
                   />
                 ) : (
-                  <div className="flex items-center justify-center" style={{ padding: '10vw 4vw' }}>
+                  <div className="flex items-center justify-center" style={{ padding: '39.4px 11.76px' }}>
                     <p
                       className="text-white italic font-[family-name:var(--font-libre-baskerville)]"
-                      style={{ fontSize: '6vw', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                      style={{ fontSize: 'calc(29.64 * var(--w) / 600)', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)', marginTop: 'calc(-20 * var(--w) / 600)', }}
                     >
                       Coming Soon
                     </p>
@@ -1055,11 +1070,11 @@ export default function VinylMobile() {
         ))}
 
         {/* Bottom spacing - peek of background below last section */}
-        <div style={{ height: '0vw' }} />
-
-        <Footer />
+        <div style={{ height: '0px' }} />
 
       </div>
+
+      <TabletFooter />
     </div>
     </>
   );

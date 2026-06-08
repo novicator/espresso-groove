@@ -9,12 +9,13 @@ interface Note {
 
 const sizePresets = {
   mobile: { height: '40vw', marginTop: '-5vw', fontSize: '10.6vw', left: '-3vw', top: '50%', wave: '4.6vw', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', speed: '8s', unit: 'vw' },
+  tablet: { height: '300.6px', marginTop: '-120.7px', fontSize: '45.164px', left: '0px', top: '50%', wave: '19.524px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', speed: '8s', unit: 'px' },
   desktop: { height: '15vw', marginTop: '-3vw', fontSize: '5vw', left: '-2vw', top: '50%', wave: '2vw', textShadow: 'none', speed: '10s', unit: 'vw' },
   xl: { height: '10vw', marginTop: '-1vw', fontSize: '3.5vw', left: '-1.5vw', top: '50%', wave: '1.5vw', textShadow: 'none', speed: '8s', unit: 'vw' },
   xlFixed: { height: '245px', marginTop: '-42px', fontSize: '70px', left: '-28px', top: '50%', wave: '28px', textShadow: 'none', speed: '10s', unit: 'px' },
 };
 
-export default function MusicNotes({ isPlaying, size = "mobile" }: { isPlaying: boolean; size?: "mobile" | "desktop" | "xl" | "xlFixed" }) {
+export default function MusicNotes({ isPlaying, size = "mobile" }: { isPlaying: boolean; size?: "mobile" | "tablet" | "desktop" | "xl" | "xlFixed" }) {
   const s = sizePresets[size];
   const [notes, setNotes] = useState<Note[]>([]);
   const noteIdRef = useRef(0);
@@ -50,7 +51,7 @@ export default function MusicNotes({ isPlaying, size = "mobile" }: { isPlaying: 
 
   return (
     <>
-      <div className="relative w-full overflow-hidden pointer-events-none" style={{ height: s.height, marginTop: s.marginTop }}>
+      <div className="relative w-full overflow-hidden pointer-events-none" style={{ height: s.height, marginTop: s.marginTop, ...(size === 'tablet' ? { width: '100vw', marginLeft: 'calc(50% - 50vw)' } : {}) }}>
         {notes.map((note) => (
           <span
             key={note.id}

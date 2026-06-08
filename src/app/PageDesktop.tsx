@@ -363,20 +363,20 @@ export default function PageDesktop() {
         {/* Now Spinning */}
         <div
           className="flex items-center justify-center"
-          style={{ gap: '4vw', marginTop: '2.1vw' }}
+          style={{ gap: '3.7vw', marginTop: '2.1vw' }}
         >
           <div
             className="bg-white"
             style={{
-              width: '10.3vw',
-              height: '0.4vw',
+              width: '6.3vw',
+              height: '0.45vw',
               boxShadow: '0 0 6px rgba(0,0,0,0.9)',
             }}
           />
           <span
             className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
             style={{
-              fontSize: '3vw',
+              fontSize: '3.3vw',
               textShadow: '2px 2px 8px rgba(0,0,0,0.9)',
               fontWeight: 900,
             }}
@@ -386,8 +386,8 @@ export default function PageDesktop() {
           <div
             className="bg-white"
             style={{
-              width: '10.3vw',
-              height: '0.4vw',
+              width: '6.3vw',
+              height: '0.45vw',
               boxShadow: '0 0 6px rgba(0,0,0,.9)',
             }}
           />
@@ -415,11 +415,11 @@ export default function PageDesktop() {
         {/* Jazz */}
         <div
           className="flex items-center justify-center"
-          style={{ gap: '4.1vw', marginTop: '2.5vw' }}
+          style={{ gap: '3.5vw', marginTop: '2.5vw' }}
         >
           <div
             className="bg-white"
-            style={{ width: '12.2vw', height: '0.8vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+            style={{ width: '8.2vw', height: '0.45vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
           />
           <span
             className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase whitespace-nowrap"
@@ -429,11 +429,11 @@ export default function PageDesktop() {
               fontWeight: 900,
             }}
           >
-            The 60<span className="lowercase">s</span> Revolution
+            60<span className="lowercase">s</span> Revolution
           </span>
           <div
             className="bg-white"
-            style={{ width: '12.2vw', height: '0.8vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+            style={{ width: '8.2vw', height: '0.45vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
           />
         </div>
 
@@ -586,13 +586,20 @@ export default function PageDesktop() {
                   Now Spinning
                 </span>
                 <div className="flex items-center justify-center" style={{ gap: '1vw', marginTop: '0.8vw' }}>
+                  <div
+                    className="bg-white"
+                    style={{ width: '1vw', height: '0.2vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+                  />
                   <span
                     className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase font-bold whitespace-nowrap"
                     style={{ fontSize: '1.7vw', letterSpacing: '0.15em' }}
                   >
                     60<span className="lowercase">s</span> Revolution
                   </span>
-                  
+                  <div
+                    className="bg-white"
+                    style={{ width: '1vw', height: '0.2vw', boxShadow: '0 0 6px rgba(0,0,0,.9)' }}
+                  />
                 </div>
               </div>
 

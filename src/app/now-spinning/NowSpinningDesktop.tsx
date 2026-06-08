@@ -178,7 +178,7 @@ export default function NowSpinningDesktop() {
                     marginTop: '-0.7vw',
                   }}
                 >
-                  The 60<span className="lowercase">s</span> Revolution
+                  60<span className="lowercase">s</span> Revolution
                 </span>
                 <div
                   className="bg-white"

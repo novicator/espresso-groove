@@ -12,6 +12,27 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Custom tablet breakpoint: 600px – 1023px.
+   Mobile shows below 600px, tablet shows 600–1023px, desktop shows 1024–1200px, XL shows 1201+. */
+.show-on-mobile-only {
+  display: block !important;
+}
+.show-on-tablet {
+  display: none !important;
+}
+
+@media (min-width: 600px) {
+  .show-on-mobile-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .show-on-tablet {
+    display: block !important;
+  }
+}
+
 /* Custom XL breakpoint at 1200px */
 .show-on-xl {
   display: none !important;

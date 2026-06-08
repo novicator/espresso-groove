@@ -8,13 +8,14 @@ interface Note {
 }
 
 const sizePresets = {
-  mobile: { height: '8vw', fontSize: '7.2vw', left: '-2vw', wave: '1vw', top: '-30%', speed: '6s', unit: 'vw' },
+  mobile: { height: '8vw', fontSize: '7.2vw', left: '0vw', wave: '1vw', top: '-20%', speed: '6s', unit: 'vw' },
+  tablet: { height: '35.52px', fontSize: '35.168px', left: '-5.88px', wave: '2.94px', top: '-30%', speed: '6s', unit: 'px' },
   desktop: { height: '7vw', fontSize: '4vw', left: '-1vw', wave: '0.5vw', top: '0%', speed: '8s', unit: 'vw' },
   xl: { height: '3.3vw', fontSize: '2.4vw', left: '-0.8vw', wave: '0.3vw', top: '0%', speed: '6s', unit: 'vw' },
   xlFixed: { height: '98px', fontSize: '56px', left: '-14px', wave: '7px', top: '0%', speed: '8s', unit: 'px' },
 };
 
-export default function MiniMusicNotes({ isPlaying, size = "mobile" }: { isPlaying: boolean; size?: "mobile" | "desktop" | "xl" | "xlFixed" }) {
+export default function MiniMusicNotes({ isPlaying, size = "mobile" }: { isPlaying: boolean; size?: "mobile" | "tablet" | "desktop" | "xl" | "xlFixed" }) {
   const s = sizePresets[size];
   const [notes, setNotes] = useState<Note[]>([]);
   const noteIdRef = useRef(0);
@@ -50,7 +51,7 @@ export default function MiniMusicNotes({ isPlaying, size = "mobile" }: { isPlayi
 
   return (
     <>
-      <div className="relative w-full overflow-hidden pointer-events-none" style={{ height: s.height }}>
+      <div className="relative w-full overflow-hidden pointer-events-none" style={{ height: s.height, ...(size === 'tablet' ? { width: '100vw', marginLeft: 'calc(50% - 50vw)' } : {}) }}>
         {notes.map((note) => (
           <span
             key={note.id}

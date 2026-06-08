@@ -119,7 +119,7 @@ export default function NowSpinningXL() {
                     className="font-[family-name:var(--font-libre-baskerville)] text-white uppercase"
                     style={{ fontSize: '46px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)', fontWeight: 900 }}
                   >
-                    The 60<span className="lowercase">s</span> Revolution
+                    60<span className="lowercase">s</span> Revolution
                   </span>
                   <div className="bg-white" style={{ width: '74px', height: '4.6px', boxShadow: '0 0 6px rgba(0,0,0,.9)' }} />
                 </div>
