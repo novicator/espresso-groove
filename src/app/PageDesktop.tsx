@@ -722,7 +722,7 @@ export default function PageDesktop() {
                     href="https://www.google.com/maps/search/?api=1&query=3540+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-start"
+                    className="hidden flex items-start"
                     style={{ gap: '1.5vw' }}
                   >
                     <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '3.5vw', height: '3.5vw' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -747,7 +747,7 @@ export default function PageDesktop() {
 
                   {/* Hours */}
                   <div
-                    className="flex items-start"
+                    className="hidden flex items-start"
                     style={{ gap: '1.5vw', marginTop: '1.5vw' }}
                   >
                     <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '3.5vw', height: '3.5vw' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">

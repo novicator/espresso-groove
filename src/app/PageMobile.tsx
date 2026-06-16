@@ -893,7 +893,7 @@ export default function PageMobile() {
                 href="https://www.google.com/maps/search/?api=1&query=3540+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start"
+                className="hidden flex items-start"
                 style={{ gap: '3vw' }}
               >
                 <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '5vw', height: '5vw' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -918,7 +918,7 @@ export default function PageMobile() {
 
               {/* Hours */}
               <div
-                className="flex items-start"
+                className="hidden flex items-start"
                 style={{ gap: '3vw', marginTop: '3vw' }}
               >
                 <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '5vw', height: '5vw' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">

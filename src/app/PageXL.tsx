@@ -730,7 +730,7 @@ export default function PageXL() {
                         href="https://www.google.com/maps/search/?api=1&query=3540+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-start"
+                        className="hidden flex items-start"
                         style={{ gap: '21px' }}
                       >
                         <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '40px', height: '40px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -755,7 +755,7 @@ export default function PageXL() {
 
                       {/* Hours */}
                       <div
-                        className="flex items-start"
+                        className="hidden flex items-start"
                         style={{ gap: '21px', marginTop: '21px' }}
                       >
                         <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '40px', height: '40px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">

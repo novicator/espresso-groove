@@ -66,7 +66,7 @@ export default function DesktopFooterXL() {
                 href="https://www.google.com/maps/search/?api=1&query=3540+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start"
+                className="hidden flex items-start"
                 style={{ gap: '9.8px' }}
               >
                 <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '42px', height: '42px', marginLeft: '-14px', filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.6))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,7 +83,7 @@ export default function DesktopFooterXL() {
                 </div>
               </a>
 
-              <div className="flex items-start" style={{ gap: '14px', marginTop: '21px' }}>
+              <div className="hidden flex items-start" style={{ gap: '14px', marginTop: '21px' }}>
                 <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '42px', height: '42px', marginLeft: '-14px', filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.6))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>

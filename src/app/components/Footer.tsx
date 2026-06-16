@@ -66,7 +66,7 @@ export default function Footer({ style, className }: { style?: React.CSSProperti
             href="https://www.google.com/maps/search/?api=1&query=3540+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-start"
+            className="hidden flex items-start"
             style={{ gap: '3vw' }}
           >
             <svg className="text-white mt-[1vw] flex-shrink-0" style={{ width: '9vw', height: '9vw', filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.6))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@ export default function Footer({ style, className }: { style?: React.CSSProperti
 
           {/* Hours */}
           <div
-            className="flex items-start"
+            className="hidden flex items-start"
             style={{ gap: '3vw', marginTop: '4vw' }}
           >
             <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: '9vw', height: '9vw', filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.6))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -883,7 +883,7 @@ export default function PageTablet() {
                 href="https://www.google.com/maps/search/?api=1&query=3540+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start"
+                className="hidden flex items-start"
                 style={{ gap: 'calc(8.82 * var(--w) / 600)' }}
               >
                 <div style={{ paddingTop: '2px',}}>
@@ -910,7 +910,7 @@ export default function PageTablet() {
 
               {/* Hours */}
               <div
-                className="flex items-start"
+                className="hidden flex items-start"
                 style={{ gap: 'calc(8.82 * var(--w) / 600)', marginTop: 'calc(8.82 * var(--w) / 600)' }}
               >
                 <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: 'calc(24.7 * var(--w) / 600)', height: 'calc(24.7 * var(--w) / 600)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">

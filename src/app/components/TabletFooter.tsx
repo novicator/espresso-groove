@@ -69,7 +69,7 @@ export default function TabletFooter({ style, className }: { style?: React.CSSPr
               href="https://www.google.com/maps/search/?api=1&query=3540+Belle+Terre+Blvd,+Suite+C,+Myrtle+Beach,+SC+29526"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start"
+              className="hidden flex items-start"
               style={{ gap: 'calc(0.00925 * var(--w))' }}
             >
               <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: 'calc(0.04 * var(--w))', height: 'calc(0.04 * var(--w))', marginLeft: 'calc(-0.09 * var(--w))', filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.6)),' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@ export default function TabletFooter({ style, className }: { style?: React.CSSPr
               </div>
             </a>
 
-            <div className="flex items-start" style={{ gap: 'calc(0.0075 * var(--w))', marginTop: 'calc(0.01125 * var(--w))' }}>
+            <div className="hidden flex items-start" style={{ gap: 'calc(0.0075 * var(--w))', marginTop: 'calc(0.01125 * var(--w))' }}>
               <svg className="text-white mt-0.5 flex-shrink-0" style={{ width: 'calc(0.04 * var(--w))', height: 'calc(0.04 * var(--w))', marginLeft: 'calc(-0.09 * var(--w))', filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.6))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
