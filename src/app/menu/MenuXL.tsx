@@ -309,24 +309,13 @@ export default function MenuXL() {
                           </div>
 
                           {/* Drink cards row */}
-                          <div className="flex flex-1">
-                            {[
-                              { name: "PURPLE HAZE", desc: "Lemon lavender vanilla latte with butterfly pea cold foam and purple shimmer." },
-                              { name: "SUNDAY MORNING", desc: "Banana vanilla cold brew with sweet cream foam and vanilla wafer crumbles." },
-                            ].map((item, index) => (
-                              <div key={`ice-${index}`} className="flex-1 flex flex-col items-center justify-center" style={{ padding: '18px 12px 36px 12px', gap: '5px', borderRight: '1px solid rgba(255,255,255,0.15)' }}>
-                                <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
-                                  style={{ fontSize: '28.8px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                                <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '16.4px' }}>{item.desc}</p>
-                              </div>
-                            ))}
-
-                            {/* Strawberry Fields - standalone for individual editing */}
-                            <div className="flex-1 flex flex-col items-center justify-center" style={{ padding: '18px 12px 36px 12px', gap: '5px' }}>
-                              <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide text-center"
-                                style={{ fontSize: '28.8px', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>STRAWBERRY FIELDS</h3>
-                              <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug text-center" style={{ fontSize: '16.4px' }}>Strawberry passionfruit refresher with popping pearls.</p>
-                            </div>
+                          <div className="flex items-center justify-center" style={{ padding: '60px 30px' }}>
+                            <p
+                              className="text-white italic font-[family-name:var(--font-libre-baskerville)]"
+                              style={{ fontSize: '40px', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                            >
+                              Coming Soon
+                            </p>
                           </div>
                         </div>
                       </div>

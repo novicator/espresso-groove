@@ -1,0 +1,11 @@
+Limited Press - Iced Drinks (backup of names/descriptions before "Coming Soon" placeholder)
+Source: src/app/menu/MenuMobile.tsx
+
+PURPLE HAZE
+Lemon lavender vanilla latte with butterfly pea cold foam and purple shimmer.
+
+SUNDAY MORNING
+Banana vanilla cold brew with sweet cream foam and vanilla wafer crumbles.
+
+STRAWBERRY FIELDS
+Strawberry passionfruit refresher with popping pearls.

@@ -524,19 +524,19 @@ export default function PageDesktop() {
               <div className="flex-1 flex flex-col">
                 <div className="flex-1 flex items-center justify-center">
                   <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '2.2vw' }}>
-                    Purple Haze
+                    Coming Soon
                   </span>
                 </div>
                 <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
                 <div className="flex-1 flex items-center justify-center">
                   <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '2.2vw' }}>
-                    Sunday Morning
+                    Coming Soon
                   </span>
                 </div>
                 <div style={{ height: '0.4vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
                 <div className="flex-1 flex items-center justify-center">
                   <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '2.2vw' }}>
-                    Strawberry Fields
+                    Coming Soon
                   </span>
                 </div>
               </div>

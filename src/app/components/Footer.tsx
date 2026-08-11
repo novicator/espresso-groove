@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import MusicNotes from "./MusicNotes";
 import { sendContactForm, type ContactStatus } from "../lib/contact";
 import ContactDropdown from "./ContactDropdown";
@@ -183,7 +184,7 @@ export default function Footer({ style, className }: { style?: React.CSSProperti
       </div>
 
       {/* === Contact Form Modal === */}
-      {contactOpen && (
+      {contactOpen && createPortal(
         <div
           className="fixed inset-0 z-50 flex items-center justify-center"
           style={{ background: 'rgba(0,0,0,0.65)', padding: '6vw' }}
@@ -300,7 +301,8 @@ export default function Footer({ style, className }: { style?: React.CSSProperti
               )}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

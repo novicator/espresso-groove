@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(node inspect.js)",
+      "Bash(node -e \"let d='';process.stdin.on\\('data',c=>d+=c\\);process.stdin.on\\('end',\\(\\)=>{const o=JSON.parse\\(d.slice\\(d.indexOf\\('{'\\)\\)\\);console.log\\(JSON.stringify\\(o.modalAncestorChain,null,2\\)\\);console.log\\('RECT', JSON.stringify\\(o.modalRect\\)\\);}\\)\")"
+    ]
+  }
+}

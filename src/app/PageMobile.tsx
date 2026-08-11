@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import MusicNotes from "./components/MusicNotes";
 import MiniMusicNotes from "./components/MiniMusicNotes";
@@ -612,7 +613,7 @@ export default function PageMobile() {
                   className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
                   style={{ fontSize: '5vw' }}
                 >
-                  Purple Haze
+                  Coming Soon
                 </span>
               </div>
               <div style={{ height: '0.7vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
@@ -621,7 +622,7 @@ export default function PageMobile() {
                   className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
                   style={{ fontSize: '5vw' }}
                 >
-                  Sunday Morning
+                  Coming Soon
                 </span>
               </div>
               <div style={{ height: '0.7vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
@@ -630,7 +631,7 @@ export default function PageMobile() {
                   className="text-white whitespace-nowrap font-[family-name:var(--font-bebas-neue)] tracking-wide"
                   style={{ fontSize: '5vw' }}
                 >
-                  Strawberry Fields
+                  Coming Soon
                 </span>
               </div>
             </div>
@@ -1042,7 +1043,7 @@ export default function PageMobile() {
       </div>
 
       {/* === Contact Form Modal === */}
-      {contactOpen && (
+      {contactOpen && createPortal(
         <div
           className="fixed inset-0 z-50 flex items-center justify-center"
           style={{ background: 'rgba(0,0,0,0.65)', padding: '6vw' }}
@@ -1050,12 +1051,12 @@ export default function PageMobile() {
         >
           <div
             className="rounded-2xl w-full"
-            style={{ maxWidth: '92vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+            style={{ maxWidth: '337.6px', padding: '2.9px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
             onClick={(e) => e.stopPropagation()}
           >
             <div
               className="rounded-2xl bg-[#2d1f1a] relative"
-              style={{ padding: '6vw', maxHeight: '85vh', overflowY: 'auto' }}
+              style={{ padding: '22px', maxHeight: '85vh', overflowY: 'auto' }}
             >
               {/* Close (X) */}
               <button
@@ -1063,14 +1064,14 @@ export default function PageMobile() {
                 onClick={() => setContactOpen(false)}
                 aria-label="Close contact form"
                 className="absolute text-white leading-none cursor-pointer"
-                style={{ top: '3.5vw', right: '4.5vw', fontSize: '7vw', fontWeight: 700 }}
+                style={{ top: '12.8px', right: '16.5px', fontSize: '25.7px', fontWeight: 700 }}
               >
                 &times;
               </button>
 
               <h4
                 className="text-white font-[family-name:var(--font-bebas-neue)] uppercase"
-                style={{ fontSize: '6.5vw', letterSpacing: '0.12em', textShadow: '2px 2px 8px rgba(0,0,0,0.4)' }}
+                style={{ fontSize: '23.9px', letterSpacing: '0.12em', textShadow: '2px 2px 8px rgba(0,0,0,0.4)' }}
               >
                 Contact Us
               </h4>
@@ -1078,26 +1079,26 @@ export default function PageMobile() {
               {contactStatus === "success" ? (
                 <p
                   className="text-white font-[family-name:var(--font-libre-baskerville)] text-center"
-                  style={{ fontSize: '4.6vw', fontWeight: 900, marginTop: '8vw', marginBottom: '6vw', lineHeight: 1.5 }}
+                  style={{ fontSize: '16.9px', fontWeight: 900, marginTop: '29.4px', marginBottom: '22px', lineHeight: 1.5 }}
                 >
                   Thanks! We&apos;ll be in touch soon.
                 </p>
               ) : (
                 <form
                   className="flex flex-col"
-                  style={{ gap: '3vw', marginTop: '5vw' }}
+                  style={{ gap: '11px', marginTop: '18.4px' }}
                   onSubmit={handleContactSubmit}
                 >
                   <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} />
-                  <ContactDropdown size="mobile" />
-                  <div className="flex" style={{ gap: '3vw' }}>
+                  <ContactDropdown size="mobileLocked" />
+                  <div className="flex" style={{ gap: '11px' }}>
                     <input
                       type="text"
                       name="firstName"
                       placeholder="First Name"
                       autoComplete="given-name"
                       className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
-                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '3vw', fontSize: '4vw' }}
+                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '11px', fontSize: '14.7px' }}
                     />
                     <input
                       type="text"
@@ -1105,7 +1106,7 @@ export default function PageMobile() {
                       placeholder="Last Name"
                       autoComplete="family-name"
                       className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
-                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '3vw', fontSize: '4vw' }}
+                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '11px', fontSize: '14.7px' }}
                     />
                   </div>
                   <input
@@ -1115,7 +1116,7 @@ export default function PageMobile() {
                     autoComplete="email"
                     required
                     className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
-                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '3vw', fontSize: '4vw' }}
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '11px', fontSize: '14.7px' }}
                   />
                   <input
                     type="tel"
@@ -1123,7 +1124,7 @@ export default function PageMobile() {
                     placeholder="Phone Number"
                     autoComplete="tel"
                     className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
-                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '3vw', fontSize: '4vw' }}
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '11px', fontSize: '14.7px' }}
                   />
                   <textarea
                     name="message"
@@ -1131,10 +1132,10 @@ export default function PageMobile() {
                     rows={4}
                     required
                     className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)] resize-none"
-                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '3vw', fontSize: '4vw' }}
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '11px', fontSize: '14.7px' }}
                   />
                   {contactStatus === "error" && (
-                    <p className="text-center" style={{ color: '#ff9b6b', fontSize: '3.6vw' }}>
+                    <p className="text-center" style={{ color: '#ff9b6b', fontSize: '13.2px' }}>
                       Something went wrong. Please try again.
                     </p>
                   )}
@@ -1142,15 +1143,15 @@ export default function PageMobile() {
                     type="submit"
                     disabled={contactStatus === "sending"}
                     className="rounded-full"
-                    style={{ marginTop: '2vw', padding: '0.8vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', opacity: contactStatus === "sending" ? 0.6 : 1 }}
+                    style={{ marginTop: '7.3px', padding: '2.9px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', opacity: contactStatus === "sending" ? 0.6 : 1 }}
                   >
                     <div
                       className="rounded-full bg-[#2d1f1a] flex items-center justify-center"
-                      style={{ paddingBlock: '3vw' }}
+                      style={{ paddingBlock: '11px' }}
                     >
                       <span
                         className="text-white font-[family-name:var(--font-libre-baskerville)] uppercase"
-                        style={{ fontSize: '4.4vw', fontWeight: 900, letterSpacing: '0.12em' }}
+                        style={{ fontSize: '16.1px', fontWeight: 900, letterSpacing: '0.12em' }}
                       >
                         {contactStatus === "sending" ? "Sending..." : "Send"}
                       </span>
@@ -1160,7 +1161,8 @@ export default function PageMobile() {
               )}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

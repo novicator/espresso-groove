@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import MusicNotes from "./MusicNotes";
 import { sendContactForm, type ContactStatus } from "../lib/contact";
@@ -166,7 +167,7 @@ export default function DesktopFooterXL() {
       </div>
 
       {/* === Contact Form Modal === */}
-      {contactOpen && (
+      {contactOpen && createPortal(
         <div
           className="fixed inset-0 z-50 flex items-center justify-center"
           style={{ background: 'rgba(0,0,0,0.65)', padding: '24px' }}
@@ -174,26 +175,26 @@ export default function DesktopFooterXL() {
         >
           <div
             className="rounded-2xl"
-            style={{ width: '560px', maxWidth: '92vw', padding: '3px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+            style={{ width: '460px', padding: '3px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
             onClick={(e) => e.stopPropagation()}
           >
             <div
               className="rounded-2xl bg-[#2d1f1a] relative"
-              style={{ padding: '36px', maxHeight: '85vh', overflowY: 'auto' }}
+              style={{ padding: '26px', maxHeight: '85vh', overflowY: 'auto' }}
             >
               <button
                 type="button"
                 onClick={() => setContactOpen(false)}
                 aria-label="Close contact form"
                 className="absolute text-white leading-none cursor-pointer"
-                style={{ top: '18px', right: '22px', fontSize: '34px', fontWeight: 700 }}
+                style={{ top: '14px', right: '16px', fontSize: '26px', fontWeight: 700 }}
               >
                 &times;
               </button>
 
               <h4
                 className="text-white font-[family-name:var(--font-bebas-neue)] uppercase"
-                style={{ fontSize: '38px', letterSpacing: '0.12em', textShadow: '2px 2px 8px rgba(0,0,0,0.4)' }}
+                style={{ fontSize: '28px', letterSpacing: '0.12em', textShadow: '2px 2px 8px rgba(0,0,0,0.4)' }}
               >
                 Contact Us
               </h4>
@@ -201,26 +202,26 @@ export default function DesktopFooterXL() {
               {contactStatus === "success" ? (
                 <p
                   className="text-white font-[family-name:var(--font-libre-baskerville)] text-center"
-                  style={{ fontSize: '24px', fontWeight: 900, marginTop: '36px', marginBottom: '28px', lineHeight: 1.5 }}
+                  style={{ fontSize: '18px', fontWeight: 900, marginTop: '26px', marginBottom: '20px', lineHeight: 1.5 }}
                 >
                   Thanks! We&apos;ll be in touch soon.
                 </p>
               ) : (
                 <form
                   className="flex flex-col"
-                  style={{ gap: '16px', marginTop: '26px' }}
+                  style={{ gap: '12px', marginTop: '18px' }}
                   onSubmit={handleContactSubmit}
                 >
                   <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} />
-                  <ContactDropdown size="xl" />
-                  <div className="flex" style={{ gap: '16px' }}>
+                  <ContactDropdown size="xlLocked" />
+                  <div className="flex" style={{ gap: '10px' }}>
                     <input
                       type="text"
                       name="firstName"
                       placeholder="First Name"
                       autoComplete="given-name"
                       className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
-                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '14px', fontSize: '18px' }}
+                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '11px', fontSize: '15px' }}
                     />
                     <input
                       type="text"
@@ -228,7 +229,7 @@ export default function DesktopFooterXL() {
                       placeholder="Last Name"
                       autoComplete="family-name"
                       className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
-                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '14px', fontSize: '18px' }}
+                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '11px', fontSize: '15px' }}
                     />
                   </div>
                   <input
@@ -238,7 +239,7 @@ export default function DesktopFooterXL() {
                     autoComplete="email"
                     required
                     className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
-                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '14px', fontSize: '18px' }}
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '11px', fontSize: '15px' }}
                   />
                   <input
                     type="tel"
@@ -246,7 +247,7 @@ export default function DesktopFooterXL() {
                     placeholder="Phone Number"
                     autoComplete="tel"
                     className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
-                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '14px', fontSize: '18px' }}
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '11px', fontSize: '15px' }}
                   />
                   <textarea
                     name="message"
@@ -254,10 +255,10 @@ export default function DesktopFooterXL() {
                     rows={4}
                     required
                     className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)] resize-none"
-                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '14px', fontSize: '18px' }}
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '11px', fontSize: '15px' }}
                   />
                   {contactStatus === "error" && (
-                    <p className="text-center" style={{ color: '#ff9b6b', fontSize: '16px' }}>
+                    <p className="text-center" style={{ color: '#ff9b6b', fontSize: '13px' }}>
                       Something went wrong. Please try again.
                     </p>
                   )}
@@ -265,15 +266,15 @@ export default function DesktopFooterXL() {
                     type="submit"
                     disabled={contactStatus === "sending"}
                     className="rounded-full"
-                    style={{ marginTop: '8px', padding: '3px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', opacity: contactStatus === "sending" ? 0.6 : 1 }}
+                    style={{ marginTop: '6px', padding: '3px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', opacity: contactStatus === "sending" ? 0.6 : 1 }}
                   >
                     <div
                       className="rounded-full bg-[#2d1f1a] flex items-center justify-center"
-                      style={{ paddingBlock: '14px' }}
+                      style={{ paddingBlock: '11px' }}
                     >
                       <span
                         className="text-white font-[family-name:var(--font-libre-baskerville)] uppercase"
-                        style={{ fontSize: '22px', fontWeight: 900, letterSpacing: '0.12em' }}
+                        style={{ fontSize: '17px', fontWeight: 900, letterSpacing: '0.12em' }}
                       >
                         {contactStatus === "sending" ? "Sending..." : "Send"}
                       </span>
@@ -283,7 +284,8 @@ export default function DesktopFooterXL() {
               )}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

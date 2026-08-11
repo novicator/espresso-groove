@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { CONTACT_CATEGORIES } from "../lib/contact";
 
-type Size = "mobile" | "desktop" | "xl";
+type Size = "mobile" | "mobileLocked" | "tabletLocked" | "desktop" | "desktopLocked" | "xl" | "xlLocked";
 
 const sizes: Record<Size, {
   padding: string;
@@ -25,6 +25,26 @@ const sizes: Record<Size, {
     optionPadding: '1.8vw 3vw',
     optionFontSize: '3.5vw',
   },
+  mobileLocked: {
+    padding: '11px',
+    paddingRight: '36.7px',
+    fontSize: '14.7px',
+    chevronSize: '11px',
+    chevronRight: '11px',
+    panelGap: '3.7px',
+    optionPadding: '6.6px 11px',
+    optionFontSize: '12.8px',
+  },
+  tabletLocked: {
+    padding: '12px',
+    paddingRight: '34px',
+    fontSize: '15px',
+    chevronSize: '12px',
+    chevronRight: '12px',
+    panelGap: '4px',
+    optionPadding: '8px 12px',
+    optionFontSize: '14px',
+  },
   desktop: {
     padding: '1vw',
     paddingRight: '3vw',
@@ -35,6 +55,16 @@ const sizes: Record<Size, {
     optionPadding: '0.55vw 1vw',
     optionFontSize: '1.15vw',
   },
+  desktopLocked: {
+    padding: '11.8px',
+    paddingRight: '35.3px',
+    fontSize: '15.3px',
+    chevronSize: '11.8px',
+    chevronRight: '11.8px',
+    panelGap: '3.6px',
+    optionPadding: '6.4px 11.8px',
+    optionFontSize: '13.6px',
+  },
   xl: {
     padding: '14px',
     paddingRight: '40px',
@@ -44,6 +74,16 @@ const sizes: Record<Size, {
     panelGap: '4px',
     optionPadding: '8px 14px',
     optionFontSize: '15px',
+  },
+  xlLocked: {
+    padding: '11px',
+    paddingRight: '32px',
+    fontSize: '15px',
+    chevronSize: '11px',
+    chevronRight: '11px',
+    panelGap: '3px',
+    optionPadding: '7px 11px',
+    optionFontSize: '13px',
   },
 };
 

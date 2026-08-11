@@ -529,19 +529,19 @@ export default function PageXL() {
                   <div className="flex-1 flex flex-col">
                     <div className="flex-1 flex items-center justify-center">
                       <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '30.8px' }}>
-                        Purple Haze
+                        Coming Soon
                       </span>
                     </div>
                     <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
                     <div className="flex-1 flex items-center justify-center">
                       <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '30.8px' }}>
-                        Sunday Morning
+                        Coming Soon
                       </span>
                     </div>
                     <div style={{ height: '5.6px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />
                     <div className="flex-1 flex items-center justify-center">
                       <span className="text-white font-[family-name:var(--font-bebas-neue)] tracking-wide text-center" style={{ fontSize: '30.8px' }}>
-                        Strawberry Fields
+                        Coming Soon
                       </span>
                     </div>
                   </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import MusicNotes from "./MusicNotes";
 import { sendContactForm, type ContactStatus } from "../lib/contact";
@@ -168,7 +169,7 @@ export default function TabletFooter({ style, className }: { style?: React.CSSPr
       </div>
 
       {/* === Contact Form Modal === */}
-      {contactOpen && (
+      {contactOpen && createPortal(
         <div
           className="fixed inset-0 z-50 flex items-center justify-center"
           style={{ background: 'rgba(0,0,0,0.65)', padding: '1.5vw' }}
@@ -176,26 +177,26 @@ export default function TabletFooter({ style, className }: { style?: React.CSSPr
         >
           <div
             className="rounded-2xl"
-            style={{ width: '30vw', padding: '0.1875vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
+            style={{ width: '440px', padding: '4px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }}
             onClick={(e) => e.stopPropagation()}
           >
             <div
               className="rounded-2xl bg-[#2d1f1a] relative"
-              style={{ padding: '1.875vw', maxHeight: '85vh', overflowY: 'auto' }}
+              style={{ padding: '28px', maxHeight: '85vh', overflowY: 'auto' }}
             >
               <button
                 type="button"
                 onClick={() => setContactOpen(false)}
                 aria-label="Close contact form"
                 className="absolute text-white leading-none cursor-pointer"
-                style={{ top: '0.9vw', right: '1.125vw', fontSize: '1.8vw', fontWeight: 700 }}
+                style={{ top: '16px', right: '18px', fontSize: '26px', fontWeight: 700 }}
               >
                 &times;
               </button>
 
               <h4
                 className="text-white font-[family-name:var(--font-bebas-neue)] uppercase"
-                style={{ fontSize: '1.95vw', letterSpacing: '0.12em', textShadow: '2px 2px 8px rgba(0,0,0,0.4)' }}
+                style={{ fontSize: '24px', letterSpacing: '0.12em', textShadow: '2px 2px 8px rgba(0,0,0,0.4)' }}
               >
                 Contact Us
               </h4>
@@ -203,26 +204,26 @@ export default function TabletFooter({ style, className }: { style?: React.CSSPr
               {contactStatus === "success" ? (
                 <p
                   className="text-white font-[family-name:var(--font-libre-baskerville)] text-center"
-                  style={{ fontSize: '1.2vw', fontWeight: 900, marginTop: '1.875vw', marginBottom: '1.5vw', lineHeight: 1.5 }}
+                  style={{ fontSize: '17px', fontWeight: 900, marginTop: '22px', marginBottom: '18px', lineHeight: 1.5 }}
                 >
                   Thanks! We&apos;ll be in touch soon.
                 </p>
               ) : (
                 <form
                   className="flex flex-col"
-                  style={{ gap: '0.9vw', marginTop: '1.35vw' }}
+                  style={{ gap: '14px', marginTop: '16px' }}
                   onSubmit={handleContactSubmit}
                 >
                   <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} />
-                  <ContactDropdown size="desktop" />
-                  <div className="flex" style={{ gap: '0.9vw' }}>
+                  <ContactDropdown size="tabletLocked" />
+                  <div className="flex" style={{ gap: '12px' }}>
                     <input
                       type="text"
                       name="firstName"
                       placeholder="First Name"
                       autoComplete="given-name"
                       className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
-                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '0.75vw', fontSize: '0.975vw' }}
+                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '12px', fontSize: '15px' }}
                     />
                     <input
                       type="text"
@@ -230,7 +231,7 @@ export default function TabletFooter({ style, className }: { style?: React.CSSPr
                       placeholder="Last Name"
                       autoComplete="family-name"
                       className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
-                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '0.75vw', fontSize: '0.975vw' }}
+                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '12px', fontSize: '15px' }}
                     />
                   </div>
                   <input
@@ -240,7 +241,7 @@ export default function TabletFooter({ style, className }: { style?: React.CSSPr
                     autoComplete="email"
                     required
                     className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
-                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '0.75vw', fontSize: '0.975vw' }}
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '12px', fontSize: '15px' }}
                   />
                   <input
                     type="tel"
@@ -248,7 +249,7 @@ export default function TabletFooter({ style, className }: { style?: React.CSSPr
                     placeholder="Phone Number"
                     autoComplete="tel"
                     className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)]"
-                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '0.75vw', fontSize: '0.975vw' }}
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '12px', fontSize: '15px' }}
                   />
                   <textarea
                     name="message"
@@ -256,10 +257,10 @@ export default function TabletFooter({ style, className }: { style?: React.CSSPr
                     rows={4}
                     required
                     className="contact-input w-full text-white rounded-lg font-[family-name:var(--font-inter)] resize-none"
-                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '0.75vw', fontSize: '0.975vw' }}
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', padding: '12px', fontSize: '15px' }}
                   />
                   {contactStatus === "error" && (
-                    <p className="text-center" style={{ color: '#ff9b6b', fontSize: '0.825vw' }}>
+                    <p className="text-center" style={{ color: '#ff9b6b', fontSize: '14px' }}>
                       Something went wrong. Please try again.
                     </p>
                   )}
@@ -267,15 +268,15 @@ export default function TabletFooter({ style, className }: { style?: React.CSSPr
                     type="submit"
                     disabled={contactStatus === "sending"}
                     className="rounded-full"
-                    style={{ marginTop: '0.45vw', padding: '0.1875vw', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', opacity: contactStatus === "sending" ? 0.6 : 1 }}
+                    style={{ marginTop: '8px', padding: '4px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)', opacity: contactStatus === "sending" ? 0.6 : 1 }}
                   >
                     <div
                       className="rounded-full bg-[#2d1f1a] flex items-center justify-center"
-                      style={{ paddingBlock: '0.675vw' }}
+                      style={{ paddingBlock: '12px' }}
                     >
                       <span
                         className="text-white font-[family-name:var(--font-libre-baskerville)] uppercase"
-                        style={{ fontSize: '1.125vw', fontWeight: 900, letterSpacing: '0.12em' }}
+                        style={{ fontSize: '16px', fontWeight: 900, letterSpacing: '0.12em' }}
                       >
                         {contactStatus === "sending" ? "Sending..." : "Send"}
                       </span>
@@ -285,7 +286,8 @@ export default function TabletFooter({ style, className }: { style?: React.CSSPr
               )}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

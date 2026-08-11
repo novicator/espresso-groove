@@ -434,24 +434,14 @@ export default function MenuTablet() {
           </div>
 
           {/* Iced Drinks Cards */}
-          {[
-            { name: "PURPLE HAZE", desc: "Lemon lavender vanilla latte with butterfly pea cold foam and purple shimmer." },
-            { name: "SUNDAY MORNING", desc: "Banana vanilla cold brew with sweet cream foam and vanilla wafer crumbles." },
-            { name: "STRAWBERRY FIELDS", desc: "Strawberry passionfruit refresher with\npopping pearls." },
-          ].map((item, index) => (
-            <div key={`ice-${index}`}>
-              {index > 0 && <div style={{ height: '0.882px', background: 'linear-gradient(135deg, #ff6b2b, #33cccc, #9b59d0)' }} />}
-              <div className="flex" style={{ padding: '8.82px 11.76px', gap: 'calc(8.82 * var(--w) / 600)' }}>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between" style={{ gap: 'calc(5.88 * var(--w) / 600)' }}>
-                    <h3 className="font-[family-name:var(--font-bebas-neue)] text-white leading-tight tracking-wide"
-                      style={{ fontSize: 'calc(23.758 * var(--w) / 600)', textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}>{item.name}</h3>
-                  </div>
-                  <p className="text-white/50 font-[family-name:var(--font-inter)] leading-snug" style={{ fontSize: 'calc(15.878 * var(--w) / 600)', marginTop: '1.47px', whiteSpace: 'pre-line' }}>{item.desc}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+          <div className="flex items-center justify-center" style={{ padding: '29.4px 11.76px' }}>
+            <p
+              className="text-white italic font-[family-name:var(--font-libre-baskerville)]"
+              style={{ fontSize: 'calc(24.64 * var(--w) / 600)', fontWeight: 900, textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+            >
+              Coming Soon
+            </p>
+          </div>
 
         </div>
         </div>
